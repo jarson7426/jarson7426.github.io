@@ -30,7 +30,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="http://pic.cnblogs.com/avatar/626812/20140423095909.png" class="js-avatar">
+			<img lazy-src="./img.png" class="js-avatar">
 			
 		</a>
 
@@ -77,7 +77,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -118,7 +118,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/上传文件-javascript/" style="font-size: 10px;">上传文件 javascript</a>
+						<a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/上传文件-javascript/" style="font-size: 10px;">上传文件 javascript</a> <a href="/tags/there/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -158,7 +158,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img lazy-src="http://pic.cnblogs.com/avatar/626812/20140423095909.png" class="js-avatar">
+				<img lazy-src="./img.png" class="js-avatar">
 			
 			</div>
 			<hgroup>
@@ -203,7 +203,7 @@
     <article id="post-文件上传的实现--ajax和form+iframe" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/uncategorized/2016-04-21-文件上传的实现--ajax和form+iframe.html" class="article-date">
+      <a href="/default/2016-04-21/文件上传的实现--ajax和form+iframe.html" class="article-date">
   	<time datetime="2016-04-21T14:53:20.105Z" itemprop="datePublished">2016-04-21</time>
 </a>
     </div>
@@ -213,32 +213,40 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/default/2016-04-21/文件上传的实现--ajax和form+iframe.html">文件上传</a>
+    </h1>
+  
+
+      </header>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>话说现在很多很多项目需要用到文件上传，自从有了HTML5之后，上传就变的超级简单了。HTML5支持多图片上传，而且支持ajax上传，而且支持上传之前图片的预览，而且支持图片拖拽上传，而且还是纯粹利用file控件实现，JS代码寥寥，想不让人称赞都难啊！</p>
-<h1 id="HTML5Ajax上传"><a href="#HTML5Ajax上传" class="headerlink" title="HTML5Ajax上传"></a>HTML5Ajax上传</h1><p>html5的上传实现，是需要file控件以及XMLHttpRequest请求。下面是我封装的一个上传插件：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fileUpload</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">   	<span class="keyword">var</span> opts = options || &#123;&#125;;</span><br><span class="line">   	<span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">   	<span class="keyword">this</span>.fileInput = opts.fileInput || <span class="literal">null</span>;</span><br><span class="line">   	<span class="keyword">this</span>.url = opts.url || <span class="string">''</span>;</span><br><span class="line">   	<span class="keyword">this</span>.fileList = [];</span><br><span class="line">   	<span class="keyword">this</span>.onFilter = opts.onFilter || <span class="function"><span class="keyword">function</span>(<span class="params">f</span>) </span>&#123;<span class="keyword">return</span> f;&#125;;		<span class="comment">//选择文件组的过滤方法</span></span><br><span class="line">   	<span class="keyword">this</span>.onSelect = opts.onSelect || func;			<span class="comment">//文件选择后</span></span><br><span class="line">	<span class="keyword">this</span>.onProgress = opts.onProgress || func;		<span class="comment">//文件上传进度</span></span><br><span class="line">	<span class="keyword">this</span>.onSuccess = opts.onSuccess || func;		<span class="comment">//文件上传成功时</span></span><br><span class="line">	<span class="keyword">this</span>.onFailure = opts.onFailure || func;		<span class="comment">//文件上传失败时;</span></span><br><span class="line">	<span class="keyword">this</span>.onComplete = opts.onComplete || func;		<span class="comment">//文件全部上传完毕时</span></span><br><span class="line">   	<span class="keyword">this</span>.init();</span><br><span class="line">&#125;</span><br><span class="line">fileUpload.prototype = &#123;</span><br><span class="line">   	dealFiles: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;     <span class="comment">//获取要上传的文件数组（用户选择文件后执行）</span></span><br><span class="line">       	<span class="keyword">var</span> files = e.target.files || e.dataTransfer.files;</span><br><span class="line">       	<span class="keyword">this</span>.fileList = <span class="keyword">this</span>.onFilter(files);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, file; file = <span class="keyword">this</span>.fileList[i]; i++)&#123;   <span class="comment">//增加唯一索引值</span></span><br><span class="line">			file.index = i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">this</span>.onSelect(<span class="keyword">this</span>.fileList);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">   	removeFile: <span class="function"><span class="keyword">function</span>(<span class="params">fileDelete</span>) </span>&#123;     <span class="comment">//删除某一个文件</span></span><br><span class="line">		<span class="keyword">var</span> arrFile = [];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, file; file = <span class="keyword">this</span>.fileList[i]; i++)&#123;</span><br><span class="line">			<span class="keyword">if</span> (file != fileDelete) &#123;</span><br><span class="line">				arrFile.push(file);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">this</span>.fileList = arrFile;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">   	removeAll: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;     <span class="comment">//清空文件队列</span></span><br><span class="line">       	<span class="keyword">this</span>.fileList = [];</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">   	&#125;,</span><br><span class="line">    uploadFile: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;     <span class="comment">//上传文件</span></span><br><span class="line">		<span class="keyword">var</span> me = <span class="keyword">this</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, file; file = <span class="keyword">this</span>.fileList[i]; i++)&#123;</span><br><span class="line">			(<span class="function"><span class="keyword">function</span>(<span class="params">file</span>) </span>&#123;</span><br><span class="line">               	<span class="keyword">var</span> formData = <span class="keyword">new</span> FormData();</span><br><span class="line">				<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">				<span class="keyword">if</span> (xhr.upload) &#123;</span><br><span class="line">					xhr.upload.addEventListener(<span class="string">"progress"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;   <span class="comment">// 上传中</span></span><br><span class="line">						me.onProgress(file, e.loaded, e.total);</span><br><span class="line">					&#125;, <span class="literal">false</span>);</span><br><span class="line">					xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;      <span class="comment">// 文件上传成功或是失败</span></span><br><span class="line">						<span class="keyword">if</span> (xhr.readyState == <span class="number">4</span>) &#123;</span><br><span class="line">							<span class="keyword">if</span> (xhr.status == <span class="number">200</span>) &#123;</span><br><span class="line">								me.onSuccess(file, xhr.responseText);</span><br><span class="line">								me.removeFile(file);</span><br><span class="line">								<span class="keyword">if</span> (!me.fileList.length) &#123;</span><br><span class="line">									me.onComplete();   <span class="comment">//上传全部完毕。执行回调</span></span><br><span class="line">								&#125;</span><br><span class="line">							&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">								me.onFailure(file, xhr.responseText);</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;;</span><br><span class="line">					<span class="comment">// 开始上传</span></span><br><span class="line">           	        formData.append(<span class="string">'file'</span>, file);</span><br><span class="line">					xhr.open(<span class="string">"POST"</span>, me.url, <span class="literal">true</span>);</span><br><span class="line">                  		xhr.send(formData);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;)(file);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">    init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> me = <span class="keyword">this</span>;</span><br><span class="line">		<span class="comment">//文件选择控件选择</span></span><br><span class="line">		<span class="keyword">if</span> (me.fileInput) &#123;</span><br><span class="line">			me.fileInput.addEventListener(<span class="string">"change"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123; me.dealFiles(e); &#125;, <span class="literal">false</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>相信大家也看到了，代码中出现了<code>formData</code>,这就是html5的神奇之处了。借助formData轻松实现异步无刷新支持预览图片的多文件上传功能。而且，令人欣慰的是，现在已经有很多浏览器都已经支持html5了。</p>
-<p>但是！！！ie9以下的版本不支持呀！！</p>
-<p>除此之外，上面的方法还有一个弊端，因为使用了ajax的上传方式，所以不能支持跨域上传，如果必须要满足这两个业务场景，那就试试下面的方法吧，借助form和iframe来实现上传。下面来详细看一下：</p>
-<h1 id="form表单提交到iframe"><a href="#form表单提交到iframe" class="headerlink" title="form表单提交到iframe"></a>form表单提交到iframe</h1><p>html代码:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe name=<span class="string">"demoIframe"</span> style=<span class="string">"display:none"</span>&gt;&lt;/iframe&gt;</span><br><span class="line">   &lt;form target=<span class="string">"demoIframe"</span> action=<span class="string">"upload.php"</span> method=<span class="string">"post"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;</span><br><span class="line">       &lt;input class="filename" type="file" name="fileLabel"&gt;</span><br><span class="line">       &lt;input type="submit" value="提交"&gt;</span><br><span class="line">   &lt;/form&gt;</span><br></pre></td></tr></table></figure>
-<p>我们点击提交,可以看到下面的请求：</p>
-<p><img src="https://img.alicdn.com/tps/TB1DHQaMpXXXXcaXVXXXXXXXXXX-794-199.png" alt=""></p>
-<p>已经把文件上传。那么，加入这个upload.php接口可用，而且假如上传成功后，会返回：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"code"</span>: <span class="string">"200"</span>,</span><br><span class="line">	<span class="string">"success"</span>: <span class="literal">true</span>,</span><br><span class="line">	<span class="string">"data"</span>: &#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们要怎么去获取返回值，从而进行下一步的操作呢？因为我们是上传到了iframe中，所以我们只需要监听iframe的load事件，如果有返回值了，我们就能获取到，从而进行进一步处理。看js代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'iframe'</span>).on(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> responseText = $(<span class="string">'iframe'</span>)[<span class="number">0</span>].contentDocument.body.textContent;</span><br><span class="line">	<span class="keyword">var</span> responseData = <span class="built_in">JSON</span>.parse(responseText) || &#123;&#125;;</span><br><span class="line">	<span class="keyword">if</span> (responseData.isSuccess == <span class="literal">true</span> || responseData.code == <span class="number">200</span>) &#123;</span><br><span class="line">		<span class="comment">//success</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    	<span class="comment">//error   </span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>这样我们就完成了一个支持所有浏览器的上传文件操作了。还是很简单的吧^_^</p>
-
       
     </div>
     
     <div class="article-info article-info-index">
       
       
-      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/there/">随笔</a></li></ul>
+	</div>
 
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/default/">default</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/default/2016-04-21/文件上传的实现--ajax和form+iframe.html#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -259,7 +267,7 @@
     <article id="post-common-skills" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/uncategorized/2016-04-20-common-skills.html" class="article-date">
+      <a href="/uncategorized/2016-04-20/common-skills.html" class="article-date">
   	<time datetime="2016-04-20T14:20:35.000Z" itemprop="datePublished">2016-04-20</time>
 </a>
     </div>
@@ -273,7 +281,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/uncategorized/2016-04-20-common-skills.html">common-skills</a>
+      <a class="article-title" href="/uncategorized/2016-04-20/common-skills.html">common-skills</a>
     </h1>
   
 
@@ -315,7 +323,7 @@
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/uncategorized/2016-04-19-hello-world.html" class="article-date">
+      <a href="/uncategorized/2016-04-19/hello-world.html" class="article-date">
   	<time datetime="2016-04-19T15:10:40.132Z" itemprop="datePublished">2016-04-19</time>
 </a>
     </div>
@@ -329,7 +337,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/uncategorized/2016-04-19-hello-world.html">Hello World</a>
+      <a class="article-title" href="/uncategorized/2016-04-19/hello-world.html">Hello World</a>
     </h1>
   
 
@@ -339,13 +347,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
