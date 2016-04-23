@@ -198,6 +198,9 @@ a {
   position: relative;
   min-height: 100%;
 }
+#container .share_jia {
+  padding: 0 40px;
+}
 #container #mobile-nav {
   display: none;
 }
@@ -498,7 +501,7 @@ a {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  background: #88acdb;
+  background: #fff;
   -webkit-transition: all 0.2s ease-in;
   display: -webkit-box;
   -webkit-box-orient: horizontal;

@@ -12,7 +12,7 @@ define([], function(){
 				$tipBox.addClass("hide");
 			},
 			init: function(){
-				
+
 			}
 		}
 	})();
@@ -88,13 +88,15 @@ define([], function(){
 		});
 	}
 
-	
+
 
 	return {
 		init: function(){
 			resetTags();
 			bind();
 			Tips.init();
+			console.log(11);
+			$($('span.jiathis_txt')[0]).html('分享到：');
 		}
 	}
 });

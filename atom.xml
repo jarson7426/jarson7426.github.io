@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>jarson的个人站</title>
-  <subtitle>我就是我，颜色不一样的烟火1~~</subtitle>
+  <title>jarson的博客</title>
+  <subtitle>我就是我，颜色不一样的烟火</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
