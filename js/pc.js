@@ -69,6 +69,12 @@ define([], function(){
 			}, 100);
 		});
 
+		$('.profilepic').bind("mouseover", function() {
+			$(this).addClass('hover-profile');
+		}).bind("mouseout", function() {
+			$(this).removeClass('hover-profile');
+		});
+
 		$(".tips-box").bind("mouseenter", function(){
 			isEnterTips = true;
 			Tips.show();
@@ -95,7 +101,6 @@ define([], function(){
 			resetTags();
 			bind();
 			Tips.init();
-			console.log(11);
 			$($('span.jiathis_txt')[0]).html('分享到：');
 		}
 	}

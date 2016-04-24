@@ -194,6 +194,19 @@ a {
     width: 100%;
   }
 }
+.go-top {
+  z-index: 100;
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: url("http://7xtawy.com2.z0.glb.clouddn.com/top.png") 0 0 no-repeat;
+}
+.go-top:hover {
+  background-position: 0 -40px;
+  cursor: pointer;
+}
 #container {
   position: relative;
   min-height: 100%;
@@ -480,6 +493,7 @@ a {
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s;
+  font-weight: bold;
 }
 #header {
   width: 100%;
@@ -493,7 +507,7 @@ a {
 #header .profilepic {
   text-align: center;
   display: block;
-  border: 5px solid #fff;
+  border: 3px solid #fff;
   -webkit-border-radius: 300px;
   border-radius: 300px;
   width: 128px;
@@ -508,6 +522,10 @@ a {
   -webkit-box-pack: center;
   -webkit-box-align: center;
   text-align: center;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 #header .profilepic img {
   width: 20%;
@@ -521,6 +539,12 @@ a {
   width: 100%;
   height: 100%;
   opacity: 1;
+}
+#header .hover-profile {
+  -webkit-animation: rotate360 2s ease-in-out infinite alternate;
+  -moz-animation: rotate360 2s ease-in-out infinite alternate;
+  -ms-animation: rotate360 2s ease-in-out infinite alternate;
+  animation: rotate360 2s ease-in-out infinite alternate;
 }
 #header .header-subtitle {
   text-align: center;
@@ -688,10 +712,11 @@ a {
 }
 #header .switch-part1 {
   left: 0;
+  top: -10px;
 }
 #header .switch-part2 {
   left: 100%;
-  top: 20px;
+  top: 10px;
   overlay-x: hidden;
   overflow-y: auto;
   max-height: 200px;
@@ -715,11 +740,71 @@ a {
   text-align: left;
   line-height: 30px;
 }
+#header #js-aboutme {
+  text-align: left;
+  margin-top: 10px;
+}
 .duoshuo {
   padding: 0 40px;
 }
 #disqus_thread {
   padding: 0 40px;
+}
+@-moz-keyframes rotate360 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    transform: rotate(540deg);
+  }
+}
+@-webkit-keyframes rotate360 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    transform: rotate(540deg);
+  }
+}
+@-o-keyframes rotate360 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    transform: rotate(540deg);
+  }
+}
+@keyframes rotate360 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    transform: rotate(540deg);
+  }
 }
 .archives-wrap {
   position: relative;
@@ -1825,7 +1910,7 @@ pre .css ~ * .id {
   text-align: center;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  opacity: 0.8;
+  opacity: 0.9;
   position: absolute;
   z-index: 99;
   left: -13px;

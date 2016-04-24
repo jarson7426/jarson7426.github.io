@@ -1,5 +1,19 @@
 require([], function (){
 
+	$(window).scroll(function() {
+	    var a = $(window).scrollTop();
+	    if(a > 150) {
+	        $('.go-top').fadeIn();
+	    }else {
+	        $('.go-top').fadeOut();
+	    }
+	});
+	$(".go-top").click(function(){
+	    $("body").animate({scrollTop:"0px"},'600');
+	});
+
+
+
 	var isMobileInit = false;
 	var loadMobile = function(){
 		require(['/js/mobile.js'], function(mobile){
@@ -47,6 +61,7 @@ require([], function (){
 		}
 	});
 
+
 	if(browser.versions.mobile === true || $(window).width() < 700){
 		loadMobile();
 	}else{
@@ -67,7 +82,7 @@ require([], function (){
 				$(".article-inner .fancy-ctn").fancybox();
 			}
 		});
-		
+
 	}
 	//是否开启动画
 	if(yiliaConfig.animate === true){
@@ -79,7 +94,7 @@ require([], function (){
 				$(".js-avatar").addClass("show");
 			}
 		});
-		
+
 		if(yiliaConfig.isHome === true){
 			//content
 			function showArticle(){
@@ -99,12 +114,12 @@ require([], function (){
 			});
 			showArticle();
 		}
-		
+
 	}
-	
+
 	//是否新窗口打开链接
 	if(yiliaConfig.open_in_new == true){
 		$(".article a[href]").attr("target", "_blank")
 	}
-	
+
 });
