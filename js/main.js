@@ -1,4 +1,5 @@
 require([], function (){
+	var showCode = false;
 
 	$(window).scroll(function() {
 	    var a = $(window).scrollTop();
@@ -10,6 +11,12 @@ require([], function (){
 	});
 	$(".go-top").click(function(){
 	    $("body").animate({scrollTop:"0px"},'600');
+	});
+
+	$('.show-code').click(function() {
+		var module = showCode ? 'fadeOut' : 'fadeIn';
+		$('.support-author .pay-code')[module]();
+		showCode = !showCode;
 	});
 
 
