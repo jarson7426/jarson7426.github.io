@@ -483,6 +483,14 @@ a {
   #container #footer .footer-right {
     float: initial;
   }
+  #container .support-author {
+    display: none !important;
+  }
+  #container .go-top {
+    position: fixed;
+    bottom: 40px;
+    right: 15px;
+  }
 }
 .header-author {
   text-align: center;
