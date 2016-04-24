@@ -101,7 +101,6 @@ define([], function(){
 			resetTags();
 			bind();
 			Tips.init();
-			$($('span.jiathis_txt')[0]).html('分享到：');
 		}
 	}
 });

@@ -10,7 +10,7 @@ require([], function (){
 	    }
 	});
 	$(".go-top").click(function(){
-	    $("body").animate({scrollTop:"0px"},'600');
+		$("body").animate({scrollTop:"0px"},'600');
 	});
 
 	$('.show-code').click(function() {

@@ -202,6 +202,7 @@ a {
   width: 40px;
   height: 40px;
   background: url("http://7xtawy.com2.z0.glb.clouddn.com/top.png") 0 0 no-repeat;
+  display: none;
 }
 .go-top:hover {
   background-position: 0 -40px;
@@ -486,11 +487,6 @@ a {
   #container .support-author {
     display: none !important;
   }
-  #container .go-top {
-    position: fixed;
-    bottom: 40px;
-    right: 15px;
-  }
 }
 .header-author {
   text-align: center;
@@ -764,9 +760,10 @@ a {
   border-left: 4px solid #f57e42;
   -webkit-box-shadow: 0 0 1px #d9d9d9;
   box-shadow: 0 0 1px #d9d9d9;
-  width: 580px;
+  max-width: 580px;
   margin: 40px auto 50px;
   position: relative;
+  width: 80%;
 }
 .support-author p {
   margin: 0 auto 15px;

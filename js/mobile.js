@@ -10,6 +10,9 @@ define([], function(){
 		radio = document.body.scrollHeight/document.body.scrollWidth;
 		//设定一页的宽度
 		scaleW = document.body.scrollWidth;
+		//设置回到顶部按钮的位置
+		$('.go-top').css({'right': '10px', 'bottom': '20px'});
+		$('.share_jia').css('padding-left','15px');
 		//设定初始的索引值
 		idx = 0;
 	};
@@ -76,7 +79,7 @@ define([], function(){
 	//第四步 -- 绑定 DOM 事件
 	var bindDOM = function(){
 		var scaleW = scaleW;
-		
+
 		//滑动隐藏
 		document.getElementById("viewer-box").addEventListener("webkitTransitionEnd", function(){
 
@@ -85,7 +88,7 @@ define([], function(){
 				_isShow = true;
 			}else{
 			}
-			
+
 		}, false);
 
 		//点击展示和隐藏
