@@ -11,7 +11,7 @@ define([], function(){
 		//设定一页的宽度
 		scaleW = document.body.scrollWidth;
 		//设置回到顶部按钮的位置
-		$('.go-top').css({'right': '10px', 'bottom': '20px'});
+		$('.go-top').css({'right': '10px', 'bottom': '30px'});
 		$('.share_jia').css('padding-left','15px');
 		//设定初始的索引值
 		idx = 0;

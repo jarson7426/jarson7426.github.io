@@ -234,6 +234,11 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 	</div>
 
 
+        <div class="busuanzi-read-num">
+            <span id="busuanzi_container_page_pv">
+            阅读次数：<span id="busuanzi_value_page_pv">0</span>次
+            </span>
+        </div>
         <div class="clearfix"></div>
       </div>
       
@@ -398,14 +403,18 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 jarson
+            <span id="busuanzi_container_site_uv" style="color:#ef7522">
+                本站共访问次数：<span id="busuanzi_value_site_uv">0</span>次
+            </span>
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+             --- &copy; 2016 jarson
       	</div>
     </div>
   </div>
 </footer>
+
     </div>
     
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
@@ -455,5 +464,7 @@ MathJax.Hub.Queue(function() {
 
   </div>
   <div class="go-top"></div>
+  <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
 </body>
 </html>
