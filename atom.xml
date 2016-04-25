@@ -62,7 +62,7 @@
     <link href="http://yoursite.com/work/2016-04-23/heoll-hexo.html"/>
     <id>http://yoursite.com/work/2016-04-23/heoll-hexo.html</id>
     <published>2016-04-23T14:11:51.000Z</published>
-    <updated>2016-04-25T15:43:57.230Z</updated>
+    <updated>2016-04-25T15:48:59.013Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;一直都在博客园写博客，不过最近在逛园子的时候不小心看到了&lt;code&gt;hexo&lt;/code&gt;,简直有种相见恨晚的感觉呀！在github上创建自己的开源博客，维护方便，主题多多，更重要的是，终于找到只属于自己的小窝啦！也希望自己能坚持写文^_^&lt;/p&gt;
@@ -143,6 +143,7 @@
 &lt;li&gt;鼠标移动头像上会有旋转效果。&lt;/li&gt;
 &lt;li&gt;给文章添加打赏功能。&lt;/li&gt;
 &lt;li&gt;添加回到顶部的功能。&lt;/li&gt;
+&lt;li&gt;添加总站访问量和文章阅读量&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;其实修改这些非常简单，只要你有html、css、js的基础就可以。&lt;br&gt;思路：因为整个网站都是依赖yilia主题。所以应该在theme/yilia文件夹下，修改对应的dom结构，然后添加对应的效果或者事件绑定就可以实现了。&lt;/p&gt;
 &lt;p&gt;如果大家还有问题，欢迎留言，我会很乐意为大家解答的。&lt;/p&gt;
