@@ -165,8 +165,11 @@ h6 {
 a {
   text-decoration: none;
   outline-width: 0;
-  color: #258fb8;
+  color: #39f;
   outline: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 .alignleft {
   float: left;
@@ -212,7 +215,7 @@ a {
   float: right;
   font-size: 14px;
   margin-right: 30px;
-  margin-top: 4px;
+  margin-top: 5px;
   color: #ef7522;
 }
 #container {
@@ -494,6 +497,10 @@ a {
   #container .support-author {
     display: none !important;
   }
+  #container .article-inner .busuanzi-read-num {
+    margin-right: 0px;
+    font-size: 12px;
+  }
 }
 .header-author {
   text-align: center;
@@ -588,6 +595,9 @@ a {
 #header .header-menu li a {
   font-size: 14px;
   min-width: 300px;
+}
+#header .header-menu li a:hover {
+  text-decoration: none;
 }
 #header .switch-area {
   position: relative;
@@ -1136,16 +1146,16 @@ a {
 }
 .article-entry ul li:before {
   content: "";
-  width: 6px;
-  height: 6px;
-  border: 1px solid #999;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background: #aaa;
+  width: 4px;
+  height: 4px;
+  border: 1px solid #444;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: #444;
   display: inline-block;
   margin-right: 10px;
   float: left;
-  margin-top: 12px;
+  margin-top: 11px;
 }
 .article-entry ul,
 .article-entry ol {
@@ -1159,7 +1169,7 @@ a {
 .article-entry li ul li:before,
 .article-entry li ol li:before {
   content: "";
-  background: #dedede;
+  background: #fff;
 }
 .article-entry h1 {
   margin-top: 30px;
