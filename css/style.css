@@ -212,20 +212,14 @@ a {
   float: right;
   font-size: 14px;
   margin-right: 30px;
-  margin-top: 5px;
+  margin-top: 8px;
   color: #ef7522;
   height: 16px;
 }
-.busuanzi-read-num span {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin-right: 1px;
-  margin-top: 4px;
-}
 .busuanzi-read-num span img {
+  vertical-align: top;
   position: relative;
-  bottom: -3px;
+  top: -1px;
   -webkit-animation: rotate 0.6s linear infinite;
   -moz-animation: rotate 0.6s linear infinite;
   -ms-animation: rotate 0.6s linear infinite;
