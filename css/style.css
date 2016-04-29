@@ -1386,7 +1386,7 @@ div.jiathis_style {
 }
 #article-nav .article-nav-link-wrap .article-nav-title {
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   color: #333;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
@@ -1863,6 +1863,7 @@ pre .css ~ * .id {
 }
 .footer-left {
   float: left;
+  margin-left: 10px;
 }
 .footer-right {
   float: right;
