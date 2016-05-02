@@ -1416,6 +1416,50 @@ div.jiathis_style {
 #article-nav #article-nav-older {
   float: right;
 }
+.toc-article {
+  background: #fff;
+  border: 1px solid #ccc;
+  max-width: 230px;
+  -webkit-box-shadow: 5px 5px 2px #ccc;
+  box-shadow: 5px 5px 2px #ccc;
+  font-size: 12px;
+  padding: 10px;
+  overflow-y: auto;
+  position: fixed;
+  right: 35px;
+  top: 134px;
+}
+.toc-article .toc-close {
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  float: right;
+  color: #ccc;
+}
+.toc-article .toc-close:hover {
+  color: #000;
+}
+.toc-article .toc {
+  padding: 0;
+  margin: 10px;
+  line-height: 20px;
+}
+.toc-article .toc .toc-number {
+  color: #333;
+}
+.toc-article .toc .toc-text:hover {
+  text-decoration: underline;
+  color: #2a6496;
+}
+.toc-article li {
+  list-style-type: none;
+}
+.toc-article .toc-level-1 {
+  margin: 4px 0px;
+}
+.toc-article .toc-child {
+  margin-left: -4px;
+}
 @-moz-keyframes cd-bounce-1 {
   0% {
     opacity: 0;

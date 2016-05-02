@@ -3,12 +3,15 @@ require([], function (){
 
 	$(window).scroll(function() {
 	    var a = $(window).scrollTop();
-	    if(a > 150) {
+	    if(a > 134) {
 	        $('.go-top').fadeIn();
+			$('.toc-article').css('top', '0px');
 	    }else {
 	        $('.go-top').fadeOut();
+			$('.toc-article').css('top', '134px');
 	    }
 	});
+
 	$(".go-top").click(function(){
 		$("body").animate({scrollTop:"0px"},'600');
 	});
@@ -18,6 +21,10 @@ require([], function (){
 		$('.support-author .pay-code')[module]();
 		showCode = !showCode;
 	});
+
+	$('.toc-close').click(function() {
+		$('.toc-article').fadeOut();
+	})
 
 
 
