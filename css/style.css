@@ -823,6 +823,10 @@ a {
 div.jiathis_style {
   overflow: hidden;
 }
+div.instagram .album li {
+  width: 25%;
+  margin: 10px 0px;
+}
 @-moz-keyframes rotate360 {
   0% {
     -webkit-transform: rotate(0deg);
