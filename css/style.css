@@ -508,6 +508,9 @@ a {
     margin-right: 0px;
     font-size: 12px;
   }
+  #container .toc-article {
+    display: none;
+  }
 }
 .header-author {
   text-align: center;
