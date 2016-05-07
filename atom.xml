@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-02T14:52:17.550Z</updated>
+  <updated>2016-05-07T13:34:47.536Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/work/2016-05-02/grunt-angular.html"/>
     <id>http://yoursite.com/work/2016-05-02/grunt-angular.html</id>
     <published>2016-05-02T14:33:32.000Z</published>
-    <updated>2016-05-02T14:52:17.550Z</updated>
+    <updated>2016-05-07T13:34:47.536Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;前段时间在公司做了一个项目，前后端的合作方式是这样的：前端开发页面，然后把代码给到后端同学，后端同学通过java的vm模板来渲染页面。慢慢的我发现，这种方式简直是太low了，因为所有的前端代码都揉在服务端同学那里，而每次项目需要更新，甚至只是页面微调，只要服务端同学说他不懂，或者是没有时间，我们前端同学就要屁颠屁颠的跑去他那里配合他修改代码，维护成本高，卖力不讨好＝＝&lt;/p&gt;
@@ -166,13 +166,13 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="grunt" scheme="http://yoursite.com/tags/grunt/"/>
     
       <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
     
       <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -181,7 +181,7 @@
     <link href="http://yoursite.com/simomo/2016-04-23/simomo01.html"/>
     <id>http://yoursite.com/simomo/2016-04-23/simomo01.html</id>
     <published>2016-04-23T14:54:48.000Z</published>
-    <updated>2016-04-23T16:04:46.155Z</updated>
+    <updated>2016-05-07T13:34:26.284Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;blockquote&gt;
@@ -223,7 +223,7 @@
     <link href="http://yoursite.com/work/2016-04-23/heoll-hexo.html"/>
     <id>http://yoursite.com/work/2016-04-23/heoll-hexo.html</id>
     <published>2016-04-23T14:11:51.000Z</published>
-    <updated>2016-04-25T15:48:59.013Z</updated>
+    <updated>2016-05-07T13:34:36.560Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;一直都在博客园写博客，不过最近在逛园子的时候不小心看到了&lt;code&gt;hexo&lt;/code&gt;,简直有种相见恨晚的感觉呀！在github上创建自己的开源博客，维护方便，主题多多，更重要的是，终于找到只属于自己的小窝啦！也希望自己能坚持写文^_^&lt;/p&gt;
@@ -323,9 +323,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
   </entry>
   
