@@ -166,13 +166,13 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="grunt" scheme="http://yoursite.com/tags/grunt/"/>
     
       <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
     
       <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -323,9 +323,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
   </entry>
   
