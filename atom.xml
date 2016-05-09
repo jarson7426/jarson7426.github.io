@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-07T13:34:47.536Z</updated>
+  <updated>2016-05-09T13:23:30.395Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实例demo之React-Todos</title>
+    <link href="http://yoursite.com/work/2016-05-08/react-todo.html"/>
+    <id>http://yoursite.com/work/2016-05-08/react-todo.html</id>
+    <published>2016-05-08T14:11:51.000Z</published>
+    <updated>2016-05-09T13:23:30.395Z</updated>
+    
+    <content type="html">&lt;hr&gt;
+&lt;header style=&quot;margin-top:-50px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/jarson7426/react-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
+
+
+&lt;div class=&quot;container&quot; style=&quot;margin-top:-25px;&quot;&gt;&lt;br&gt;    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;script src=&quot;https://rawgit.com/jarson7426/react-demo/master/src/vendor/react.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/jarson7426/react-demo/master/out/bundle.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;code&gt;React-Todos&lt;/code&gt;是一个管理任务清单的例子，数据使用localstorage存储在浏览器中，有以下几点功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在输入框输入任务名称，回车键显示。&lt;/li&gt;
+&lt;li&gt;勾选其中一条任务列表，表示已完成。&lt;/li&gt;
+&lt;li&gt;鼠标移入其中一个list，可以删除。&lt;/li&gt;
+&lt;li&gt;底部有全选和删除已完成任务列表的功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;header style=&quot;margin-top:-50px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/jarson7426/react-d
+    
+    </summary>
+    
+      <category term="工作" scheme="http://yoursite.com/categories/work/"/>
+    
+    
+      <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>前后端分离之前端项目构建（grunt+require+angular）</title>
@@ -166,13 +209,13 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
       <category term="grunt" scheme="http://yoursite.com/tags/grunt/"/>
     
       <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
     
       <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
-    
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -323,9 +366,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
