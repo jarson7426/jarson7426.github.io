@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>简单封装微信分享插件 | jarson的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近要慢慢开始做移动端的一些页面了，并且大多数都是活动页面，需要在微信里面分享、传播。
+如果只是单单传播一下页面，扩散一些信息还好，那就跟pc差不多，一刀一刀切页面就完了。。。但是我们在传播的时候往往需要分享出去，并且自定义传播信息的标题、链接或者图片，有时候一些小游戏还需要获取用户的信息等等，那么，就需要调用微信分享的接口了…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单封装微信分享插件">
+<meta property="og:url" content="http://yoursite.com/work/2016-05-14/weixin-share.html">
+<meta property="og:site_name" content="jarson的博客">
+<meta property="og:description" content="最近要慢慢开始做移动端的一些页面了，并且大多数都是活动页面，需要在微信里面分享、传播。
+如果只是单单传播一下页面，扩散一些信息还好，那就跟pc差不多，一刀一刀切页面就完了。。。但是我们在传播的时候往往需要分享出去，并且自定义传播信息的标题、链接或者图片，有时候一些小游戏还需要获取用户的信息等等，那么，就需要调用微信分享的接口了…">
+<meta property="og:updated_time" content="2016-05-14T02:52:08.762Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简单封装微信分享插件">
+<meta name="twitter:description" content="最近要慢慢开始做移动端的一些页面了，并且大多数都是活动页面，需要在微信里面分享、传播。
+如果只是单单传播一下页面，扩散一些信息还好，那就跟pc差不多，一刀一刀切页面就完了。。。但是我们在传播的时候往往需要分享出去，并且自定义传播信息的标题、链接或者图片，有时候一些小游戏还需要获取用户的信息等等，那么，就需要调用微信分享的接口了…">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">jarson</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我就是我，颜色不一样的烟火</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<!-- <li>Menu</li> -->
+						<!-- <li>Tags</li> -->
+						<li>主菜单</li>
+						<li>云标签</li>
+						
+						
+						<!-- <li>Über</li> -->
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/demo/">demo</a></li>
+				        
+							<li><a href="/photos">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/jarson7426" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2732624311" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/demo/" style="font-size: 20px;">demo</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/highcharts/" style="font-size: 10px;">highcharts</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/插件/" style="font-size: 20px;">插件</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/构建/" style="font-size: 10px;">构建</a> <a href="/tags/编辑器/" style="font-size: 10px;">编辑器</a>
+					</div>
+				</section>
+				
+
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">
+						<p>家乡：广元市，也是武则天的家乡~</p>
+						<p>学校：成都信息工程大学</p>
+						<p>职业：一枚程序猿~</p>
+						<p>爱好：篮球、羽毛球</p>
+					</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">jarson</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">jarson</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我就是我，颜色不一样的烟火</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/demo/">demo</a></li>
+		        
+					<li><a href="/photos">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/jarson7426" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2732624311" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-weixin-share" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      
+<time datetime="2016-05-14T02:33:46.000Z" itemprop="datePublished">2016-05-14</time>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      简单封装微信分享插件
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信分享/">微信分享</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+	</div>
+
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/work/">工作</a>
+	</div>
+
+
+        <div class="busuanzi-read-num">
+            阅读次数：<span id="busuanzi_value_page_pv"><img src="http://7xtawy.com2.z0.glb.clouddn.com/loading1.png"/></span>次
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <!-- Table of Contents -->
+    
+    <div id="toc" class="toc-article">
+    <span class="toc-close">×</span>
+    <!-- <strong class="toc-title">文章目录</strong> -->
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用条件"><span class="toc-number">1.</span> <span class="toc-text">使用条件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调用过程"><span class="toc-number">2.</span> <span class="toc-text">调用过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#插件代码"><span class="toc-number">3.</span> <span class="toc-text">插件代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用文档"><span class="toc-number">4.</span> <span class="toc-text">使用文档</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>最近要慢慢开始做移动端的一些页面了，并且大多数都是活动页面，需要在微信里面分享、传播。</p>
+<p>如果只是单单传播一下页面，扩散一些信息还好，那就跟pc差不多，一刀一刀切页面就完了。。。但是我们在传播的时候往往需要分享出去，并且自定义传播信息的标题、链接或者图片，有时候一些小游戏还需要获取用户的信息等等，那么，就需要调用微信分享的接口了…<br><a id="more"></a></p>
+<p>我跟着<a href="http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html" target="_blank" rel="external">微信官方文档</a>开发了两次，其实如果搞清楚了流程，本身步骤也还算简单。但是我发现每次要写很多重复的代码，并且因为时间间隔，每次开发的时候又要重新看看文档，才能回忆起该怎么调用＝＝，所以我写这个微信分享的小插件，就是为了自己以后再做这样的需求时，分分钟搞定。顺便在这里做一个简单的记录，如果文中有错，欢迎大家指出^_^。</p>
+<h1 id="使用条件"><a href="#使用条件" class="headerlink" title="使用条件"></a>使用条件</h1><p>首先解释一下，这里的使用条件，不是说插件的使用条件，而是调用微信分享接口的使用条件。</p>
+<p>不是每个人随便写个页面都能拿到微信里，互相传播，让用户授权，获取用户信息的。你需要拥有一个已经认证过的微信公众号，进入”公众号设置”的”功能设置”里填写”JS接口安全域名”，来绑定一个能访问的域名，另外还需要一个与公众号对应的唯一的appId，这个id能从公众号后台查看。</p>
+<h1 id="调用过程"><a href="#调用过程" class="headerlink" title="调用过程"></a>调用过程</h1><p>其实使用的过程在微信官方文档中已经说的非常清楚了，但是其中其实有很多的都是我们用不到的，所以我把分享页面的开发过程再简单的总结一遍:</p>
+<ul>
+<li>引入官方分享需要的js文件：<a href="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" target="_blank">http://res.wx.qq.com/open/js/jweixin-1.0.0.js</a></li>
+<li>调用后台接口，获取签名信息(服务端提供)。</li>
+<li><p>所有需要使用JS-SDK的页面必须先注入配置信息，如下配置之后(signature,nonceStr,timestamp就是上一步获取到的信息)，方能调用分享接口。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">wx.config(&#123;</span><br><span class="line">    debug: <span class="literal">true</span>,    <span class="comment">//开启调试模式，会实时的提示信息</span></span><br><span class="line">    appId: self.config.appId, <span class="comment">// 必填，公众号的唯一标识</span></span><br><span class="line">    timestamp: d.timestamp, <span class="comment">// 必填，生成签名的时间戳</span></span><br><span class="line">    nonceStr: d.conststr, <span class="comment">// 必填，生成签名的随机串</span></span><br><span class="line">    signature: d.signature,<span class="comment">// 必填，签名，见附录1</span></span><br><span class="line">    jsApiList: [<span class="string">'onMenuShareTimeline'</span>, <span class="string">'onMenuShareAppMessage'</span>]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果上一步的配置有错，则执行：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">wx.error(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      alert(<span class="string">'error'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果配置成功，则执行</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">wx.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="comment">//...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后在配置成功的回调函数里，即可调用分享的函数了。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">wx.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    wx.onMenuShareTimeline(&#123;   <span class="comment">//分享到朋友圈</span></span><br><span class="line">        title: ‘标题’,</span><br><span class="line">        link: <span class="string">'http://www.taobao.com'</span>,</span><br><span class="line">        imgUrl: <span class="string">'imgurl'</span>,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            self.config.circleFunction();      <span class="comment">// 分享成功的回调函数</span></span><br><span class="line">        &#125;,</span><br><span class="line">        cancel: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 取消分享</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    wx.onMenuShareAppMessage(&#123;   <span class="comment">//分享给朋友</span></span><br><span class="line">        title: self.config.title,</span><br><span class="line">        link: self.config.link,</span><br><span class="line">        desc: <span class="string">'为什么这里没有起作用？？'</span>,</span><br><span class="line">        imgUrl: self.config.imgUrl,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            self.config.friendFunction();         <span class="comment">// 分享成功的回调函数</span></span><br><span class="line">        &#125;,</span><br><span class="line">        cancel: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 取消分享</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><code>值得一提的是，这里用到的函数，都需要在配置项的&#39;jsAplilist&#39;中添加进去。</code> jsApiList: [‘onMenuShareTimeline’, ‘onMenuShareAppMessage’]</p>
+</li>
+</ul>
+<h1 id="插件代码"><a href="#插件代码" class="headerlink" title="插件代码"></a>插件代码</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">WxShare</span>(<span class="params">conf</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.getURLParam = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">decodeURIComponent</span>((<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'[?|&amp;]'</span> + name + <span class="string">'='</span> + <span class="string">'([^&amp;;]+?)(&amp;|#|;|$)'</span>, <span class="string">"ig"</span>).exec(location.search) || [, <span class="string">""</span>])[<span class="number">1</span>].replace(<span class="regexp">/\+/g</span>, <span class="string">'%20'</span>)) || <span class="literal">null</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">this</span>.config = &#123;</span><br><span class="line">        appId: conf &amp;&amp; conf.appId || <span class="string">''</span>,</span><br><span class="line">        url: conf &amp;&amp; conf.url || <span class="string">''</span>,   <span class="comment">//接口地址</span></span><br><span class="line">        data: &#123;    <span class="comment">//接口的参数</span></span><br><span class="line">            code: <span class="keyword">this</span>.getURLParam(<span class="string">'code'</span>),</span><br><span class="line">            state: <span class="keyword">this</span>.getURLParam(<span class="string">'state'</span>),</span><br><span class="line">            url: location.href.split(<span class="string">'#'</span>)[<span class="number">0</span>],   <span class="comment">// zepto 自动编码对location.href进行encodeURIComponent编码</span></span><br><span class="line">            method: <span class="number">0</span></span><br><span class="line">        &#125;,</span><br><span class="line">        imgUrl: conf &amp;&amp; conf.imgUrl || <span class="string">''</span>,</span><br><span class="line">        title: conf &amp;&amp; conf.title || <span class="string">''</span>,</span><br><span class="line">        link: conf &amp;&amp; conf.link || <span class="string">''</span>,</span><br><span class="line">        desc: conf &amp;&amp; conf.desc || <span class="string">''</span>,</span><br><span class="line">        circleFunction: conf &amp;&amp; conf.circleFunction || <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">        friendFunction: conf &amp;&amp; conf.friendFunction || <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">        callback: conf &amp;&amp; conf.callback || <span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>&#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">this</span>.init();</span><br><span class="line">&#125;</span><br><span class="line">WxShare.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//获取用户信息</span></span><br><span class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        url: self.config.url,</span><br><span class="line">        data: self.config.data,</span><br><span class="line">        dataType: <span class="string">'jsonp'</span>,</span><br><span class="line">        jsonp: <span class="string">'callback'</span>,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123;    <span class="comment">// 成功获取到用户信息，然后配置sdk</span></span><br><span class="line">            self.config.callback(d);   <span class="comment">//处理用户信息</span></span><br><span class="line">            wx.config(&#123;</span><br><span class="line">                debug: <span class="literal">false</span>,</span><br><span class="line">                appId: self.config.appId, <span class="comment">// 必填，公众号的唯一标识</span></span><br><span class="line">                timestamp: d.timestamp, <span class="comment">// 必填，生成签名的时间戳</span></span><br><span class="line">                nonceStr: d.conststr, <span class="comment">// 必填，生成签名的随机串</span></span><br><span class="line">                signature: d.signature,<span class="comment">// 必填，签名，见附录1</span></span><br><span class="line">                jsApiList: [<span class="string">'onMenuShareTimeline'</span>, <span class="string">'onMenuShareAppMessage'</span>]</span><br><span class="line">            &#125;);</span><br><span class="line">            wx.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                wx.onMenuShareTimeline(&#123;   <span class="comment">//分享到朋友圈</span></span><br><span class="line">                    title: self.config.title,</span><br><span class="line">                    link: self.config.link,</span><br><span class="line">                    imgUrl: self.config.imgUrl,</span><br><span class="line">                    success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        self.config.circleFunction();      <span class="comment">// 确认分享</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    cancel: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="comment">// 取消分享</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">                wx.onMenuShareAppMessage(&#123;   <span class="comment">//分享给朋友</span></span><br><span class="line">                    title: self.config.title,</span><br><span class="line">                    link: self.config.link,</span><br><span class="line">                    desc: self.config.desc,</span><br><span class="line">                    imgUrl: self.config.imgUrl,</span><br><span class="line">                    success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        self.config.friendFunction();         <span class="comment">// 确认分享</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    cancel: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="comment">// 取消分享</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">        error: <span class="function"><span class="keyword">function</span> (<span class="params">a, b, c</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// alert('error');</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>说明</code>：</p>
+<ul>
+<li>因为我最常见的就是分享朋友圈和分享给朋友这两个需求，所以插件只是实现了这样个功能，官方文档中还有其他很多功能强大的接口，比如分享到微博，分享到qq等等，大家如果有需要，可以自行添加。</li>
+<li>另外，分享给朋友这个接口还有一些配置项因为不常用，也没有列出来，比如：文件类型type，文件链接dataUrl（如果类型为音乐或视频）。</li>
+</ul>
+<h1 id="使用文档"><a href="#使用文档" class="headerlink" title="使用文档"></a>使用文档</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> linkUrl = <span class="string">'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx60d2d83ca82005ec&amp;redirect_uri='</span>+ location.href +<span class="string">'&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=STATE#wechat_redirect'</span>;</span><br><span class="line"><span class="keyword">var</span> wxShare = <span class="keyword">new</span> WxShare(&#123;</span><br><span class="line">    appId: <span class="string">'xxxxxxxxxxxxxxxxxx'</span>,</span><br><span class="line">    url: url,</span><br><span class="line">    imgUrl: <span class="string">'http://pic24.nipic.com/20120831/10132780_100453579000_2.jpg'</span>,</span><br><span class="line">    title: <span class="string">'云盾双11-精彩不断！'</span>,</span><br><span class="line">    desc: <span class="string">'这时发送给朋友的描述信息'</span>,</span><br><span class="line">    link: linkUrl,</span><br><span class="line">    circleFunction: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    callback: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;   <span class="comment">//处理获得的用户信息</span></span><br><span class="line">        $(<span class="string">'.page1 .logo'</span>).html(data.nickname);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>配置项</code>：</p>
+<ul>
+<li>appId： 必填，公众号的唯一标识。</li>
+<li>url：后端接口地址（不需要配置接口参数，因为插件已经传入了需要的参数code、state、url、method）。</li>
+<li>imgUrl：分享出去的图片地址。</li>
+<li>title：分享出去的标题。</li>
+<li>link：分享出去的链接（注意：如果希望别人点击你分享的链接也需要授权，则需要微信客户端的链接格式。）</li>
+<li>desc：分享给朋友的的描述信息。</li>
+<li>circleFunction：分享到朋友圈成功的回调函数。</li>
+<li>friendFunction：分享给朋友成功的回调函数。</li>
+<li>callback：参数d(用户信息)，接口调用成功，处理用户信息的回调函数。</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>因为平时用到的只有分享朋友圈和朋友这两个接口，所以这个插件也只是实现了这两个功能。并且标题，链接，图片地址都是公用的。以后如有需要，可以继续增加功能。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/work/2016-05-13/atom-edit.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">下一篇：优美的编辑器－Github Atom</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+<div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <p class="pay-code">
+        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
+    </p>
+</div>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<!-- Share to: &nbsp;  -->
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_facebook"></a>
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a>
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="weixin-share" data-title="简单封装微信分享插件" data-url="http://yoursite.com/work/2016-05-14/weixin-share.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"jarson7426"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+            <span id="busuanzi_container_site_uv" style="color:#ef7522">
+                本站共访问次数：<span id="busuanzi_value_site_uv">0</span>次
+            </span>
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+             --- &copy; 2016 jarson
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+  <div class="go-top"></div>
+   <script src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</body>
+</html>

@@ -18,7 +18,7 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 $ hexo new(n)    //写文章$ hexo generate(g)">
 <meta property="og:image" content="http://7xtawy.com2.z0.glb.clouddn.com/msysgit.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1.knpHVXXXXcmaXXXXXXXXXXX-1003-456.png">
-<meta property="og:updated_time" content="2016-05-07T13:34:36.560Z">
+<meta property="og:updated_time" content="2016-05-14T02:56:10.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建属于自己的博客">
 <meta name="twitter:description" content="一直都在博客园写博客，不过最近在逛园子的时候不小心看到了hexo,简直有种相见恨晚的感觉呀！在github上创建自己的开源博客，维护方便，主题多多，更重要的是，终于找到只属于自己的小窝啦！也希望自己能坚持写文^_^
@@ -124,7 +124,7 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/构建/" style="font-size: 10px;">构建</a>
+						<a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/demo/" style="font-size: 20px;">demo</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/highcharts/" style="font-size: 10px;">highcharts</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/插件/" style="font-size: 20px;">插件</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/构建/" style="font-size: 10px;">构建</a> <a href="/tags/编辑器/" style="font-size: 10px;">编辑器</a>
 					</div>
 				</section>
 				
@@ -228,6 +228,7 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
 	</div>
 
+
         
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/work/">工作</a>
@@ -262,18 +263,22 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <li><code>备注2：网上大多教程是都是hexo2.x版本的，所以有很多坑。因此以下教程是针对hexo的版本为3.x以上的，大家放心使用。</code></li>
 </ul>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
-<li>安装node<br>  到<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>官网下载相应平台的最新版本，一路安装即可。</li>
-<li>安装git<br>  根据系统不同安装相应的git环境。mac系统不多说，windows一般安装msysgit。下面是我本地msysgit的截图，也还是挺好用的:<br>  <img src="http://7xtawy.com2.z0.glb.clouddn.com/msysgit.png" alt=""></li>
-<li><p>安装hexo<br>  使用以下命令安装hexo到全局</p>
-  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
+<li>安装node</li>
+<li>到<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>官网下载相应平台的最新版本，一路安装即可。</li>
+<li>安装git</li>
+<li>根据系统不同安装相应的git环境。mac系统不多说，windows一般安装msysgit。下面是我本地msysgit的截图，也还是挺好用的:</li>
+<li><img src="http://7xtawy.com2.z0.glb.clouddn.com/msysgit.png" alt=""></li>
+<li><p>安装hexo</p>
+<p>  使用以下命令安装hexo到全局</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
 <p>  然后输入命令<code>hexo -v</code>输入hexo的版本号即为安装成功。</p>
 </li>
 <li><p>github准备</p>
 <ul>
 <li>博客是在<a href="https://github.com/" target="_blank" rel="external">github</a>上托管维护的，所以当然需要一个github的账号了。然后创建一个名为<code>jarson7426.github.io</code>的仓库。</li>
-<li>其中‘jarson7426’是我的账户名，下文同理。</li>
+<li>其中’jarson7426’是我的账户名，下文同理。</li>
 <li><p>除此之外，相信大多数人都知道，要想使用git命令来和github进行提交部署等操作，需要进行一些配置，大概就是下面一些命令，如不明白请自行搜索。</p>
-  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">git config --global user.email xxx@<span class="number">163.</span>com</span><br><span class="line">git config --global user.name xxx</span><br><span class="line">ssh-keygen -t rsa -C xxx@<span class="number">163.</span>com(邮箱地址)      <span class="comment">// 生成ssh</span></span><br><span class="line">找到.ssh文件夹打开，使用cat id_rsa.pub    <span class="comment">//打开公钥ssh串</span></span><br><span class="line">登陆github，settings － SSH keys  － add ssh keys（把上面的内容全部添加进去即可）</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">git config --global user.email xxx@<span class="number">163.</span>com</span><br><span class="line">git config --global user.name xxx</span><br><span class="line">ssh-keygen -t rsa -C xxx@<span class="number">163.</span>com(邮箱地址)      <span class="comment">// 生成ssh</span></span><br><span class="line">找到.ssh文件夹打开，使用cat id_rsa.pub    <span class="comment">//打开公钥ssh串</span></span><br><span class="line">登陆github，settings － SSH keys  － add ssh keys（把上面的内容全部添加进去即可）</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -281,11 +286,11 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><p>ok，环境都准备好了，开始激动人心的步骤了，搭建博客。</p>
 <p>在某个地方新建一个项目文件夹（比如Blog），然后进入Blog目录，以下所有的命令行操作都是在这个文件夹下进行的。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
-<h1 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h1><p>初始化完成之后，就已经生成一篇“hello word”的文章了，现在执行以下命令把文章编译为静态页面：</p>
+<h1 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h1><p>初始化完成之后，就已经生成一篇”hello word”的文章了，现在执行以下命令把文章编译为静态页面：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <h1 id="本地启动"><a href="#本地启动" class="headerlink" title="本地启动"></a>本地启动</h1><p>把文章变为页面之后，可以执行以下命令，本地启动服务，在浏览器中输入<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>查看生成的页面效果。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>如果你看到了下面这个画面，恭喜你，你成功了！<br><img src="https://img.alicdn.com/tps/TB1.knpHVXXXXcmaXXXXXXXXXXX-1003-456.png" alt=""></p>
+<p>如果你看到了下面这个画面，恭喜你，你成功了！ <img src="https://img.alicdn.com/tps/TB1.knpHVXXXXcmaXXXXXXXXXXX-1003-456.png" alt=""></p>
 <h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>上面的博客效果是hexo自己默认的主题<code>landscape</code>，如果你满足与它，可以跳过这个步骤，直接进行下一步。但是我却还不够满足，因为我发现了一个页面交互人性化，并且完美兼容不同终端显示的主题<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>，貌似这个主题受欢迎程度很高呀，说明我的审美还是不错啊，哈哈~~</p>
 <p>下面贴出github上star数量最多的前10个主题：</p>
 <ul>
@@ -299,29 +304,30 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <li><a href="https://github.com/presscustomizr/hueman" target="_blank" rel="external">AlxMedia/hueman</a>， 336个star。</li>
 <li><a href="https://github.com/kathyqian/crisp-ghost-theme" target="_blank" rel="external">kathyqian/crisp-ghost-theme</a>， 303个star。</li>
 <li><a href="https://github.com/xiangming/landscape-plus" target="_blank" rel="external">xiangming/landscape-plus</a>， 287个star。</li>
-</ul>
-<ul>
-<li><p>clone主题代码<br>  在目录下执行下面的命令clone主题代码：</p>
-  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ git clone https:<span class="comment">//github.com/litten/hexo-theme-yilia.git themes/yilia</span></span><br></pre></td></tr></table></figure>
+<li><p>clone主题代码</p>
+<p>  在目录下执行下面的命令clone主题代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ git clone https:<span class="comment">//github.com/litten/hexo-theme-yilia.git themes/yilia</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>修改配置文件<br>  修改<code>Blog/_config.yml</code>文件：</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">theme: yilia    <span class="comment">//默认为landscape</span></span><br></pre></td></tr></table></figure>
+<li><p>修改配置文件</p>
+<p>  修改<code>Blog/_config.yml</code>文件：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">theme: yilia    <span class="comment">//默认为landscape</span></span><br></pre></td></tr></table></figure>
 <p>  修改<code>themes/yilia/_config.yml</code>文件：</p>
-  <figure class="highlight"><table><tr><td class="code"><pre><span class="line"># Header</span><br><span class="line">menu:</span><br><span class="line">    主页: /</span><br><span class="line">    所有文章: /archives</span><br><span class="line">    丝茉茉: /categories/simomo/</span><br><span class="line">    相册: /photos</span><br><span class="line"># SubNav</span><br><span class="line">subnav:</span><br><span class="line">    github: "https://github.com/jarson7426"</span><br><span class="line">     weibo: "http://weibo.com/u/2732624311"</span><br><span class="line">    zhihu: "#"</span><br><span class="line">    rss: /atom.xml</span><br><span class="line"># Content</span><br><span class="line">excerpt_link: 阅读全文</span><br><span class="line">fancybox: true</span><br><span class="line">mathjax: true</span><br><span class="line">top: true</span><br><span class="line"># 是否开启动画效果</span><br><span class="line">animate: true</span><br><span class="line"># 是否在新窗口打开链接</span><br><span class="line">open_in_new: false</span><br><span class="line"># Miscellaneous</span><br><span class="line">google_analytics: ''</span><br><span class="line">favicon: /favicon.ico</span><br><span class="line">#你的头像url</span><br><span class="line">avatar: /img.png</span><br><span class="line">#是否开启分享</span><br><span class="line">share_jia: true</span><br><span class="line">share_addthis: false</span><br><span class="line">#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key</span><br><span class="line">#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论</span><br><span class="line">duoshuo: jarson7426</span><br><span class="line">#是否开启云标签</span><br><span class="line">tagcloud: true</span><br><span class="line">#是否开启友情链接</span><br><span class="line">#不开启——</span><br><span class="line">friends: false</span><br><span class="line">#开启——</span><br><span class="line">#friends:</span><br><span class="line">#  百度一下: http://www.baidu.com</span><br><span class="line">#  淘宝商城: http://www.taobao.com</span><br><span class="line">#是否开启“关于我”。</span><br><span class="line">#不开启——</span><br><span class="line">#aboutme: false</span><br><span class="line">#开启——</span><br><span class="line">aboutme: true</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"># Header</span><br><span class="line">menu:</span><br><span class="line">    主页: /</span><br><span class="line">    所有文章: /archives</span><br><span class="line">    丝茉茉: /categories/simomo/</span><br><span class="line">    相册: /photos</span><br><span class="line"># SubNav</span><br><span class="line">subnav:</span><br><span class="line">    github: "https://github.com/jarson7426"</span><br><span class="line">     weibo: "http://weibo.com/u/2732624311"</span><br><span class="line">    zhihu: "#"</span><br><span class="line">    rss: /atom.xml</span><br><span class="line"># Content</span><br><span class="line">excerpt_link: 阅读全文</span><br><span class="line">fancybox: true</span><br><span class="line">mathjax: true</span><br><span class="line">top: true</span><br><span class="line"># 是否开启动画效果</span><br><span class="line">animate: true</span><br><span class="line"># 是否在新窗口打开链接</span><br><span class="line">open_in_new: false</span><br><span class="line"># Miscellaneous</span><br><span class="line">google_analytics: ''</span><br><span class="line">favicon: /favicon.ico</span><br><span class="line">#你的头像url</span><br><span class="line">avatar: /img.png</span><br><span class="line">#是否开启分享</span><br><span class="line">share_jia: true</span><br><span class="line">share_addthis: false</span><br><span class="line">#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key</span><br><span class="line">#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论</span><br><span class="line">duoshuo: jarson7426</span><br><span class="line">#是否开启云标签</span><br><span class="line">tagcloud: true</span><br><span class="line">#是否开启友情链接</span><br><span class="line">#不开启——</span><br><span class="line">friends: false</span><br><span class="line">#开启——</span><br><span class="line">#friends:</span><br><span class="line">#  百度一下: http://www.baidu.com</span><br><span class="line">#  淘宝商城: http://www.taobao.com</span><br><span class="line">#是否开启“关于我”。</span><br><span class="line">#不开启——</span><br><span class="line">#aboutme: false</span><br><span class="line">#开启——</span><br><span class="line">aboutme: true</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>查看效果<br>  更改主题之后可以使用命令<code>hexo server</code>打开本地服务，查看效果。</p>
+<li><p>查看效果</p>
+<p>  更改主题之后可以使用命令<code>hexo server</code>打开本地服务，查看效果。</p>
 </li>
 </ul>
 <h1 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h1><p>上面所有的操作完成之后，你就可以将你的Blog项目部署到github上了。</p>
 <ul>
 <li><p>部署之前先修改<code>Blog/_config.yml</code>文件。</p>
-  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repository: https:<span class="comment">//github.com/jarson7426/jarson7426.github.io.git  //jarson7426替换为你自己的用户名</span></span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repository: https:<span class="comment">//github.com/jarson7426/jarson7426.github.io.git  //jarson7426替换为你自己的用户名</span></span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
 <p>  <code>备注：在hexo3.x版本下，这里的type应该填git，不是github；另外冒号后面都有一个英文的空格，不然会报错的。</code></p>
 </li>
 <li><p>然后使用以下命令进行部署。</p>
-  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>  <code>备注：如果执行上述命令报错，你可以试试下面这个命令再试。</code></p>
-  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git--save</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git--save</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>部署成功后，你在浏览器中输入<a href="http://jarson7426.github.io/" target="_blank" rel="external">jarson7426.github.io</a>，就能看到和本地一样的效果了。</p>
@@ -332,7 +338,7 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <li>添加回到顶部的功能。</li>
 <li>添加总站访问量和文章阅读量</li>
 </ul>
-<p>其实修改这些非常简单，只要你有html、css、js的基础就可以。<br>思路：因为整个网站都是依赖yilia主题。所以应该在theme/yilia文件夹下，修改对应的dom结构，然后添加对应的效果或者事件绑定就可以实现了。</p>
+<p>其实修改这些非常简单，只要你有html、css、js的基础就可以。 思路：因为整个网站都是依赖yilia主题。所以应该在theme/yilia文件夹下，修改对应的dom结构，然后添加对应的效果或者事件绑定就可以实现了。</p>
 <p>如果大家还有问题，欢迎留言，我会很乐意为大家解答的。</p>
 <p>好了，到这里搭建github博客的步骤就结束了。快快enjoy it吧！！！</p>
 
