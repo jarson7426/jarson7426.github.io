@@ -1385,8 +1385,10 @@ div.instagram .album li {
   visibility: hidden;
 }
 #article-nav {
-  margin: 80px 0 30px 0;
+  margin: 30px 0;
   padding-bottom: 10px;
+  padding-top: 40px;
+  border-top: 1px solid #ccc;
 }
 #article-nav .article-nav-link-wrap {
   margin: 0px 30px 0px 30px;
@@ -1425,7 +1427,46 @@ div.instagram .album li {
 #article-nav #article-nav-older {
   float: right;
 }
+.show-toc-btn {
+  width: 16px;
+  min-height: 14px;
+  overflow: hidden;
+  padding: 4px 6px 8px 5px;
+  border: 1px solid #ddd;
+  border-right: none;
+  position: fixed;
+  right: 31px;
+  top: 114px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+.show-toc-btn .btn-bg {
+  margin-top: 2px;
+  display: block;
+  width: 16px;
+  height: 14px;
+  background: url("http://7xtawy.com1.z0.glb.clouddn.com/show.png") no-repeat;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+}
+.show-toc-btn .btn-text {
+  color: #ea8010;
+  font-size: 12px;
+  display: none;
+}
+.show-toc-btn:hover {
+  cursor: pointer;
+}
+.show-toc-btn:hover .btn-bg {
+  background-position: 0 -16px;
+}
+.show-toc-btn:hover .btn-text {
+  font-size: 12px;
+  display: none;
+}
 .toc-article {
+  display: none;
   z-index: 100;
   background: #fff;
   border: 1px solid #ccc;
@@ -1435,10 +1476,9 @@ div.instagram .album li {
   box-shadow: 5px 5px 2px #ccc;
   font-size: 12px;
   padding: 10px;
-  overflow-y: auto;
   position: fixed;
   right: 35px;
-  top: 134px;
+  top: 0px;
 }
 .toc-article .toc-close {
   font-weight: bold;

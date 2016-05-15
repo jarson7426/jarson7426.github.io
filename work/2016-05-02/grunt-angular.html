@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="jarson的博客">
 <meta property="og:description" content="前段时间在公司做了一个项目，前后端的合作方式是这样的：前端开发页面，然后把代码给到后端同学，后端同学通过java的vm模板来渲染页面。慢慢的我发现，这种方式简直是太low了，因为所有的前端代码都揉在服务端同学那里，而每次项目需要更新，甚至只是页面微调，只要服务端同学说他不懂，或者是没有时间，我们前端同学就要屁颠屁颠的跑去他那里配合他修改代码，维护成本高，卖力不讨好==，那我们到底该怎么办呢？">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1bzUGJXXXXXcOXpXXXXXXXXXX-251-584.png">
-<meta property="og:updated_time" content="2016-05-14T02:56:03.484Z">
+<meta property="og:updated_time" content="2016-05-15T07:15:25.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前后端分离之前端项目构建（grunt+require+angular）">
 <meta name="twitter:description" content="前段时间在公司做了一个项目，前后端的合作方式是这样的：前端开发页面，然后把代码给到后端同学，后端同学通过java的vm模板来渲染页面。慢慢的我发现，这种方式简直是太low了，因为所有的前端代码都揉在服务端同学那里，而每次项目需要更新，甚至只是页面微调，只要服务端同学说他不懂，或者是没有时间，我们前端同学就要屁颠屁颠的跑去他那里配合他修改代码，维护成本高，卖力不讨好==，那我们到底该怎么办呢？">
@@ -237,8 +237,12 @@
     
     <!-- Table of Contents -->
     
+    <p class="show-toc-btn">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+    </p>
     <div id="toc" class="toc-article">
-    <span class="toc-close">×</span>
+    <span class="toc-close" title="隐藏导航">×</span>
     <!-- <strong class="toc-title">文章目录</strong> -->
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前后端分离的目的和作用"><span class="toc-number">1.</span> <span class="toc-text">前后端分离的目的和作用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端项目构建"><span class="toc-number">2.</span> <span class="toc-text">前端项目构建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建项目目录"><span class="toc-number">2.1.</span> <span class="toc-text">创建项目目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建package-json"><span class="toc-number">2.2.</span> <span class="toc-text">创建package.json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装grunt"><span class="toc-number">2.3.</span> <span class="toc-text">安装grunt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为grunt创建配置文件Gruntfile-js"><span class="toc-number">2.4.</span> <span class="toc-text">为grunt创建配置文件Gruntfile.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装bower"><span class="toc-number">2.5.</span> <span class="toc-text">安装bower</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为bower生成配置文件bower-json"><span class="toc-number">2.6.</span> <span class="toc-text">为bower生成配置文件bower.json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于Requirejs"><span class="toc-number">2.7.</span> <span class="toc-text">关于Requirejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用Requirejs"><span class="toc-number">2.8.</span> <span class="toc-text">使用Requirejs</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AngularJs实例"><span class="toc-number">3.</span> <span class="toc-text">AngularJs实例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录结构"><span class="toc-number">3.1.</span> <span class="toc-text">目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#views-index-html"><span class="toc-number">3.2.</span> <span class="toc-text">views/index.html</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scripts-config-js"><span class="toc-number">3.3.</span> <span class="toc-text">scripts/config.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scripts-bootstrap-js"><span class="toc-number">3.4.</span> <span class="toc-text">scripts/bootstrap.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scripts-app-js"><span class="toc-number">3.5.</span> <span class="toc-text">scripts/app.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#controller-testController-js"><span class="toc-number">3.6.</span> <span class="toc-text">controller/testController.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看效果"><span class="toc-number">3.7.</span> <span class="toc-text">查看效果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结语"><span class="toc-number">4.</span> <span class="toc-text">结语</span></a></li></ol>
     </div>
@@ -246,7 +250,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>前段时间在公司做了一个项目，前后端的合作方式是这样的：前端开发页面，然后把代码给到后端同学，后端同学通过java的vm模板来渲染页面。慢慢的我发现，这种方式简直是太low了，因为所有的前端代码都揉在服务端同学那里，而每次项目需要更新，甚至只是页面微调，只要服务端同学说他不懂，或者是没有时间，我们前端同学就要屁颠屁颠的跑去他那里配合他修改代码，维护成本高，卖力不讨好==，那我们到底该怎么办呢？<br><a id="more"></a></p>
+<p>前段时间在公司做了一个项目，前后端的合作方式是这样的：前端开发页面，然后把代码给到后端同学，后端同学通过java的vm模板来渲染页面。慢慢的我发现，这种方式简直是太low了，因为所有的前端代码都揉在服务端同学那里，而每次项目需要更新，甚至只是页面微调，只要服务端同学说他不懂，或者是没有时间，我们前端同学就要屁颠屁颠的跑去他那里配合他修改代码，维护成本高，卖力不讨好==，那我们到底该怎么办呢？</p>
+<a id="more"></a>
 <p>可能有人会说了，使用svn或者git这种版本控制工具呀，大家down一套代码，在一起开发不就好了。我想说的是，代码虽然有了，但是对于服务端同学的那一套复杂的环境，有兴趣或者涉猎还好，如果没有，自己去启个java环境估计都得花上半天时间吧。</p>
 <p>此时你会深深的感受到了那句名言的魅力，<code>时间就是金钱！</code>后来我发现，现在的web开发，谁还用这种低级的方法，大家都已经开始搞<code>前后端分离了</code>！</p>
 <h1 id="前后端分离的目的和作用"><a href="#前后端分离的目的和作用" class="headerlink" title="前后端分离的目的和作用"></a>前后端分离的目的和作用</h1><blockquote>
@@ -355,6 +360,7 @@
 <h2 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h2><p>使用<code>python -m SimpleHTTPServer</code>启动一个简单的web服务器，默认监听8000端口。在浏览器输入正确地址就能看到效果了。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">hello, world</span><br></pre></td></tr></table></figure>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>现在，我们需要做的就是，和服务端约定好接口格式，自己根据格式mock需要的数据，然后，我们可以随心所欲的开发我们的项目了，不用再和人打交道了。开发完毕之后，再通过grunt压缩、合并、打包文件等操作，暴露给外部的只需一个js文件，另外还可以通过git等版本管理工具来迭代项目。有了这种开发方式，你再也不用担心服务端开发随时来烦你，自己也有更多时间来钻研前端本身的技术了，哈哈。</p>
+<hr>
 
       
     </div>
@@ -362,6 +368,16 @@
   </div>
   
     
+<div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <p class="pay-code">
+        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
+    </p>
+</div>
+
+
 <nav id="article-nav">
   
     <a href="/work/2016-05-08/react-todo.html" id="article-nav-newer" class="article-nav-link-wrap">
@@ -381,15 +397,6 @@
   
 </nav>
 
-
-<div class="support-author">
-    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
-    <p>您的支持将鼓励我继续创作！</p>
-    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
-    <p class="pay-code">
-        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
-    </p>
-</div>
 
   
 </article>

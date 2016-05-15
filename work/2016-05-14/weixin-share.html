@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="jarson的博客">
 <meta property="og:description" content="最近要慢慢开始做移动端的一些页面了，并且大多数都是活动页面，需要在微信里面分享、传播。
 如果只是单单传播一下页面，扩散一些信息还好，那就跟pc差不多，一刀一刀切页面就完了。。。但是我们在传播的时候往往需要分享出去，并且自定义传播信息的标题、链接或者图片，有时候一些小游戏还需要获取用户的信息等等，那么，就需要调用微信分享的接口了…">
-<meta property="og:updated_time" content="2016-05-14T02:52:08.762Z">
+<meta property="og:updated_time" content="2016-05-15T07:19:47.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单封装微信分享插件">
 <meta name="twitter:description" content="最近要慢慢开始做移动端的一些页面了，并且大多数都是活动页面，需要在微信里面分享、传播。
@@ -238,8 +238,12 @@
     
     <!-- Table of Contents -->
     
+    <p class="show-toc-btn">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+    </p>
     <div id="toc" class="toc-article">
-    <span class="toc-close">×</span>
+    <span class="toc-close" title="隐藏导航">×</span>
     <!-- <strong class="toc-title">文章目录</strong> -->
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用条件"><span class="toc-number">1.</span> <span class="toc-text">使用条件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调用过程"><span class="toc-number">2.</span> <span class="toc-text">调用过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#插件代码"><span class="toc-number">3.</span> <span class="toc-text">插件代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用文档"><span class="toc-number">4.</span> <span class="toc-text">使用文档</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
     </div>
@@ -271,13 +275,13 @@
 </li>
 </ul>
 <h1 id="插件代码"><a href="#插件代码" class="headerlink" title="插件代码"></a>插件代码</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">WxShare</span>(<span class="params">conf</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.getURLParam = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">decodeURIComponent</span>((<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'[?|&amp;]'</span> + name + <span class="string">'='</span> + <span class="string">'([^&amp;;]+?)(&amp;|#|;|$)'</span>, <span class="string">"ig"</span>).exec(location.search) || [, <span class="string">""</span>])[<span class="number">1</span>].replace(<span class="regexp">/\+/g</span>, <span class="string">'%20'</span>)) || <span class="literal">null</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">this</span>.config = &#123;</span><br><span class="line">        appId: conf &amp;&amp; conf.appId || <span class="string">''</span>,</span><br><span class="line">        url: conf &amp;&amp; conf.url || <span class="string">''</span>,   <span class="comment">//接口地址</span></span><br><span class="line">        data: &#123;    <span class="comment">//接口的参数</span></span><br><span class="line">            code: <span class="keyword">this</span>.getURLParam(<span class="string">'code'</span>),</span><br><span class="line">            state: <span class="keyword">this</span>.getURLParam(<span class="string">'state'</span>),</span><br><span class="line">            url: location.href.split(<span class="string">'#'</span>)[<span class="number">0</span>],   <span class="comment">// zepto 自动编码对location.href进行encodeURIComponent编码</span></span><br><span class="line">            method: <span class="number">0</span></span><br><span class="line">        &#125;,</span><br><span class="line">        imgUrl: conf &amp;&amp; conf.imgUrl || <span class="string">''</span>,</span><br><span class="line">        title: conf &amp;&amp; conf.title || <span class="string">''</span>,</span><br><span class="line">        link: conf &amp;&amp; conf.link || <span class="string">''</span>,</span><br><span class="line">        desc: conf &amp;&amp; conf.desc || <span class="string">''</span>,</span><br><span class="line">        circleFunction: conf &amp;&amp; conf.circleFunction || <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">        friendFunction: conf &amp;&amp; conf.friendFunction || <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">        callback: conf &amp;&amp; conf.callback || <span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>&#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">this</span>.init();</span><br><span class="line">&#125;</span><br><span class="line">WxShare.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//获取用户信息</span></span><br><span class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        url: self.config.url,</span><br><span class="line">        data: self.config.data,</span><br><span class="line">        dataType: <span class="string">'jsonp'</span>,</span><br><span class="line">        jsonp: <span class="string">'callback'</span>,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123;    <span class="comment">// 成功获取到用户信息，然后配置sdk</span></span><br><span class="line">            self.config.callback(d);   <span class="comment">//处理用户信息</span></span><br><span class="line">            wx.config(&#123;</span><br><span class="line">                debug: <span class="literal">false</span>,</span><br><span class="line">                appId: self.config.appId, <span class="comment">// 必填，公众号的唯一标识</span></span><br><span class="line">                timestamp: d.timestamp, <span class="comment">// 必填，生成签名的时间戳</span></span><br><span class="line">                nonceStr: d.conststr, <span class="comment">// 必填，生成签名的随机串</span></span><br><span class="line">                signature: d.signature,<span class="comment">// 必填，签名，见附录1</span></span><br><span class="line">                jsApiList: [<span class="string">'onMenuShareTimeline'</span>, <span class="string">'onMenuShareAppMessage'</span>]</span><br><span class="line">            &#125;);</span><br><span class="line">            wx.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                wx.onMenuShareTimeline(&#123;   <span class="comment">//分享到朋友圈</span></span><br><span class="line">                    title: self.config.title,</span><br><span class="line">                    link: self.config.link,</span><br><span class="line">                    imgUrl: self.config.imgUrl,</span><br><span class="line">                    success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        self.config.circleFunction();      <span class="comment">// 确认分享</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    cancel: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="comment">// 取消分享</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">                wx.onMenuShareAppMessage(&#123;   <span class="comment">//分享给朋友</span></span><br><span class="line">                    title: self.config.title,</span><br><span class="line">                    link: self.config.link,</span><br><span class="line">                    desc: self.config.desc,</span><br><span class="line">                    imgUrl: self.config.imgUrl,</span><br><span class="line">                    success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        self.config.friendFunction();         <span class="comment">// 确认分享</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    cancel: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="comment">// 取消分享</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">        error: <span class="function"><span class="keyword">function</span> (<span class="params">a, b, c</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// alert('error');</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>说明</code>：</p>
+<p>说明：</p>
 <ul>
 <li>因为我最常见的就是分享朋友圈和分享给朋友这两个需求，所以插件只是实现了这样个功能，官方文档中还有其他很多功能强大的接口，比如分享到微博，分享到qq等等，大家如果有需要，可以自行添加。</li>
 <li>另外，分享给朋友这个接口还有一些配置项因为不常用，也没有列出来，比如：文件类型type，文件链接dataUrl（如果类型为音乐或视频）。</li>
 </ul>
 <h1 id="使用文档"><a href="#使用文档" class="headerlink" title="使用文档"></a>使用文档</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> linkUrl = <span class="string">'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx60d2d83ca82005ec&amp;redirect_uri='</span>+ location.href +<span class="string">'&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=STATE#wechat_redirect'</span>;</span><br><span class="line"><span class="keyword">var</span> wxShare = <span class="keyword">new</span> WxShare(&#123;</span><br><span class="line">    appId: <span class="string">'xxxxxxxxxxxxxxxxxx'</span>,</span><br><span class="line">    url: url,</span><br><span class="line">    imgUrl: <span class="string">'http://pic24.nipic.com/20120831/10132780_100453579000_2.jpg'</span>,</span><br><span class="line">    title: <span class="string">'云盾双11-精彩不断！'</span>,</span><br><span class="line">    desc: <span class="string">'这时发送给朋友的描述信息'</span>,</span><br><span class="line">    link: linkUrl,</span><br><span class="line">    circleFunction: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    callback: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;   <span class="comment">//处理获得的用户信息</span></span><br><span class="line">        $(<span class="string">'.page1 .logo'</span>).html(data.nickname);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><code>配置项</code>：</p>
+<p>配置项：</p>
 <ul>
 <li>appId： 必填，公众号的唯一标识。</li>
 <li>url：后端接口地址（不需要配置接口参数，因为插件已经传入了需要的参数code、state、url、method）。</li>
@@ -290,6 +294,7 @@
 <li>callback：参数d(用户信息)，接口调用成功，处理用户信息的回调函数。</li>
 </ul>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>因为平时用到的只有分享朋友圈和朋友这两个接口，所以这个插件也只是实现了这两个功能。并且标题，链接，图片地址都是公用的。以后如有需要，可以继续增加功能。</p>
+<hr>
 
       
     </div>
@@ -297,6 +302,16 @@
   </div>
   
     
+<div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <p class="pay-code">
+        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
+    </p>
+</div>
+
+
 <nav id="article-nav">
   
   
@@ -307,15 +322,6 @@
   
 </nav>
 
-
-<div class="support-author">
-    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
-    <p>您的支持将鼓励我继续创作！</p>
-    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
-    <p class="pay-code">
-        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
-    </p>
-</div>
 
   
 </article>

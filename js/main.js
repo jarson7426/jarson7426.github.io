@@ -5,10 +5,8 @@ require([], function (){
 	    var a = $(window).scrollTop();
 	    if(a > 134) {
 	        $('.go-top').fadeIn();
-			$('.toc-article').css('top', '0px');
 	    }else {
 	        $('.go-top').fadeOut();
-			$('.toc-article').css('top', '134px');
 	    }
 	});
 
@@ -24,7 +22,15 @@ require([], function (){
 
 	$('.toc-close').click(function() {
 		$('.toc-article').fadeOut();
-	})
+	});
+
+	$('.show-toc-btn').mouseover(function() {
+		$(this).find('.btn-text').show();
+	}).mouseout(function() {
+		$(this).find('.btn-text').hide();
+	}).click(function() {
+		$('.toc-article').fadeIn();
+	});
 
 
 

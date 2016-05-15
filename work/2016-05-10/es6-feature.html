@@ -16,7 +16,7 @@ ES6给我们提供了许多的新语法和代码特性来提高javascript的体�
 <meta property="og:description" content="ES6是即将到来的新版本JavaScript语言的标准，他给我们带来了更”甜”的语法糖（一种语法，使得语言更容易理解和更具有可读性，也让我们编写代码更加简单快捷），如箭头函数（=&amp;gt;）、class等等。用一句话来说就是：
 
 ES6给我们提供了许多的新语法和代码特性来提高javascript的体验">
-<meta property="og:updated_time" content="2016-05-14T02:52:58.357Z">
+<meta property="og:updated_time" content="2016-05-15T07:17:38.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="总结ES6常用的新特性">
 <meta name="twitter:description" content="ES6是即将到来的新版本JavaScript语言的标准，他给我们带来了更”甜”的语法糖（一种语法，使得语言更容易理解和更具有可读性，也让我们编写代码更加简单快捷），如箭头函数（=&amp;gt;）、class等等。用一句话来说就是：
@@ -241,8 +241,12 @@ ES6给我们提供了许多的新语法和代码特性来提高javascript的体�
     
     <!-- Table of Contents -->
     
+    <p class="show-toc-btn">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+    </p>
     <div id="toc" class="toc-article">
-    <span class="toc-close">×</span>
+    <span class="toc-close" title="隐藏导航">×</span>
     <!-- <strong class="toc-title">文章目录</strong> -->
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#es6常用特性列举"><span class="toc-number">1.</span> <span class="toc-text">es6常用特性列举</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义函数"><span class="toc-number">1.1.</span> <span class="toc-text">定义函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建类"><span class="toc-number">1.2.</span> <span class="toc-text">创建类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模块"><span class="toc-number">1.3.</span> <span class="toc-text">模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内联导出"><span class="toc-number">1.3.1.</span> <span class="toc-text">内联导出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出一组对象"><span class="toc-number">1.3.2.</span> <span class="toc-text">导出一组对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Default导出"><span class="toc-number">1.3.3.</span> <span class="toc-text">Default导出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无对象导入"><span class="toc-number">1.3.4.</span> <span class="toc-text">无对象导入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入默认对象"><span class="toc-number">1.3.5.</span> <span class="toc-text">导入默认对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#let与const"><span class="toc-number">1.4.</span> <span class="toc-text">let与const</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#箭头函数"><span class="toc-number">1.5.</span> <span class="toc-text">箭头函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串模版"><span class="toc-number">1.6.</span> <span class="toc-text">字符串模版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解构"><span class="toc-number">1.7.</span> <span class="toc-text">解构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#默认参数"><span class="toc-number">1.8.</span> <span class="toc-text">默认参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Proxy"><span class="toc-number">1.9.</span> <span class="toc-text">Proxy</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结语"><span class="toc-number">2.</span> <span class="toc-text">结语</span></a></li></ol>
     </div>
@@ -252,8 +256,9 @@ ES6给我们提供了许多的新语法和代码特性来提高javascript的体�
         <hr>
 <p>ES6是即将到来的新版本JavaScript语言的标准，他给我们带来了更”甜”的语法糖（一种语法，使得语言更容易理解和更具有可读性，也让我们编写代码更加简单快捷），如箭头函数（=&gt;）、class等等。用一句话来说就是：</p>
 <blockquote>
-<p>ES6给我们提供了许多的新语法和代码特性来提高javascript的体验<br><a id="more"></a></p>
+<p>ES6给我们提供了许多的新语法和代码特性来提高javascript的体验</p>
 </blockquote>
+<a id="more"></a>
 <p>不过遗憾的是，现在还没有浏览器能够很好的支持es6语法，<a href="http://kangax.github.io/compat-table/es6/" target="_blank" rel="external">点这里</a>查看浏览器支持情况，所以我们在开发中还需要用babel进行转换为CommonJS这种模块化标准的语法。</p>
 <p>因为下面我会讲到一些es6新特性的例子，如果想要运行试试效果的话，可以<a href="http://google.github.io/traceur-compiler/demo/repl.html" target="_blank" rel="external">点这里</a>去测试es6的代码。</p>
 <h1 id="es6常用特性列举"><a href="#es6常用特性列举" class="headerlink" title="es6常用特性列举"></a>es6常用特性列举</h1><p>然后我下面简单的介绍一些很常用的语法特性，如果想完整的了解ES6，我推荐大家<a href="http://gank.io/post/564151c1f1df1210001c9161" target="_blank" rel="external">点这里</a></p>
@@ -308,6 +313,7 @@ ES6给我们提供了许多的新语法和代码特性来提高javascript的体�
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义被监听的目标对象</span></span><br><span class="line"><span class="keyword">let</span> engineer = &#123; name: <span class="string">'Joe Sixpack'</span>, salary: <span class="number">50</span> &#125;;</span><br><span class="line"><span class="comment">//定义处理程序</span></span><br><span class="line"><span class="keyword">let</span> interceptor = &#123;</span><br><span class="line">      set(receiver, property, value) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(property, <span class="string">'is changed to'</span>, value);</span><br><span class="line">        receiver[property] = value;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//创建代理以进行侦听</span></span><br><span class="line">engineer = <span class="keyword">new</span> <span class="built_in">Proxy</span>(engineer, interceptor);</span><br><span class="line"><span class="comment">//做一些改动来触发代理</span></span><br><span class="line">engineer.salary = <span class="number">70</span>;<span class="comment">//控制台输出：salary is changed to 70</span></span><br></pre></td></tr></table></figure>
 <p>对于处理程序，是在被监听的对象身上发生了相应事件之后，处理程序里面的方法就会被调用。</p>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>总的来说，虽然支持es6的情况到目前还不是很乐观，但es6的新语法特性让前端和后端的差异越来越小了，这是一个新时代的开始，我们必须要了解这些新的前沿知识，才能跟上时代的步伐。</p>
+<hr>
 
       
     </div>
@@ -315,6 +321,16 @@ ES6给我们提供了许多的新语法和代码特性来提高javascript的体�
   </div>
   
     
+<div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <p class="pay-code">
+        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
+    </p>
+</div>
+
+
 <nav id="article-nav">
   
     <a href="/work/2016-05-12/high-extend.html" id="article-nav-newer" class="article-nav-link-wrap">
@@ -334,15 +350,6 @@ ES6给我们提供了许多的新语法和代码特性来提高javascript的体�
   
 </nav>
 
-
-<div class="support-author">
-    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
-    <p>您的支持将鼓励我继续创作！</p>
-    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
-    <p class="pay-code">
-        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
-    </p>
-</div>
 
   
 </article>

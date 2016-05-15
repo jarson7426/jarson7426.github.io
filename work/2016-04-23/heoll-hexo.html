@@ -18,7 +18,7 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 $ hexo new(n)    //写文章$ hexo generate(g)">
 <meta property="og:image" content="http://7xtawy.com2.z0.glb.clouddn.com/msysgit.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1.knpHVXXXXcmaXXXXXXXXXXX-1003-456.png">
-<meta property="og:updated_time" content="2016-05-14T02:56:10.181Z">
+<meta property="og:updated_time" content="2016-05-15T07:15:51.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建属于自己的博客">
 <meta name="twitter:description" content="一直都在博客园写博客，不过最近在逛园子的时候不小心看到了hexo,简直有种相见恨晚的感觉呀！在github上创建自己的开源博客，维护方便，主题多多，更重要的是，终于找到只属于自己的小窝啦！也希望自己能坚持写文^_^
@@ -244,8 +244,12 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
     
     <!-- Table of Contents -->
     
+    <p class="show-toc-btn">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+    </p>
     <div id="toc" class="toc-article">
-    <span class="toc-close">×</span>
+    <span class="toc-close" title="隐藏导航">×</span>
     <!-- <strong class="toc-title">文章目录</strong> -->
     <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#准备工作"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#初始化"><span class="toc-number">2.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#生成静态页面"><span class="toc-number">3.</span> <span class="toc-text">生成静态页面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#本地启动"><span class="toc-number">4.</span> <span class="toc-text">本地启动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#更换主题"><span class="toc-number">5.</span> <span class="toc-text">更换主题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署到github"><span class="toc-number">6.</span> <span class="toc-text">部署到github</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结语"><span class="toc-number">7.</span> <span class="toc-text">结语</span></a></li></ol>
     </div>
@@ -263,11 +267,8 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <li><code>备注2：网上大多教程是都是hexo2.x版本的，所以有很多坑。因此以下教程是针对hexo的版本为3.x以上的，大家放心使用。</code></li>
 </ul>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
-<li>安装node</li>
-<li>到<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>官网下载相应平台的最新版本，一路安装即可。</li>
-<li>安装git</li>
-<li>根据系统不同安装相应的git环境。mac系统不多说，windows一般安装msysgit。下面是我本地msysgit的截图，也还是挺好用的:</li>
-<li><img src="http://7xtawy.com2.z0.glb.clouddn.com/msysgit.png" alt=""></li>
+<li>安装node<br> 到<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>官网下载相应平台的最新版本，一路安装即可。</li>
+<li>安装git<br> 根据系统不同安装相应的git环境。mac系统不多说，windows一般安装msysgit。下面是我本地msysgit的截图，也还是挺好用的:<br> <img src="http://7xtawy.com2.z0.glb.clouddn.com/msysgit.png" alt=""></li>
 <li><p>安装hexo</p>
 <p>  使用以下命令安装hexo到全局</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
@@ -304,21 +305,18 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <li><a href="https://github.com/presscustomizr/hueman" target="_blank" rel="external">AlxMedia/hueman</a>， 336个star。</li>
 <li><a href="https://github.com/kathyqian/crisp-ghost-theme" target="_blank" rel="external">kathyqian/crisp-ghost-theme</a>， 303个star。</li>
 <li><a href="https://github.com/xiangming/landscape-plus" target="_blank" rel="external">xiangming/landscape-plus</a>， 287个star。</li>
-<li><p>clone主题代码</p>
-<p>  在目录下执行下面的命令clone主题代码：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ git clone https:<span class="comment">//github.com/litten/hexo-theme-yilia.git themes/yilia</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改配置文件</p>
-<p>  修改<code>Blog/_config.yml</code>文件：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">theme: yilia    <span class="comment">//默认为landscape</span></span><br></pre></td></tr></table></figure>
-<p>  修改<code>themes/yilia/_config.yml</code>文件：</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line"># Header</span><br><span class="line">menu:</span><br><span class="line">    主页: /</span><br><span class="line">    所有文章: /archives</span><br><span class="line">    丝茉茉: /categories/simomo/</span><br><span class="line">    相册: /photos</span><br><span class="line"># SubNav</span><br><span class="line">subnav:</span><br><span class="line">    github: "https://github.com/jarson7426"</span><br><span class="line">     weibo: "http://weibo.com/u/2732624311"</span><br><span class="line">    zhihu: "#"</span><br><span class="line">    rss: /atom.xml</span><br><span class="line"># Content</span><br><span class="line">excerpt_link: 阅读全文</span><br><span class="line">fancybox: true</span><br><span class="line">mathjax: true</span><br><span class="line">top: true</span><br><span class="line"># 是否开启动画效果</span><br><span class="line">animate: true</span><br><span class="line"># 是否在新窗口打开链接</span><br><span class="line">open_in_new: false</span><br><span class="line"># Miscellaneous</span><br><span class="line">google_analytics: ''</span><br><span class="line">favicon: /favicon.ico</span><br><span class="line">#你的头像url</span><br><span class="line">avatar: /img.png</span><br><span class="line">#是否开启分享</span><br><span class="line">share_jia: true</span><br><span class="line">share_addthis: false</span><br><span class="line">#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key</span><br><span class="line">#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论</span><br><span class="line">duoshuo: jarson7426</span><br><span class="line">#是否开启云标签</span><br><span class="line">tagcloud: true</span><br><span class="line">#是否开启友情链接</span><br><span class="line">#不开启——</span><br><span class="line">friends: false</span><br><span class="line">#开启——</span><br><span class="line">#friends:</span><br><span class="line">#  百度一下: http://www.baidu.com</span><br><span class="line">#  淘宝商城: http://www.taobao.com</span><br><span class="line">#是否开启“关于我”。</span><br><span class="line">#不开启——</span><br><span class="line">#aboutme: false</span><br><span class="line">#开启——</span><br><span class="line">aboutme: true</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看效果</p>
-<p>  更改主题之后可以使用命令<code>hexo server</code>打开本地服务，查看效果。</p>
-</li>
 </ul>
-<h1 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h1><p>上面所有的操作完成之后，你就可以将你的Blog项目部署到github上了。</p>
+<p>clone主题代码</p>
+<p>在目录下执行下面的命令clone主题代码：</p>
+  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ git clone https:<span class="comment">//github.com/litten/hexo-theme-yilia.git themes/yilia</span></span><br></pre></td></tr></table></figure>
+<p>修改配置文件</p>
+<p>修改<code>Blog/_config.yml</code>文件：</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">theme: yilia    <span class="comment">//默认为landscape</span></span><br></pre></td></tr></table></figure>
+<pre><code>修改`themes/yilia/_config.yml`文件：
+</code></pre>  <figure class="highlight"><table><tr><td class="code"><pre><span class="line"># Header</span><br><span class="line">menu:</span><br><span class="line">    主页: /</span><br><span class="line">    所有文章: /archives</span><br><span class="line">    丝茉茉: /categories/simomo/</span><br><span class="line">    相册: /photos</span><br><span class="line"># SubNav</span><br><span class="line">subnav:</span><br><span class="line">    github: "https://github.com/jarson7426"</span><br><span class="line">     weibo: "http://weibo.com/u/2732624311"</span><br><span class="line">    zhihu: "#"</span><br><span class="line">    rss: /atom.xml</span><br><span class="line"># Content</span><br><span class="line">excerpt_link: 阅读全文</span><br><span class="line">fancybox: true</span><br><span class="line">mathjax: true</span><br><span class="line">top: true</span><br><span class="line"># 是否开启动画效果</span><br><span class="line">animate: true</span><br><span class="line"># 是否在新窗口打开链接</span><br><span class="line">open_in_new: false</span><br><span class="line"># Miscellaneous</span><br><span class="line">google_analytics: ''</span><br><span class="line">favicon: /favicon.ico</span><br><span class="line">#你的头像url</span><br><span class="line">avatar: /img.png</span><br><span class="line">#是否开启分享</span><br><span class="line">share_jia: true</span><br><span class="line">share_addthis: false</span><br><span class="line">#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key</span><br><span class="line">#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论</span><br><span class="line">duoshuo: jarson7426</span><br><span class="line">#是否开启云标签</span><br><span class="line">tagcloud: true</span><br><span class="line">#是否开启友情链接</span><br><span class="line">#不开启——</span><br><span class="line">friends: false</span><br><span class="line">#开启——</span><br><span class="line">#friends:</span><br><span class="line">#  百度一下: http://www.baidu.com</span><br><span class="line">#  淘宝商城: http://www.taobao.com</span><br><span class="line">#是否开启“关于我”。</span><br><span class="line">#不开启——</span><br><span class="line">#aboutme: false</span><br><span class="line">#开启——</span><br><span class="line">aboutme: true</span><br></pre></td></tr></table></figure>
+<p>查看效果</p>
+<pre><code>更改主题之后可以使用命令`hexo server`打开本地服务，查看效果。
+</code></pre><h1 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h1><p>上面所有的操作完成之后，你就可以将你的Blog项目部署到github上了。</p>
 <ul>
 <li><p>部署之前先修改<code>Blog/_config.yml</code>文件。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repository: https:<span class="comment">//github.com/jarson7426/jarson7426.github.io.git  //jarson7426替换为你自己的用户名</span></span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
@@ -327,7 +325,7 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <li><p>然后使用以下命令进行部署。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>  <code>备注：如果执行上述命令报错，你可以试试下面这个命令再试。</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git--save</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>部署成功后，你在浏览器中输入<a href="http://jarson7426.github.io/" target="_blank" rel="external">jarson7426.github.io</a>，就能看到和本地一样的效果了。</p>
@@ -337,10 +335,12 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <li>给文章添加打赏功能。</li>
 <li>添加回到顶部的功能。</li>
 <li>添加总站访问量和文章阅读量</li>
+<li>添加文章目录显示</li>
 </ul>
 <p>其实修改这些非常简单，只要你有html、css、js的基础就可以。 思路：因为整个网站都是依赖yilia主题。所以应该在theme/yilia文件夹下，修改对应的dom结构，然后添加对应的效果或者事件绑定就可以实现了。</p>
 <p>如果大家还有问题，欢迎留言，我会很乐意为大家解答的。</p>
 <p>好了，到这里搭建github博客的步骤就结束了。快快enjoy it吧！！！</p>
+<hr>
 
       
     </div>
@@ -348,6 +348,16 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
   </div>
   
     
+<div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <p class="pay-code">
+        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
+    </p>
+</div>
+
+
 <nav id="article-nav">
   
     <a href="/simomo/2016-04-23/simomo01.html" id="article-nav-newer" class="article-nav-link-wrap">
@@ -362,15 +372,6 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
   
 </nav>
 
-
-<div class="support-author">
-    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
-    <p>您的支持将鼓励我继续创作！</p>
-    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
-    <p class="pay-code">
-        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
-    </p>
-</div>
 
   
 </article>
