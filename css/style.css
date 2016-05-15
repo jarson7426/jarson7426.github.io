@@ -587,7 +587,7 @@ a {
 }
 #header .header-menu {
   font-weight: 300;
-  line-height: 31px;
+  line-height: 29px;
   cursor: pointer;
   text-transform: uppercase;
   float: none;
@@ -1428,6 +1428,7 @@ div.instagram .album li {
   float: right;
 }
 .show-toc-btn {
+  z-index: 10;
   width: 16px;
   min-height: 14px;
   overflow: hidden;
@@ -1436,7 +1437,7 @@ div.instagram .album li {
   border-right: none;
   position: fixed;
   right: 31px;
-  top: 114px;
+  top: 112px;
   text-align: center;
   background-color: #f9f9f9;
 }
@@ -1466,7 +1467,6 @@ div.instagram .album li {
   display: none;
 }
 .toc-article {
-  display: none;
   z-index: 100;
   background: #fff;
   border: 1px solid #ccc;

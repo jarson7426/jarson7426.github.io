@@ -6,55 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>实例demo之Highextend图表 | jarson的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基于highextend图表示例view on github
+  <meta name="description" content="highextend图表示例view on github
 
-        fwfwefwfe
-
-
-.high-extend-container {
-    background:#f5f5f5;
-}
-
-
-
-
-
-    console.log(11);">
+highextend是基于highcharts进一步封装的图表组件，组件暴露一个Hxt的全局对象，它有以下一些方法来绘制不同类的图形，从此以后，画图只需简简单单的几行配置就ok了！赶紧点进来看看实例吧！
+Hxt.line(elem, data, options);         //渲染默认折线图Hxt.spline(elem">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实例demo之Highextend图表">
 <meta property="og:url" content="http://yoursite.com/work/2016-05-12/high-extend.html">
 <meta property="og:site_name" content="jarson的博客">
-<meta property="og:description" content="基于highextend图表示例view on github
+<meta property="og:description" content="highextend图表示例view on github
 
-        fwfwefwfe
-
-
-.high-extend-container {
-    background:#f5f5f5;
-}
-
-
-
-
-
-    console.log(11);">
-<meta property="og:updated_time" content="2016-05-14T03:33:47.804Z">
+highextend是基于highcharts进一步封装的图表组件，组件暴露一个Hxt的全局对象，它有以下一些方法来绘制不同类的图形，从此以后，画图只需简简单单的几行配置就ok了！赶紧点进来看看实例吧！
+Hxt.line(elem, data, options);         //渲染默认折线图Hxt.spline(elem">
+<meta property="og:updated_time" content="2016-05-15T15:18:23.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实例demo之Highextend图表">
-<meta name="twitter:description" content="基于highextend图表示例view on github
+<meta name="twitter:description" content="highextend图表示例view on github
 
-        fwfwefwfe
-
-
-.high-extend-container {
-    background:#f5f5f5;
-}
-
-
-
-
-
-    console.log(11);">
+highextend是基于highcharts进一步封装的图表组件，组件暴露一个Hxt的全局对象，它有以下一些方法来绘制不同类的图形，从此以后，画图只需简简单单的几行配置就ok了！赶紧点进来看看实例吧！
+Hxt.line(elem, data, options);         //渲染默认折线图Hxt.spline(elem">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -112,7 +82,7 @@
 						<li>云标签</li>
 						
 						
-						<!-- <li>Über</li> -->
+						<!-- <li>About</li> -->
 						<li>关于我</li>
 						
 					</ul>
@@ -131,6 +101,8 @@
 							<li><a href="/archives">所有文章</a></li>
 				        
 							<li><a href="/demo/">demo</a></li>
+				        
+							<li><a href="/categories/simomo/">丝茉茉</a></li>
 				        
 							<li><a href="/photos">相册</a></li>
 				        
@@ -207,6 +179,8 @@
 		        
 					<li><a href="/demo/">demo</a></li>
 		        
+					<li><a href="/categories/simomo/">丝茉茉</a></li>
+		        
 					<li><a href="/photos">相册</a></li>
 		        
 		        <div class="clearfix"></div>
@@ -274,23 +248,274 @@
     
     <!-- Table of Contents -->
     
+    <p class="show-toc-btn">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc" class="toc-article">
+    <span class="toc-close" title="隐藏导航">×</span>
+    <!-- <strong class="toc-title">文章目录</strong> -->
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实例展示"><span class="toc-number">1.</span> <span class="toc-text">实例展示</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用文档"><span class="toc-number">2.</span> <span class="toc-text">使用文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#公共配置项"><span class="toc-number">2.1.</span> <span class="toc-text">公共配置项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线图-柱状图配置项"><span class="toc-number">2.2.</span> <span class="toc-text">线图/柱状图配置项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#饼图配置项"><span class="toc-number">2.3.</span> <span class="toc-text">饼图配置项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#雷达图配置项"><span class="toc-number">2.4.</span> <span class="toc-text">雷达图配置项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正负对比图（bar）配置项"><span class="toc-number">2.5.</span> <span class="toc-text">正负对比图（bar）配置项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#混合图特有配置项"><span class="toc-number">2.6.</span> <span class="toc-text">混合图特有配置项</span></a></li></ol></li></ol>
+    </div>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<header style="margin-top:-55px;text-align:center"><br>    <h1 class="todo-title"><span>基于highextend图表示例</span><a href="https://github.com/jarson7426/react-demo" style="font-size:14px;font-weight:normal;" target="_blank" rel="external">view on github</a></h1><br></header>
+<header style="margin-top:-55px;text-align:center"><br>    <p class="todo-title"><span>highextend图表示例</span><a href="https://github.com/jarson7426/highextend" style="font-size:14px;font-weight:normal;" target="_blank" rel="external">view on github</a></p><br></header>
 
-<div class="high-extend-container"><br>        fwfwefwfe<br></div>
+<p>highextend是基于highcharts进一步封装的图表组件，组件暴露一个<code>Hxt</code>的全局对象，它有以下一些方法来绘制不同类的图形，从此以后，画图只需简简单单的几行配置就ok了！赶紧点进来看看实例吧！</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Hxt.line(elem, data, options);         <span class="comment">//渲染默认折线图</span></span><br><span class="line">Hxt.spline(elem, data, options);         <span class="comment">//曲线图</span></span><br><span class="line">Hxt.scatter(elem, data, options);         <span class="comment">//散点图</span></span><br><span class="line">Hxt.bubble(elem, data, options);         <span class="comment">//bubble图</span></span><br><span class="line">Hxt.column(elem, data, options);         <span class="comment">//柱状图</span></span><br><span class="line">Hxt.bar(elem, data, options);         <span class="comment">//bar图，（横向柱状图）</span></span><br><span class="line">Hxt.area(elem, data, options);         <span class="comment">//区域图（默认为平滑区域图）</span></span><br><span class="line">Hxt.pie(elem, data, options);         <span class="comment">//圆饼图</span></span><br><span class="line">Hxt.polar(elem, data, options);         <span class="comment">//雷达图</span></span><br><span class="line">Hxt.pyramid(elem, data, options);         <span class="comment">//金字塔图</span></span><br><span class="line">Hxt.mix(elem, data, options);         <span class="comment">//混合图</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="实例展示"><a href="#实例展示" class="headerlink" title="实例展示"></a>实例展示</h1><div class="high-extend-container"><br>    <div class="chart" id="line-chart"></div><br>    <div class="chart" id="area-chart"></div><br>    <div class="chart" id="column-chart"></div><br>    <div class="chart" id="mix-chart"></div><br>    <div class="small-chart" id="pie-chart1"></div><br>    <div class="small-chart" id="pie-chart2" style="margin-top:-28px;"></div>
 
+<p></p></div><p></p>
+<h1 id="使用文档"><a href="#使用文档" class="headerlink" title="使用文档"></a>使用文档</h1><p>本页面的实例不全，读者可以在<a href="https://github.com/jarson7426/highextend" target="_blank" rel="external">我的github</a>上访问到这个项目的所有代码，然后down下来执行以下代码就能直接在浏览器看到所有实例。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npm install   <span class="comment">//安装依赖</span></span><br><span class="line">gulp   <span class="comment">//启动服务</span></span><br></pre></td></tr></table></figure>
+<p>在上面介绍的方法中，有<code>elem</code>, <code>data</code>, <code>options</code>三个参数，下面依次介绍以下：</p>
+<ul>
+<li>elem：绘制图表元素的id。</li>
+<li>data：图表的数据。</li>
+<li>options：图表配置项,<code>可以为空，为空则使用默认配置。</code></li>
+</ul>
+<h2 id="公共配置项"><a href="#公共配置项" class="headerlink" title="公共配置项"></a>公共配置项</h2><ul>
+<li><p><code>emptyHtml</code>: 数据为空时的提示信息，支持html格式。</p>
+</li>
+<li><p><code>backgroundColor</code>: 图表背景颜色，默认为’白色‘。</p>
+</li>
+<li><p><code>marginTop</code>: 图形的上边距，例如 marginTop: 60。</p>
+</li>
+<li><p><code>marginRight</code>: 图形的上边距，例如 marginRight: 60。</p>
+</li>
+<li><p><code>chartLoad</code>: 设置图形加载方式。一般实时动态数据会配置此项。</p>
+</li>
+<li><p><code>colors</code>: 颜色，<code>类型为数组</code>。非必选，有默认的颜色。</p>
+</li>
+<li><p><code>title</code>: 图表标题，默认为空。</p>
+</li>
+<li><p><code>subtitle</code>: 副标题，默认为空。</p>
+</li>
+<li><p><code>markerEnabled</code>: 是否显示线条上的点，默认<code>true</code>为显示。</p>
+</li>
+<li><p><code>markerSymbol</code>: 线条上点的形状，默认为‘circle’圆形，并且默认样式为空心。其他值有‘square’，‘diamond’，‘triangle’等。</p>
+</li>
+<li><p><code>legendEnabled</code>: 图例是否显示，默认为<code>true</code>，显示图例。</p>
+</li>
+<li><p><code>legendLayout</code>: 图例显示方式，默认为水平方向：‘horizontal’。 ‘vertical’为垂直方向。</p>
+</li>
+<li><p><code>legendAlign</code>: 水平方向显示位置，默认中间位置：‘center’，其他值有‘right’，‘left’。</p>
+</li>
+<li><p><code>legendVerticalAlign</code>: 垂直方向显示位置，默认‘bottom’，其他值有‘top’，‘middle’。</p>
+</li>
+<li><p><code>legendItemMarginBottom</code>: 每个图例的下边距，默认为4px。</p>
+</li>
+<li><p><code>shared</code>: tooltip提示框是否被共享。默认为<code>false</code>。</p>
+</li>
+<li><p><code>valuePrefix</code>: tooltip悬浮框value值前面的字符，默认为空。</p>
+</li>
+<li><p><code>valueSuffix</code>: tooltip悬浮框value值后面的字符，默认为空。</p>
+</li>
+<li><p><code>xDateFormat</code>: tooltip中时间转化格式，默认为‘%Y-%m-%d’，即‘2016-01-10’。</p>
+</li>
+<li><p><code>chartLabel</code>： 图形中的提示文案，格式为对象，如：{html:’title’, style:{left:’30px’, top: ‘5px’}}。</p>
+</li>
+</ul>
+<h2 id="线图-柱状图配置项"><a href="#线图-柱状图配置项" class="headerlink" title="线图/柱状图配置项"></a>线图/柱状图配置项</h2><ul>
+<li><p><code>Xtype</code>: 横坐标类型，默认为空。<code>如设置&#39;datetime&#39;，则为时间类型，默认转为&#39;01-01&#39;格式</code>。</p>
+</li>
+<li><p><code>Ytitle</code>: 纵坐标标题，默认为空。</p>
+</li>
+<li><p><code>Ytype</code>: 纵坐标类型，默认为空。<code>如设置&#39;rate&#39;,则用1024为单位计算，且默认单位为‘kb’，大于1024单位变为‘M’</code>。</p>
+</li>
+</ul>
+<h2 id="饼图配置项"><a href="#饼图配置项" class="headerlink" title="饼图配置项"></a>饼图配置项</h2><ul>
+<li><p><code>size</code>: 饼图的整体大小（百分比），默认为100%。</p>
+</li>
+<li><p><code>innerSize</code>: 内圆所占的百分比，默认为55%。</p>
+</li>
+<li><p><code>showInLegend</code>: 设置圆饼图的图例是否显示，默认为<code>true</code>。</p>
+</li>
+<li><p><code>startAngle</code>: 圆饼图的开始角度。</p>
+</li>
+<li><p><code>endAngle</code>: 圆饼图的结束角度。</p>
+</li>
+<li><p><code>pieLabel</code>: 设置圆饼图的series文案，默认为<code>数量</code>。</p>
+</li>
+<li><p><code>pieClick</code>: 圆饼图的点击事件。</p>
+</li>
+<li><p><code>pieMouseOut</code>: 圆饼图的mouseout事件。</p>
+</li>
+<li><p><code>pieMouseOver</code>: 圆饼图的mouseover事件。</p>
+</li>
+</ul>
+<h2 id="雷达图配置项"><a href="#雷达图配置项" class="headerlink" title="雷达图配置项"></a>雷达图配置项</h2><ul>
+<li><p><code>polarType</code>: 雷达图的形状，可设置为‘circle’－圆形，默认为‘polygon’－菱形。</p>
+</li>
+<li><p><code>polarSize</code>: 雷达图大小百分比，默认95%。</p>
+</li>
+</ul>
+<h2 id="正负对比图（bar）配置项"><a href="#正负对比图（bar）配置项" class="headerlink" title="正负对比图（bar）配置项"></a>正负对比图（bar）配置项</h2><ul>
+<li><code>barStacking</code>: 设置为“normal”－表示正负对比图。</li>
+</ul>
+<h2 id="混合图特有配置项"><a href="#混合图特有配置项" class="headerlink" title="混合图特有配置项"></a>混合图特有配置项</h2><ul>
+<li><p><code>mixPieCenter</code>: 混合图中饼图的特有设置–中心原点坐标，如[100,50]。</p>
+</li>
+<li><p><code>mixPieSize</code>: 混合图中饼图的特有设置–饼图大小，默认为‘60%’。</p>
+</li>
+<li><p><code>mixPieInnerSize</code>: 混合图中饼图的特有设置–饼图空心圆大小，默认为0。</p>
+</li>
+<li><p><code>miePieShowInLegend</code>: 混合图中饼图的特有设置–是否显示legend，默认为false。</p>
+</li>
+</ul>
+<hr>
 <style>
+header .todo-title {
+    font-size: 1.5em;
+    margin-top: 30px;
+}
 .high-extend-container {
-    background:#f5f5f5;
+    min-height: 400px;
+    overflow: hidden;
+}
+.high-extend-container .chart {
+    background: #f5f5f5;
+    padding: 10px;
+    width: 90%;
+    height: 280px;
+}
+.high-extend-container .small-chart {
+    padding: 10px;
+    background: #f5f5f5;
+    width: 360px;
+    height: 340px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    display: inline-block;
 }
 </style>
 
 <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
 <script src="https://rawgit.com/jarson7426/highextend/daily/0.0.1/build/js/highextend-min.js"></script>
 <script type="text/javascript">
-    console.log(11);
+    var lineData = {
+        "items": [{
+            "data": [100,80,94,99,80,50,90],
+            "name": "tom"
+        }],
+        "categories": ["first", "second", "third", "forth", "fifth", "sixth", "seventh"]
+    };
+    var chart = Hxt.spline('line-chart', lineData, {
+        shared: true
+    });
+    chart.fn.setTitle({text: '这是我动态设置的标题'});
+    //展示动态添加一行数据，和动态删除一行数据的例子
+    var num = 1;
+    var time = function() {
+        var colors = chart.fn.options.colors;
+        if(num < 4) {
+            setTimeout(function() {
+                chart.fn.addSeries({
+                    name: 'name' + num,
+                    data:[num*50, num*50, num*50, num*50, num*50, num*50, num*50],
+                    color: colors[num]
+                });
+                num ++;
+                time();
+            }, 3000);
+        }else {
+            setTimeout(function() {
+                var series = chart.fn.series;
+                series[series.length-1].remove();
+                num  = num == 6 ? 1 : num+1;
+                time();
+            }, 3000);
+        }
+    };
+    time();
+
+    var areaData = {
+        "items": [{
+            "data": [100,105,94,79,80],
+            "name": "tom"
+        }, {
+            "data": [65,90,140,100,120],
+            "name": "jane"
+        }],
+        "timeScope": {
+            "interval": 86400000,
+            "start": 1463328000000
+        }
+    };
+    var chart1 = Hxt.area('area-chart', areaData, {    //曲线图
+        Xtype: 'datetime',
+        shared: true
+    });
+    var chart2 = Hxt.column('column-chart', areaData, {    //曲线图
+        Xtype: 'datetime',
+        shared: true
+    });
+
+    var pieData = {
+        "items": [{
+            "name": "已开通",
+            "data": 20
+        },{
+            "name": "未开通",
+            "data": 5
+        },{
+            "name": "待定",
+            "data": 10
+        }]
+    };
+    var chart3 = Hxt.pie('pie-chart1', pieData, {
+        size: '45%',
+        valueSuffix: '个',
+        showPercentLabels: true
+    });
+    var chart4 = Hxt.pie('pie-chart2', pieData, {    
+        startAngle: -90,  //设置角度，达到半圆效果
+        endAngle: 90
+    });
+
+                                var mixData = {
+                                    "items": [{
+                                        "type": "column",
+                                        "name": "第一天",
+                                        "data": [3, 2, 1, 3, 4]
+                                    },{
+                                        "type": "column",
+                                        "name": "第二天",
+                                        "data": [2, 3, 5, 7, 9]
+                                    },{
+                                        "type": "spline",
+                                        "name": "平均值",
+                                        "data": [2.5, 2.5, 3, 5, 6.5]
+                                    },{
+                                        "type": "pie",
+                                        "name": "总量",
+                                        "data": [{
+                                            "name": "第一天",
+                                            "y": 13
+                                        },{
+                                            "name": "第二天",
+                                            "y": 26
+                                        }]
+                                    }],
+                                    "categories": ["苹果", "橘子", "石榴", "香蕉", "草莓"]
+                                };
+                                var chart5 = Hxt.mix('mix-chart', mixData, {
+                                    valueSuffix: '斤',
+                                    mixPieCenter: [60, 50],
+                                    mixPieSize: '55%',
+                                    shared: true,
+                                    chartLabel: {
+                                        html: '水果两天的总销量',
+                                        style: {
+                                            left: '30px',
+                                            top: '5px'
+                                        }
+                                    }
+                                });
 </script>
 
       
