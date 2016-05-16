@@ -3,10 +3,12 @@ require([], function (){
 
 	$(window).scroll(function() {
 	    var a = $(window).scrollTop();
-	    if(a > 134) {
+	    if(a > 126) {
 	        $('.go-top').fadeIn();
+			$('.toc-article').css('top', '0px');
 	    }else {
 	        $('.go-top').fadeOut();
+			$('.toc-article').css('top', '126px');
 	    }
 	});
 
@@ -22,14 +24,12 @@ require([], function (){
 
 	$('.toc-close').click(function() {
 		$('.toc-article').fadeOut();
+		$('.show-toc-btn').fadeIn();
 	});
 
-	$('.show-toc-btn').mouseover(function() {
-		$(this).find('.btn-text').show();
-	}).mouseout(function() {
-		$(this).find('.btn-text').hide();
-	}).click(function() {
+	$('.show-toc-btn').click(function() {
 		$('.toc-article').fadeIn();
+		$('.show-toc-btn').fadeOut();
 	});
 
 

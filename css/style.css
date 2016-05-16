@@ -508,7 +508,8 @@ a {
     margin-right: 0px;
     font-size: 12px;
   }
-  #container .toc-article {
+  #container .toc-article,
+  #container .show-toc-btn {
     display: none;
   }
 }
@@ -1428,6 +1429,7 @@ div.instagram .album li {
   float: right;
 }
 .show-toc-btn {
+  display: none;
   z-index: 10;
   width: 16px;
   min-height: 14px;
@@ -1452,9 +1454,8 @@ div.instagram .album li {
   background-size: 100%;
 }
 .show-toc-btn .btn-text {
-  color: #ea8010;
+  color: #999;
   font-size: 12px;
-  display: none;
 }
 .show-toc-btn:hover {
   cursor: pointer;
@@ -1464,7 +1465,7 @@ div.instagram .album li {
 }
 .show-toc-btn:hover .btn-text {
   font-size: 12px;
-  display: none;
+  color: #ea8010;
 }
 .toc-article {
   z-index: 100;
@@ -1478,7 +1479,7 @@ div.instagram .album li {
   padding: 10px;
   position: fixed;
   right: 35px;
-  top: 0px;
+  top: 126px;
 }
 .toc-article .toc-close {
   font-weight: bold;
