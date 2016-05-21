@@ -127,9 +127,9 @@
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
-      <category term="微信分享" scheme="http://yoursite.com/tags/%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB/"/>
-    
       <category term="插件" scheme="http://yoursite.com/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="微信分享" scheme="http://yoursite.com/tags/%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
@@ -513,9 +513,9 @@
     
       <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
     
-      <category term="插件" scheme="http://yoursite.com/tags/%E6%8F%92%E4%BB%B6/"/>
-    
       <category term="highcharts" scheme="http://yoursite.com/tags/highcharts/"/>
+    
+      <category term="插件" scheme="http://yoursite.com/tags/%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
@@ -786,13 +786,13 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="grunt" scheme="http://yoursite.com/tags/grunt/"/>
     
       <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
     
       <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -945,9 +945,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
   </entry>
   
