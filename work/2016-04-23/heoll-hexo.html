@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>hexo搭建属于自己的博客 | jarson的博客</title>
+  <title>hexo搭建属于自己的博客 | luckykun-不一样的世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一直都在博客园写博客，不过最近在逛园子的时候不小心看到了hexo,简直有种相见恨晚的感觉呀！在github上创建自己的开源博客，维护方便，主题多多，更重要的是，终于找到只属于自己的小窝啦！也希望自己能坚持写文^_^
 为了引起读者的兴趣，先介绍一下，搭建完成之后，只需这几个简单常用的命令，就能够轻松维护自己的博客了：
@@ -12,13 +12,14 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo搭建属于自己的博客">
 <meta property="og:url" content="http://yoursite.com/work/2016-04-23/heoll-hexo.html">
-<meta property="og:site_name" content="jarson的博客">
+<meta property="og:site_name" content="luckykun-不一样的世界">
 <meta property="og:description" content="一直都在博客园写博客，不过最近在逛园子的时候不小心看到了hexo,简直有种相见恨晚的感觉呀！在github上创建自己的开源博客，维护方便，主题多多，更重要的是，终于找到只属于自己的小窝啦！也希望自己能坚持写文^_^
 为了引起读者的兴趣，先介绍一下，搭建完成之后，只需这几个简单常用的命令，就能够轻松维护自己的博客了：
 $ hexo new(n)    //写文章$ hexo generate(g)">
 <meta property="og:image" content="http://7xtawy.com2.z0.glb.clouddn.com/msysgit.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1.knpHVXXXXcmaXXXXXXXXXXX-1003-456.png">
-<meta property="og:updated_time" content="2016-05-21T09:10:14.386Z">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/home.png">
+<meta property="og:updated_time" content="2016-05-21T09:44:46.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建属于自己的博客">
 <meta name="twitter:description" content="一直都在博客园写博客，不过最近在逛园子的时候不小心看到了hexo,简直有种相见恨晚的感觉呀！在github上创建自己的开源博客，维护方便，主题多多，更重要的是，终于找到只属于自己的小窝啦！也希望自己能坚持写文^_^
@@ -27,7 +28,8 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <meta name="twitter:image" content="http://7xtawy.com2.z0.glb.clouddn.com/msysgit.png">
   
   
-    <link rel="icon" href="/favicon.ico">
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+    <!-- <link rel="icon" href="/favicon.ico?v=0.5.0"> -->
   
   <link rel="stylesheet" href="/css/style.css">
 
@@ -55,7 +57,7 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 		</a>
 
 		<hgroup>
-		  <h1 class="header-author"><a href="/">jarson</a></h1>
+		  <h1 class="header-author"><a href="/">luckykun</a></h1>
 		</hgroup>
 
 		
@@ -165,7 +167,7 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
       <nav id="mobile-nav">
   	<div class="overlay">
   		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">jarson</h1>
+  		<h1 class="header-author js-mobile-header hide">luckykun</h1>
   	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
@@ -175,7 +177,7 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 			
 			</div>
 			<hgroup>
-			  <h1 class="header-author">jarson</h1>
+			  <h1 class="header-author">luckykun</h1>
 			</hgroup>
 			
 			<p class="header-subtitle">我就是我，颜色不一样的烟火</p>
@@ -281,8 +283,11 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <li><code>备注2：网上大多教程是都是hexo2.x版本的，所以有很多坑。因此以下教程是针对hexo的版本为3.x以上的，大家放心使用。</code></li>
 </ul>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
-<li>安装node<br> 到<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>官网下载相应平台的最新版本，一路安装即可。</li>
-<li>安装git<br> 根据系统不同安装相应的git环境。mac系统不多说，windows一般安装msysgit。下面是我本地msysgit的截图，也还是挺好用的:<br> <img src="http://7xtawy.com2.z0.glb.clouddn.com/msysgit.png" alt=""></li>
+<li>安装node</li>
+<li>到<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>官网下载相应平台的最新版本，一路安装即可。</li>
+<li>安装git</li>
+<li>根据系统不同安装相应的git环境。mac系统不多说，windows一般安装msysgit。下面是我本地msysgit的截图，也还是挺好用的:</li>
+<li><img src="http://7xtawy.com2.z0.glb.clouddn.com/msysgit.png" alt=""></li>
 <li><p>安装hexo</p>
 <p>  使用以下命令安装hexo到全局</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
@@ -322,15 +327,16 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 </ul>
 <p>clone主题代码</p>
 <p>在目录下执行下面的命令clone主题代码：</p>
-  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ git clone https:<span class="comment">//github.com/litten/hexo-theme-yilia.git themes/yilia</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ git clone https:<span class="comment">//github.com/litten/hexo-theme-yilia.git themes/yilia</span></span><br></pre></td></tr></table></figure>
 <p>修改配置文件</p>
+<p><code>温馨提示：修改的时候，每个冒号后面都需要留一个英文空格，不然会出现很蛋疼的报错！</code></p>
 <p>修改<code>Blog/_config.yml</code>文件：</p>
-  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">theme: yilia    <span class="comment">//默认为landscape</span></span><br></pre></td></tr></table></figure>
-<pre><code>修改`themes/yilia/_config.yml`文件：
-</code></pre>  <figure class="highlight"><table><tr><td class="code"><pre><span class="line"># Header</span><br><span class="line">menu:</span><br><span class="line">    主页: /</span><br><span class="line">    所有文章: /archives</span><br><span class="line">    丝茉茉: /categories/simomo/</span><br><span class="line">    相册: /photos</span><br><span class="line"># SubNav</span><br><span class="line">subnav:</span><br><span class="line">    github: "https://github.com/luckykun"</span><br><span class="line">     weibo: "http://weibo.com/u/2732624311"</span><br><span class="line">    zhihu: "#"</span><br><span class="line">    rss: /atom.xml</span><br><span class="line"># Content</span><br><span class="line">excerpt_link: 阅读全文</span><br><span class="line">fancybox: true</span><br><span class="line">mathjax: true</span><br><span class="line">top: true</span><br><span class="line"># 是否开启动画效果</span><br><span class="line">animate: true</span><br><span class="line"># 是否在新窗口打开链接</span><br><span class="line">open_in_new: false</span><br><span class="line"># Miscellaneous</span><br><span class="line">google_analytics: ''</span><br><span class="line">favicon: /favicon.ico</span><br><span class="line">#你的头像url</span><br><span class="line">avatar: /img.png</span><br><span class="line">#是否开启分享</span><br><span class="line">share_jia: true</span><br><span class="line">share_addthis: false</span><br><span class="line">#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key</span><br><span class="line">#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论</span><br><span class="line">duoshuo: jarson7426</span><br><span class="line">#是否开启云标签</span><br><span class="line">tagcloud: true</span><br><span class="line">#是否开启友情链接</span><br><span class="line">#不开启——</span><br><span class="line">friends: false</span><br><span class="line">#开启——</span><br><span class="line">#friends:</span><br><span class="line">#  百度一下: http://www.baidu.com</span><br><span class="line">#  淘宝商城: http://www.taobao.com</span><br><span class="line">#是否开启“关于我”。</span><br><span class="line">#不开启——</span><br><span class="line">#aboutme: false</span><br><span class="line">#开启——</span><br><span class="line">aboutme: true</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">theme: yilia    <span class="comment">//默认为landscape</span></span><br></pre></td></tr></table></figure>
+<p>修改<code>themes/yilia/_config.yml</code>文件：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"># Header</span><br><span class="line">menu:</span><br><span class="line">    主页: /</span><br><span class="line">    所有文章: /archives</span><br><span class="line">    丝茉茉: /categories/simomo/</span><br><span class="line">    相册: /photos</span><br><span class="line"># SubNav</span><br><span class="line">subnav:</span><br><span class="line">    github: "https://github.com/luckykun"</span><br><span class="line">     weibo: "http://weibo.com/u/2732624311"</span><br><span class="line">    zhihu: "#"</span><br><span class="line">    rss: /atom.xml</span><br><span class="line"># Content</span><br><span class="line">excerpt_link: 阅读全文</span><br><span class="line">fancybox: true</span><br><span class="line">mathjax: true</span><br><span class="line">top: true</span><br><span class="line"># 是否开启动画效果</span><br><span class="line">animate: true</span><br><span class="line"># 是否在新窗口打开链接</span><br><span class="line">open_in_new: false</span><br><span class="line"># Miscellaneous</span><br><span class="line">google_analytics: ''</span><br><span class="line">favicon: /favicon.ico</span><br><span class="line">#你的头像url</span><br><span class="line">avatar: /img.png</span><br><span class="line">#是否开启分享</span><br><span class="line">share_jia: true</span><br><span class="line">share_addthis: false</span><br><span class="line">#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key</span><br><span class="line">#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论</span><br><span class="line">duoshuo: jarson7426</span><br><span class="line">#是否开启云标签</span><br><span class="line">tagcloud: true</span><br><span class="line">#是否开启友情链接</span><br><span class="line">#不开启——</span><br><span class="line">friends: false</span><br><span class="line">#开启——</span><br><span class="line">#friends:</span><br><span class="line">#  百度一下: http://www.baidu.com</span><br><span class="line">#  淘宝商城: http://www.taobao.com</span><br><span class="line">#是否开启“关于我”。</span><br><span class="line">#不开启——</span><br><span class="line">#aboutme: false</span><br><span class="line">#开启——</span><br><span class="line">aboutme: true</span><br></pre></td></tr></table></figure>
 <p>查看效果</p>
-<pre><code>更改主题之后可以使用命令`hexo server`打开本地服务，查看效果。
-</code></pre><h1 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h1><p>上面所有的操作完成之后，你就可以将你的Blog项目部署到github上了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">更改主题之后可以使用命令`hexo server`打开本地服务，查看效果。</span><br></pre></td></tr></table></figure>
+<h1 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h1><p>上面所有的操作完成之后，你就可以将你的Blog项目部署到github上了。</p>
 <ul>
 <li><p>部署之前先修改<code>Blog/_config.yml</code>文件。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repository: https:<span class="comment">//github.com/luckykun/luckykun.github.io.git  //luckykun替换为你自己的用户名</span></span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
@@ -340,6 +346,16 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>  <code>备注：如果执行上述命令报错，你可以试试下面这个命令再试。</code></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>另外，部署的时候会提示输入github的账号和密码。由于每次部署都会提示，很烦人，也很影响效率，所以你可以试着这样做：</p>
+<ul>
+<li><p>在系统环境变量中设置一个环境变量</p>
+<p><img src="http://7xtawy.com1.z0.glb.clouddn.com/home.png" alt=""></p>
+</li>
+<li><p>然后在你的用户目录（C:\Users\username）下新建一个叫 _netrc的文件，内容如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">machine github.com</span><br><span class="line">login your name</span><br><span class="line">password xxxxxx</span><br></pre></td></tr></table></figure>
+<p>然后你可以再部署试试，就不需要输入用户和密码，方便友好多了^_^</p>
+</li>
+</ul>
 </li>
 </ul>
 <p>部署成功后，你在浏览器中输入<a href="http://luckykun.github.io/" target="_blank" rel="external">luckykun.github.io</a>，就能看到和本地一样的效果了。</p>
@@ -350,6 +366,8 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
 <li>添加回到顶部的功能。</li>
 <li>添加总站访问量和文章阅读量</li>
 <li>添加文章目录显示</li>
+<li>添加相册功能</li>
+<li>给网站配置独立的域名</li>
 </ul>
 <p>其实修改这些非常简单，只要你有html、css、js的基础就可以。 思路：因为整个网站都是依赖yilia主题。所以应该在theme/yilia文件夹下，修改对应的dom结构，然后添加对应的效果或者事件绑定就可以实现了。</p>
 <p>如果大家还有问题，欢迎留言，我会很乐意为大家解答的。</p>
@@ -460,7 +478,7 @@ $ hexo new(n)    //写文章$ hexo generate(g)">
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-             --- &copy; 2016 jarson
+             --- &copy; 2016 luckykun
       	</div>
     </div>
   </div>

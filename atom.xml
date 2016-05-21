@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>jarson的博客</title>
+  <title>luckykun-不一样的世界</title>
   <subtitle>我就是我，颜色不一样的烟火</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -9,7 +9,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>jarson</name>
+    <name>luckykun</name>
     
   </author>
   
@@ -844,7 +844,7 @@
     <link href="http://yoursite.com/work/2016-04-23/heoll-hexo.html"/>
     <id>http://yoursite.com/work/2016-04-23/heoll-hexo.html</id>
     <published>2016-04-23T14:11:51.000Z</published>
-    <updated>2016-05-21T09:10:14.386Z</updated>
+    <updated>2016-05-21T09:44:46.508Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;一直都在博客园写博客，不过最近在逛园子的时候不小心看到了&lt;code&gt;hexo&lt;/code&gt;,简直有种相见恨晚的感觉呀！在github上创建自己的开源博客，维护方便，主题多多，更重要的是，终于找到只属于自己的小窝啦！也希望自己能坚持写文^_^&lt;/p&gt;
@@ -857,8 +857,11 @@
 &lt;li&gt;&lt;code&gt;备注2：网上大多教程是都是hexo2.x版本的，所以有很多坑。因此以下教程是针对hexo的版本为3.x以上的，大家放心使用。&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;安装node&lt;br&gt; 到&lt;a href=&quot;http://nodejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node.js&lt;/a&gt;官网下载相应平台的最新版本，一路安装即可。&lt;/li&gt;
-&lt;li&gt;安装git&lt;br&gt; 根据系统不同安装相应的git环境。mac系统不多说，windows一般安装msysgit。下面是我本地msysgit的截图，也还是挺好用的:&lt;br&gt; &lt;img src=&quot;http://7xtawy.com2.z0.glb.clouddn.com/msysgit.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;li&gt;安装node&lt;/li&gt;
+&lt;li&gt;到&lt;a href=&quot;http://nodejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node.js&lt;/a&gt;官网下载相应平台的最新版本，一路安装即可。&lt;/li&gt;
+&lt;li&gt;安装git&lt;/li&gt;
+&lt;li&gt;根据系统不同安装相应的git环境。mac系统不多说，windows一般安装msysgit。下面是我本地msysgit的截图，也还是挺好用的:&lt;/li&gt;
+&lt;li&gt;&lt;img src=&quot;http://7xtawy.com2.z0.glb.clouddn.com/msysgit.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;安装hexo&lt;/p&gt;
 &lt;p&gt;  使用以下命令安装hexo到全局&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install -g hexo&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -898,15 +901,16 @@
 &lt;/ul&gt;
 &lt;p&gt;clone主题代码&lt;/p&gt;
 &lt;p&gt;在目录下执行下面的命令clone主题代码：&lt;/p&gt;
-  &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git clone https:&lt;span class=&quot;comment&quot;&gt;//github.com/litten/hexo-theme-yilia.git themes/yilia&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git clone https:&lt;span class=&quot;comment&quot;&gt;//github.com/litten/hexo-theme-yilia.git themes/yilia&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;修改配置文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;温馨提示：修改的时候，每个冒号后面都需要留一个英文空格，不然会出现很蛋疼的报错！&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;修改&lt;code&gt;Blog/_config.yml&lt;/code&gt;文件：&lt;/p&gt;
-  &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;theme: yilia    &lt;span class=&quot;comment&quot;&gt;//默认为landscape&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;pre&gt;&lt;code&gt;修改`themes/yilia/_config.yml`文件：
-&lt;/code&gt;&lt;/pre&gt;  &lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Header&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;menu:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    主页: /&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    所有文章: /archives&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    丝茉茉: /categories/simomo/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    相册: /photos&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# SubNav&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;subnav:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    github: &quot;https://github.com/luckykun&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     weibo: &quot;http://weibo.com/u/2732624311&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    zhihu: &quot;#&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    rss: /atom.xml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# Content&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;excerpt_link: 阅读全文&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fancybox: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mathjax: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;top: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 是否开启动画效果&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;animate: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 是否在新窗口打开链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;open_in_new: false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# Miscellaneous&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;google_analytics: &#39;&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;favicon: /favicon.ico&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#你的头像url&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;avatar: /img.png&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#是否开启分享&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;share_jia: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;share_addthis: false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;duoshuo: jarson7426&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#是否开启云标签&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tagcloud: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#是否开启友情链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#不开启——&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;friends: false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#开启——&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#friends:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#  百度一下: http://www.baidu.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#  淘宝商城: http://www.taobao.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#是否开启“关于我”。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#不开启——&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#aboutme: false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#开启——&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;aboutme: true&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;theme: yilia    &lt;span class=&quot;comment&quot;&gt;//默认为landscape&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;修改&lt;code&gt;themes/yilia/_config.yml&lt;/code&gt;文件：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# Header&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;menu:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    主页: /&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    所有文章: /archives&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    丝茉茉: /categories/simomo/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    相册: /photos&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# SubNav&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;subnav:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    github: &quot;https://github.com/luckykun&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     weibo: &quot;http://weibo.com/u/2732624311&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    zhihu: &quot;#&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    rss: /atom.xml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# Content&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;excerpt_link: 阅读全文&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fancybox: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mathjax: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;top: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 是否开启动画效果&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;animate: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 是否在新窗口打开链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;open_in_new: false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# Miscellaneous&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;google_analytics: &#39;&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;favicon: /favicon.ico&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#你的头像url&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;avatar: /img.png&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#是否开启分享&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;share_jia: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;share_addthis: false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;duoshuo: jarson7426&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#是否开启云标签&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tagcloud: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#是否开启友情链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#不开启——&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;friends: false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#开启——&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#friends:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#  百度一下: http://www.baidu.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#  淘宝商城: http://www.taobao.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#是否开启“关于我”。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#不开启——&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#aboutme: false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#开启——&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;aboutme: true&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;查看效果&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;更改主题之后可以使用命令`hexo server`打开本地服务，查看效果。
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;部署到github&quot;&gt;&lt;a href=&quot;#部署到github&quot; class=&quot;headerlink&quot; title=&quot;部署到github&quot;&gt;&lt;/a&gt;部署到github&lt;/h1&gt;&lt;p&gt;上面所有的操作完成之后，你就可以将你的Blog项目部署到github上了。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;更改主题之后可以使用命令`hexo server`打开本地服务，查看效果。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;部署到github&quot;&gt;&lt;a href=&quot;#部署到github&quot; class=&quot;headerlink&quot; title=&quot;部署到github&quot;&gt;&lt;/a&gt;部署到github&lt;/h1&gt;&lt;p&gt;上面所有的操作完成之后，你就可以将你的Blog项目部署到github上了。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;部署之前先修改&lt;code&gt;Blog/_config.yml&lt;/code&gt;文件。&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    repository: https:&lt;span class=&quot;comment&quot;&gt;//github.com/luckykun/luckykun.github.io.git  //luckykun替换为你自己的用户名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    branch: master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -916,6 +920,16 @@
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;  &lt;code&gt;备注：如果执行上述命令报错，你可以试试下面这个命令再试。&lt;/code&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install hexo-deployer-git --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;另外，部署的时候会提示输入github的账号和密码。由于每次部署都会提示，很烦人，也很影响效率，所以你可以试着这样做：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在系统环境变量中设置一个环境变量&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/home.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;然后在你的用户目录（C:\Users\username）下新建一个叫 _netrc的文件，内容如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;machine github.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;login your name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;password xxxxxx&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后你可以再部署试试，就不需要输入用户和密码，方便友好多了^_^&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;部署成功后，你在浏览器中输入&lt;a href=&quot;http://luckykun.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;luckykun.github.io&lt;/a&gt;，就能看到和本地一样的效果了。&lt;/p&gt;
@@ -926,6 +940,8 @@
 &lt;li&gt;添加回到顶部的功能。&lt;/li&gt;
 &lt;li&gt;添加总站访问量和文章阅读量&lt;/li&gt;
 &lt;li&gt;添加文章目录显示&lt;/li&gt;
+&lt;li&gt;添加相册功能&lt;/li&gt;
+&lt;li&gt;给网站配置独立的域名&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;其实修改这些非常简单，只要你有html、css、js的基础就可以。 思路：因为整个网站都是依赖yilia主题。所以应该在theme/yilia文件夹下，修改对应的dom结构，然后添加对应的效果或者事件绑定就可以实现了。&lt;/p&gt;
 &lt;p&gt;如果大家还有问题，欢迎留言，我会很乐意为大家解答的。&lt;/p&gt;
