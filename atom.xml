@@ -241,10 +241,10 @@
     <link href="http://yoursite.com/work/2016-05-12/high-extend.html"/>
     <id>http://yoursite.com/work/2016-05-12/high-extend.html</id>
     <published>2016-05-12T04:11:51.000Z</published>
-    <updated>2016-05-15T15:22:52.655Z</updated>
+    <updated>2016-05-21T14:49:15.316Z</updated>
     
     <content type="html">&lt;hr&gt;
-&lt;header style=&quot;margin-top:-55px;text-align:center&quot;&gt;&lt;br&gt;    &lt;p style=&quot;font-size: 1.5em;margin-top: 30px;&quot;&gt;&lt;span&gt;highextend图表示例&lt;/span&gt;&lt;a href=&quot;https://github.com/jarson7426/highextend&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/p&gt;&lt;br&gt;&lt;/header&gt;
+&lt;header style=&quot;margin-top:-55px;text-align:center&quot;&gt;&lt;br&gt;    &lt;p style=&quot;font-size: 1.5em;margin-top: 30px;&quot;&gt;&lt;span&gt;highextend图表示例&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/highextend&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/p&gt;&lt;br&gt;&lt;/header&gt;
 
 &lt;p&gt;highextend是基于highcharts进一步封装的图表组件，组件暴露一个&lt;code&gt;Hxt&lt;/code&gt;的全局对象，它有以下一些方法来绘制不同类的图形，从此以后，画图只需简简单单的几行配置就ok了！赶紧点进来看看实例吧！&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Hxt.line(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//渲染默认折线图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.spline(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//曲线图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.scatter(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//散点图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.bubble(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//bubble图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.column(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//柱状图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.bar(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//bar图，（横向柱状图）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.area(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//区域图（默认为平滑区域图）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.pie(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//圆饼图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.polar(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//雷达图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.pyramid(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//金字塔图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.mix(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//混合图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -252,7 +252,7 @@
 &lt;h1 id=&quot;实例展示&quot;&gt;&lt;a href=&quot;#实例展示&quot; class=&quot;headerlink&quot; title=&quot;实例展示&quot;&gt;&lt;/a&gt;实例展示&lt;/h1&gt;&lt;div class=&quot;high-extend-container&quot;&gt;&lt;br&gt;    &lt;div class=&quot;chart&quot; id=&quot;line-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;chart&quot; id=&quot;area-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;chart&quot; id=&quot;column-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;chart&quot; id=&quot;mix-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;small-chart&quot; id=&quot;pie-chart1&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;small-chart&quot; id=&quot;pie-chart2&quot; style=&quot;margin-top:-28px;&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
-&lt;h1 id=&quot;使用文档&quot;&gt;&lt;a href=&quot;#使用文档&quot; class=&quot;headerlink&quot; title=&quot;使用文档&quot;&gt;&lt;/a&gt;使用文档&lt;/h1&gt;&lt;p&gt;本页面的实例不全，读者可以在&lt;a href=&quot;https://github.com/jarson7426/highextend&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;我的github&lt;/a&gt;上访问到这个项目的所有代码，然后down下来执行以下代码就能直接在浏览器看到所有实例。&lt;/p&gt;
+&lt;h1 id=&quot;使用文档&quot;&gt;&lt;a href=&quot;#使用文档&quot; class=&quot;headerlink&quot; title=&quot;使用文档&quot;&gt;&lt;/a&gt;使用文档&lt;/h1&gt;&lt;p&gt;本页面的实例不全，读者可以在&lt;a href=&quot;https://github.com/luckykun/highextend&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;我的github&lt;/a&gt;上访问到这个项目的所有代码，然后down下来执行以下代码就能直接在浏览器看到所有实例。&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install   &lt;span class=&quot;comment&quot;&gt;//安装依赖&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gulp   &lt;span class=&quot;comment&quot;&gt;//启动服务&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;在上面介绍的方法中，有&lt;code&gt;elem&lt;/code&gt;, &lt;code&gt;data&lt;/code&gt;, &lt;code&gt;options&lt;/code&gt;三个参数，下面依次介绍以下：&lt;/p&gt;
 &lt;ul&gt;
@@ -374,7 +374,7 @@
 &lt;/style&gt;
 
 &lt;script src=&quot;http://cdn.hcharts.cn/highcharts/highcharts.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://rawgit.com/jarson7426/highextend/daily/0.0.1/build/js/highextend-min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/luckykun/highextend/daily/0.0.1/build/js/highextend-min.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
     var lineData = {
         &quot;items&quot;: [{
@@ -501,7 +501,7 @@
     <summary type="html">
     
       &lt;hr&gt;
-&lt;header style=&quot;margin-top:-55px;text-align:center&quot;&gt;&lt;br&gt;    &lt;p style=&quot;font-size: 1.5em;margin-top: 30px;&quot;&gt;&lt;span&gt;highextend图表示例&lt;/span&gt;&lt;a href=&quot;https://github.com/jarson7426/highextend&quot; style=&quot;font-size:14px;font-weight:normal;&quot;&gt;view on github&lt;/a&gt;&lt;/p&gt;&lt;br&gt;&lt;/header&gt;
+&lt;header style=&quot;margin-top:-55px;text-align:center&quot;&gt;&lt;br&gt;    &lt;p style=&quot;font-size: 1.5em;margin-top: 30px;&quot;&gt;&lt;span&gt;highextend图表示例&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/highextend&quot; style=&quot;font-size:14px;font-weight:normal;&quot;&gt;view on github&lt;/a&gt;&lt;/p&gt;&lt;br&gt;&lt;/header&gt;
 
 &lt;p&gt;highextend是基于highcharts进一步封装的图表组件，组件暴露一个&lt;code&gt;Hxt&lt;/code&gt;的全局对象，它有以下一些方法来绘制不同类的图形，从此以后，画图只需简简单单的几行配置就ok了！赶紧点进来看看实例吧！&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Hxt.line(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//渲染默认折线图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.spline(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//曲线图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.scatter(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//散点图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.bubble(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//bubble图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.column(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//柱状图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.bar(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//bar图，（横向柱状图）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.area(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//区域图（默认为平滑区域图）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.pie(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//圆饼图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.polar(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//雷达图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.pyramid(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//金字塔图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hxt.mix(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//混合图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -613,15 +613,15 @@
     <link href="http://yoursite.com/work/2016-05-08/react-todo.html"/>
     <id>http://yoursite.com/work/2016-05-08/react-todo.html</id>
     <published>2016-05-08T14:11:51.000Z</published>
-    <updated>2016-05-16T15:09:47.360Z</updated>
+    <updated>2016-05-21T14:45:16.258Z</updated>
     
     <content type="html">&lt;hr&gt;
-&lt;header style=&quot;margin-top:-55px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/jarson7426/react-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
+&lt;header style=&quot;margin-top:-55px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/react-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
 
 &lt;div class=&quot;container&quot; style=&quot;margin-top:-30px;&quot;&gt;&lt;br&gt;    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;script src=&quot;https://rawgit.com/jarson7426/react-demo/master/src/vendor/react.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://rawgit.com/jarson7426/react-demo/master/out/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/luckykun/react-demo/master/src/vendor/react.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/luckykun/react-demo/master/out/bundle.js&quot;&gt;&lt;/script&gt;
 
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;code&gt;React-Todos&lt;/code&gt;是一个管理任务清单的例子，数据使用localstorage存储在浏览器中，有以下几点功能：&lt;/p&gt;
@@ -637,12 +637,12 @@
     <summary type="html">
     
       &lt;hr&gt;
-&lt;header style=&quot;margin-top:-55px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/jarson7426/react-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
+&lt;header style=&quot;margin-top:-55px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/react-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
 
 &lt;div class=&quot;container&quot; style=&quot;margin-top:-30px;&quot;&gt;&lt;br&gt;    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;script src=&quot;https://rawgit.com/jarson7426/react-demo/master/src/vendor/react.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://rawgit.com/jarson7426/react-demo/master/out/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/luckykun/react-demo/master/src/vendor/react.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/luckykun/react-demo/master/out/bundle.js&quot;&gt;&lt;/script&gt;
     
     </summary>
     
@@ -786,13 +786,13 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
       <category term="grunt" scheme="http://yoursite.com/tags/grunt/"/>
     
       <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
     
       <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
-    
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -961,9 +961,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   

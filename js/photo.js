@@ -18,8 +18,8 @@ define([], function () {
             var html, li = "";
             for (var i = begin; i < end && i < data.length; i++) {
                 li += '<li><div class="img-box">' +
-                    '<a class="img-bg" rel="example_group" href="https://raw.githubusercontent.com/jarson7426/blog-back-up/master/photos/' + data[i] + '"></a>' +
-                    '<img lazy-src="https://raw.githubusercontent.com/jarson7426/blog-back-up/master/photos/' + data[i] + '" />' +
+                    '<a class="img-bg" rel="example_group" href="https://raw.githubusercontent.com/luckykun/blog-back-up/master/photos/' + data[i] + '"></a>' +
+                    '<img lazy-src="https://raw.githubusercontent.com/luckykun/blog-back-up/master/photos/' + data[i] + '" />' +
                     '</li>';
             }
 
