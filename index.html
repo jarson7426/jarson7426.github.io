@@ -236,11 +236,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<blockquote>
 <p>React 的核心思想是：封装组件，各个组件维护自己的状态和 UI，当状态变更，自动重新渲染整个组件。</p>
 </blockquote>
-<p>最近前端界闹的沸沸扬扬的技术当属<code>react</code>了，加上项目需要等等原因，自己也决定花些时间来好好认识下这个东西。然后花时间自己写了一个demo：<code>react-todos</code>， 你可以先<a href="http://luckykun.com/work/2016-05-08/react-todo.html">点这里去看react-todo</a></p>
-<p>react首先值得拍手称赞的是它所有的开发都基于一个<code>组件（component）</code>，组件和组件之间传递方法，而且每个组件都有一个<code>状态（state）</code>，当方法改变了这个状态值时，整个组件就会<code>重绘</code>，从而达到刷新，另外，说到重绘就要提到<code>虚拟dom</code>了，就是用js模拟dom结构，等整个组件的dom更新完毕，才渲染到页面，简单来说只更新了相比之前改变了的部分，而不是全部刷新，所以效率很高。<br>
+<p>最近前端界闹的沸沸扬扬的技术当属<code>react</code>了，加上项目需要等等原因，自己也决定花些时间来好好认识下这个东西。然后学习的时候顺便花时间写了一个demo：<code>react-todos</code>， 为了提起兴趣，你可以先<a href="http://luckykun.com/work/2016-05-08/react-todo.html">点这里去看react-todo</a></p>
+<p>首先react值得拍手称赞的是它所有的开发都基于<code>组件（component）</code>，然后组件和组件之间通过props传递方法，每个组件都有一个<code>状态（state）</code>，当某个方法改变了这个状态值时，整个组件就会<code>重绘</code>，从而达到刷新。另外，说到重绘就要提到<code>虚拟dom</code>了，就是用js模拟dom结构，等整个组件的dom更新完毕，才渲染到页面，简单来说只更新了相比之前改变了的部分，而不是全部刷新，所以效率很高。<br>
       
     </div>
     

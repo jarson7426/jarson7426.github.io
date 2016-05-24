@@ -282,7 +282,6 @@ a {
   height: 180px;
   background-color: #ef7522;
   position: absolute;
-  opacity: 0.7;
 }
 #container .left-col .intrude-less {
   width: 76%;
@@ -295,6 +294,7 @@ a {
   min-height: 100%;
   background: #eaeaea;
   left: 300px;
+  border-top: 3px solid #ef7522;
   width: auto;
 }
 @media screen and (max-width: 800px) {
