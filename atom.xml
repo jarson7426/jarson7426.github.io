@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-24T14:15:11.533Z</updated>
+  <updated>2016-05-29T03:07:20.830Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tiny-heart-demo</title>
+    <link href="http://yoursite.com/work/2016-05-29/tiny-heart-demo.html"/>
+    <id>http://yoursite.com/work/2016-05-29/tiny-heart-demo.html</id>
+    <published>2016-05-29T01:41:43.000Z</published>
+    <updated>2016-05-29T03:07:20.830Z</updated>
+    
+    <content type="html">&lt;hr&gt;
+&lt;style&gt;
+.introduce{width:800px;min-height:50px;margin:0 auto;overflow:hidden;margin-top:-40px;}
+.introduce p.title{width:800px;font-size: 16px;font-weight: bold;text-align: center;}
+.introduce ul{width: 800px;margin-top: -15px;}
+.introduce ul li{width: 800px;min-height: 20px;line-height: 20px;list-style:none;}
+.introduce ul li:before {content:inherit;display:none;}
+.page{width: 800px;min-height: 600px;margin: 0px auto;margin-top: 6px;}
+#main{width: 800px;height: 600px;position: relative;top: -60px;}
+#canvas1, #canvas2 {width: 800px;height: 600px;position: absolute;left: 0;top: 0;}
+#canvas1{z-index: 1;}
+#canvas2{z-index: 0;}
+&lt;/style&gt;
+
+&lt;p&gt;&lt;header style=&quot;margin-top:-55px;text-align:center;&quot;&gt;&lt;br&gt;    &lt;h1&gt;&lt;span&gt;TinyHeart&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/tinyHeart&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;&lt;/p&gt;
+&lt;div class=&quot;introduce&quot;&gt;&lt;br&gt;    &lt;p class=&quot;title&quot;&gt;游戏规则：&lt;/p&gt;&lt;br&gt;    &lt;ul&gt;&lt;li&gt;1. 大鱼跟着鼠标的位置移动而吃到果实，如吃到红色果实，身体变红，画布下方的个数加1；如吃到蓝色果实，身体变蓝，画布下方的倍数加1。&lt;/li&gt;&lt;li&gt;2. 画布右上角显示着小鱼的体力值，初始为10，身体为红色，随着时间的推移，体力值减小，身体颜色变淡。&lt;/li&gt;&lt;li&gt;3. 大鱼吃到果实之后可以喂小鱼，此时小鱼的体力值会根据大鱼果实的数量相应增加，画布上方的分值等于画布下方的倍数乘以个数的累加和。&lt;/li&gt;&lt;li&gt;4. 当小鱼体力值减到0时，游戏结束；点击画布，则可重新开始游戏。好了，拯救小鱼行动开始，躁起来吧！&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;div class=&quot;page&quot;&gt;&lt;br&gt;    &lt;div class=&quot;content&quot; id=&quot;main&quot;&gt;&lt;br&gt;    &lt;canvas id=&quot;canvas1&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;&lt;/canvas&gt;&lt;br&gt;    &lt;canvas id=&quot;canvas2&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;&lt;/canvas&gt;&lt;br&gt;&lt;/div&gt;
+
+
+&lt;script src=&quot;https://rawgit.com/luckykun/tinyHeart/master/js/common-min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/luckykun/tinyHeart/master/js/index-min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    jzk.startgame();
+&lt;/script&gt;
+
+
+&lt;hr&gt;
+&lt;/div&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;style&gt;
+.introduce{width:800px;min-height:50px;margin:0 auto;overflow:hidden;margin-top:-40px;}
+.introduce p.title{width:800px;font-size: 16px;font-weight: bold;text-align: center;}
+.introduce ul{width: 800px;margin-top: -15px;}
+.introduce ul li{width: 800px;min-height: 20px;line-height: 20px;list-style:none;}
+.introduce ul li:before {content:inherit;display:none;}
+.page{width: 800px;min-height: 600px;margin: 0px auto;margin-top: 6px;}
+#main{width: 800px;height: 600px;position: relative;top: -60px;}
+#canvas1, #canvas2 {width: 800px;height: 600px;position: absolute;left: 0;top: 0;}
+#canvas1{z-index: 1;}
+#canvas2{z-index: 0;}
+&lt;/style&gt;
+
+&lt;p&gt;&lt;header style=&quot;margin-top:-55px;text-align:center;&quot;&gt;&lt;br&gt;    &lt;h1&gt;&lt;span&gt;TinyHeart&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/tinyHeart&quot; style=&quot;font-size:14px;font-weight:normal;&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;&lt;/p&gt;
+&lt;div class=&quot;introduce&quot;&gt;&lt;br&gt;    &lt;p class=&quot;title&quot;&gt;游戏规则：&lt;/p&gt;&lt;br&gt;    &lt;ul&gt;&lt;li&gt;1. 大鱼跟着鼠标的位置移动而吃到果实，如吃到红色果实，身体变红，画布下方的个数加1；如吃到蓝色果实，身体变蓝，画布下方的倍数加1。&lt;/li&gt;&lt;li&gt;2. 画布右上角显示着小鱼的体力值，初始为10，身体为红色，随着时间的推移，体力值减小，身体颜色变淡。&lt;/li&gt;&lt;li&gt;3. 大鱼吃到果实之后可以喂小鱼，此时小鱼的体力值会根据大鱼果实的数量相应增加，画布上方的分值等于画布下方的倍数乘以个数的累加和。&lt;/li&gt;&lt;li&gt;4. 当小鱼体力值减到0时，游戏结束；点击画布，则可重新开始游戏。好了，拯救小鱼行动开始，躁起来吧！&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="工作" scheme="http://yoursite.com/categories/work/"/>
+    
+    
+      <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
+    
+      <category term="html5" scheme="http://yoursite.com/tags/html5/"/>
+    
+      <category term="canvas" scheme="http://yoursite.com/tags/canvas/"/>
+    
+  </entry>
   
   <entry>
     <title>React入门最好的实例－TodoList</title>
