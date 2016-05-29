@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-29T03:07:20.830Z</updated>
+  <updated>2016-05-29T04:20:44.577Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,15 +20,12 @@
     <link href="http://yoursite.com/work/2016-05-29/tiny-heart-demo.html"/>
     <id>http://yoursite.com/work/2016-05-29/tiny-heart-demo.html</id>
     <published>2016-05-29T01:41:43.000Z</published>
-    <updated>2016-05-29T03:07:20.830Z</updated>
+    <updated>2016-05-29T04:20:44.577Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;style&gt;
 .introduce{width:800px;min-height:50px;margin:0 auto;overflow:hidden;margin-top:-40px;}
 .introduce p.title{width:800px;font-size: 16px;font-weight: bold;text-align: center;}
-.introduce ul{width: 800px;margin-top: -15px;}
-.introduce ul li{width: 800px;min-height: 20px;line-height: 20px;list-style:none;}
-.introduce ul li:before {content:inherit;display:none;}
 .page{width: 800px;min-height: 600px;margin: 0px auto;margin-top: 6px;}
 #main{width: 800px;height: 600px;position: relative;top: -60px;}
 #canvas1, #canvas2 {width: 800px;height: 600px;position: absolute;left: 0;top: 0;}
@@ -37,7 +34,7 @@
 &lt;/style&gt;
 
 &lt;p&gt;&lt;header style=&quot;margin-top:-55px;text-align:center;&quot;&gt;&lt;br&gt;    &lt;h1&gt;&lt;span&gt;TinyHeart&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/tinyHeart&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;&lt;/p&gt;
-&lt;div class=&quot;introduce&quot;&gt;&lt;br&gt;    &lt;p class=&quot;title&quot;&gt;游戏规则：&lt;/p&gt;&lt;br&gt;    &lt;ul&gt;&lt;li&gt;1. 大鱼跟着鼠标的位置移动而吃到果实，如吃到红色果实，身体变红，画布下方的个数加1；如吃到蓝色果实，身体变蓝，画布下方的倍数加1。&lt;/li&gt;&lt;li&gt;2. 画布右上角显示着小鱼的体力值，初始为10，身体为红色，随着时间的推移，体力值减小，身体颜色变淡。&lt;/li&gt;&lt;li&gt;3. 大鱼吃到果实之后可以喂小鱼，此时小鱼的体力值会根据大鱼果实的数量相应增加，画布上方的分值等于画布下方的倍数乘以个数的累加和。&lt;/li&gt;&lt;li&gt;4. 当小鱼体力值减到0时，游戏结束；点击画布，则可重新开始游戏。好了，拯救小鱼行动开始，躁起来吧！&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;/div&gt;
+&lt;div class=&quot;introduce&quot;&gt;&lt;br&gt;    &lt;p class=&quot;title&quot;&gt;游戏规则：&lt;/p&gt;&lt;br&gt;    &lt;p&gt;1. 大鱼跟着鼠标的位置移动而吃到果实，如吃到红色果实，身体变红，画布下方的个数加1；如吃到蓝色果实，身体变蓝，画布下方的倍数加1。&lt;/p&gt;&lt;p&gt;2. 画布右上角显示着小鱼的体力值，初始为10，身体为红色，随着时间的推移，体力值减小，身体颜色变淡。&lt;/p&gt;&lt;p&gt;3. 大鱼吃到果实之后可以喂小鱼，此时小鱼的体力值会根据大鱼果实的数量相应增加，画布上方的分值等于画布下方的倍数乘以个数的累加和。&lt;/p&gt;&lt;p&gt;4. 当小鱼体力值减到0时，游戏结束；点击画布，则可重新开始游戏。好了，拯救小鱼行动开始，躁起来吧！&lt;/p&gt;&lt;br&gt;&lt;/div&gt;
 
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;div class=&quot;page&quot;&gt;&lt;br&gt;    &lt;div class=&quot;content&quot; id=&quot;main&quot;&gt;&lt;br&gt;    &lt;canvas id=&quot;canvas1&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;&lt;/canvas&gt;&lt;br&gt;    &lt;canvas id=&quot;canvas2&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;&lt;/canvas&gt;&lt;br&gt;&lt;/div&gt;
@@ -59,9 +56,6 @@
 &lt;style&gt;
 .introduce{width:800px;min-height:50px;margin:0 auto;overflow:hidden;margin-top:-40px;}
 .introduce p.title{width:800px;font-size: 16px;font-weight: bold;text-align: center;}
-.introduce ul{width: 800px;margin-top: -15px;}
-.introduce ul li{width: 800px;min-height: 20px;line-height: 20px;list-style:none;}
-.introduce ul li:before {content:inherit;display:none;}
 .page{width: 800px;min-height: 600px;margin: 0px auto;margin-top: 6px;}
 #main{width: 800px;height: 600px;position: relative;top: -60px;}
 #canvas1, #canvas2 {width: 800px;height: 600px;position: absolute;left: 0;top: 0;}
@@ -70,7 +64,7 @@
 &lt;/style&gt;
 
 &lt;p&gt;&lt;header style=&quot;margin-top:-55px;text-align:center;&quot;&gt;&lt;br&gt;    &lt;h1&gt;&lt;span&gt;TinyHeart&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/tinyHeart&quot; style=&quot;font-size:14px;font-weight:normal;&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;&lt;/p&gt;
-&lt;div class=&quot;introduce&quot;&gt;&lt;br&gt;    &lt;p class=&quot;title&quot;&gt;游戏规则：&lt;/p&gt;&lt;br&gt;    &lt;ul&gt;&lt;li&gt;1. 大鱼跟着鼠标的位置移动而吃到果实，如吃到红色果实，身体变红，画布下方的个数加1；如吃到蓝色果实，身体变蓝，画布下方的倍数加1。&lt;/li&gt;&lt;li&gt;2. 画布右上角显示着小鱼的体力值，初始为10，身体为红色，随着时间的推移，体力值减小，身体颜色变淡。&lt;/li&gt;&lt;li&gt;3. 大鱼吃到果实之后可以喂小鱼，此时小鱼的体力值会根据大鱼果实的数量相应增加，画布上方的分值等于画布下方的倍数乘以个数的累加和。&lt;/li&gt;&lt;li&gt;4. 当小鱼体力值减到0时，游戏结束；点击画布，则可重新开始游戏。好了，拯救小鱼行动开始，躁起来吧！&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;/div&gt;
+&lt;div class=&quot;introduce&quot;&gt;&lt;br&gt;    &lt;p class=&quot;title&quot;&gt;游戏规则：&lt;/p&gt;&lt;br&gt;    &lt;p&gt;1. 大鱼跟着鼠标的位置移动而吃到果实，如吃到红色果实，身体变红，画布下方的个数加1；如吃到蓝色果实，身体变蓝，画布下方的倍数加1。&lt;/p&gt;&lt;p&gt;2. 画布右上角显示着小鱼的体力值，初始为10，身体为红色，随着时间的推移，体力值减小，身体颜色变淡。&lt;/p&gt;&lt;p&gt;3. 大鱼吃到果实之后可以喂小鱼，此时小鱼的体力值会根据大鱼果实的数量相应增加，画布上方的分值等于画布下方的倍数乘以个数的累加和。&lt;/p&gt;&lt;p&gt;4. 当小鱼体力值减到0时，游戏结束；点击画布，则可重新开始游戏。好了，拯救小鱼行动开始，躁起来吧！&lt;/p&gt;&lt;br&gt;&lt;/div&gt;
     
     </summary>
     
@@ -78,6 +72,125 @@
     
     
       <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
+    
+      <category term="html5" scheme="http://yoursite.com/tags/html5/"/>
+    
+      <category term="canvas" scheme="http://yoursite.com/tags/canvas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>h5+canvas实现酷炫的小游戏</title>
+    <link href="http://yoursite.com/work/2016-05-29/tiny-heart-study.html"/>
+    <id>http://yoursite.com/work/2016-05-29/tiny-heart-study.html</id>
+    <published>2016-05-29T01:41:43.000Z</published>
+    <updated>2016-05-29T04:18:19.577Z</updated>
+    
+    <content type="html">&lt;p&gt;最近除了做业务，也在尝试学习h5和移动端，在这个过程中，学到了很多，利用h5和canvas做了一个爱心鱼的小游戏。源码在github上，down下来直接就能够运行。要是觉得还行，就给个star吧！&lt;a href=&quot;https://github.com/luckykun/tinyHeart&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;源码地址点这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下面我就做游戏的步骤来分享总结一下用到h5和canvas的API和一些常见的数学函数。推荐你先去玩一玩游戏，才能更好的明白这些逻辑。&lt;a href=&quot;http://luckykun.com/work/2016-05-29/tiny-heart-demo.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点这里去玩一下&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;首先，一个游戏最重要的就是动画，怎么让元素动起来呢？先来看一句话：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;元素的位置移动，就形成了动画。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一帧一帧的来渲染这个元素，而且这个元素每一帧的位置都不一样，我们的眼睛看到的就是动画了。OK，先来介绍&lt;code&gt;requestAnimationFrame&lt;/code&gt;这个函数。&lt;/p&gt;
+&lt;p&gt;我们都知道，隔一段时间重新渲染，可以用到&lt;code&gt;setTimeout&lt;/code&gt; 和&lt;code&gt;setInterval&lt;/code&gt;这两个函数，那这里为什么不用呢？&lt;/p&gt;
+&lt;p&gt;我来简单举个例子吧：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;setInterval(myFun, 1);  意思是隔一毫秒执行一个myFun函数，但是这样就有一个问题了，比如我myFun函数里面绘制的东西比较耗时，而1ms之内还没有完全绘制出来，但是这段代码强制1ms之后又开始绘制下一帧了，所以就会出现&lt;code&gt;丢帧&lt;/code&gt;的问题，而如果时间设置太长，就会出现&lt;code&gt;视觉卡顿&lt;/code&gt;的问题。&lt;/li&gt;
+&lt;li&gt;requestAnimationFrame(myFun); 如果我们这样写，又是什么意思呢？意思是根据&lt;code&gt;一定的时间间隔&lt;/code&gt;，会自动执行myFun函数来进行绘制。这个”一定的时间间隔”就是根据浏览器的性能或者网速快慢来决定了，总之，它会保证你绘制完这一帧，才会绘制下一帧，保证性能的同时，也保证动画的流畅。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;动画解决了，那么用什么来绘制每一帧的页面呢？这时就要用到h5的神奇—-&lt;code&gt;canvas&lt;/code&gt;了，所以canvas画布的API非常重要。&lt;/p&gt;
+&lt;h2 id=&quot;html文件&quot;&gt;&lt;a href=&quot;#html文件&quot; class=&quot;headerlink&quot; title=&quot;html文件&quot;&gt;&lt;/a&gt;html文件&lt;/h2&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;page&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;content&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;main&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;canvas1&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;800&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;600&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;canvas&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;canvas2&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;800&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;600&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;canvas&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;定义两个画布，分别在画布上绘制相应的物体；&lt;/li&gt;
+&lt;li&gt;canvas2 上绘制，背景、海葵、果实；&lt;/li&gt;
+&lt;li&gt;canvas1 上绘制，大鱼、小鱼、显示文字、圆圈特效；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;js文件&quot;&gt;&lt;a href=&quot;#js文件&quot; class=&quot;headerlink&quot; title=&quot;js文件&quot;&gt;&lt;/a&gt;js文件&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;init&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        can1 = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;canvas1&#39;&lt;/span&gt;);     &lt;span class=&quot;comment&quot;&gt;//画布&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ctx1 = can1.getContext(&lt;span class=&quot;string&quot;&gt;&#39;2d&#39;&lt;/span&gt;);   &lt;span class=&quot;comment&quot;&gt;//画笔&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        can2 = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;canvas2&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ctx2 = can2.getContext(&lt;span class=&quot;string&quot;&gt;&#39;2d&#39;&lt;/span&gt;);   &lt;span class=&quot;comment&quot;&gt;//下面的canvas&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;gameloop&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        requestAnimFrame(gameLoop);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//绘制物体...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; requestAnimFrame = (&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.requestAnimationFrame || &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.webkitRequestAnimationFrame || &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.mozRequestAnimationFrame || &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.oRequestAnimationFrame || &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.msRequestAnimationFrame ||&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;callback, element&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.setTimeout(callback, &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt; / &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;init函数初始化一些变量，比如海葵对象，大鱼、小鱼对象等等。&lt;/li&gt;
+&lt;li&gt;gameloop函数用于绘制每一帧的页面。下面所介绍的所有绘制函数都是在这里执行。&lt;/li&gt;
+&lt;li&gt;requestAnimFrame函数是为了兼容所有浏览器。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面我们就开始绘制游戏中出现的东西，顺便看看都用到了哪些有趣的API函数。go！go！go！&lt;/p&gt;
+&lt;h1 id=&quot;绘制背景和海葵&quot;&gt;&lt;a href=&quot;#绘制背景和海葵&quot; class=&quot;headerlink&quot; title=&quot;绘制背景和海葵&quot;&gt;&lt;/a&gt;绘制背景和海葵&lt;/h1&gt;&lt;p&gt;背景是一张图，而海葵是一个类，它有x坐标，y坐标，个数等等属性，有初始化init和draw方法。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;drawImage(image, x, y, width, height)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ctx2.save();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ctx2.globalAlpha = &lt;span class=&quot;number&quot;&gt;0.7&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ctx2.lineWidth = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ctx2.lineCap = &lt;span class=&quot;string&quot;&gt;&#39;round&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ctx2.strokeStyle = &lt;span class=&quot;string&quot;&gt;&#39;#3b154e&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ctx2.beginPath();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ctx2.moveTo(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.rootx[i], canHei);     &lt;span class=&quot;comment&quot;&gt;//起始点&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ctx2.lineTo(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.rootx[i], canHei - &lt;span class=&quot;number&quot;&gt;220&lt;/span&gt;,);  &lt;span class=&quot;comment&quot;&gt;//结束点    ctx2.stroke();&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ctx2.restore();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;ctx2.drawImage(image, x, y, width, height)    //x,y代表坐标，width和height代表宽高&lt;/li&gt;
+&lt;li&gt;ctx2.save();   //定义作用空间&lt;/li&gt;
+&lt;li&gt;ctx2.globalAlpha = 0.7;      //定义线的透明度&lt;/li&gt;
+&lt;li&gt;ctx2.lineWidth = 20;       //  宽度&lt;/li&gt;
+&lt;li&gt;ctx2.lineCap = ‘round’;     // 圆角&lt;/li&gt;
+&lt;li&gt;ctx2.strokeStyle = ‘#3b154e’;   //定义绘制线条的颜色&lt;/li&gt;
+&lt;li&gt;ctx2.beginPath();    //开始路径&lt;/li&gt;
+&lt;li&gt;ctx2.moveTo(x,y);     //线的起点，x,y代表坐标（坐标原点在左上角）&lt;/li&gt;
+&lt;li&gt;ctx2.lineTo(x,y);    // 线条从起点连接到这个点&lt;/li&gt;
+&lt;li&gt;ctx2.stroke();       // 开始绘制线条&lt;/li&gt;
+&lt;li&gt;ctx2.restore();      //作用空间结束&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;海葵产生果实&quot;&gt;&lt;a href=&quot;#海葵产生果实&quot; class=&quot;headerlink&quot; title=&quot;海葵产生果实&quot;&gt;&lt;/a&gt;海葵产生果实&lt;/h1&gt;&lt;p&gt;果实也是一个类，他的属性有：坐标、类型（黄色和蓝色）、大小、状态（显示还是隐藏）、速度（向上漂浮的速度）等等属性；他的方法有：初始化init、出生born和绘制draw。&lt;/p&gt;
+&lt;p&gt;draw方法：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i =&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.num; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.alive[i])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//find an ane, grow, fly up...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.size[i] &amp;lt;= &lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;)&amp;#123;   &lt;span class=&quot;comment&quot;&gt;//长大状态&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.grow[i] = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.size[i] += &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.speed[i] * diffframetime * &lt;span class=&quot;number&quot;&gt;0.8&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;   &lt;span class=&quot;comment&quot;&gt;//已经长大,向上漂浮&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.grow[i] = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.y[i] -= &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.speed[i] * &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; * diffframetime;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; pic = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.orange;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.type[i] == &lt;span class=&quot;string&quot;&gt;&#39;blue&#39;&lt;/span&gt;)   pic = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.blue;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ctx2.drawImage(pic, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.x[i] - &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.size[i] * &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.y[i] - &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.size[i] * &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.size[i], &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.size[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.y[i] &amp;lt; &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.alive[i] = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;born方法：随机找到一个海葵的坐标，在海葵的坐标上出生一个果实。&lt;/p&gt;
+&lt;h1 id=&quot;绘制大鱼和小鱼&quot;&gt;&lt;a href=&quot;#绘制大鱼和小鱼&quot; class=&quot;headerlink&quot; title=&quot;绘制大鱼和小鱼&quot;&gt;&lt;/a&gt;绘制大鱼和小鱼&lt;/h1&gt;&lt;p&gt;大鱼和小鱼都是一个类，它的属性有：坐标、旋转角度、尾巴摆动时间间隔、眨眼睛时间间隔、身体图片数组….等等&lt;/p&gt;
+&lt;p&gt;先把大鱼绘制出来，用canvas的drawImage方法。&lt;/p&gt;
+&lt;p&gt;比较难的是大鱼的动画，大鱼会随着鼠标移动而移动的动画，这里定义了两个函数：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;lerpAngle&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;a, b, t&lt;/span&gt;) &lt;/span&gt;&amp;#123;     &lt;span class=&quot;comment&quot;&gt;//计算每一帧旋转的角度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; d = b - a;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (d &amp;gt; &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.PI) d = d - &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; * &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.PI;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (d &amp;lt; -&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.PI) d = d + &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; * &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.PI;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a + d * t;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;lerpDistance&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;aim, cur, ratio&lt;/span&gt;) &lt;/span&gt;&amp;#123;   &lt;span class=&quot;comment&quot;&gt;//aim：目标 cur：当前 ratio：百分比  计算每一帧趋近的距离&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; delta = cur - aim;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; aim + delta * ratio&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.momTailTimer += diffframetime;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.momTailTimer &amp;gt; &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.momTailIndex = (&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.momTailIndex + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) % &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;;      &lt;span class=&quot;comment&quot;&gt;//根据时间间隔改变尾巴图片&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.momTailTimer %= &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;lerpDistance 是计算每一帧大鱼趋紧到鼠标的距离。&lt;/li&gt;
+&lt;li&gt;lerpAngle  用来计算大鱼每一帧向鼠标旋转的角度。 定义这两个函数，让大鱼动起来比较平滑。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;获得了一个角度之后，怎么让大鱼旋转起来呢？这里又需要用到几个API了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ctx1.save();  //建议每次绘制都使用save和restore，可以避免定义样式，发生冲突。&lt;/li&gt;
+&lt;li&gt;ctx1.translate(this.x, this.y);      //把原点变成(this.x , this.y);&lt;/li&gt;
+&lt;li&gt;ctx1.rotate(this.angle);     //根据原点顺时针旋转一个角度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;绘制小鱼跟大鱼是一样的，不做详述。但是需要注意的是绘制小鱼的时候有个判断，当小鱼的颜色变白的时候，游戏结束。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.babyBodyTimer += diffframetime;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.babyBodyTimer &amp;gt; &lt;span class=&quot;number&quot;&gt;550&lt;/span&gt;)&amp;#123;   &lt;span class=&quot;comment&quot;&gt;//身体图片变化的计数器 &amp;gt; 550ms&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.babyBodyIndex += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;     &lt;span class=&quot;comment&quot;&gt;//身体图片变淡&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.babyBodyTimer %= &lt;span class=&quot;number&quot;&gt;550&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    scoreOb.strength = ((&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt; - &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.babyBodyIndex)/&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;).toFixed(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.babyBodyIndex &amp;gt; &lt;span class=&quot;number&quot;&gt;19&lt;/span&gt;)&amp;#123;   &lt;span class=&quot;comment&quot;&gt;//如果身体变成白色，game over；&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.babyBodyIndex = &lt;span class=&quot;number&quot;&gt;19&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        scoreOb.gameOver = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        can1.style.cursor = &lt;span class=&quot;string&quot;&gt;&quot;pointer&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;大鱼吃果实&quot;&gt;&lt;a href=&quot;#大鱼吃果实&quot; class=&quot;headerlink&quot; title=&quot;大鱼吃果实&quot;&gt;&lt;/a&gt;大鱼吃果实&lt;/h1&gt;&lt;p&gt;大鱼吃果实是根据距离来判断定的，如果大鱼和果实的距离小于30，则让果实消失，并且出现白色圆环，并且分值有一定的变化。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;jzk.momEatFruit = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;     &lt;span class=&quot;comment&quot;&gt;//判断果实和大鱼之间的距离，小于30说明被吃掉&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i &amp;lt; fruitOb.num; i++ )&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(fruitOb.alive[i] &amp;amp;&amp;amp; fruitOb.grow[i])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; len = calLength2(fruitOb.x[i], fruitOb.y[i], momOb.x, momOb.y);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(len &amp;lt; &lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                fruitOb.dead(i);    &lt;span class=&quot;comment&quot;&gt;//如果距离小于30，则被吃掉&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                waveOb.born(i);     &lt;span class=&quot;comment&quot;&gt;//吃掉的时候，产生圆圈&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                scoreOb.fruitNum ++;    &lt;span class=&quot;comment&quot;&gt;//吃到的果实数量＋1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                momOb.momBodyIndex = momOb.momBodyIndex == &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt; ? momOb.momBodyIndex : (momOb.momBodyIndex + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);      &lt;span class=&quot;comment&quot;&gt;//大鱼的身体颜色红&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(fruitOb.type[i] == &lt;span class=&quot;string&quot;&gt;&#39;blue&#39;&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    scoreOb.doubleNum ++;  &lt;span class=&quot;comment&quot;&gt;//吃到蓝色果实，倍数＋1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其中有一个calLength2函数，使用来计算两个点之间的距离的。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;calLength2&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x1, y1, x2, y2&lt;/span&gt;) &lt;/span&gt;&amp;#123;    &lt;span class=&quot;comment&quot;&gt;//计算两个点之间的距离，，， 先求平方和，再开平方&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.sqrt(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(x1 - x2, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;) + &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(y1 - y2, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;大鱼吃到果实的时候，会产生一个白色的圆圈，这个效果怎么实现呢？&lt;/p&gt;
+&lt;p&gt;首先，我们定义一个waveObject类，它的属性有：坐标、数量、半径、使用状态。它的方法有：初始化、绘制和出生。&lt;/p&gt;
+&lt;p&gt;我们来看一下绘制圆圈的方法：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.num; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.status[i])&amp;#123;     &lt;span class=&quot;comment&quot;&gt;//如果圆圈是使用状态，则绘制圆圈&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.r[i] += diffframetime * &lt;span class=&quot;number&quot;&gt;0.04&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.r[i] &amp;gt; &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.status[i] = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; alpha = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; - &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.r[i] / &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ctx1.strokeStyle = &lt;span class=&quot;string&quot;&gt;&quot;rgba(255, 255, 255, &quot;&lt;/span&gt;+ alpha +&lt;span class=&quot;string&quot;&gt;&quot;)&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ctx1.beginPath();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ctx1.arc(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.x[i], &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.y[i], &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.r[i], &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; * &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.PI);   &lt;span class=&quot;comment&quot;&gt;//画圆，&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ctx1.stroke();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;一帧一帧的画每一个圆，圆的半径逐渐增大，透明度逐渐减小，直到半径大于60的时候，把状态设为false，让其回归物体池中。&lt;/p&gt;
+&lt;p&gt;这里又用到了一个新的方法：ctx1.arc(x,y,r,deg);   //画圆，x,y是中心圆点，r是半径，deg是角度，360度就是一个整圆。&lt;/p&gt;
+&lt;p&gt;再来看一下出生的方法：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.num; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.status[i])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.status[i] = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;   &lt;span class=&quot;comment&quot;&gt;//把圆圈状态设为使用状态&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.x[i] = fruitOb.x[index];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.y[i] = fruitOb.y[index];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.r[i] = &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;   &lt;span class=&quot;comment&quot;&gt;//找到一个未使用的圆圈，就结束。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;圆圈出生的坐标就是被吃果实的坐标。&lt;/p&gt;
+&lt;h1 id=&quot;大鱼喂小鱼&quot;&gt;&lt;a href=&quot;#大鱼喂小鱼&quot; class=&quot;headerlink&quot; title=&quot;大鱼喂小鱼&quot;&gt;&lt;/a&gt;大鱼喂小鱼&lt;/h1&gt;&lt;p&gt;大鱼喂小鱼同上，不再详述，这里喂小鱼之后，大鱼身体变白，小鱼随果实数量相应增多，另外需要注意的是，此时产生圆圈的坐标是小鱼的坐标。&lt;/p&gt;
+&lt;h1 id=&quot;游戏分值计算&quot;&gt;&lt;a href=&quot;#游戏分值计算&quot; class=&quot;headerlink&quot; title=&quot;游戏分值计算&quot;&gt;&lt;/a&gt;游戏分值计算&lt;/h1&gt;&lt;p&gt;定义一个数据类，它的属性有：吃到的果实数量、倍数、总分、力量值、游戏状态（是否结束）等；方法有：初始化、绘制分数。&lt;/p&gt;
+&lt;p&gt;这里我们需要在画布上绘制文字，又用到了新的API：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ctx1.save();&lt;/li&gt;
+&lt;li&gt;ctx1.font = ‘40px verdana’;   定义文字的大小和字体；&lt;/li&gt;
+&lt;li&gt;ctx1.shadowBlur = 10;    定义文字的阴影宽度&lt;/li&gt;
+&lt;li&gt;ctx1.shadowColor = “white”;   定义文字阴影的颜色；&lt;/li&gt;
+&lt;li&gt;ctx1.fillStyle = “rgba(255, 255, 255, “+ this.alpha +”)”;  定义文字的颜色（rgba,a代表透明度）&lt;/li&gt;
+&lt;li&gt;ctx1.fillText(“GAME OVER”, canWid &lt;em&gt; 0.5, canHei &lt;/em&gt; 0.5 - 25);   绘制文字，第一个参数是字符串，支持表达式，后两个参数是坐标值。&lt;/li&gt;
+&lt;li&gt;ctx1.font = ‘25px verdana’;&lt;/li&gt;
+&lt;li&gt;ctx1.fillText(“CLICK TO RESTART”, canWid &lt;em&gt; 0.5, canHei &lt;/em&gt; 0.5 + 25);&lt;/li&gt;
+&lt;li&gt;ctx1.restore();&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;p&gt;好啦，整个游戏的制作过程就分享完了，做的过程中有遇到过很多问题，不过都一一解决了，加深了很多以前模糊的概念，也学到了很多新的知识，比如使用rgba()来一起控制颜色和透明度，以前还真没用到过。&lt;/p&gt;
+&lt;p&gt;这个游戏本身功能比较简单，但是动画还算比较酷炫。这也算是一个比较基本的动画基础框架了，而比较不容易理解的地方也有很多，比如求趋近的角度函数&lt;code&gt;lerpAngle(a,b,c)&lt;/code&gt;，还有&lt;code&gt;Math.atan2()&lt;/code&gt;这个函数，等等。 欢迎大家提出bug或者改进建议～～～&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近除了做业务，也在尝试学习h5和移动端，在这个过程中，学到了很多，利用h5和canvas做了一个爱心鱼的小游戏。源码在github上，down下来直接就能够运行。要是觉得还行，就给个star吧！&lt;a href=&quot;https://github.com/luckykun/tinyHeart&quot;&gt;源码地址点这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下面我就做游戏的步骤来分享总结一下用到h5和canvas的API和一些常见的数学函数。推荐你先去玩一玩游戏，才能更好的明白这些逻辑。&lt;a href=&quot;http://luckykun.com/work/2016-05-29/tiny-heart-demo.html&quot;&gt;点这里去玩一下&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工作" scheme="http://yoursite.com/categories/work/"/>
+    
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="html5" scheme="http://yoursite.com/tags/html5/"/>
     
@@ -246,9 +359,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -1023,13 +1136,13 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
       <category term="grunt" scheme="http://yoursite.com/tags/grunt/"/>
     
       <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
     
       <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
-    
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -1198,9 +1311,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   

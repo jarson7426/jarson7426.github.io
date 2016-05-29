@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="baidu-site-verification" content="5tcBr0YNFF" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>h5+canvas实现酷炫的小游戏 | luckykun-不一样的世界</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近除了做业务，也在尝试学习h5和移动端，在这个过程中，学到了很多，利用h5和canvas做了一个爱心鱼的小游戏。源码在github上，down下来直接就能够运行。要是觉得还行，就给个star吧！源码地址点这里
+下面我就做游戏的步骤来分享总结一下用到h5和canvas的API和一些常见的数学函数。推荐你先去玩一玩游戏，才能更好的明白这些逻辑。点这里去玩一下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="h5+canvas实现酷炫的小游戏">
+<meta property="og:url" content="http://yoursite.com/work/2016-05-29/tiny-heart-study.html">
+<meta property="og:site_name" content="luckykun-不一样的世界">
+<meta property="og:description" content="最近除了做业务，也在尝试学习h5和移动端，在这个过程中，学到了很多，利用h5和canvas做了一个爱心鱼的小游戏。源码在github上，down下来直接就能够运行。要是觉得还行，就给个star吧！源码地址点这里
+下面我就做游戏的步骤来分享总结一下用到h5和canvas的API和一些常见的数学函数。推荐你先去玩一玩游戏，才能更好的明白这些逻辑。点这里去玩一下">
+<meta property="og:updated_time" content="2016-05-29T04:18:19.577Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="h5+canvas实现酷炫的小游戏">
+<meta name="twitter:description" content="最近除了做业务，也在尝试学习h5和移动端，在这个过程中，学到了很多，利用h5和canvas做了一个爱心鱼的小游戏。源码在github上，down下来直接就能够运行。要是觉得还行，就给个star吧！源码地址点这里
+下面我就做游戏的步骤来分享总结一下用到h5和canvas的API和一些常见的数学函数。推荐你先去玩一玩游戏，才能更好的明白这些逻辑。点这里去玩一下">
+  
+  
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+    <!-- <link rel="icon" href="/favicon.ico?v=0.5.0"> -->
+  
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?527e9393be17772155eb920f1ce3648e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">luckykun</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我就是我，颜色不一样的烟火</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<!-- <li>Menu</li> -->
+						<!-- <li>Tags</li> -->
+						<li>主菜单</li>
+						<li>云标签</li>
+						
+						
+						<!-- <li>About</li> -->
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/demo/">demo</a></li>
+				        
+							<li><a href="/categories/simomo/">丝茉茉</a></li>
+				        
+							<li><a href="/photos">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/luckykun" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2732624311" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/canvas/" style="font-size: 13.33px;">canvas</a> <a href="/tags/demo/" style="font-size: 16.67px;">demo</a> <a href="/tags/es6/" style="font-size: 13.33px;">es6</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo系列/" style="font-size: 13.33px;">hexo系列</a> <a href="/tags/highcharts/" style="font-size: 10px;">highcharts</a> <a href="/tags/html5/" style="font-size: 13.33px;">html5</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/react/" style="font-size: 13.33px;">react</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/插件/" style="font-size: 13.33px;">插件</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/构建/" style="font-size: 10px;">构建</a> <a href="/tags/编辑器/" style="font-size: 10px;">编辑器</a>
+					</div>
+				</section>
+				
+
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">
+						<p>家乡：广元市，也是武则天的家乡~</p>
+						<p>学校：成都信息工程大学</p>
+						<p>职业：一枚程序猿~</p>
+						<p>爱好：篮球、羽毛球</p>
+					</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">luckykun</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">luckykun</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我就是我，颜色不一样的烟火</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/demo/">demo</a></li>
+		        
+					<li><a href="/categories/simomo/">丝茉茉</a></li>
+		        
+					<li><a href="/photos">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/luckykun" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2732624311" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-tiny-heart-study" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      
+<time datetime="2016-05-29T01:41:43.000Z" itemprop="datePublished">2016-05-29</time>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      h5+canvas实现酷炫的小游戏
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+	</div>
+
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/work/">工作</a>
+	</div>
+
+
+        <div class="busuanzi-read-num">
+            阅读次数：<span id="busuanzi_value_page_pv"><img src="http://7xtawy.com2.z0.glb.clouddn.com/loading1.png"/></span>次
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <!-- Table of Contents -->
+    
+    <p class="show-toc-btn">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc" class="toc-article">
+    <span class="toc-close" title="隐藏导航">×</span>
+    <!-- <strong class="toc-title">文章目录</strong> -->
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#html文件"><span class="toc-number">1.1.</span> <span class="toc-text">html文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js文件"><span class="toc-number">1.2.</span> <span class="toc-text">js文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绘制背景和海葵"><span class="toc-number">2.</span> <span class="toc-text">绘制背景和海葵</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#海葵产生果实"><span class="toc-number">3.</span> <span class="toc-text">海葵产生果实</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绘制大鱼和小鱼"><span class="toc-number">4.</span> <span class="toc-text">绘制大鱼和小鱼</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#大鱼吃果实"><span class="toc-number">5.</span> <span class="toc-text">大鱼吃果实</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#大鱼喂小鱼"><span class="toc-number">6.</span> <span class="toc-text">大鱼喂小鱼</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#游戏分值计算"><span class="toc-number">7.</span> <span class="toc-text">游戏分值计算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">8.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近除了做业务，也在尝试学习h5和移动端，在这个过程中，学到了很多，利用h5和canvas做了一个爱心鱼的小游戏。源码在github上，down下来直接就能够运行。要是觉得还行，就给个star吧！<a href="https://github.com/luckykun/tinyHeart" target="_blank" rel="external">源码地址点这里</a></p>
+<p>下面我就做游戏的步骤来分享总结一下用到h5和canvas的API和一些常见的数学函数。推荐你先去玩一玩游戏，才能更好的明白这些逻辑。<a href="http://luckykun.com/work/2016-05-29/tiny-heart-demo.html" target="_blank" rel="external">点这里去玩一下</a></p>
+<a id="more"></a>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>首先，一个游戏最重要的就是动画，怎么让元素动起来呢？先来看一句话：</p>
+<blockquote>
+<p>元素的位置移动，就形成了动画。</p>
+</blockquote>
+<p>一帧一帧的来渲染这个元素，而且这个元素每一帧的位置都不一样，我们的眼睛看到的就是动画了。OK，先来介绍<code>requestAnimationFrame</code>这个函数。</p>
+<p>我们都知道，隔一段时间重新渲染，可以用到<code>setTimeout</code> 和<code>setInterval</code>这两个函数，那这里为什么不用呢？</p>
+<p>我来简单举个例子吧：</p>
+<ul>
+<li>setInterval(myFun, 1);  意思是隔一毫秒执行一个myFun函数，但是这样就有一个问题了，比如我myFun函数里面绘制的东西比较耗时，而1ms之内还没有完全绘制出来，但是这段代码强制1ms之后又开始绘制下一帧了，所以就会出现<code>丢帧</code>的问题，而如果时间设置太长，就会出现<code>视觉卡顿</code>的问题。</li>
+<li>requestAnimationFrame(myFun); 如果我们这样写，又是什么意思呢？意思是根据<code>一定的时间间隔</code>，会自动执行myFun函数来进行绘制。这个”一定的时间间隔”就是根据浏览器的性能或者网速快慢来决定了，总之，它会保证你绘制完这一帧，才会绘制下一帧，保证性能的同时，也保证动画的流畅。</li>
+</ul>
+<p>动画解决了，那么用什么来绘制每一帧的页面呢？这时就要用到h5的神奇—-<code>canvas</code>了，所以canvas画布的API非常重要。</p>
+<h2 id="html文件"><a href="#html文件" class="headerlink" title="html文件"></a>html文件</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span> <span class="attr">id</span> = <span class="string">"main"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span> = <span class="string">"canvas1"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span> = <span class="string">"canvas2"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>定义两个画布，分别在画布上绘制相应的物体；</li>
+<li>canvas2 上绘制，背景、海葵、果实；</li>
+<li>canvas1 上绘制，大鱼、小鱼、显示文字、圆圈特效；</li>
+</ul>
+<h2 id="js文件"><a href="#js文件" class="headerlink" title="js文件"></a>js文件</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        can1 = <span class="built_in">document</span>.getElementById(<span class="string">'canvas1'</span>);     <span class="comment">//画布</span></span><br><span class="line">        ctx1 = can1.getContext(<span class="string">'2d'</span>);   <span class="comment">//画笔</span></span><br><span class="line">        can2 = <span class="built_in">document</span>.getElementById(<span class="string">'canvas2'</span>);</span><br><span class="line">        ctx2 = can2.getContext(<span class="string">'2d'</span>);   <span class="comment">//下面的canvas</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">gameloop</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        requestAnimFrame(gameLoop);</span><br><span class="line">        <span class="comment">//绘制物体...</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> requestAnimFrame = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">window</span>.requestAnimationFrame || <span class="built_in">window</span>.webkitRequestAnimationFrame || <span class="built_in">window</span>.mozRequestAnimationFrame || <span class="built_in">window</span>.oRequestAnimationFrame || <span class="built_in">window</span>.msRequestAnimationFrame ||</span><br><span class="line">        <span class="function"><span class="keyword">function</span>(<span class="params">callback, element</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">window</span>.setTimeout(callback, <span class="number">1000</span> / <span class="number">60</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>init函数初始化一些变量，比如海葵对象，大鱼、小鱼对象等等。</li>
+<li>gameloop函数用于绘制每一帧的页面。下面所介绍的所有绘制函数都是在这里执行。</li>
+<li>requestAnimFrame函数是为了兼容所有浏览器。</li>
+</ul>
+<p>下面我们就开始绘制游戏中出现的东西，顺便看看都用到了哪些有趣的API函数。go！go！go！</p>
+<h1 id="绘制背景和海葵"><a href="#绘制背景和海葵" class="headerlink" title="绘制背景和海葵"></a>绘制背景和海葵</h1><p>背景是一张图，而海葵是一个类，它有x坐标，y坐标，个数等等属性，有初始化init和draw方法。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">drawImage(image, x, y, width, height)</span><br><span class="line">ctx2.save();</span><br><span class="line">ctx2.globalAlpha = <span class="number">0.7</span>;</span><br><span class="line">ctx2.lineWidth = <span class="number">20</span>;</span><br><span class="line">ctx2.lineCap = <span class="string">'round'</span>;</span><br><span class="line">ctx2.strokeStyle = <span class="string">'#3b154e'</span>;</span><br><span class="line">ctx2.beginPath();</span><br><span class="line">ctx2.moveTo(<span class="keyword">this</span>.rootx[i], canHei);     <span class="comment">//起始点</span></span><br><span class="line">ctx2.lineTo(<span class="keyword">this</span>.rootx[i], canHei - <span class="number">220</span>,);  <span class="comment">//结束点    ctx2.stroke();</span></span><br><span class="line">ctx2.restore();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ctx2.drawImage(image, x, y, width, height)    //x,y代表坐标，width和height代表宽高</li>
+<li>ctx2.save();   //定义作用空间</li>
+<li>ctx2.globalAlpha = 0.7;      //定义线的透明度</li>
+<li>ctx2.lineWidth = 20;       //  宽度</li>
+<li>ctx2.lineCap = ‘round’;     // 圆角</li>
+<li>ctx2.strokeStyle = ‘#3b154e’;   //定义绘制线条的颜色</li>
+<li>ctx2.beginPath();    //开始路径</li>
+<li>ctx2.moveTo(x,y);     //线的起点，x,y代表坐标（坐标原点在左上角）</li>
+<li>ctx2.lineTo(x,y);    // 线条从起点连接到这个点</li>
+<li>ctx2.stroke();       // 开始绘制线条</li>
+<li>ctx2.restore();      //作用空间结束</li>
+</ul>
+<h1 id="海葵产生果实"><a href="#海葵产生果实" class="headerlink" title="海葵产生果实"></a>海葵产生果实</h1><p>果实也是一个类，他的属性有：坐标、类型（黄色和蓝色）、大小、状态（显示还是隐藏）、速度（向上漂浮的速度）等等属性；他的方法有：初始化init、出生born和绘制draw。</p>
+<p>draw方法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt; <span class="keyword">this</span>.num; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.alive[i])&#123;</span><br><span class="line">        <span class="comment">//find an ane, grow, fly up...</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.size[i] &lt;= <span class="number">16</span>)&#123;   <span class="comment">//长大状态</span></span><br><span class="line">            <span class="keyword">this</span>.grow[i] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">this</span>.size[i] += <span class="keyword">this</span>.speed[i] * diffframetime * <span class="number">0.8</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;   <span class="comment">//已经长大,向上漂浮</span></span><br><span class="line">            <span class="keyword">this</span>.grow[i] = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">this</span>.y[i] -= <span class="keyword">this</span>.speed[i] * <span class="number">5</span> * diffframetime;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> pic = <span class="keyword">this</span>.orange;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.type[i] == <span class="string">'blue'</span>)   pic = <span class="keyword">this</span>.blue;</span><br><span class="line">        ctx2.drawImage(pic, <span class="keyword">this</span>.x[i] - <span class="keyword">this</span>.size[i] * <span class="number">0.5</span>, <span class="keyword">this</span>.y[i] - <span class="keyword">this</span>.size[i] * <span class="number">0.5</span>, <span class="keyword">this</span>.size[i], <span class="keyword">this</span>.size[i]);</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.y[i] &lt; <span class="number">8</span>)&#123;</span><br><span class="line">            <span class="keyword">this</span>.alive[i] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>born方法：随机找到一个海葵的坐标，在海葵的坐标上出生一个果实。</p>
+<h1 id="绘制大鱼和小鱼"><a href="#绘制大鱼和小鱼" class="headerlink" title="绘制大鱼和小鱼"></a>绘制大鱼和小鱼</h1><p>大鱼和小鱼都是一个类，它的属性有：坐标、旋转角度、尾巴摆动时间间隔、眨眼睛时间间隔、身体图片数组….等等</p>
+<p>先把大鱼绘制出来，用canvas的drawImage方法。</p>
+<p>比较难的是大鱼的动画，大鱼会随着鼠标移动而移动的动画，这里定义了两个函数：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lerpAngle</span>(<span class="params">a, b, t</span>) </span>&#123;     <span class="comment">//计算每一帧旋转的角度</span></span><br><span class="line">    <span class="keyword">var</span> d = b - a;</span><br><span class="line">    <span class="keyword">if</span> (d &gt; <span class="built_in">Math</span>.PI) d = d - <span class="number">2</span> * <span class="built_in">Math</span>.PI;</span><br><span class="line">    <span class="keyword">if</span> (d &lt; -<span class="built_in">Math</span>.PI) d = d + <span class="number">2</span> * <span class="built_in">Math</span>.PI;</span><br><span class="line">    <span class="keyword">return</span> a + d * t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lerpDistance</span>(<span class="params">aim, cur, ratio</span>) </span>&#123;   <span class="comment">//aim：目标 cur：当前 ratio：百分比  计算每一帧趋近的距离</span></span><br><span class="line">    <span class="keyword">var</span> delta = cur - aim;</span><br><span class="line">    <span class="keyword">return</span> aim + delta * ratio</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">this</span>.momTailTimer += diffframetime;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">this</span>.momTailTimer &gt; <span class="number">50</span>)&#123;</span><br><span class="line">    <span class="keyword">this</span>.momTailIndex = (<span class="keyword">this</span>.momTailIndex + <span class="number">1</span>) % <span class="number">8</span>;      <span class="comment">//根据时间间隔改变尾巴图片</span></span><br><span class="line">    <span class="keyword">this</span>.momTailTimer %= <span class="number">50</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>lerpDistance 是计算每一帧大鱼趋紧到鼠标的距离。</li>
+<li>lerpAngle  用来计算大鱼每一帧向鼠标旋转的角度。 定义这两个函数，让大鱼动起来比较平滑。</li>
+</ul>
+<p>获得了一个角度之后，怎么让大鱼旋转起来呢？这里又需要用到几个API了。</p>
+<ul>
+<li>ctx1.save();  //建议每次绘制都使用save和restore，可以避免定义样式，发生冲突。</li>
+<li>ctx1.translate(this.x, this.y);      //把原点变成(this.x , this.y);</li>
+<li>ctx1.rotate(this.angle);     //根据原点顺时针旋转一个角度</li>
+</ul>
+<p>绘制小鱼跟大鱼是一样的，不做详述。但是需要注意的是绘制小鱼的时候有个判断，当小鱼的颜色变白的时候，游戏结束。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">this</span>.babyBodyTimer += diffframetime;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">this</span>.babyBodyTimer &gt; <span class="number">550</span>)&#123;   <span class="comment">//身体图片变化的计数器 &gt; 550ms</span></span><br><span class="line">    <span class="keyword">this</span>.babyBodyIndex += <span class="number">1</span>;     <span class="comment">//身体图片变淡</span></span><br><span class="line">    <span class="keyword">this</span>.babyBodyTimer %= <span class="number">550</span>;</span><br><span class="line">    scoreOb.strength = ((<span class="number">20</span> - <span class="keyword">this</span>.babyBodyIndex)/<span class="number">2</span>).toFixed(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.babyBodyIndex &gt; <span class="number">19</span>)&#123;   <span class="comment">//如果身体变成白色，game over；</span></span><br><span class="line">        <span class="keyword">this</span>.babyBodyIndex = <span class="number">19</span>;</span><br><span class="line">        scoreOb.gameOver = <span class="literal">true</span>;</span><br><span class="line">        can1.style.cursor = <span class="string">"pointer"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="大鱼吃果实"><a href="#大鱼吃果实" class="headerlink" title="大鱼吃果实"></a>大鱼吃果实</h1><p>大鱼吃果实是根据距离来判断定的，如果大鱼和果实的距离小于30，则让果实消失，并且出现白色圆环，并且分值有一定的变化。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">jzk.momEatFruit = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;     <span class="comment">//判断果实和大鱼之间的距离，小于30说明被吃掉</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; fruitOb.num; i++ )&#123;</span><br><span class="line">        <span class="keyword">if</span>(fruitOb.alive[i] &amp;&amp; fruitOb.grow[i])&#123;</span><br><span class="line">            <span class="keyword">var</span> len = calLength2(fruitOb.x[i], fruitOb.y[i], momOb.x, momOb.y);</span><br><span class="line">            <span class="keyword">if</span>(len &lt; <span class="number">30</span>)&#123;</span><br><span class="line">                fruitOb.dead(i);    <span class="comment">//如果距离小于30，则被吃掉</span></span><br><span class="line">                waveOb.born(i);     <span class="comment">//吃掉的时候，产生圆圈</span></span><br><span class="line">                scoreOb.fruitNum ++;    <span class="comment">//吃到的果实数量＋1</span></span><br><span class="line">                momOb.momBodyIndex = momOb.momBodyIndex == <span class="number">7</span> ? momOb.momBodyIndex : (momOb.momBodyIndex + <span class="number">1</span>);      <span class="comment">//大鱼的身体颜色红</span></span><br><span class="line">                <span class="keyword">if</span>(fruitOb.type[i] == <span class="string">'blue'</span>)&#123;</span><br><span class="line">                    scoreOb.doubleNum ++;  <span class="comment">//吃到蓝色果实，倍数＋1</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中有一个calLength2函数，使用来计算两个点之间的距离的。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calLength2</span>(<span class="params">x1, y1, x2, y2</span>) </span>&#123;    <span class="comment">//计算两个点之间的距离，，， 先求平方和，再开平方</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.sqrt(<span class="built_in">Math</span>.pow(x1 - x2, <span class="number">2</span>) + <span class="built_in">Math</span>.pow(y1 - y2, <span class="number">2</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大鱼吃到果实的时候，会产生一个白色的圆圈，这个效果怎么实现呢？</p>
+<p>首先，我们定义一个waveObject类，它的属性有：坐标、数量、半径、使用状态。它的方法有：初始化、绘制和出生。</p>
+<p>我们来看一下绘制圆圈的方法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt; <span class="keyword">this</span>.num; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.status[i])&#123;     <span class="comment">//如果圆圈是使用状态，则绘制圆圈</span></span><br><span class="line">        <span class="keyword">this</span>.r[i] += diffframetime * <span class="number">0.04</span>;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.r[i] &gt; <span class="number">60</span>)&#123;</span><br><span class="line">            <span class="keyword">this</span>.status[i] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> alpha = <span class="number">1</span> - <span class="keyword">this</span>.r[i] / <span class="number">60</span>;</span><br><span class="line">        ctx1.strokeStyle = <span class="string">"rgba(255, 255, 255, "</span>+ alpha +<span class="string">")"</span>;</span><br><span class="line">        ctx1.beginPath();</span><br><span class="line">        ctx1.arc(<span class="keyword">this</span>.x[i], <span class="keyword">this</span>.y[i], <span class="keyword">this</span>.r[i], <span class="number">0</span>, <span class="number">2</span> * <span class="built_in">Math</span>.PI);   <span class="comment">//画圆，</span></span><br><span class="line">        ctx1.stroke();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一帧一帧的画每一个圆，圆的半径逐渐增大，透明度逐渐减小，直到半径大于60的时候，把状态设为false，让其回归物体池中。</p>
+<p>这里又用到了一个新的方法：ctx1.arc(x,y,r,deg);   //画圆，x,y是中心圆点，r是半径，deg是角度，360度就是一个整圆。</p>
+<p>再来看一下出生的方法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; <span class="keyword">this</span>.num; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>.status[i])&#123;</span><br><span class="line">        <span class="keyword">this</span>.status[i] = <span class="literal">true</span>;   <span class="comment">//把圆圈状态设为使用状态</span></span><br><span class="line">        <span class="keyword">this</span>.x[i] = fruitOb.x[index];</span><br><span class="line">        <span class="keyword">this</span>.y[i] = fruitOb.y[index];</span><br><span class="line">        <span class="keyword">this</span>.r[i] = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;   <span class="comment">//找到一个未使用的圆圈，就结束。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>圆圈出生的坐标就是被吃果实的坐标。</p>
+<h1 id="大鱼喂小鱼"><a href="#大鱼喂小鱼" class="headerlink" title="大鱼喂小鱼"></a>大鱼喂小鱼</h1><p>大鱼喂小鱼同上，不再详述，这里喂小鱼之后，大鱼身体变白，小鱼随果实数量相应增多，另外需要注意的是，此时产生圆圈的坐标是小鱼的坐标。</p>
+<h1 id="游戏分值计算"><a href="#游戏分值计算" class="headerlink" title="游戏分值计算"></a>游戏分值计算</h1><p>定义一个数据类，它的属性有：吃到的果实数量、倍数、总分、力量值、游戏状态（是否结束）等；方法有：初始化、绘制分数。</p>
+<p>这里我们需要在画布上绘制文字，又用到了新的API：</p>
+<ul>
+<li>ctx1.save();</li>
+<li>ctx1.font = ‘40px verdana’;   定义文字的大小和字体；</li>
+<li>ctx1.shadowBlur = 10;    定义文字的阴影宽度</li>
+<li>ctx1.shadowColor = “white”;   定义文字阴影的颜色；</li>
+<li>ctx1.fillStyle = “rgba(255, 255, 255, “+ this.alpha +”)”;  定义文字的颜色（rgba,a代表透明度）</li>
+<li>ctx1.fillText(“GAME OVER”, canWid <em> 0.5, canHei </em> 0.5 - 25);   绘制文字，第一个参数是字符串，支持表达式，后两个参数是坐标值。</li>
+<li>ctx1.font = ‘25px verdana’;</li>
+<li>ctx1.fillText(“CLICK TO RESTART”, canWid <em> 0.5, canHei </em> 0.5 + 25);</li>
+<li>ctx1.restore();</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>好啦，整个游戏的制作过程就分享完了，做的过程中有遇到过很多问题，不过都一一解决了，加深了很多以前模糊的概念，也学到了很多新的知识，比如使用rgba()来一起控制颜色和透明度，以前还真没用到过。</p>
+<p>这个游戏本身功能比较简单，但是动画还算比较酷炫。这也算是一个比较基本的动画基础框架了，而比较不容易理解的地方也有很多，比如求趋近的角度函数<code>lerpAngle(a,b,c)</code>，还有<code>Math.atan2()</code>这个函数，等等。 欢迎大家提出bug或者改进建议～～～</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <p class="pay-code">
+        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
+    </p>
+</div>
+
+
+<nav id="article-nav">
+  
+    <a href="/work/2016-05-29/tiny-heart-demo.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          上一篇：tiny-heart-demo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/work/2016-05-23/react-todo-study.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">下一篇：React入门最好的实例－TodoList</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<!-- Share to: &nbsp;  -->
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_facebook"></a>
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a>
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="tiny-heart-study" data-title="h5+canvas实现酷炫的小游戏" data-url="http://yoursite.com/work/2016-05-29/tiny-heart-study.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"jarson7426"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+            <span id="busuanzi_container_site_uv" style="color:#ef7522">
+                本站共访问次数：<span id="busuanzi_value_site_uv">0</span>次
+            </span>
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+             --- &copy; 2016 luckykun
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+  <div class="go-top"></div>
+   <script src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</body>
+</html>

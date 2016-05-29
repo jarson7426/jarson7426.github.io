@@ -2009,7 +2009,6 @@ pre .css ~ * .id {
 #page-nav .extend {
   color: #4d4d4d;
   margin: 0 27px;
-  opacity: 0;
 }
 #page-nav .extend:hover {
   color: #5e5e5e;
