@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-04T14:56:27.000Z</updated>
+  <updated>2016-07-04T15:06:39.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,14 +16,15 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>css3-study01</title>
+    <title>CSS3深入学习之奇技淫巧</title>
     <link href="http://yoursite.com/work/2016-07-04/css3-study01.html"/>
     <id>http://yoursite.com/work/2016-07-04/css3-study01.html</id>
     <published>2016-07-04T14:39:19.000Z</published>
-    <updated>2016-07-04T14:56:27.000Z</updated>
+    <updated>2016-07-04T15:06:39.000Z</updated>
     
     <content type="html">&lt;p&gt;自CSS3流行以来，虽然以前看过一遍所有的新增属性，但其实在实际项目中用到的少之又少。所以没有形成系统性的认识，以及看到效果立马就能想到解决方案的能力。然后最近正好遇到一个需要绘制大量动画的需求，所以决定趁此机会好好研究一下这个既熟悉又陌生的css3。&lt;/p&gt;
-&lt;p&gt;在正式开始css3之前，先来介绍一些比较经典的css3实例，让大家好好感受一下css3的魅力：&lt;/p&gt;
+&lt;p&gt;在正式开始css3之前，先来介绍一些比较经典的&lt;code&gt;css3实例&lt;/code&gt;，让大家好好感受一下css3的魅力，本文会提到以下几个css3的属性：&lt;/p&gt;
+&lt;p&gt;border-radius、::after、attr和content、box-sizing、linear-gradient、radial-gradient、box-shadow&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;border-radius&quot;&gt;&lt;a href=&quot;#border-radius&quot; class=&quot;headerlink&quot; title=&quot;border-radius&quot;&gt;&lt;/a&gt;border-radius&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;相信这个属性，写过css的同学都知道，用来产生圆角，比如画一个圆形：&lt;/p&gt;
@@ -95,7 +96,8 @@
     <summary type="html">
     
       &lt;p&gt;自CSS3流行以来，虽然以前看过一遍所有的新增属性，但其实在实际项目中用到的少之又少。所以没有形成系统性的认识，以及看到效果立马就能想到解决方案的能力。然后最近正好遇到一个需要绘制大量动画的需求，所以决定趁此机会好好研究一下这个既熟悉又陌生的css3。&lt;/p&gt;
-&lt;p&gt;在正式开始css3之前，先来介绍一些比较经典的css3实例，让大家好好感受一下css3的魅力：&lt;/p&gt;
+&lt;p&gt;在正式开始css3之前，先来介绍一些比较经典的&lt;code&gt;css3实例&lt;/code&gt;，让大家好好感受一下css3的魅力，本文会提到以下几个css3的属性：&lt;/p&gt;
+&lt;p&gt;border-radius、::after、attr和content、box-sizing、linear-gradient、radial-gradient、box-shadow&lt;/p&gt;
     
     </summary>
     
@@ -393,11 +395,11 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
+      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
+    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
-    
-      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
     
   </entry>
   
@@ -427,7 +429,7 @@
 &lt;h2 id=&quot;创建相册页面&quot;&gt;&lt;a href=&quot;#创建相册页面&quot; class=&quot;headerlink&quot; title=&quot;创建相册页面&quot;&gt;&lt;/a&gt;创建相册页面&lt;/h2&gt;&lt;p&gt;在根目录下执行命令：&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hexo page photos&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;会在&lt;code&gt;source/photos&lt;/code&gt;目录下生成一个index.md文件，编辑文件内容如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;link type=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt; href=&lt;span class=&quot;string&quot;&gt;&quot;/fancybox/jquery.fancybox.css&quot;&lt;/span&gt; rel=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;div class=&quot;instagram&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;section class=&quot;archives album&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;ul class=&quot;img-box-ul&quot;&amp;gt;&amp;lt;/ul&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;/section&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;link type=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt; href=&lt;span class=&quot;string&quot;&gt;&quot;/fancybox/jquery.fancybox.css&quot;&lt;/span&gt; rel=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;instagram&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;archives album&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img-box-ul&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;section&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;修改themes-yilia-js-photo-js：&quot;&gt;&lt;a href=&quot;#修改themes-yilia-js-photo-js：&quot; class=&quot;headerlink&quot; title=&quot;修改themes/yilia/js/photo.js：&quot;&gt;&lt;/a&gt;修改&lt;code&gt;themes/yilia/js/photo.js&lt;/code&gt;：&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;init: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; that = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $.getJSON(&lt;span class=&quot;string&quot;&gt;&quot;/photos/data.json&quot;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;data&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        that.render(that.page, data);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        that.scroll(data);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;render: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;page, data&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; begin = (page - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) * &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.offset;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; end = page * &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.offset;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (begin &amp;gt;= data.length) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; html, li = &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = begin; i &amp;lt; end &amp;amp;&amp;amp; i &amp;lt; data.length; i++) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        li += &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;li&amp;gt;&amp;lt;div class=&quot;img-box&quot;&amp;gt;&#39;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;a class=&quot;img-bg&quot; rel=&quot;example_group&quot; href=&quot;https://raw.githubusercontent.com/jarson7426/blog-back-up/master/photos/&#39;&lt;/span&gt; + data[i] + &lt;span class=&quot;string&quot;&gt;&#39;&quot;&amp;gt;&amp;lt;/a&amp;gt;&#39;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;img lazy-src=&quot;https://raw.githubusercontent.com/jarson7426/blog-back-up/master/photos/&#39;&lt;/span&gt; + data[i] + &lt;span class=&quot;string&quot;&gt;&#39;&quot; /&amp;gt;&#39;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/li&amp;gt;&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&quot;.img-box-ul&quot;&lt;/span&gt;).append(li);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&quot;.img-box-ul&quot;&lt;/span&gt;).lazyload();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&quot;a[rel=example_group]&quot;&lt;/span&gt;).fancybox();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;...&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;上述文件读取json文件，将图片的线上url拼接起来渲染在页面上，相册样式使用yilia主题提供。然后上传这些文件，根据自定义的路径访问url，就能看到相册了。那么，到这里就基本完成了相册的制作。&lt;/p&gt;
 &lt;h1 id=&quot;独立域名&quot;&gt;&lt;a href=&quot;#独立域名&quot; class=&quot;headerlink&quot; title=&quot;独立域名&quot;&gt;&lt;/a&gt;独立域名&lt;/h1&gt;&lt;p&gt;到目前为止，我们的博客都是使用github分配的二级域名&lt;code&gt;luckykun.github.io&lt;/code&gt;来访问的， 那么我们会想如果能自己设置个域名，是多么cool的事！要怎么办呢？那就继续往下看吧！&lt;/p&gt;
@@ -452,9 +454,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
     
   </entry>
   
@@ -1229,13 +1231,13 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="grunt" scheme="http://yoursite.com/tags/grunt/"/>
     
       <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
     
       <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -1404,9 +1406,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
     
   </entry>
   
