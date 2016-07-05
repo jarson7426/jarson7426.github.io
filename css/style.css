@@ -1235,10 +1235,10 @@ div.instagram .album li {
   content: "";
   width: 4px;
   height: 4px;
-  border: 1px solid #444;
+  border: 1px solid #777;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  background: #444;
+  background: #777;
   display: inline-block;
   margin-right: 10px;
   float: left;
@@ -1429,7 +1429,6 @@ div.instagram .album li {
   float: right;
 }
 .show-toc-btn {
-  display: none;
   z-index: 10;
   width: 16px;
   min-height: 14px;
@@ -1480,6 +1479,7 @@ div.instagram .album li {
   position: fixed;
   right: 35px;
   top: 126px;
+  display: none;
 }
 .toc-article .toc-close {
   font-weight: bold;
@@ -1823,7 +1823,7 @@ div.instagram .album li {
 }
 .article-entry .highlight table {
   margin: 0;
-  width: auto;
+  width: 100%;
 }
 .article-entry .highlight td {
   border: none;
@@ -1854,8 +1854,9 @@ div.instagram .album li {
   text-shadow: none;
 }
 .article-entry .highlight .line {
-  font-size: 14px;
-  height: 15px;
+  font-size: 15px;
+  height: 22px;
+  font-family: monospace;
 }
 .article-entry .gist {
   margin: 0 -20px;
