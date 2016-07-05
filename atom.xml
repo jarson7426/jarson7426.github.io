@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-04T15:06:39.000Z</updated>
+  <updated>2016-07-05T14:36:08.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>CSS3深入学习之奇技淫巧</title>
+    <title>CSS3初体验之奇技淫巧</title>
     <link href="http://yoursite.com/work/2016-07-04/css3-study01.html"/>
     <id>http://yoursite.com/work/2016-07-04/css3-study01.html</id>
     <published>2016-07-04T14:39:19.000Z</published>
-    <updated>2016-07-04T15:06:39.000Z</updated>
+    <updated>2016-07-05T14:36:08.000Z</updated>
     
     <content type="html">&lt;p&gt;自CSS3流行以来，虽然以前看过一遍所有的新增属性，但其实在实际项目中用到的少之又少。所以没有形成系统性的认识，以及看到效果立马就能想到解决方案的能力。然后最近正好遇到一个需要绘制大量动画的需求，所以决定趁此机会好好研究一下这个既熟悉又陌生的css3。&lt;/p&gt;
 &lt;p&gt;在正式开始css3之前，先来介绍一些比较经典的&lt;code&gt;css3实例&lt;/code&gt;，让大家好好感受一下css3的魅力，本文会提到以下几个css3的属性：&lt;/p&gt;
@@ -69,7 +69,8 @@
 &lt;p&gt;你以为这就完了？等等，还有更强大的呢！&lt;code&gt;repeating-linear-gradient&lt;/code&gt;，来感受一下：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/css3gradi.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;linear-gradient&lt;/code&gt;还有更加强大的功能，比如它可以给元素添加多个渐变，从而达到更NB的效果。&lt;/p&gt;
-&lt;h1 id=&quot;radial-gradient&quot;&gt;&lt;a href=&quot;#radial-gradient&quot; class=&quot;headerlink&quot; title=&quot;radial-gradient&quot;&gt;&lt;/a&gt;radial-gradient&lt;/h1&gt;&lt;p&gt;上面的&lt;code&gt;linear-gradient&lt;/code&gt;是线性渐变，这个属性是径向渐变。下面的代码实现了一个chrome的logo。 &lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/css36.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;radial-gradient&quot;&gt;&lt;a href=&quot;#radial-gradient&quot; class=&quot;headerlink&quot; title=&quot;radial-gradient&quot;&gt;&lt;/a&gt;radial-gradient&lt;/h1&gt;&lt;p&gt;上面的&lt;code&gt;linear-gradient&lt;/code&gt;是线性渐变，这个属性是径向渐变。下面的代码实现了一个chrome的logo。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/css36.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;div.chrome &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    width: 180px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    height: 180px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    border-radius: 50%;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    box-shadow: 0 0 4px #999, 0 0 2px #ddd inset;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    background: radial-gradient(circle, #4FACF5 0, #2196F3 28%, transparent 28%),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                radial-gradient(circle, #fff 33%, transparent 33%),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                linear-gradient(-50deg, #FFEB3B 34%, transparent 34%),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                linear-gradient(60deg, #4CAF50 33%, transparent 33%),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                linear-gradient(180deg, #FF756B 0, #F44336 30%, transparent 30%),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                linear-gradient(-120deg, #FFEB3B 40%, transparent 40%),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                linear-gradient(-60deg, #FFEB3B 30%, transparent 30%),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                linear-gradient(0deg, #4CAF50 45%, transparent 45%),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                linear-gradient(60deg, #4CAF50 30%, transparent 30%),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                linear-gradient(120deg, #F44336 50%, transparent 50%),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                linear-gradient(180deg, #F44336 30%, transparent 30%);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;实现原理就是使用了多个渐变色放在div上，友协被遮住，视觉上就产生了想要的效果，是不是很强大！看了下图你就知道其实就是在div上加了很多个渐变。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/css3test6.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -179,10 +180,10 @@
     <link href="http://yoursite.com/work/2016-05-29/tiny-heart-study.html"/>
     <id>http://yoursite.com/work/2016-05-29/tiny-heart-study.html</id>
     <published>2016-05-29T01:41:43.000Z</published>
-    <updated>2016-05-29T04:18:20.000Z</updated>
+    <updated>2016-07-05T14:19:12.000Z</updated>
     
     <content type="html">&lt;p&gt;最近除了做业务，也在尝试学习h5和移动端，在这个过程中，学到了很多，利用h5和canvas做了一个爱心鱼的小游戏。源码在github上，down下来直接就能够运行。要是觉得还行，就给个star吧！&lt;a href=&quot;https://github.com/luckykun/tinyHeart&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;源码地址点这里&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;下面我就做游戏的步骤来分享总结一下用到h5和canvas的API和一些常见的数学函数。推荐你先去玩一玩游戏，才能更好的明白这些逻辑。&lt;a href=&quot;http://luckykun.com/work/2016-05-29/tiny-heart-demo.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点这里去玩一下&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下面我就做游戏的步骤来分享总结一下用到h5和canvas的API和一些常见的数学函数。推荐你先去玩一玩游戏，才能更好的明白这些逻辑。&lt;a href=&quot;http://luckykun.com/work/2016-05-30/tiny-heart-demo.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点这里去玩一下&lt;/a&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;首先，一个游戏最重要的就是动画，怎么让元素动起来呢？先来看一句话：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -278,7 +279,7 @@
     <summary type="html">
     
       &lt;p&gt;最近除了做业务，也在尝试学习h5和移动端，在这个过程中，学到了很多，利用h5和canvas做了一个爱心鱼的小游戏。源码在github上，down下来直接就能够运行。要是觉得还行，就给个star吧！&lt;a href=&quot;https://github.com/luckykun/tinyHeart&quot;&gt;源码地址点这里&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;下面我就做游戏的步骤来分享总结一下用到h5和canvas的API和一些常见的数学函数。推荐你先去玩一玩游戏，才能更好的明白这些逻辑。&lt;a href=&quot;http://luckykun.com/work/2016-05-29/tiny-heart-demo.html&quot;&gt;点这里去玩一下&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下面我就做游戏的步骤来分享总结一下用到h5和canvas的API和一些常见的数学函数。推荐你先去玩一玩游戏，才能更好的明白这些逻辑。&lt;a href=&quot;http://luckykun.com/work/2016-05-30/tiny-heart-demo.html&quot;&gt;点这里去玩一下&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -395,9 +396,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
