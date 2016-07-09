@@ -396,9 +396,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     

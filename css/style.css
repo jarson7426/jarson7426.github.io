@@ -194,20 +194,6 @@ a {
     width: 100%;
   }
 }
-.go-top {
-  z-index: 100;
-  position: fixed;
-  bottom: 100px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
-  background: url("http://7xtawy.com2.z0.glb.clouddn.com/top.png") 0 0 no-repeat;
-  display: none;
-}
-.go-top:hover {
-  background-position: 0 -40px;
-  cursor: pointer;
-}
 .busuanzi-read-num {
   float: right;
   font-size: 14px;
@@ -224,6 +210,20 @@ a {
   -moz-animation: rotate 0.6s linear infinite;
   -ms-animation: rotate 0.6s linear infinite;
   animation: rotate 0.6s linear infinite;
+}
+.go-top {
+  z-index: 100;
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: url("../img/top.png") 0 0 no-repeat;
+  display: none;
+}
+.go-top:hover {
+  background-position: 0 -40px;
+  cursor: pointer;
 }
 #container {
   position: relative;
