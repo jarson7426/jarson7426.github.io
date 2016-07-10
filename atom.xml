@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-05T15:08:28.000Z</updated>
+  <updated>2016-07-10T15:29:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,13 +16,94 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hexo博客进阶－性能优化</title>
+    <link href="http://yoursite.com/work/2016-07-10/hexo-faster.html"/>
+    <id>http://yoursite.com/work/2016-07-10/hexo-faster.html</id>
+    <published>2016-07-10T09:47:20.000Z</published>
+    <updated>2016-07-10T15:29:20.000Z</updated>
+    
+    <content type="html">&lt;hr&gt;
+&lt;p&gt;刚开始搭建博客的时候觉得很好玩，可是玩的久了，问题慢慢就出来了，就跟谈恋爱一样＝＝。比如现在我访问博客的时候就感觉慢的要死，不可否认，使用hexo搭建服务器方便快捷，但是由于github作为服务器，也会有速度稍慢的代价产生。既然我不能放弃github，那就只有另寻出路了，作为一名前端，有哪些地方我们可以自己来优化呢？&lt;/p&gt;
+&lt;p&gt;先来说说我们在面试中经常遇到的一个问题，&lt;code&gt;在浏览器输入url到页面打开，都做了些什么？&lt;/code&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器里输入网址&lt;/li&gt;
+&lt;li&gt;浏览器查找域名对应的IP地址&lt;ul&gt;
+&lt;li&gt;这一步包括DNS具体的查找过程，包括：浏览器缓存-&amp;gt;系统缓存-&amp;gt;路由器缓存…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;浏览器向web服务器发送一个HTTP请求&lt;/li&gt;
+&lt;li&gt;服务器的永久重定向响应（从&lt;code&gt;http://example.com&lt;/code&gt; 到 &lt;code&gt;http://www.example.com&lt;/code&gt;）&lt;ul&gt;
+&lt;li&gt;关于为什么要重定向。其中一个原因跟&lt;code&gt;搜索引擎&lt;/code&gt;排名有关。如果一个页面有两个地址，就像&lt;code&gt;http://example.com/&lt;/code&gt;和&lt;code&gt;http://www.example.com/&lt;/code&gt;，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成&lt;code&gt;缓存友好性变差&lt;/code&gt;。，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成&lt;code&gt;缓存友好性变差&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;浏览器跟踪重定向地址，发起GET请求&lt;/li&gt;
+&lt;li&gt;服务器”处理”请求，向浏览器发回一个HTML响应&lt;/li&gt;
+&lt;li&gt;浏览器解析显示HTML&lt;/li&gt;
+&lt;li&gt;浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等）&lt;/li&gt;
+&lt;li&gt;浏览器发送异步请求（ajax请求等）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;分析&quot;&gt;&lt;a href=&quot;#分析&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h1&gt;&lt;p&gt;从上面的过程可以看出，其实大部分过程我们是控制不了的，我们只能从浏览器端入手来找一些可以做的事情。那么，我们可以做些什么呢？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;少发送请求&lt;ul&gt;
+&lt;li&gt;把要加载的js文件（css文件同理）合并成一个（尽量少）文件，则可以向服务器少发送请求，从而减少等待时间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;压缩文件&lt;ul&gt;
+&lt;li&gt;使用压缩之后的js、css、img文件，同样可以减少请求时间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Css Sprite&lt;ul&gt;
+&lt;li&gt;这是css的一项技术，将图片尽可能多的合并成一个图片文件，第一次使用的时候加载这张图片，然后浏览器会缓存下来，其他地方再使用的时候就不需要重新请求了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;js／css位置&lt;ul&gt;
+&lt;li&gt;css引用建议放在head标签里面；js脚本建议放到body内容的最后，原因：等待js加载或者脚本有错误的时候不会影响html页面的展示。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;待发现…^_^&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;博客优化&quot;&gt;&lt;a href=&quot;#博客优化&quot; class=&quot;headerlink&quot; title=&quot;博客优化&quot;&gt;&lt;/a&gt;博客优化&lt;/h1&gt;&lt;h2 id=&quot;优化之前&quot;&gt;&lt;a href=&quot;#优化之前&quot; class=&quot;headerlink&quot; title=&quot;优化之前&quot;&gt;&lt;/a&gt;优化之前&lt;/h2&gt;&lt;p&gt;优化之前，大家可以利用百度统计这个平台（界面太丑，不过功能还行＝＝）给自己的网站做一些评测，比如可以测速，并给出优化建议，下面是我测试的结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/111.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;他还会告诉我们导致网站访问速度慢的原因，以便我们对症下药，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;使用gulp优化&quot;&gt;&lt;a href=&quot;#使用gulp优化&quot; class=&quot;headerlink&quot; title=&quot;使用gulp优化&quot;&gt;&lt;/a&gt;使用gulp优化&lt;/h2&gt;&lt;p&gt;从上图可以看出，慢的不要不要的，不优化根本不能接受，所以，我尝试着做了一些优化，主要是利用gulp和它的一些插件来压缩js、css、img等文件，下面是我添加的gulpfile.js文件:&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; gulp = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp&#39;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    uglify = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-uglify&#39;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    rename = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-rename&#39;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    cssmin = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-minify-css&#39;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    imagemin = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-imagemin&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//JS压缩&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;uglify&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;././public/js/*.js&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(uglify())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;././public/js/&#39;&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//public-fancybox-js压缩&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;fancybox:js&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;././public/fancybox/jquery.fancybox.js&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(uglify())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;././public/fancybox/&#39;&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//public-fancybox-css压缩&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;fancybox:css&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;././public/fancybox/jquery.fancybox.css&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(cssmin())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;././public/fancybox/&#39;&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//CSS压缩&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;cssmin&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;././public/css/style.css&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(cssmin())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;././public/css/&#39;&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//图片压缩&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;images&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;././public/img/*.*&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(imagemin(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            progressive: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;././public/img/&#39;&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;build&#39;&lt;/span&gt;, [&lt;span class=&quot;string&quot;&gt;&#39;uglify&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;cssmin&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;images&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;fancybox:js&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;fancybox:css&#39;&lt;/span&gt;]);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;博客优化-1&quot;&gt;&lt;a href=&quot;#博客优化-1&quot; class=&quot;headerlink&quot; title=&quot;博客优化&quot;&gt;&lt;/a&gt;博客优化&lt;/h1&gt;&lt;p&gt;优化之后，然后每次添加文章之后，编译发布之间需要多一个命令来压缩这些文件，总结了一下，详细如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;hexo clean   //清除public文件夹&lt;/li&gt;
+&lt;li&gt;hexo g   //编译文章，生成public文件夹&lt;/li&gt;
+&lt;li&gt;gulp build   //压缩js、css、img文件&lt;/li&gt;
+&lt;li&gt;hexo d   //部署到github&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;刚开始搭建博客的时候觉得很好玩，可是玩的久了，问题慢慢就出来了，就跟谈恋爱一样＝＝。比如现在我访问博客的时候就感觉慢的要死，不可否认，使用hexo搭建服务器方便快捷，但是由于github作为服务器，也会有速度稍慢的代价产生。既然我不能放弃github，那就只有另寻出路了，作为一名前端，有哪些地方我们可以自己来优化呢？&lt;/p&gt;
+&lt;p&gt;先来说说我们在面试中经常遇到的一个问题，&lt;code&gt;在浏览器输入url到页面打开，都做了些什么？&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工作" scheme="http://yoursite.com/categories/work/"/>
+    
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS3初体验之奇技淫巧</title>
     <link href="http://yoursite.com/work/2016-07-04/css3-study01.html"/>
     <id>http://yoursite.com/work/2016-07-04/css3-study01.html</id>
     <published>2016-07-04T14:39:19.000Z</published>
-    <updated>2016-07-05T15:08:28.000Z</updated>
+    <updated>2016-07-10T09:52:10.000Z</updated>
     
-    <content type="html">&lt;p&gt;自CSS3流行以来，虽然以前看过一遍所有的新增属性，但其实在实际项目中用到的少之又少。所以没有形成系统性的认识，以及看到效果立马就能想到解决方案的能力。然后最近正好遇到一个需要绘制大量动画的需求，所以决定趁此机会好好研究一下这个既熟悉又陌生的css3。&lt;/p&gt;
+    <content type="html">&lt;hr&gt;
+&lt;p&gt;自CSS3流行以来，虽然以前看过一遍所有的新增属性，但其实在实际项目中用到的少之又少。所以没有形成系统性的认识，以及看到效果立马就能想到解决方案的能力。然后最近正好遇到一个需要绘制大量动画的需求，所以决定趁此机会好好研究一下这个既熟悉又陌生的css3。&lt;/p&gt;
 &lt;p&gt;在正式开始css3之前，先来介绍一些比较经典的&lt;code&gt;css3实例&lt;/code&gt;，让大家好好感受一下css3的魅力，本文会提到以下几个css3的属性：&lt;/p&gt;
 &lt;p&gt;border-radius、::after、attr和content、box-sizing、linear-gradient、radial-gradient、box-shadow&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -96,7 +177,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;自CSS3流行以来，虽然以前看过一遍所有的新增属性，但其实在实际项目中用到的少之又少。所以没有形成系统性的认识，以及看到效果立马就能想到解决方案的能力。然后最近正好遇到一个需要绘制大量动画的需求，所以决定趁此机会好好研究一下这个既熟悉又陌生的css3。&lt;/p&gt;
+      &lt;hr&gt;
+&lt;p&gt;自CSS3流行以来，虽然以前看过一遍所有的新增属性，但其实在实际项目中用到的少之又少。所以没有形成系统性的认识，以及看到效果立马就能想到解决方案的能力。然后最近正好遇到一个需要绘制大量动画的需求，所以决定趁此机会好好研究一下这个既熟悉又陌生的css3。&lt;/p&gt;
 &lt;p&gt;在正式开始css3之前，先来介绍一些比较经典的&lt;code&gt;css3实例&lt;/code&gt;，让大家好好感受一下css3的魅力，本文会提到以下几个css3的属性：&lt;/p&gt;
 &lt;p&gt;border-radius、::after、attr和content、box-sizing、linear-gradient、radial-gradient、box-shadow&lt;/p&gt;
     
@@ -430,7 +512,7 @@
 &lt;h2 id=&quot;创建相册页面&quot;&gt;&lt;a href=&quot;#创建相册页面&quot; class=&quot;headerlink&quot; title=&quot;创建相册页面&quot;&gt;&lt;/a&gt;创建相册页面&lt;/h2&gt;&lt;p&gt;在根目录下执行命令：&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hexo page photos&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;会在&lt;code&gt;source/photos&lt;/code&gt;目录下生成一个index.md文件，编辑文件内容如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;link type=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt; href=&lt;span class=&quot;string&quot;&gt;&quot;/fancybox/jquery.fancybox.css&quot;&lt;/span&gt; rel=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;div class=&quot;instagram&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;section class=&quot;archives album&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;ul class=&quot;img-box-ul&quot;&amp;gt;&amp;lt;/ul&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;/section&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;link type=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt; href=&lt;span class=&quot;string&quot;&gt;&quot;/fancybox/jquery.fancybox.css&quot;&lt;/span&gt; rel=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;instagram&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;archives album&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img-box-ul&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;section&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;修改themes-yilia-js-photo-js：&quot;&gt;&lt;a href=&quot;#修改themes-yilia-js-photo-js：&quot; class=&quot;headerlink&quot; title=&quot;修改themes/yilia/js/photo.js：&quot;&gt;&lt;/a&gt;修改&lt;code&gt;themes/yilia/js/photo.js&lt;/code&gt;：&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;init: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; that = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $.getJSON(&lt;span class=&quot;string&quot;&gt;&quot;/photos/data.json&quot;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;data&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        that.render(that.page, data);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        that.scroll(data);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;render: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;page, data&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; begin = (page - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) * &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.offset;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; end = page * &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.offset;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (begin &amp;gt;= data.length) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; html, li = &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = begin; i &amp;lt; end &amp;amp;&amp;amp; i &amp;lt; data.length; i++) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        li += &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;li&amp;gt;&amp;lt;div class=&quot;img-box&quot;&amp;gt;&#39;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;a class=&quot;img-bg&quot; rel=&quot;example_group&quot; href=&quot;https://raw.githubusercontent.com/jarson7426/blog-back-up/master/photos/&#39;&lt;/span&gt; + data[i] + &lt;span class=&quot;string&quot;&gt;&#39;&quot;&amp;gt;&amp;lt;/a&amp;gt;&#39;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;img lazy-src=&quot;https://raw.githubusercontent.com/jarson7426/blog-back-up/master/photos/&#39;&lt;/span&gt; + data[i] + &lt;span class=&quot;string&quot;&gt;&#39;&quot; /&amp;gt;&#39;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/li&amp;gt;&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&quot;.img-box-ul&quot;&lt;/span&gt;).append(li);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&quot;.img-box-ul&quot;&lt;/span&gt;).lazyload();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&quot;a[rel=example_group]&quot;&lt;/span&gt;).fancybox();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;...&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;上述文件读取json文件，将图片的线上url拼接起来渲染在页面上，相册样式使用yilia主题提供。然后上传这些文件，根据自定义的路径访问url，就能看到相册了。那么，到这里就基本完成了相册的制作。&lt;/p&gt;
 &lt;h1 id=&quot;独立域名&quot;&gt;&lt;a href=&quot;#独立域名&quot; class=&quot;headerlink&quot; title=&quot;独立域名&quot;&gt;&lt;/a&gt;独立域名&lt;/h1&gt;&lt;p&gt;到目前为止，我们的博客都是使用github分配的二级域名&lt;code&gt;luckykun.github.io&lt;/code&gt;来访问的， 那么我们会想如果能自己设置个域名，是多么cool的事！要怎么办呢？那就继续往下看吧！&lt;/p&gt;
@@ -455,9 +537,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
     
   </entry>
   
@@ -1232,13 +1314,13 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="grunt" scheme="http://yoursite.com/tags/grunt/"/>
     
       <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
     
       <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -1407,9 +1489,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
     
   </entry>
   
