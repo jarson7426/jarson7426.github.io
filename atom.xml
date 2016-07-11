@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-10T15:29:20.000Z</updated>
+  <updated>2016-07-11T14:04:15.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/work/2016-07-10/hexo-faster.html"/>
     <id>http://yoursite.com/work/2016-07-10/hexo-faster.html</id>
     <published>2016-07-10T09:47:20.000Z</published>
-    <updated>2016-07-10T15:29:20.000Z</updated>
+    <updated>2016-07-11T14:04:15.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;刚开始搭建博客的时候觉得很好玩，可是玩的久了，问题慢慢就出来了，就跟谈恋爱一样＝＝。比如现在我访问博客的时候就感觉慢的要死，不可否认，使用hexo搭建服务器方便快捷，但是由于github作为服务器，也会有速度稍慢的代价产生。既然我不能放弃github，那就只有另寻出路了，作为一名前端，有哪些地方我们可以自己来优化呢？&lt;/p&gt;
@@ -28,15 +28,9 @@
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;浏览器里输入网址&lt;/li&gt;
-&lt;li&gt;浏览器查找域名对应的IP地址&lt;ul&gt;
-&lt;li&gt;这一步包括DNS具体的查找过程，包括：浏览器缓存-&amp;gt;系统缓存-&amp;gt;路由器缓存…&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;浏览器查找域名对应的IP地址&lt;br&gt;  这一步包括DNS具体的查找过程，包括：浏览器缓存-&amp;gt;系统缓存-&amp;gt;路由器缓存…&lt;/li&gt;
 &lt;li&gt;浏览器向web服务器发送一个HTTP请求&lt;/li&gt;
-&lt;li&gt;服务器的永久重定向响应（从&lt;code&gt;http://example.com&lt;/code&gt; 到 &lt;code&gt;http://www.example.com&lt;/code&gt;）&lt;ul&gt;
-&lt;li&gt;关于为什么要重定向。其中一个原因跟&lt;code&gt;搜索引擎&lt;/code&gt;排名有关。如果一个页面有两个地址，就像&lt;code&gt;http://example.com/&lt;/code&gt;和&lt;code&gt;http://www.example.com/&lt;/code&gt;，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成&lt;code&gt;缓存友好性变差&lt;/code&gt;。，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成&lt;code&gt;缓存友好性变差&lt;/code&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;服务器的永久重定向响应（从&lt;code&gt;http://example.com&lt;/code&gt; 到 &lt;code&gt;http://www.example.com&lt;/code&gt;）&lt;br&gt; 关于为什么要重定向。其中一个原因跟&lt;code&gt;搜索引擎&lt;/code&gt;排名有关。如果一个页面有两个地址，就像&lt;code&gt;http://example.com/&lt;/code&gt;和&lt;code&gt;http://www.example.com/&lt;/code&gt;，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成&lt;code&gt;缓存友好性变差&lt;/code&gt;。&lt;/li&gt;
 &lt;li&gt;浏览器跟踪重定向地址，发起GET请求&lt;/li&gt;
 &lt;li&gt;服务器”处理”请求，向浏览器发回一个HTML响应&lt;/li&gt;
 &lt;li&gt;浏览器解析显示HTML&lt;/li&gt;
@@ -45,22 +39,10 @@
 &lt;/ul&gt;
 &lt;h1 id=&quot;分析&quot;&gt;&lt;a href=&quot;#分析&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h1&gt;&lt;p&gt;从上面的过程可以看出，其实大部分过程我们是控制不了的，我们只能从浏览器端入手来找一些可以做的事情。那么，我们可以做些什么呢？&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;少发送请求&lt;ul&gt;
-&lt;li&gt;把要加载的js文件（css文件同理）合并成一个（尽量少）文件，则可以向服务器少发送请求，从而减少等待时间。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;压缩文件&lt;ul&gt;
-&lt;li&gt;使用压缩之后的js、css、img文件，同样可以减少请求时间。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Css Sprite&lt;ul&gt;
-&lt;li&gt;这是css的一项技术，将图片尽可能多的合并成一个图片文件，第一次使用的时候加载这张图片，然后浏览器会缓存下来，其他地方再使用的时候就不需要重新请求了。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;js／css位置&lt;ul&gt;
-&lt;li&gt;css引用建议放在head标签里面；js脚本建议放到body内容的最后，原因：等待js加载或者脚本有错误的时候不会影响html页面的展示。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;少发送请求&lt;br&gt; 把要加载的js文件（css文件同理）合并成一个（尽量少）文件，则可以向服务器少发送请求，从而减少等待时间。&lt;/li&gt;
+&lt;li&gt;压缩文件&lt;br&gt; 使用压缩之后的js、css、img文件，同样可以减少请求时间。&lt;/li&gt;
+&lt;li&gt;Css Sprite&lt;br&gt; 这是css的一项技术，将图片尽可能多的合并成一个图片文件，第一次使用的时候加载这张图片，然后浏览器会缓存下来，其他地方再使用的时候就不需要重新请求了。&lt;/li&gt;
+&lt;li&gt;js／css位置&lt;br&gt; css引用建议放在head标签里面；js脚本建议放到body内容的最后，原因：等待js加载或者脚本有错误的时候不会影响html页面的展示。&lt;/li&gt;
 &lt;li&gt;待发现…^_^&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;博客优化&quot;&gt;&lt;a href=&quot;#博客优化&quot; class=&quot;headerlink&quot; title=&quot;博客优化&quot;&gt;&lt;/a&gt;博客优化&lt;/h1&gt;&lt;h2 id=&quot;优化之前&quot;&gt;&lt;a href=&quot;#优化之前&quot; class=&quot;headerlink&quot; title=&quot;优化之前&quot;&gt;&lt;/a&gt;优化之前&lt;/h2&gt;&lt;p&gt;优化之前，大家可以利用百度统计这个平台（界面太丑，不过功能还行＝＝）给自己的网站做一些评测，比如可以测速，并给出优化建议，下面是我测试的结果：&lt;/p&gt;
@@ -70,12 +52,8 @@
 &lt;h2 id=&quot;使用gulp优化&quot;&gt;&lt;a href=&quot;#使用gulp优化&quot; class=&quot;headerlink&quot; title=&quot;使用gulp优化&quot;&gt;&lt;/a&gt;使用gulp优化&lt;/h2&gt;&lt;p&gt;从上图可以看出，慢的不要不要的，不优化根本不能接受，所以，我尝试着做了一些优化，主要是利用gulp和它的一些插件来压缩js、css、img等文件，下面是我添加的gulpfile.js文件:&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; gulp = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp&#39;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    uglify = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-uglify&#39;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    rename = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-rename&#39;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    cssmin = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-minify-css&#39;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    imagemin = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-imagemin&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//JS压缩&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;uglify&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;././public/js/*.js&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(uglify())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;././public/js/&#39;&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//public-fancybox-js压缩&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;fancybox:js&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;././public/fancybox/jquery.fancybox.js&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(uglify())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;././public/fancybox/&#39;&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//public-fancybox-css压缩&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;fancybox:css&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;././public/fancybox/jquery.fancybox.css&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(cssmin())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;././public/fancybox/&#39;&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//CSS压缩&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;cssmin&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;././public/css/style.css&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(cssmin())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;././public/css/&#39;&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//图片压缩&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;images&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;././public/img/*.*&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(imagemin(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            progressive: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;././public/img/&#39;&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;build&#39;&lt;/span&gt;, [&lt;span class=&quot;string&quot;&gt;&#39;uglify&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;cssmin&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;images&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;fancybox:js&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;fancybox:css&#39;&lt;/span&gt;]);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h1 id=&quot;博客优化-1&quot;&gt;&lt;a href=&quot;#博客优化-1&quot; class=&quot;headerlink&quot; title=&quot;博客优化&quot;&gt;&lt;/a&gt;博客优化&lt;/h1&gt;&lt;p&gt;优化之后，然后每次添加文章之后，编译发布之间需要多一个命令来压缩这些文件，总结了一下，详细如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;hexo clean   //清除public文件夹&lt;/li&gt;
-&lt;li&gt;hexo g   //编译文章，生成public文件夹&lt;/li&gt;
-&lt;li&gt;gulp build   //压缩js、css、img文件&lt;/li&gt;
-&lt;li&gt;hexo d   //部署到github&lt;/li&gt;
-&lt;/ul&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hexo clean      &lt;span class=&quot;comment&quot;&gt;//清除public文件夹&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;hexo g       &lt;span class=&quot;comment&quot;&gt;//编译文章，生成public文件夹&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp build     &lt;span class=&quot;comment&quot;&gt;//压缩js、css、img文件&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;hexo d      &lt;span class=&quot;comment&quot;&gt;//部署到github&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;最后再去测试一下网站的访问速度，可以看出比之前已经快了不少了，截图如下：&lt;br&gt;&lt;img src=&quot;https://img.alicdn.com/tps/TB1iMayKVXXXXX.XXXXXXXXXXXX-795-86.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -478,9 +456,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     

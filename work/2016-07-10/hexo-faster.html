@@ -17,7 +17,8 @@
 先来说说我们在面试中经常遇到的一个问题，在浏览器输入url到页面打开，都做了些">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/111.png">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/2.png">
-<meta property="og:updated_time" content="2016-07-10T15:29:20.000Z">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1iMayKVXXXXX.XXXXXXXXXXXX-795-86.png">
+<meta property="og:updated_time" content="2016-07-11T14:04:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo博客进阶－性能优化">
 <meta name="twitter:description" content="刚开始搭建博客的时候觉得很好玩，可是玩的久了，问题慢慢就出来了，就跟谈恋爱一样＝＝。比如现在我访问博客的时候就感觉慢的要死，不可否认，使用hexo搭建服务器方便快捷，但是由于github作为服务器，也会有速度稍慢的代价产生。既然我不能放弃github，那就只有另寻出路了，作为一名前端，有哪些地方我们可以自己来优化呢？
@@ -274,15 +275,9 @@
 <a id="more"></a>
 <ul>
 <li>浏览器里输入网址</li>
-<li>浏览器查找域名对应的IP地址<ul>
-<li>这一步包括DNS具体的查找过程，包括：浏览器缓存-&gt;系统缓存-&gt;路由器缓存…</li>
-</ul>
-</li>
+<li>浏览器查找域名对应的IP地址<br>  这一步包括DNS具体的查找过程，包括：浏览器缓存-&gt;系统缓存-&gt;路由器缓存…</li>
 <li>浏览器向web服务器发送一个HTTP请求</li>
-<li>服务器的永久重定向响应（从<code>http://example.com</code> 到 <code>http://www.example.com</code>）<ul>
-<li>关于为什么要重定向。其中一个原因跟<code>搜索引擎</code>排名有关。如果一个页面有两个地址，就像<code>http://example.com/</code>和<code>http://www.example.com/</code>，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成<code>缓存友好性变差</code>。，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成<code>缓存友好性变差</code>。</li>
-</ul>
-</li>
+<li>服务器的永久重定向响应（从<code>http://example.com</code> 到 <code>http://www.example.com</code>）<br> 关于为什么要重定向。其中一个原因跟<code>搜索引擎</code>排名有关。如果一个页面有两个地址，就像<code>http://example.com/</code>和<code>http://www.example.com/</code>，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成<code>缓存友好性变差</code>。</li>
 <li>浏览器跟踪重定向地址，发起GET请求</li>
 <li>服务器”处理”请求，向浏览器发回一个HTML响应</li>
 <li>浏览器解析显示HTML</li>
@@ -291,22 +286,10 @@
 </ul>
 <h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>从上面的过程可以看出，其实大部分过程我们是控制不了的，我们只能从浏览器端入手来找一些可以做的事情。那么，我们可以做些什么呢？</p>
 <ul>
-<li>少发送请求<ul>
-<li>把要加载的js文件（css文件同理）合并成一个（尽量少）文件，则可以向服务器少发送请求，从而减少等待时间。</li>
-</ul>
-</li>
-<li>压缩文件<ul>
-<li>使用压缩之后的js、css、img文件，同样可以减少请求时间。</li>
-</ul>
-</li>
-<li>Css Sprite<ul>
-<li>这是css的一项技术，将图片尽可能多的合并成一个图片文件，第一次使用的时候加载这张图片，然后浏览器会缓存下来，其他地方再使用的时候就不需要重新请求了。</li>
-</ul>
-</li>
-<li>js／css位置<ul>
-<li>css引用建议放在head标签里面；js脚本建议放到body内容的最后，原因：等待js加载或者脚本有错误的时候不会影响html页面的展示。</li>
-</ul>
-</li>
+<li>少发送请求<br> 把要加载的js文件（css文件同理）合并成一个（尽量少）文件，则可以向服务器少发送请求，从而减少等待时间。</li>
+<li>压缩文件<br> 使用压缩之后的js、css、img文件，同样可以减少请求时间。</li>
+<li>Css Sprite<br> 这是css的一项技术，将图片尽可能多的合并成一个图片文件，第一次使用的时候加载这张图片，然后浏览器会缓存下来，其他地方再使用的时候就不需要重新请求了。</li>
+<li>js／css位置<br> css引用建议放在head标签里面；js脚本建议放到body内容的最后，原因：等待js加载或者脚本有错误的时候不会影响html页面的展示。</li>
 <li>待发现…^_^</li>
 </ul>
 <h1 id="博客优化"><a href="#博客优化" class="headerlink" title="博客优化"></a>博客优化</h1><h2 id="优化之前"><a href="#优化之前" class="headerlink" title="优化之前"></a>优化之前</h2><p>优化之前，大家可以利用百度统计这个平台（界面太丑，不过功能还行＝＝）给自己的网站做一些评测，比如可以测速，并给出优化建议，下面是我测试的结果：</p>
@@ -316,12 +299,8 @@
 <h2 id="使用gulp优化"><a href="#使用gulp优化" class="headerlink" title="使用gulp优化"></a>使用gulp优化</h2><p>从上图可以看出，慢的不要不要的，不优化根本不能接受，所以，我尝试着做了一些优化，主要是利用gulp和它的一些插件来压缩js、css、img等文件，下面是我添加的gulpfile.js文件:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">    uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>),</div><div class="line">    rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>),</div><div class="line">    cssmin = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>),</div><div class="line">    imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>);</div><div class="line"><span class="comment">//JS压缩</span></div><div class="line">gulp.task(<span class="string">'uglify'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'././public/js/*.js'</span>)</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(gulp.dest(<span class="string">'././public/js/'</span>));</div><div class="line">&#125;);</div><div class="line"><span class="comment">//public-fancybox-js压缩</span></div><div class="line">gulp.task(<span class="string">'fancybox:js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'././public/fancybox/jquery.fancybox.js'</span>)</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(gulp.dest(<span class="string">'././public/fancybox/'</span>));</div><div class="line">&#125;);</div><div class="line"><span class="comment">//public-fancybox-css压缩</span></div><div class="line">gulp.task(<span class="string">'fancybox:css'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'././public/fancybox/jquery.fancybox.css'</span>)</div><div class="line">        .pipe(cssmin())</div><div class="line">        .pipe(gulp.dest(<span class="string">'././public/fancybox/'</span>));</div><div class="line">&#125;);</div><div class="line"><span class="comment">//CSS压缩</span></div><div class="line">gulp.task(<span class="string">'cssmin'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'././public/css/style.css'</span>)</div><div class="line">        .pipe(cssmin())</div><div class="line">        .pipe(gulp.dest(<span class="string">'././public/css/'</span>));</div><div class="line">&#125;);</div><div class="line"><span class="comment">//图片压缩</span></div><div class="line">gulp.task(<span class="string">'images'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    gulp.src(<span class="string">'././public/img/*.*'</span>)</div><div class="line">        .pipe(imagemin(&#123;</div><div class="line">            progressive: <span class="literal">false</span></div><div class="line">        &#125;))</div><div class="line">        .pipe(gulp.dest(<span class="string">'././public/img/'</span>));</div><div class="line">&#125;);</div><div class="line">gulp.task(<span class="string">'build'</span>, [<span class="string">'uglify'</span>, <span class="string">'cssmin'</span>, <span class="string">'images'</span>, <span class="string">'fancybox:js'</span>, <span class="string">'fancybox:css'</span>]);</div></pre></td></tr></table></figure>
 <h1 id="博客优化-1"><a href="#博客优化-1" class="headerlink" title="博客优化"></a>博客优化</h1><p>优化之后，然后每次添加文章之后，编译发布之间需要多一个命令来压缩这些文件，总结了一下，详细如下：</p>
-<ul>
-<li>hexo clean   //清除public文件夹</li>
-<li>hexo g   //编译文章，生成public文件夹</li>
-<li>gulp build   //压缩js、css、img文件</li>
-<li>hexo d   //部署到github</li>
-</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">hexo clean      <span class="comment">//清除public文件夹</span></div><div class="line">hexo g       <span class="comment">//编译文章，生成public文件夹</span></div><div class="line">gulp build     <span class="comment">//压缩js、css、img文件</span></div><div class="line">hexo d      <span class="comment">//部署到github</span></div></pre></td></tr></table></figure>
+<p>最后再去测试一下网站的访问速度，可以看出比之前已经快了不少了，截图如下：<br><img src="https://img.alicdn.com/tps/TB1iMayKVXXXXX.XXXXXXXXXXXX-795-86.png" alt=""></p>
 
       
     </div>
