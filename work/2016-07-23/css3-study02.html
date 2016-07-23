@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="baidu-site-verification" content="5tcBr0YNFF" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>CSS3 3D立方体效果－transform也不过如此 | luckykun-不一样的世界</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS3系列已经学习了一段时间了，第一篇文章写了一些css3的奇技淫巧，原文戳这里，还获得了较多网友的支持，在此谢过各位，你们的支持是我写文章最大的动力^_^。
+那么这一篇文章呢，主要是通过一个3D立方体的效果实例来深入了解css3的transform属性，下面是这个实例的截图，加上动画还能旋转起来哟，是不是很酷炫？换上你喜欢的女生的照片，就可以大胆的撩妹了，哈哈！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3 3D立方体效果－transform也不过如此">
+<meta property="og:url" content="http://yoursite.com/work/2016-07-23/css3-study02.html">
+<meta property="og:site_name" content="luckykun-不一样的世界">
+<meta property="og:description" content="CSS3系列已经学习了一段时间了，第一篇文章写了一些css3的奇技淫巧，原文戳这里，还获得了较多网友的支持，在此谢过各位，你们的支持是我写文章最大的动力^_^。
+那么这一篇文章呢，主要是通过一个3D立方体的效果实例来深入了解css3的transform属性，下面是这个实例的截图，加上动画还能旋转起来哟，是不是很酷炫？换上你喜欢的女生的照片，就可以大胆的撩妹了，哈哈！">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/rect.png">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/weidu.png">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/x.png">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/y.png">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/Z.png">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/test9.gif">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/center.png">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/1.png">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/bottom.png">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/right.png">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/left.png">
+<meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/top-left.png">
+<meta property="og:updated_time" content="2016-07-23T09:46:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3 3D立方体效果－transform也不过如此">
+<meta name="twitter:description" content="CSS3系列已经学习了一段时间了，第一篇文章写了一些css3的奇技淫巧，原文戳这里，还获得了较多网友的支持，在此谢过各位，你们的支持是我写文章最大的动力^_^。
+那么这一篇文章呢，主要是通过一个3D立方体的效果实例来深入了解css3的transform属性，下面是这个实例的截图，加上动画还能旋转起来哟，是不是很酷炫？换上你喜欢的女生的照片，就可以大胆的撩妹了，哈哈！">
+<meta name="twitter:image" content="http://7xtawy.com1.z0.glb.clouddn.com/rect.png">
+  
+  
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+  
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?527e9393be17772155eb920f1ce3648e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/user.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">luckykun</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我就是我，颜色不一样的烟火</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<!-- <li>Menu</li> -->
+						<!-- <li>Tags</li> -->
+						<li>主菜单</li>
+						<li>云标签</li>
+						
+						
+						<!-- <li>Über</li> -->
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/demo/">demo</a></li>
+				        
+							<li><a href="/categories/life/">生活</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/luckykun" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2732624311" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/3D效果/" style="font-size: 10px;">3D效果</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/canvas/" style="font-size: 13.33px;">canvas</a> <a href="/tags/demo/" style="font-size: 16.67px;">demo</a> <a href="/tags/es6/" style="font-size: 13.33px;">es6</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo系列/" style="font-size: 16.67px;">hexo系列</a> <a href="/tags/highcharts/" style="font-size: 10px;">highcharts</a> <a href="/tags/html5/" style="font-size: 13.33px;">html5</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/react/" style="font-size: 13.33px;">react</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/插件/" style="font-size: 13.33px;">插件</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/构建/" style="font-size: 10px;">构建</a> <a href="/tags/编辑器/" style="font-size: 10px;">编辑器</a>
+					</div>
+				</section>
+				
+
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">
+						<p>家乡：广元市，也是武则天的家乡~</p>
+						<p>学校：成都信息工程大学</p>
+						<p>职业：一枚程序猿~</p>
+						<p>爱好：篮球、羽毛球</p>
+					</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">luckykun</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/user.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">luckykun</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我就是我，颜色不一样的烟火</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/demo/">demo</a></li>
+		        
+					<li><a href="/categories/life/">生活</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/luckykun" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2732624311" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-css3-study02" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      
+<time datetime="2016-07-23T09:41:57.000Z" itemprop="datePublished">2016-07-23</time>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3 3D立方体效果－transform也不过如此
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/3D效果/">3D效果</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+	</div>
+
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/work/">工作</a>
+	</div>
+
+
+        <div class="busuanzi-read-num">
+            阅读次数：<span id="busuanzi_value_page_pv"><img src="http://7xtawy.com2.z0.glb.clouddn.com/loading1.png"/></span>次
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <!-- Table of Contents -->
+    
+    <p class="show-toc-btn">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc" class="toc-article">
+    <span class="toc-close" title="隐藏导航">×</span>
+    <!-- <strong class="toc-title">文章目录</strong> -->
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#初识transform"><span class="toc-number">1.</span> <span class="toc-text">初识transform</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3D效果的认知"><span class="toc-number">2.</span> <span class="toc-text">3D效果的认知</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#perspective属性"><span class="toc-number">3.</span> <span class="toc-text">perspective属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#transform-style"><span class="toc-number">4.</span> <span class="toc-text">transform-style</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#transform-origin"><span class="toc-number">5.</span> <span class="toc-text">transform-origin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绘制立方体效果"><span class="toc-number">6.</span> <span class="toc-text">绘制立方体效果</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dom结构"><span class="toc-number">6.1.</span> <span class="toc-text">dom结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css代码"><span class="toc-number">6.2.</span> <span class="toc-text">css代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加动画"><span class="toc-number">6.3.</span> <span class="toc-text">加动画</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">7.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>CSS3系列已经学习了一段时间了，第一篇文章写了一些css3的奇技淫巧，<a href="http://luckykun.com/work/2016-07-04/css3-study01.html" target="_blank" rel="external">原文戳这里</a>，还获得了较多网友的支持，在此谢过各位，你们的支持是我写文章最大的动力^_^。</p>
+<p>那么这一篇文章呢，主要是通过一个3D立方体的效果实例来深入了解css3的<code>transform属性</code>，下面是这个实例的截图，加上动画还能旋转起来哟，是不是很酷炫？换上你喜欢的女生的照片，就可以大胆的撩妹了，哈哈！</p>
+<p><img src="http://7xtawy.com1.z0.glb.clouddn.com/rect.png" alt=""></p>
+<a id="more"></a>
+<h1 id="初识transform"><a href="#初识transform" class="headerlink" title="初识transform"></a>初识transform</h1><p>顾名思义：变换。就可以想到它可以做很多很多的事情了，这个属性有很多的值，在这里简单列举一下：</p>
+<ul>
+<li>translate(x,y)、translateX(x)、translateY(y)、translateZ(z)、translate3d(x,y,z)：定义位置的<code>移动距离</code>。</li>
+<li>scale(x,y)、scaleX(x)、scaleY(y)、scaleZ(z)、scale3d(x,y,z)：定义元素的<code>缩放比例</code>。</li>
+<li>rotate(angle)、rotateX(a)、rotateY(a)、rotateZ(a)、rotate3d(x,y,z,angle)：定义元素的<code>旋转角度</code>。</li>
+<li>skew(x-angle,y-angle)、skewX(angle)、skewY(angle)：定义元素的<code>倾斜角度</code>。</li>
+</ul>
+<h1 id="3D效果的认知"><a href="#3D效果的认知" class="headerlink" title="3D效果的认知"></a>3D效果的认知</h1><p><img src="http://7xtawy.com1.z0.glb.clouddn.com/weidu.png" alt=""></p>
+<p>我们可以看到这是一个三维的空间图，不要被第一眼的复杂感吓到，仔细分解一下其实还是很清晰的：反正就X轴、Y轴、Z轴三个方向嘛。</p>
+<p>想象一下，假如你现在坐在电脑面前，<code>电脑屏幕中心是原点，原点往右就是X轴正方向，往下就是Y轴正方向，往屏幕前方（也就是往人脸）的方向就是Z轴的正方向了</code>。把坐标轴的方向搞清楚了，上面的方法就能正确的使用了。</p>
+<p>如果你觉得上面的解释仍然太过于枯燥抽象，那就来举个生活中的例子来对应一下三个rotate属性（rotateX、rotateY、rotateZ）吧：</p>
+<p>如下图：体操表演－绕着X轴旋转就是<code>rotateX</code>（单杠就是X轴）</p>
+<p><img src="http://7xtawy.com1.z0.glb.clouddn.com/x.png" alt=""></p>
+<p>如下图：钢管舞表演－绕着Y轴旋转就是<code>rotateY</code>（钢管就是Y轴）</p>
+<p><img src="http://7xtawy.com1.z0.glb.clouddn.com/y.png" alt=""></p>
+<p>如下图：转盘旋转－绕着Z轴在旋转就是<code>rotateZ</code>（想象有一根绳子从转盘的中心穿过，图不好找＝＝）</p>
+<p><img src="http://7xtawy.com1.z0.glb.clouddn.com/Z.png" alt=""></p>
+<h1 id="perspective属性"><a href="#perspective属性" class="headerlink" title="perspective属性"></a>perspective属性</h1><blockquote>
+<p>perspective的中文意思是：透视，视角！该属性用来激活一个3D空间。</p>
+</blockquote>
+<p>当为元素定义perspective属性时，其子元素都会获得透视效果（使用了3D变换的元素）。所以一般来说perspective属性都应用在父元素上，我们可以把这个父元素称为<code>舞台元素</code>。</p>
+<p>只看解释可能还是难以理解，我们还是用实例说话吧：</p>
+<p><img src="http://7xtawy.com1.z0.glb.clouddn.com/test9.gif" alt=""></p>
+<p>从上图可以看出，div1是div2的父元素，开始我们给div2元素增加旋转<code>transform:rotateX(50deg)</code>的时候，只感觉div2在平面上被’压缩’了，没有3D的效果，然后当我们给父元素div1增加<code>perspective: 150px;</code>的时候，立马就能看到3D的效果了，感受到他的神奇之处了吧。</p>
+<p><code>另外，perspective的取值也一直是个谜，经过我的多次查阅和测试，得出了一下几个结论</code>：</p>
+<ul>
+<li>取值为none或不设置，就没有3D空间。</li>
+<li>取值越小，3D效果就越明显，也就是你的眼睛越靠近真3D。</li>
+<li>貌似当取值为元素的宽度时，视觉效果比较好。</li>
+</ul>
+<h1 id="transform-style"><a href="#transform-style" class="headerlink" title="transform-style"></a>transform-style</h1><blockquote>
+<p>transform-style指定嵌套元素如何在3D空间中呈现。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">transform-style: flat | preserve<span class="number">-3</span>d</div></pre></td></tr></table></figure>
+<p><code>flat</code>是默认值，表示所有子元素在2D平面呈现；<code>preserve-3d</code>表示所有子元素在3D空间中呈现。</p>
+<p>因此，我们想要实现一些3D效果的时候，<code>transform-style: preserve-3d</code>是少不了的。一般而言，该声明应用在3D变换的兄弟元素们的父元素上，我们可以叫它<code>容器</code>。</p>
+<h1 id="transform-origin"><a href="#transform-origin" class="headerlink" title="transform-origin"></a>transform-origin</h1><blockquote>
+<p>transform-origin用来改变元素的原点位置。</p>
+</blockquote>
+<p>它的取值方式有很多种，下面我们通过实例（把背景为黄色的div顺时针旋转45deg）来介绍一下它的常用取值方式：</p>
+<ul>
+<li><p><code>transform-origin:center</code>（默认值，等价于：center center/ 50% 50%）</p>
+<p>  <img src="http://7xtawy.com1.z0.glb.clouddn.com/center.png" alt=""></p>
+</li>
+<li><p><code>transform-origin:top</code>（等价于：top center/center top）</p>
+<p>  <img src="http://7xtawy.com1.z0.glb.clouddn.com/1.png" alt=""></p>
+</li>
+<li><p><code>transform-origin:bottom</code>（等价于：bottom center/center bottom）</p>
+<p>  <img src="http://7xtawy.com1.z0.glb.clouddn.com/bottom.png" alt=""></p>
+</li>
+<li><p><code>transform-origin:right</code>（等价于：right center/center right）</p>
+<p>  <img src="http://7xtawy.com1.z0.glb.clouddn.com/right.png" alt=""></p>
+</li>
+<li><p><code>transform-origin:left</code>（等价于：left center/center left）</p>
+<p>  <img src="http://7xtawy.com1.z0.glb.clouddn.com/left.png" alt=""></p>
+</li>
+<li><p><code>transform-origin:top left</code>（等价于：left top）</p>
+<p>  <img src="http://7xtawy.com1.z0.glb.clouddn.com/top-left.png" alt=""></p>
+</li>
+<li><p>同理，还可以设置为：<code>transform-origin:top right（右上角为原点）</code>、<code>transform-origin:bottom right（右下角为原点）</code>、<code>transform-origin:bottom left（左下角为原点）</code></p>
+</li>
+</ul>
+<h1 id="绘制立方体效果"><a href="#绘制立方体效果" class="headerlink" title="绘制立方体效果"></a>绘制立方体效果</h1><p>各位看官等不及了吧，讲了那么多’废话’，本篇文章的<code>重头戏</code>终于来了！</p>
+<h2 id="dom结构"><a href="#dom结构" class="headerlink" title="dom结构"></a>dom结构</h2><figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;div class="rect-wrap"&gt;   //舞台元素，设置perspective，让其子元素获得透视效果。</div><div class="line">    &lt;div class="container"&gt;    //容器，设置transform-style: preserve-3d，让其子元素在3D空间呈现</div><div class="line">        &lt;div class="top slide"&gt;&lt;/div&gt;   //立方体的六个面</div><div class="line">        &lt;div class="bottom slide"&gt;&lt;/div&gt;</div><div class="line">        &lt;div class="left slide"&gt;&lt;/div&gt;</div><div class="line">        &lt;div class="right slide"&gt;&lt;/div&gt;</div><div class="line">        &lt;div class="front slide"&gt;&lt;/div&gt;</div><div class="line">        &lt;div class="back slide"&gt;&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="css代码"><a href="#css代码" class="headerlink" title="css代码"></a>css代码</h2><ul>
+<li><p>对于舞台元素</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.rect-wrap &#123;</div><div class="line">    position: relative;</div><div class="line">    perspective: <span class="number">1600</span>px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>对于容器</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.container &#123;</div><div class="line">    width: <span class="number">800</span>px;</div><div class="line">    height: <span class="number">800</span>px;</div><div class="line">    transform-style: preserve<span class="number">-3</span>d;</div><div class="line">    transform-origin: <span class="number">50</span>% <span class="number">50</span>% <span class="number">200</span>px; <span class="comment">//设置3d空间的原点在平面中心再向Z轴移动200px的位置</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>立方体的每个面</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.slide &#123;</div><div class="line">    width: <span class="number">400</span>px;</div><div class="line">    height: <span class="number">400</span>px;</div><div class="line">    position: absolute;  <span class="comment">//定位</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>立方体顶面</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.top &#123;</div><div class="line">    left: <span class="number">200</span>px;</div><div class="line">    top: <span class="number">-200</span>px;</div><div class="line">    transform: rotateX(<span class="number">-90</span>deg);</div><div class="line">    transform-origin: bottom;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>立方体底面</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.top &#123;</div><div class="line">    left: <span class="number">200</span>px;</div><div class="line">    bottom: <span class="number">-200</span>px;</div><div class="line">    transform: rotateX(<span class="number">90</span>deg);</div><div class="line">    transform-origin: top;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>立方体左面</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.top &#123;</div><div class="line">    left: <span class="number">-200</span>px;</div><div class="line">    top: <span class="number">200</span>px;</div><div class="line">    transform: rotateY(<span class="number">90</span>deg);</div><div class="line">    transform-origin: right;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>立方体右面</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.top &#123;</div><div class="line">    left: <span class="number">600</span>px;</div><div class="line">    top: <span class="number">200</span>px;</div><div class="line">    transform: rotateY(<span class="number">-90</span>deg);</div><div class="line">    transform-origin: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>立方体前面</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.top &#123;</div><div class="line">    left: <span class="number">200</span>px;</div><div class="line">    top: <span class="number">200</span>px;</div><div class="line">    transform: translateZ(<span class="number">400</span>px);  <span class="comment">//立方体前面正对着屏幕，所以不用旋转，只需向Z轴前移动距离</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>立方体后面</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.top &#123;</div><div class="line">    left: <span class="number">200</span>px;</div><div class="line">    top: <span class="number">200</span>px;</div><div class="line">    transform: translateZ(<span class="number">0</span>);   <span class="comment">//立方体后面正对着屏幕，所以不用旋转，只需向Z轴后移动距离</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  最后别忘了给每个不同面加上图片，位置什么的再稍微调一下，这个酷炫的立方体就大功告成了。</p>
+</li>
+</ul>
+<h2 id="加动画"><a href="#加动画" class="headerlink" title="加动画"></a>加动画</h2><p>最后我们还想要这个立方体自己动起来，我定义了一个动画，看官们可以试试。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">@keyframes rotate-frame &#123;</div><div class="line">    <span class="number">0</span>% &#123;</div><div class="line">        transform: rotateX(<span class="number">0</span>deg) rotateY(<span class="number">0</span>deg);</div><div class="line">    &#125;</div><div class="line">    <span class="number">10</span>% &#123;</div><div class="line">        transform: rotateX(<span class="number">0</span>deg) rotateY(<span class="number">180</span>deg);</div><div class="line">    &#125;</div><div class="line">    <span class="number">20</span>% &#123;</div><div class="line">        transform: rotateX(<span class="number">-180</span>deg) rotateY(<span class="number">180</span>deg);</div><div class="line">    &#125;</div><div class="line">    <span class="number">30</span>% &#123;</div><div class="line">        transform: rotateX(<span class="number">-360</span>deg) rotateY(<span class="number">180</span>deg);</div><div class="line">    &#125;</div><div class="line">    <span class="number">40</span>% &#123;</div><div class="line">        transform: rotateX(<span class="number">-360</span>deg) rotateY(<span class="number">360</span>deg);</div><div class="line">    &#125;</div><div class="line">    <span class="number">50</span>% &#123;</div><div class="line">        transform: rotateX(<span class="number">-180</span>deg) rotateY(<span class="number">360</span>deg);</div><div class="line">    &#125;</div><div class="line">    <span class="number">60</span>% &#123;</div><div class="line">        transform: rotateX(<span class="number">90</span>deg) rotateY(<span class="number">180</span>deg);</div><div class="line">    &#125;</div><div class="line">    <span class="number">70</span>% &#123;</div><div class="line">        transform: rotateX(<span class="number">0</span>) rotateY(<span class="number">180</span>deg);</div><div class="line">    &#125;</div><div class="line">    <span class="number">80</span>% &#123;</div><div class="line">        transform: rotateX(<span class="number">90</span>deg) rotateY(<span class="number">90</span>deg);</div><div class="line">    &#125;</div><div class="line">    <span class="number">90</span>% &#123;</div><div class="line">        transform: rotateX(<span class="number">90</span>deg) rotateY(<span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="number">100</span>% &#123;</div><div class="line">        transform: rotateX(<span class="number">0</span>) rotateY(<span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>最后把这个动画用到这个立方体的容器元素上，就OK了：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.container&#123;</div><div class="line">    animation: rotate-frame <span class="number">30</span>s linear infinite;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>总而言之，在我学习CSS3的过程中，见到了不少的新特性，也学会了如何使用，但是我想说的是我们不管要学会怎么使用，更要去理解每一行代码为什么产生对应的效果，特别是对于<code>3D transform</code>，我们要从根本去理解了<code>3D空间</code>，才能更好的去掌握它的每一个属性值能够带来的效果。</p>
+<p>这篇文章内容稍微有点多，自己记录这篇文章的同时又对这个效果学习巩固了一篇，还是蛮开心哒。同时也希望能对各位看官在以后学习<code>3D transform</code>的道路上起到一点点作用！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <p class="pay-code">
+        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
+    </p>
+</div>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/work/2016-07-10/hexo-faster.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">下一篇：hexo博客进阶－性能优化</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<!-- Share to: &nbsp;  -->
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_facebook"></a>
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a>
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="css3-study02" data-title="CSS3 3D立方体效果－transform也不过如此" data-url="http://yoursite.com/work/2016-07-23/css3-study02.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"jarson7426"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+            <span id="busuanzi_container_site_uv" style="color:#333;font-size:13px;">
+                本站到目前为止已有<span id="busuanzi_value_site_uv" style="color:#ef7522">0</span>人留下脚印
+            </span>
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+             --- &copy; 2016 luckykun
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/require,jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+  <div class="go-top"></div>
+  <script src="/js/busuanzi.min.js"></script>
+</body>
+</html>

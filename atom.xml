@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-11T14:54:59.000Z</updated>
+  <updated>2016-07-23T09:46:00.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,140 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS3 3D立方体效果－transform也不过如此</title>
+    <link href="http://yoursite.com/work/2016-07-23/css3-study02.html"/>
+    <id>http://yoursite.com/work/2016-07-23/css3-study02.html</id>
+    <published>2016-07-23T09:41:57.000Z</published>
+    <updated>2016-07-23T09:46:00.000Z</updated>
+    
+    <content type="html">&lt;hr&gt;
+&lt;p&gt;CSS3系列已经学习了一段时间了，第一篇文章写了一些css3的奇技淫巧，&lt;a href=&quot;http://luckykun.com/work/2016-07-04/css3-study01.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原文戳这里&lt;/a&gt;，还获得了较多网友的支持，在此谢过各位，你们的支持是我写文章最大的动力^_^。&lt;/p&gt;
+&lt;p&gt;那么这一篇文章呢，主要是通过一个3D立方体的效果实例来深入了解css3的&lt;code&gt;transform属性&lt;/code&gt;，下面是这个实例的截图，加上动画还能旋转起来哟，是不是很酷炫？换上你喜欢的女生的照片，就可以大胆的撩妹了，哈哈！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/rect.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;初识transform&quot;&gt;&lt;a href=&quot;#初识transform&quot; class=&quot;headerlink&quot; title=&quot;初识transform&quot;&gt;&lt;/a&gt;初识transform&lt;/h1&gt;&lt;p&gt;顾名思义：变换。就可以想到它可以做很多很多的事情了，这个属性有很多的值，在这里简单列举一下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;translate(x,y)、translateX(x)、translateY(y)、translateZ(z)、translate3d(x,y,z)：定义位置的&lt;code&gt;移动距离&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;scale(x,y)、scaleX(x)、scaleY(y)、scaleZ(z)、scale3d(x,y,z)：定义元素的&lt;code&gt;缩放比例&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;rotate(angle)、rotateX(a)、rotateY(a)、rotateZ(a)、rotate3d(x,y,z,angle)：定义元素的&lt;code&gt;旋转角度&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;skew(x-angle,y-angle)、skewX(angle)、skewY(angle)：定义元素的&lt;code&gt;倾斜角度&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;3D效果的认知&quot;&gt;&lt;a href=&quot;#3D效果的认知&quot; class=&quot;headerlink&quot; title=&quot;3D效果的认知&quot;&gt;&lt;/a&gt;3D效果的认知&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/weidu.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我们可以看到这是一个三维的空间图，不要被第一眼的复杂感吓到，仔细分解一下其实还是很清晰的：反正就X轴、Y轴、Z轴三个方向嘛。&lt;/p&gt;
+&lt;p&gt;想象一下，假如你现在坐在电脑面前，&lt;code&gt;电脑屏幕中心是原点，原点往右就是X轴正方向，往下就是Y轴正方向，往屏幕前方（也就是往人脸）的方向就是Z轴的正方向了&lt;/code&gt;。把坐标轴的方向搞清楚了，上面的方法就能正确的使用了。&lt;/p&gt;
+&lt;p&gt;如果你觉得上面的解释仍然太过于枯燥抽象，那就来举个生活中的例子来对应一下三个rotate属性（rotateX、rotateY、rotateZ）吧：&lt;/p&gt;
+&lt;p&gt;如下图：体操表演－绕着X轴旋转就是&lt;code&gt;rotateX&lt;/code&gt;（单杠就是X轴）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/x.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如下图：钢管舞表演－绕着Y轴旋转就是&lt;code&gt;rotateY&lt;/code&gt;（钢管就是Y轴）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/y.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如下图：转盘旋转－绕着Z轴在旋转就是&lt;code&gt;rotateZ&lt;/code&gt;（想象有一根绳子从转盘的中心穿过，图不好找＝＝）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/Z.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;perspective属性&quot;&gt;&lt;a href=&quot;#perspective属性&quot; class=&quot;headerlink&quot; title=&quot;perspective属性&quot;&gt;&lt;/a&gt;perspective属性&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;perspective的中文意思是：透视，视角！该属性用来激活一个3D空间。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;当为元素定义perspective属性时，其子元素都会获得透视效果（使用了3D变换的元素）。所以一般来说perspective属性都应用在父元素上，我们可以把这个父元素称为&lt;code&gt;舞台元素&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;只看解释可能还是难以理解，我们还是用实例说话吧：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/test9.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;从上图可以看出，div1是div2的父元素，开始我们给div2元素增加旋转&lt;code&gt;transform:rotateX(50deg)&lt;/code&gt;的时候，只感觉div2在平面上被’压缩’了，没有3D的效果，然后当我们给父元素div1增加&lt;code&gt;perspective: 150px;&lt;/code&gt;的时候，立马就能看到3D的效果了，感受到他的神奇之处了吧。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;另外，perspective的取值也一直是个谜，经过我的多次查阅和测试，得出了一下几个结论&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;取值为none或不设置，就没有3D空间。&lt;/li&gt;
+&lt;li&gt;取值越小，3D效果就越明显，也就是你的眼睛越靠近真3D。&lt;/li&gt;
+&lt;li&gt;貌似当取值为元素的宽度时，视觉效果比较好。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;transform-style&quot;&gt;&lt;a href=&quot;#transform-style&quot; class=&quot;headerlink&quot; title=&quot;transform-style&quot;&gt;&lt;/a&gt;transform-style&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;transform-style指定嵌套元素如何在3D空间中呈现。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;transform-style: flat | preserve&lt;span class=&quot;number&quot;&gt;-3&lt;/span&gt;d&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;flat&lt;/code&gt;是默认值，表示所有子元素在2D平面呈现；&lt;code&gt;preserve-3d&lt;/code&gt;表示所有子元素在3D空间中呈现。&lt;/p&gt;
+&lt;p&gt;因此，我们想要实现一些3D效果的时候，&lt;code&gt;transform-style: preserve-3d&lt;/code&gt;是少不了的。一般而言，该声明应用在3D变换的兄弟元素们的父元素上，我们可以叫它&lt;code&gt;容器&lt;/code&gt;。&lt;/p&gt;
+&lt;h1 id=&quot;transform-origin&quot;&gt;&lt;a href=&quot;#transform-origin&quot; class=&quot;headerlink&quot; title=&quot;transform-origin&quot;&gt;&lt;/a&gt;transform-origin&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;transform-origin用来改变元素的原点位置。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;它的取值方式有很多种，下面我们通过实例（把背景为黄色的div顺时针旋转45deg）来介绍一下它的常用取值方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;transform-origin:center&lt;/code&gt;（默认值，等价于：center center/ 50% 50%）&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/center.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;transform-origin:top&lt;/code&gt;（等价于：top center/center top）&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;transform-origin:bottom&lt;/code&gt;（等价于：bottom center/center bottom）&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/bottom.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;transform-origin:right&lt;/code&gt;（等价于：right center/center right）&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/right.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;transform-origin:left&lt;/code&gt;（等价于：left center/center left）&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/left.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;transform-origin:top left&lt;/code&gt;（等价于：left top）&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/top-left.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;同理，还可以设置为：&lt;code&gt;transform-origin:top right（右上角为原点）&lt;/code&gt;、&lt;code&gt;transform-origin:bottom right（右下角为原点）&lt;/code&gt;、&lt;code&gt;transform-origin:bottom left（左下角为原点）&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;绘制立方体效果&quot;&gt;&lt;a href=&quot;#绘制立方体效果&quot; class=&quot;headerlink&quot; title=&quot;绘制立方体效果&quot;&gt;&lt;/a&gt;绘制立方体效果&lt;/h1&gt;&lt;p&gt;各位看官等不及了吧，讲了那么多’废话’，本篇文章的&lt;code&gt;重头戏&lt;/code&gt;终于来了！&lt;/p&gt;
+&lt;h2 id=&quot;dom结构&quot;&gt;&lt;a href=&quot;#dom结构&quot; class=&quot;headerlink&quot; title=&quot;dom结构&quot;&gt;&lt;/a&gt;dom结构&lt;/h2&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;div class=&quot;rect-wrap&quot;&amp;gt;   //舞台元素，设置perspective，让其子元素获得透视效果。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;div class=&quot;container&quot;&amp;gt;    //容器，设置transform-style: preserve-3d，让其子元素在3D空间呈现&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;div class=&quot;top slide&quot;&amp;gt;&amp;lt;/div&amp;gt;   //立方体的六个面&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;div class=&quot;bottom slide&quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;div class=&quot;left slide&quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;div class=&quot;right slide&quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;div class=&quot;front slide&quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;div class=&quot;back slide&quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;/div&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;css代码&quot;&gt;&lt;a href=&quot;#css代码&quot; class=&quot;headerlink&quot; title=&quot;css代码&quot;&gt;&lt;/a&gt;css代码&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;对于舞台元素&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.rect-wrap &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    position: relative;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    perspective: &lt;span class=&quot;number&quot;&gt;1600&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对于容器&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.container &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    width: &lt;span class=&quot;number&quot;&gt;800&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    height: &lt;span class=&quot;number&quot;&gt;800&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    transform-style: preserve&lt;span class=&quot;number&quot;&gt;-3&lt;/span&gt;d;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    transform-origin: &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;% &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;% &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;px; &lt;span class=&quot;comment&quot;&gt;//设置3d空间的原点在平面中心再向Z轴移动200px的位置&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;立方体的每个面&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.slide &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    width: &lt;span class=&quot;number&quot;&gt;400&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    height: &lt;span class=&quot;number&quot;&gt;400&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    position: absolute;  &lt;span class=&quot;comment&quot;&gt;//定位&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;立方体顶面&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.top &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    left: &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    top: &lt;span class=&quot;number&quot;&gt;-200&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    transform: rotateX(&lt;span class=&quot;number&quot;&gt;-90&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    transform-origin: bottom;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;立方体底面&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.top &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    left: &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    bottom: &lt;span class=&quot;number&quot;&gt;-200&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    transform: rotateX(&lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    transform-origin: top;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;立方体左面&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.top &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    left: &lt;span class=&quot;number&quot;&gt;-200&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    top: &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    transform: rotateY(&lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    transform-origin: right;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;立方体右面&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.top &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    left: &lt;span class=&quot;number&quot;&gt;600&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    top: &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    transform: rotateY(&lt;span class=&quot;number&quot;&gt;-90&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    transform-origin: left;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;立方体前面&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.top &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    left: &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    top: &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    transform: translateZ(&lt;span class=&quot;number&quot;&gt;400&lt;/span&gt;px);  &lt;span class=&quot;comment&quot;&gt;//立方体前面正对着屏幕，所以不用旋转，只需向Z轴前移动距离&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;立方体后面&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.top &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    left: &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    top: &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    transform: translateZ(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);   &lt;span class=&quot;comment&quot;&gt;//立方体后面正对着屏幕，所以不用旋转，只需向Z轴后移动距离&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;  最后别忘了给每个不同面加上图片，位置什么的再稍微调一下，这个酷炫的立方体就大功告成了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;加动画&quot;&gt;&lt;a href=&quot;#加动画&quot; class=&quot;headerlink&quot; title=&quot;加动画&quot;&gt;&lt;/a&gt;加动画&lt;/h2&gt;&lt;p&gt;最后我们还想要这个立方体自己动起来，我定义了一个动画，看官们可以试试。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;@keyframes rotate-frame &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;% &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        transform: rotateX(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;deg) rotateY(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;% &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        transform: rotateX(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;deg) rotateY(&lt;span class=&quot;number&quot;&gt;180&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;% &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        transform: rotateX(&lt;span class=&quot;number&quot;&gt;-180&lt;/span&gt;deg) rotateY(&lt;span class=&quot;number&quot;&gt;180&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;% &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        transform: rotateX(&lt;span class=&quot;number&quot;&gt;-360&lt;/span&gt;deg) rotateY(&lt;span class=&quot;number&quot;&gt;180&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;number&quot;&gt;40&lt;/span&gt;% &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        transform: rotateX(&lt;span class=&quot;number&quot;&gt;-360&lt;/span&gt;deg) rotateY(&lt;span class=&quot;number&quot;&gt;360&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;% &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        transform: rotateX(&lt;span class=&quot;number&quot;&gt;-180&lt;/span&gt;deg) rotateY(&lt;span class=&quot;number&quot;&gt;360&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;% &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        transform: rotateX(&lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;deg) rotateY(&lt;span class=&quot;number&quot;&gt;180&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;number&quot;&gt;70&lt;/span&gt;% &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        transform: rotateX(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) rotateY(&lt;span class=&quot;number&quot;&gt;180&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;% &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        transform: rotateX(&lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;deg) rotateY(&lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;% &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        transform: rotateX(&lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;deg) rotateY(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;% &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        transform: rotateX(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) rotateY(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;最后把这个动画用到这个立方体的容器元素上，就OK了：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.container&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    animation: rotate-frame &lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;s linear infinite;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;p&gt;总而言之，在我学习CSS3的过程中，见到了不少的新特性，也学会了如何使用，但是我想说的是我们不管要学会怎么使用，更要去理解每一行代码为什么产生对应的效果，特别是对于&lt;code&gt;3D transform&lt;/code&gt;，我们要从根本去理解了&lt;code&gt;3D空间&lt;/code&gt;，才能更好的去掌握它的每一个属性值能够带来的效果。&lt;/p&gt;
+&lt;p&gt;这篇文章内容稍微有点多，自己记录这篇文章的同时又对这个效果学习巩固了一篇，还是蛮开心哒。同时也希望能对各位看官在以后学习&lt;code&gt;3D transform&lt;/code&gt;的道路上起到一点点作用！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;CSS3系列已经学习了一段时间了，第一篇文章写了一些css3的奇技淫巧，&lt;a href=&quot;http://luckykun.com/work/2016-07-04/css3-study01.html&quot;&gt;原文戳这里&lt;/a&gt;，还获得了较多网友的支持，在此谢过各位，你们的支持是我写文章最大的动力^_^。&lt;/p&gt;
+&lt;p&gt;那么这一篇文章呢，主要是通过一个3D立方体的效果实例来深入了解css3的&lt;code&gt;transform属性&lt;/code&gt;，下面是这个实例的截图，加上动画还能旋转起来哟，是不是很酷炫？换上你喜欢的女生的照片，就可以大胆的撩妹了，哈哈！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/rect.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工作" scheme="http://yoursite.com/categories/work/"/>
+    
+    
+      <category term="CSS3" scheme="http://yoursite.com/tags/CSS3/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="3D效果" scheme="http://yoursite.com/tags/3D%E6%95%88%E6%9E%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo博客进阶－性能优化</title>
@@ -377,7 +511,7 @@
     <link href="http://yoursite.com/work/2016-05-23/react-todo-study.html"/>
     <id>http://yoursite.com/work/2016-05-23/react-todo-study.html</id>
     <published>2016-05-23T14:11:51.000Z</published>
-    <updated>2016-07-05T15:07:29.000Z</updated>
+    <updated>2016-07-23T09:50:26.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;blockquote&gt;
@@ -450,10 +584,11 @@
 &lt;/ul&gt;
 &lt;h2 id=&quot;TodoFooter组件&quot;&gt;&lt;a href=&quot;#TodoFooter组件&quot; class=&quot;headerlink&quot; title=&quot;TodoFooter组件&quot;&gt;&lt;/a&gt;TodoFooter组件&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;TodoFooter&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//改变任务是否已完成的状态&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    handlerSelectAll(e) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.props.changeTodoState(&lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;, e.target.checked, &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;);    &lt;span class=&quot;comment&quot;&gt;// true表示全部操作。&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//删除全部已完成的任务&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    handlerDeleteDone() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.props.clearDone();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;className&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;todo-footer&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;label&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;checked&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#123;this.props.isAllChecked&amp;#125;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;onChange&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#123;this.handlerSelectAll.bind(this)&amp;#125;&lt;/span&gt; /&amp;gt;&lt;/span&gt;全选&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;label&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;className&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text-success&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;已完成&amp;#123;this.props.todoDoneCount&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt; / 全部&amp;#123;this.props.todoCount&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;className&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;btn btn-danger&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;onClick&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;#123;this.handlerDeleteDone.bind(this)&amp;#125;&lt;/span&gt;&amp;gt;&lt;/span&gt;清除已完成任务&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        )&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;todoFooter组件主要用来批量更改状态和清除已完成的任务，还要显示任务完成情况，所以代码很简单了。&lt;/p&gt;
-&lt;h1 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;p&gt;回过头来再看看这个demo的实现过程，react组件化的思想让我们编写代码的时候思维清晰，便于阅读。我们通过父组件来控制状态，并通过props传递，来保证组件内的状态一致，并且我们可以清晰的看到某一个方法该由谁来维护。这是一种全新的前端编码体验，相信以后会成为主流。&lt;/p&gt;
+&lt;h1 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;p&gt;&lt;code&gt;webpack 命令行的几种基本命令:&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ webpack &lt;span class=&quot;comment&quot;&gt;// 最基本的启动webpack方法&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ webpack -w &lt;span class=&quot;comment&quot;&gt;// 提供watch方法，实时进行打包更新&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ webpack -p &lt;span class=&quot;comment&quot;&gt;// 对打包后的文件进行压缩，提供production&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ webpack -p -w &lt;span class=&quot;comment&quot;&gt;// 对打包后的文件进行压缩，并且实时监听&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ webpack -d &lt;span class=&quot;comment&quot;&gt;// 提供source map，方便调试。&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;回过头来再看看这个demo的实现过程，react组件化的思想让我们编写代码的时候思维清晰，便于阅读。我们通过父组件来控制状态，并通过props传递，来保证组件内的状态一致，并且我们可以清晰的看到某一个方法该由谁来维护。这是一种全新的前端编码体验，相信以后会成为主流。&lt;/p&gt;
 &lt;p&gt;另外，我们看到代码中，html直接嵌到js中了，这就是React提出的一种叫JSX的语法。其实入门react本身还是很简单，只是很多人看到JSX和ES6的语法，就打了退堂鼓了，因为我们被代码分离”洗脑”太久了。其实，它们就好像是一堵墙，要是我们畏惧这个障碍止步不前，那么只能停留在原地，如果我们骨气勇气爬上去，才发现react的风景真的很优美！&lt;/p&gt;
-&lt;p&gt;参考资料:&lt;/p&gt;
-&lt;ul&gt;
+&lt;h1 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.reqianduan.com/2297.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.reqianduan.com/2297.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://wiki.jikexueyuan.com/project/react-tutorial/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://wiki.jikexueyuan.com/project/react-tutorial/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://gank.io/post/564151c1f1df1210001c9161&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://gank.io/post/564151c1f1df1210001c9161&lt;/a&gt;&lt;/li&gt;
@@ -474,9 +609,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
@@ -1138,7 +1273,7 @@
     <link href="http://yoursite.com/work/2016-05-08/react-todo-demo.html"/>
     <id>http://yoursite.com/work/2016-05-08/react-todo-demo.html</id>
     <published>2016-05-08T14:11:51.000Z</published>
-    <updated>2016-07-12T14:45:55.000Z</updated>
+    <updated>2016-07-23T09:46:16.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;header style=&quot;margin-top:-55px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/react-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
@@ -1311,13 +1446,13 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
       <category term="grunt" scheme="http://yoursite.com/tags/grunt/"/>
     
       <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
     
       <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
-    
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
