@@ -5,15 +5,39 @@
   
   <meta name="baidu-site-verification" content="5tcBr0YNFF" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>相册 | luckykun-不一样的世界</title>
+  <title>实例demo之3D transform立方体效果 | luckykun-不一样的世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="http://yoursite.com/photos/index.html">
+  <meta name="description" content="@keyframes rotate-frame {
+        0% {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+        10% {
+            transform: rotateX(0deg) rotateY(180deg);
+        }
+        20% {">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实例demo之3D transform立方体效果">
+<meta property="og:url" content="http://yoursite.com/work/2016-07-24/rect-grid-demo.html">
 <meta property="og:site_name" content="luckykun-不一样的世界">
-<meta property="og:updated_time" content="2016-05-09T12:52:12.000Z">
+<meta property="og:description" content="@keyframes rotate-frame {
+        0% {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+        10% {
+            transform: rotateX(0deg) rotateY(180deg);
+        }
+        20% {">
+<meta property="og:updated_time" content="2016-07-23T10:02:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
+<meta name="twitter:title" content="实例demo之3D transform立方体效果">
+<meta name="twitter:description" content="@keyframes rotate-frame {
+        0% {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+        10% {
+            transform: rotateX(0deg) rotateY(180deg);
+        }
+        20% {">
   
   
       <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
@@ -198,11 +222,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-rect-grid-demo" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       
-<time datetime="2016-05-01T14:11:51.000Z" itemprop="datePublished">2016-05-01</time>
+<time datetime="2016-07-24T09:41:57.000Z" itemprop="datePublished">2016-07-24</time>
 
     </div>
   
@@ -215,7 +239,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      相册
+      实例demo之3D transform立方体效果
     </h1>
   
 
@@ -223,8 +247,16 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
+	</div>
+
 
         
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/work/">工作</a>
+	</div>
+
 
         <div class="busuanzi-read-num">
             阅读次数：<span id="busuanzi_value_page_pv"><img src="http://7xtawy.com2.z0.glb.clouddn.com/loading1.png"/></span>次
@@ -238,8 +270,124 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p><link type="text/css" href="/fancybox/jquery.fancybox.css" rel="stylesheet"></p>
-<div class="instagram"><section class="archives album"><ul class="img-box-ul"></ul></section></div>
+<style>
+    @keyframes rotate-frame {
+        0% {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+        10% {
+            transform: rotateX(0deg) rotateY(180deg);
+        }
+        20% {
+            transform: rotateX(-180deg) rotateY(180deg);
+        }
+        30% {
+            transform: rotateX(-360deg) rotateY(180deg);
+        }
+        40% {
+            transform: rotateX(-360deg) rotateY(360deg);
+        }
+        50% {
+            transform: rotateX(-180deg) rotateY(360deg);
+        }
+        60% {
+            transform: rotateX(90deg) rotateY(180deg);
+        }
+        70% {
+            transform: rotateX(0) rotateY(180deg);
+        }
+        80% {
+            transform: rotateX(90deg) rotateY(90deg);
+        }
+        90% {
+            transform: rotateX(90deg) rotateY(0);
+        }
+        100% {
+            transform: rotateX(0) rotateY(0);
+        }
+    }
+
+    .my-container {
+        width: 1000px;
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .rect-wrap {
+        position: relative;
+        perspective: 1600px;
+    }
+
+    .container {
+        width: 800px;
+        height: 800px;
+        transform-style: preserve-3d;
+        transform-origin: 50% 50% 200px;
+        animation: rotate-frame 30s linear infinite;
+    }
+
+    .slide {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9) inset;
+    }
+
+    .top {
+        left: 200px;
+        top: -200px;
+        transform: rotateX(-90deg);
+        transform-origin: bottom;
+        background: url(http://7xtawy.com1.z0.glb.clouddn.com/img1.jpeg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .bottom {
+        left: 200px;
+        bottom: -200px;
+        transform: rotateX(90deg);
+        transform-origin: top;
+        background: url(http://7xtawy.com1.z0.glb.clouddn.com/img2.jpeg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .left {
+        left: -200px;
+        top: 200px;
+        transform: rotateY(90deg);
+        transform-origin: right;
+        background: url(http://7xtawy.com1.z0.glb.clouddn.com/img3.jpeg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .right {
+        left: 600px;
+        top: 200px;
+        transform: rotateY(-90deg);
+        transform-origin: left;
+        background: url(http://7xtawy.com1.z0.glb.clouddn.com/img4.jpeg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .front {
+        left: 200px;
+        top: 200px;
+        transform: translateZ(400px);
+        background: url(http://7xtawy.com1.z0.glb.clouddn.com/img5.jpeg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .back {
+        left: 200px;
+        top: 200px;
+        transform: translateZ(0);
+        background: url(http://7xtawy.com1.z0.glb.clouddn.com/img6.jpeg) no-repeat;
+        background-size: 100% 100%;
+    }
+</style>
+
+
+<div class="my-container"><div class="rect-wrap"><div class="container"><br>    <div class="top slide"></div><br>    <div class="bottom slide"></div><br>    <div class="left slide"></div><br>    <div class="right slide"></div><br>    <div class="front slide"></div><br>    <div class="back slide"></div><br></div></div></div>
 
       
     </div>
@@ -256,6 +404,16 @@
     </p>
 </div>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/work/2016-07-23/css3-study02.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">下一篇：CSS3 3D立方体效果－transform也不过如此</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
 
   
@@ -288,7 +446,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="相册" data-url="http://yoursite.com/photos/index.html"></div>
+	<div class="ds-thread" data-thread-key="rect-grid-demo" data-title="实例demo之3D transform立方体效果" data-url="http://yoursite.com/work/2016-07-24/rect-grid-demo.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -348,7 +506,7 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

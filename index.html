@@ -125,7 +125,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/3D效果/" style="font-size: 10px;">3D效果</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/canvas/" style="font-size: 13.33px;">canvas</a> <a href="/tags/demo/" style="font-size: 16.67px;">demo</a> <a href="/tags/es6/" style="font-size: 13.33px;">es6</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo系列/" style="font-size: 16.67px;">hexo系列</a> <a href="/tags/highcharts/" style="font-size: 10px;">highcharts</a> <a href="/tags/html5/" style="font-size: 13.33px;">html5</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/react/" style="font-size: 13.33px;">react</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/插件/" style="font-size: 13.33px;">插件</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/构建/" style="font-size: 10px;">构建</a> <a href="/tags/编辑器/" style="font-size: 10px;">编辑器</a>
+						<a href="/tags/3D效果/" style="font-size: 10px;">3D效果</a> <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/canvas/" style="font-size: 12.5px;">canvas</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/es6/" style="font-size: 12.5px;">es6</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo系列/" style="font-size: 15px;">hexo系列</a> <a href="/tags/highcharts/" style="font-size: 10px;">highcharts</a> <a href="/tags/html5/" style="font-size: 12.5px;">html5</a> <a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="/tags/react/" style="font-size: 12.5px;">react</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/插件/" style="font-size: 12.5px;">插件</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/构建/" style="font-size: 10px;">构建</a> <a href="/tags/编辑器/" style="font-size: 10px;">编辑器</a>
 					</div>
 				</section>
 				
@@ -202,6 +202,191 @@
 
       <div class="body-wrap">
   
+    <article id="post-rect-grid-demo" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      
+<time datetime="2016-07-24T09:41:57.000Z" itemprop="datePublished">2016-07-24</time>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/work/2016-07-24/rect-grid-demo.html">实例demo之3D transform立方体效果</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <!-- Table of Contents -->
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<style>
+    @keyframes rotate-frame {
+        0% {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+        10% {
+            transform: rotateX(0deg) rotateY(180deg);
+        }
+        20% {
+            transform: rotateX(-180deg) rotateY(180deg);
+        }
+        30% {
+            transform: rotateX(-360deg) rotateY(180deg);
+        }
+        40% {
+            transform: rotateX(-360deg) rotateY(360deg);
+        }
+        50% {
+            transform: rotateX(-180deg) rotateY(360deg);
+        }
+        60% {
+            transform: rotateX(90deg) rotateY(180deg);
+        }
+        70% {
+            transform: rotateX(0) rotateY(180deg);
+        }
+        80% {
+            transform: rotateX(90deg) rotateY(90deg);
+        }
+        90% {
+            transform: rotateX(90deg) rotateY(0);
+        }
+        100% {
+            transform: rotateX(0) rotateY(0);
+        }
+    }
+
+    .my-container {
+        width: 1000px;
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .rect-wrap {
+        position: relative;
+        perspective: 1600px;
+    }
+
+    .container {
+        width: 800px;
+        height: 800px;
+        transform-style: preserve-3d;
+        transform-origin: 50% 50% 200px;
+        animation: rotate-frame 30s linear infinite;
+    }
+
+    .slide {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9) inset;
+    }
+
+    .top {
+        left: 200px;
+        top: -200px;
+        transform: rotateX(-90deg);
+        transform-origin: bottom;
+        background: url(http://7xtawy.com1.z0.glb.clouddn.com/img1.jpeg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .bottom {
+        left: 200px;
+        bottom: -200px;
+        transform: rotateX(90deg);
+        transform-origin: top;
+        background: url(http://7xtawy.com1.z0.glb.clouddn.com/img2.jpeg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .left {
+        left: -200px;
+        top: 200px;
+        transform: rotateY(90deg);
+        transform-origin: right;
+        background: url(http://7xtawy.com1.z0.glb.clouddn.com/img3.jpeg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .right {
+        left: 600px;
+        top: 200px;
+        transform: rotateY(-90deg);
+        transform-origin: left;
+        background: url(http://7xtawy.com1.z0.glb.clouddn.com/img4.jpeg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .front {
+        left: 200px;
+        top: 200px;
+        transform: translateZ(400px);
+        background: url(http://7xtawy.com1.z0.glb.clouddn.com/img5.jpeg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .back {
+        left: 200px;
+        top: 200px;
+        transform: translateZ(0);
+        background: url(http://7xtawy.com1.z0.glb.clouddn.com/img6.jpeg) no-repeat;
+        background-size: 100% 100%;
+    }
+</style>
+
+
+<div class="my-container"><div class="rect-wrap"><div class="container"><br>    <div class="top slide"></div><br>    <div class="bottom slide"></div><br>    <div class="left slide"></div><br>    <div class="right slide"></div><br>    <div class="front slide"></div><br>    <div class="back slide"></div><br></div></div></div>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
+	</div>
+
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/work/">工作</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-css3-study02" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -232,7 +417,7 @@
       
         <hr>
 <p>CSS3系列已经学习了一段时间了，第一篇文章写了一些css3的奇技淫巧，<a href="http://luckykun.com/work/2016-07-04/css3-study01.html">原文戳这里</a>，还获得了较多网友的支持，在此谢过各位，你们的支持是我写文章最大的动力^_^。</p>
-<p>那么这一篇文章呢，主要是通过一个3D立方体的效果实例来深入了解css3的<code>transform属性</code>，下面是这个实例的截图，加上动画还能旋转起来哟，是不是很酷炫？换上你喜欢的女生的照片，就可以大胆的撩妹了，哈哈！</p>
+<p>那么这一篇文章呢，主要是通过一个3D立方体的效果实例来深入了解css3的<code>transform属性</code>，下面是这个实例的截图，加上动画还能旋转起来哟，是不是很酷炫？换上你喜欢的女生的照片，就可以大胆的撩妹了，哈哈！ <code>想要查看demo，请点击这里</code>，<a href="http://localhost:4000/work/2016-07-24/rect-grid-demo.html">3D transform立方体效果</a></p>
 <p><img src="http://7xtawy.com1.z0.glb.clouddn.com/rect.png" alt=""></p>
       
     </div>
@@ -844,80 +1029,6 @@
       
         <p class="article-more-link">
           <a  href="/work/2016-05-13/atom-edit.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-high-extend" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      
-<time datetime="2016-05-12T04:11:51.000Z" itemprop="datePublished">2016-05-12</time>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/work/2016-05-12/high-extend.html">实例demo之Highextend图表</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <!-- Table of Contents -->
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<header style="margin-top:-55px;text-align:center"><br>    <p style="font-size: 1.5em;margin-top: 30px;"><span>highextend图表实例</span><a href="https://github.com/luckykun/highextend" style="font-size:14px;font-weight:normal;">view on github</a></p><br></header>
-
-<p>highextend是基于highcharts进一步封装的图表组件，组件暴露一个<code>Hxt</code>的全局对象，它有以下一些方法来绘制不同类的图形，从此以后，画图只需简简单单的几行配置就ok了！赶紧点进来看看实例吧！</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Hxt.line(elem, data, options);         <span class="comment">//渲染默认折线图</span></div><div class="line">Hxt.spline(elem, data, options);         <span class="comment">//曲线图</span></div><div class="line">Hxt.scatter(elem, data, options);         <span class="comment">//散点图</span></div><div class="line">Hxt.bubble(elem, data, options);         <span class="comment">//bubble图</span></div><div class="line">Hxt.column(elem, data, options);         <span class="comment">//柱状图</span></div><div class="line">Hxt.bar(elem, data, options);         <span class="comment">//bar图，（横向柱状图）</span></div><div class="line">Hxt.area(elem, data, options);         <span class="comment">//区域图（默认为平滑区域图）</span></div><div class="line">Hxt.pie(elem, data, options);         <span class="comment">//圆饼图</span></div><div class="line">Hxt.polar(elem, data, options);         <span class="comment">//雷达图</span></div><div class="line">Hxt.pyramid(elem, data, options);         <span class="comment">//金字塔图</span></div><div class="line">Hxt.mix(elem, data, options);         <span class="comment">//混合图</span></div></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/highcharts/">highcharts</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
-	</div>
-
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/work/">工作</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/work/2016-05-12/high-extend.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

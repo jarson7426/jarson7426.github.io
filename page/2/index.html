@@ -125,7 +125,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/3D效果/" style="font-size: 10px;">3D效果</a> <a href="/tags/CSS3/" style="font-size: 13.33px;">CSS3</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/canvas/" style="font-size: 13.33px;">canvas</a> <a href="/tags/demo/" style="font-size: 16.67px;">demo</a> <a href="/tags/es6/" style="font-size: 13.33px;">es6</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo系列/" style="font-size: 16.67px;">hexo系列</a> <a href="/tags/highcharts/" style="font-size: 10px;">highcharts</a> <a href="/tags/html5/" style="font-size: 13.33px;">html5</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/react/" style="font-size: 13.33px;">react</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/插件/" style="font-size: 13.33px;">插件</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/构建/" style="font-size: 10px;">构建</a> <a href="/tags/编辑器/" style="font-size: 10px;">编辑器</a>
+						<a href="/tags/3D效果/" style="font-size: 10px;">3D效果</a> <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/canvas/" style="font-size: 12.5px;">canvas</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/es6/" style="font-size: 12.5px;">es6</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo系列/" style="font-size: 15px;">hexo系列</a> <a href="/tags/highcharts/" style="font-size: 10px;">highcharts</a> <a href="/tags/html5/" style="font-size: 12.5px;">html5</a> <a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="/tags/react/" style="font-size: 12.5px;">react</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/插件/" style="font-size: 12.5px;">插件</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/构建/" style="font-size: 10px;">构建</a> <a href="/tags/编辑器/" style="font-size: 10px;">编辑器</a>
 					</div>
 				</section>
 				
@@ -201,6 +201,80 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-high-extend" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      
+<time datetime="2016-05-12T04:11:51.000Z" itemprop="datePublished">2016-05-12</time>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/work/2016-05-12/high-extend.html">实例demo之Highextend图表</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <!-- Table of Contents -->
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<header style="margin-top:-55px;text-align:center"><br>    <p style="font-size: 1.5em;margin-top: 30px;"><span>highextend图表实例</span><a href="https://github.com/luckykun/highextend" style="font-size:14px;font-weight:normal;">view on github</a></p><br></header>
+
+<p>highextend是基于highcharts进一步封装的图表组件，组件暴露一个<code>Hxt</code>的全局对象，它有以下一些方法来绘制不同类的图形，从此以后，画图只需简简单单的几行配置就ok了！赶紧点进来看看实例吧！</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Hxt.line(elem, data, options);         <span class="comment">//渲染默认折线图</span></div><div class="line">Hxt.spline(elem, data, options);         <span class="comment">//曲线图</span></div><div class="line">Hxt.scatter(elem, data, options);         <span class="comment">//散点图</span></div><div class="line">Hxt.bubble(elem, data, options);         <span class="comment">//bubble图</span></div><div class="line">Hxt.column(elem, data, options);         <span class="comment">//柱状图</span></div><div class="line">Hxt.bar(elem, data, options);         <span class="comment">//bar图，（横向柱状图）</span></div><div class="line">Hxt.area(elem, data, options);         <span class="comment">//区域图（默认为平滑区域图）</span></div><div class="line">Hxt.pie(elem, data, options);         <span class="comment">//圆饼图</span></div><div class="line">Hxt.polar(elem, data, options);         <span class="comment">//雷达图</span></div><div class="line">Hxt.pyramid(elem, data, options);         <span class="comment">//金字塔图</span></div><div class="line">Hxt.mix(elem, data, options);         <span class="comment">//混合图</span></div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/highcharts/">highcharts</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件/">插件</a></li></ul>
+	</div>
+
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/work/">工作</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/work/2016-05-12/high-extend.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-life-miss-bike" class="article article-type-post" itemscope itemprop="blogPost">
   
