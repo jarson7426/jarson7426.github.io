@@ -269,34 +269,35 @@
     }
 
     .my-container {
-        width: 1000px;
-        height: 500px;
+        width: 62.5rem;
+        height: 31.25rem;
         margin: 0 auto;
+        transform: scale(0.6) translateY(-10rem);
     }
 
     .rect-wrap {
         position: relative;
-        perspective: 1600px;
+        perspective: 100rem;
     }
 
     .container {
-        width: 800px;
-        height: 800px;
+        width: 50rem;
+        height: 50rem;
         transform-style: preserve-3d;
-        transform-origin: 50% 50% 200px;
+        transform-origin: 50% 50% 12.5rem;
         animation: rotate-frame 30s linear infinite;
     }
 
     .slide {
-        width: 400px;
-        height: 400px;
+        width: 25rem;
+        height: 25rem;
         position: absolute;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9) inset;
+        box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.9) inset;
     }
 
     .top {
-        left: 200px;
-        top: -200px;
+        left: 12.5rem;
+        top: -12.5rem;
         transform: rotateX(-90deg);
         transform-origin: bottom;
         background: url(http://7xtawy.com1.z0.glb.clouddn.com/img1.jpeg) no-repeat;
@@ -304,8 +305,8 @@
     }
 
     .bottom {
-        left: 200px;
-        bottom: -200px;
+        left: 12.5rem;
+        bottom: -12.5rem;
         transform: rotateX(90deg);
         transform-origin: top;
         background: url(http://7xtawy.com1.z0.glb.clouddn.com/img2.jpeg) no-repeat;
@@ -313,8 +314,8 @@
     }
 
     .left {
-        left: -200px;
-        top: 200px;
+        left: -12.5rem;
+        top: 12.5rem;
         transform: rotateY(90deg);
         transform-origin: right;
         background: url(http://7xtawy.com1.z0.glb.clouddn.com/img3.jpeg) no-repeat;
@@ -322,8 +323,8 @@
     }
 
     .right {
-        left: 600px;
-        top: 200px;
+        left: 37.5rem;
+        top: 12.5rem;
         transform: rotateY(-90deg);
         transform-origin: left;
         background: url(http://7xtawy.com1.z0.glb.clouddn.com/img4.jpeg) no-repeat;
@@ -331,16 +332,16 @@
     }
 
     .front {
-        left: 200px;
-        top: 200px;
-        transform: translateZ(400px);
+        left: 12.5rem;
+        top: 12.5rem;
+        transform: translateZ(25rem);
         background: url(http://7xtawy.com1.z0.glb.clouddn.com/img5.jpeg) no-repeat;
         background-size: 100% 100%;
     }
 
     .back {
-        left: 200px;
-        top: 200px;
+        left: 12.5rem;
+        top: 12.5rem;
         transform: translateZ(0);
         background: url(http://7xtawy.com1.z0.glb.clouddn.com/img6.jpeg) no-repeat;
         background-size: 100% 100%;
@@ -349,6 +350,8 @@
 
 
 <div class="my-container"><div class="rect-wrap"><div class="container"><br>    <div class="top slide"></div><br>    <div class="bottom slide"></div><br>    <div class="left slide"></div><br>    <div class="right slide"></div><br>    <div class="front slide"></div><br>    <div class="back slide"></div><br></div></div></div>
+
+<hr>
 
       
     </div>
