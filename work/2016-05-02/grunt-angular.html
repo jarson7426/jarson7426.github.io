@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="luckykun-不一样的世界">
 <meta property="og:description" content="前段时间在公司做了一个项目，前后端的合作方式是这样的：前端开发页面，然后把代码给到后端同学，后端同学通过java的vm模板来渲染页面。慢慢的我发现，这种方式简直是太low了，因为所有的前端代码都揉在服务端同学那里，而每次项目需要更新，甚至只是页面微调，只要服务端同学说他不懂，或者是没有时间，我们前端同学就要屁颠屁颠的跑去他那里配合他修改代码，维护成本高，卖力不讨好==，那我们到底该怎么办呢？">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1bzUGJXXXXXcOXpXXXXXXXXXX-251-584.png">
-<meta property="og:updated_time" content="2016-08-24T16:28:27.000Z">
+<meta property="og:updated_time" content="2016-08-24T16:38:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前后端分离之前端项目构建（grunt+require+angular）">
 <meta name="twitter:description" content="前段时间在公司做了一个项目，前后端的合作方式是这样的：前端开发页面，然后把代码给到后端同学，后端同学通过java的vm模板来渲染页面。慢慢的我发现，这种方式简直是太low了，因为所有的前端代码都揉在服务端同学那里，而每次项目需要更新，甚至只是页面微调，只要服务端同学说他不懂，或者是没有时间，我们前端同学就要屁颠屁颠的跑去他那里配合他修改代码，维护成本高，卖力不讨好==，那我们到底该怎么办呢？">
@@ -157,7 +157,7 @@
 						<li>云标签</li>
 						
 						
-						<!-- <li>About</li> -->
+						<!-- <li>Über</li> -->
 						<li>关于我</li>
 						
 					</ul>
@@ -336,9 +336,9 @@
 <a id="more"></a>
 <p>可能有人会说了，使用svn或者git这种版本控制工具呀，大家down一套代码，在一起开发不就好了。我想说的是，代码虽然有了，但是对于服务端同学的那一套复杂的环境，有兴趣或者涉猎还好，如果没有，自己去启个java环境估计都得花上半天时间吧。</p>
 <p>此时你会深深的感受到了那句名言的魅力，<code>时间就是金钱！</code>后来我发现，现在的web开发，谁还用这种低级的方法，大家都已经开始搞<code>前后端分离了</code>！</p>
-<p>本篇文章会讲述搭建一个基于<code>grunt+require+angular</code>完整的前端工程的过程。最后完整的代码，你可以在Github上看到<a href="https://github.com/luckykun/grunt-require-angular/tree/master" target="_blank" rel="external">完整代码点这里</a>，喜欢的同学不妨帮我<code>star一下</code>，谢谢^_^。</p>
+<p>本篇文章会讲述搭建一个基于<code>grunt+require+angular</code>完整的前端项目的过程，<code>本项目主要在于项目结构和思路，具体功能可以在此基础上进一步开发</code>。最后完整的代码，你可以在Github上看到<a href="https://github.com/luckykun/grunt-require-angular/tree/master" target="_blank" rel="external">完整代码点这里</a>，喜欢的同学不妨帮我<code>star一下</code>，谢谢^_^。</p>
 <p>down下来运行以下命令就可以直接看到效果：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">npm install grunt -g</div><div class="line">npm install grunt-init -g</div><div class="line">npm install   <span class="comment">//安装依赖</span></div><div class="line">grunt  <span class="comment">//启动服务</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">npm install grunt -g</div><div class="line">npm install   <span class="comment">//安装依赖</span></div><div class="line">grunt  <span class="comment">//启动服务</span></div></pre></td></tr></table></figure>
 <p>最后页面上的结果是：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">hello, world</div></pre></td></tr></table></figure>
 <h1 id="前后端分离的目的和作用"><a href="#前后端分离的目的和作用" class="headerlink" title="前后端分离的目的和作用"></a>前后端分离的目的和作用</h1><blockquote>
@@ -444,7 +444,7 @@
 <h2 id="controller-testController-js"><a href="#controller-testController-js" class="headerlink" title="controller/testController.js"></a>controller/testController.js</h2><p>如果想要让视图文件<code>views/index.html</code>能够看到效果，我们就要开始编写控制器文件了，</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">define([</div><div class="line">    <span class="string">'./controllers'</span></div><div class="line">], <span class="function"><span class="keyword">function</span>(<span class="params">mod</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> controllerFn = <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $location</span>) </span>&#123;</div><div class="line">        $scope.app = <span class="string">'hello, world'</span>;</div><div class="line">    &#125;;</div><div class="line">    controllerFn.$inject = [<span class="string">'$scope'</span>, <span class="string">'$location'</span>];</div><div class="line">    mod.controller(<span class="string">'testController'</span>, controllerFn);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>引入控制器的单独模块文件’./controllers’,然后在模块上新建一个名为<code>testController</code>的控制器，并在$scope上绑定了一个值为’hello, world’的变量<code>app</code>。</p>
-<h2 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h2><p>使用<code>python -m SimpleHTTPServer</code>启动一个简单的web服务器，默认监听8000端口。在浏览器输入正确地址就能看到效果了。</p>
+<h2 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h2><p>使用<code>grunt</code>命令启动一个简单的web服务器（前提是边编写好了Gruntfile.js文件，可以去github上看我已经写好的源码）。在浏览器就能看到效果了。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">hello, world</div></pre></td></tr></table></figure>
 <p>注：完整的代码我已上传至github<a href="https://github.com/luckykun/grunt-require-angular/tree/master" target="_blank" rel="external">完整代码点这里</a>，喜欢的同学帮忙点个star，谢谢咯。</p>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>现在，我们需要做的就是，和服务端约定好接口格式，自己根据格式mock需要的数据，然后，我们可以随心所欲的开发我们的项目了，不用再和人打交道了。开发完毕之后，再通过grunt压缩、合并、打包文件等操作，暴露给外部的只需一个js文件，另外还可以通过git等版本管理工具来迭代项目。有了这种开发方式，你再也不用担心服务端开发随时来烦你，自己也有更多时间来钻研前端本身的技术了，哈哈。</p>
