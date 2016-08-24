@@ -808,9 +808,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
@@ -1519,14 +1519,18 @@
     <link href="http://yoursite.com/work/2016-05-02/grunt-angular.html"/>
     <id>http://yoursite.com/work/2016-05-02/grunt-angular.html</id>
     <published>2016-05-02T14:33:32.000Z</published>
-    <updated>2016-08-24T01:11:38.000Z</updated>
+    <updated>2016-08-24T16:28:27.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;前段时间在公司做了一个项目，前后端的合作方式是这样的：前端开发页面，然后把代码给到后端同学，后端同学通过java的vm模板来渲染页面。慢慢的我发现，这种方式简直是太low了，因为所有的前端代码都揉在服务端同学那里，而每次项目需要更新，甚至只是页面微调，只要服务端同学说他不懂，或者是没有时间，我们前端同学就要屁颠屁颠的跑去他那里配合他修改代码，维护成本高，卖力不讨好==，那我们到底该怎么办呢？&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;可能有人会说了，使用svn或者git这种版本控制工具呀，大家down一套代码，在一起开发不就好了。我想说的是，代码虽然有了，但是对于服务端同学的那一套复杂的环境，有兴趣或者涉猎还好，如果没有，自己去启个java环境估计都得花上半天时间吧。&lt;/p&gt;
 &lt;p&gt;此时你会深深的感受到了那句名言的魅力，&lt;code&gt;时间就是金钱！&lt;/code&gt;后来我发现，现在的web开发，谁还用这种低级的方法，大家都已经开始搞&lt;code&gt;前后端分离了&lt;/code&gt;！&lt;/p&gt;
-&lt;p&gt;本篇文章会讲述搭建一个基于&lt;code&gt;grunt+require+angular&lt;/code&gt;完整的前端工程的过程。最后完整的代码，你可以在Github上看到&lt;a href=&quot;https://github.com/luckykun/grunt-require-angular/tree/master&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;完整代码点这里&lt;/a&gt;，down下来运行&lt;code&gt;grunt&lt;/code&gt;命令就可以直接看到效果，喜欢的同学不妨帮我&lt;code&gt;star一下&lt;/code&gt;，谢谢^_^。&lt;/p&gt;
+&lt;p&gt;本篇文章会讲述搭建一个基于&lt;code&gt;grunt+require+angular&lt;/code&gt;完整的前端工程的过程。最后完整的代码，你可以在Github上看到&lt;a href=&quot;https://github.com/luckykun/grunt-require-angular/tree/master&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;完整代码点这里&lt;/a&gt;，喜欢的同学不妨帮我&lt;code&gt;star一下&lt;/code&gt;，谢谢^_^。&lt;/p&gt;
+&lt;p&gt;down下来运行以下命令就可以直接看到效果：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install grunt -g&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm install grunt-init -g&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm install   &lt;span class=&quot;comment&quot;&gt;//安装依赖&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;grunt  &lt;span class=&quot;comment&quot;&gt;//启动服务&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;最后页面上的结果是：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hello, world&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h1 id=&quot;前后端分离的目的和作用&quot;&gt;&lt;a href=&quot;#前后端分离的目的和作用&quot; class=&quot;headerlink&quot; title=&quot;前后端分离的目的和作用&quot;&gt;&lt;/a&gt;前后端分离的目的和作用&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;要弄清前后端分离的目的和作用，首先要知道什么是前后端分离。&lt;/p&gt;
 &lt;/blockquote&gt;
