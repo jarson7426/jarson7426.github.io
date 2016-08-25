@@ -418,9 +418,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -867,9 +867,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -1666,10 +1666,11 @@
     <link href="http://yoursite.com/work/2016-04-23/heoll-hexo.html"/>
     <id>http://yoursite.com/work/2016-04-23/heoll-hexo.html</id>
     <published>2016-04-23T14:11:51.000Z</published>
-    <updated>2016-07-05T15:00:15.000Z</updated>
+    <updated>2016-08-25T15:39:29.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;一直都在博客园写博客，不过最近在逛园子的时候不小心看到了&lt;code&gt;hexo&lt;/code&gt;,简直有种相见恨晚的感觉呀！在github上创建自己的开源博客，维护方便，主题多多，更重要的是，终于找到只属于自己的小窝啦！也希望自己能坚持写文^_^&lt;/p&gt;
+&lt;p&gt;博客仓库地址(喜欢的朋友给个star呀，多谢～)：&lt;a href=&quot;https://github.com/luckykun/luckykun.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;博客仓库点这里&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;为了引起读者的兴趣，先介绍一下，搭建完成之后，只需这几个简单常用的命令，就能够轻松维护自己的博客了：&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt;(n) xxx    &lt;span class=&quot;comment&quot;&gt;//写文章&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo clean     &lt;span class=&quot;comment&quot;&gt;//清除缓存&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate(g)    &lt;span class=&quot;comment&quot;&gt;//把文章生成页面&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server(s)    &lt;span class=&quot;comment&quot;&gt;//启动本地服务调试&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy(d)    &lt;span class=&quot;comment&quot;&gt;//部署到github 可与hexo g合并为 hexo d -g&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -1775,6 +1776,7 @@
     
       &lt;hr&gt;
 &lt;p&gt;一直都在博客园写博客，不过最近在逛园子的时候不小心看到了&lt;code&gt;hexo&lt;/code&gt;,简直有种相见恨晚的感觉呀！在github上创建自己的开源博客，维护方便，主题多多，更重要的是，终于找到只属于自己的小窝啦！也希望自己能坚持写文^_^&lt;/p&gt;
+&lt;p&gt;博客仓库地址(喜欢的朋友给个star呀，多谢～)：&lt;a href=&quot;https://github.com/luckykun/luckykun.github.io&quot;&gt;博客仓库点这里&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;为了引起读者的兴趣，先介绍一下，搭建完成之后，只需这几个简单常用的命令，就能够轻松维护自己的博客了：&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt;(n) xxx    &lt;span class=&quot;comment&quot;&gt;//写文章&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo clean     &lt;span class=&quot;comment&quot;&gt;//清除缓存&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate(g)    &lt;span class=&quot;comment&quot;&gt;//把文章生成页面&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server(s)    &lt;span class=&quot;comment&quot;&gt;//启动本地服务调试&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy(d)    &lt;span class=&quot;comment&quot;&gt;//部署到github 可与hexo g合并为 hexo d -g&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
@@ -1783,9 +1785,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
