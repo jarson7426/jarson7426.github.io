@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-11T16:13:40.000Z</updated>
+  <updated>2016-10-11T16:27:59.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/work/2016-10-11/com-func-skill.html"/>
     <id>http://yoursite.com/work/2016-10-11/com-func-skill.html</id>
     <published>2016-10-11T15:16:27.000Z</published>
-    <updated>2016-10-11T16:13:40.000Z</updated>
+    <updated>2016-10-11T16:27:59.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;学习和工作的过程中总结的干货，包括常用函数、常用正则表达式、git笔记等。为刚接触前端的童鞋们提供一个简单的查询的途径，也以此来缅怀我的前端学习之路。此文档，我会持续更新。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -63,6 +63,7 @@
 &lt;li&gt;git常用命令&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;、git config user.name  /  user.email     &lt;span class=&quot;comment&quot;&gt;//查看当前git的用户名称、邮箱&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;、git clone https:&lt;span class=&quot;comment&quot;&gt;//github.com/jarson7426/javascript.git  project  //clone仓库到本地。&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;、修改本地代码，提交到分支:  git add file   /   git commit -m “新增文件”&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;、把本地库推送到远程库:  git push origin master&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;、查看提交日志：git log &lt;span class=&quot;number&quot;&gt;-5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;、返回某一个版本：git reset --hard &lt;span class=&quot;number&quot;&gt;123&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;、分支：git branch / git checkout name  / git checkout -b dev&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;、合并name分支到当前分支：git merge name   /   git pull origin&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;、删除本地分支：git branch -D name&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;、删除远程分支： git push origin  :daily/x.x.x&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;、git checkout -b mydev origin/daily/&lt;span class=&quot;number&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.0&lt;/span&gt;    &lt;span class=&quot;comment&quot;&gt;//把远程daily分支映射到本地mydev分支进行开发&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;、合并远程分支到当前分支 git pull origin daily/&lt;span class=&quot;number&quot;&gt;1.1&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;13&lt;/span&gt;、发布到线上：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    git tag publish/&lt;span class=&quot;number&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    git push origin publish/&lt;span class=&quot;number&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.5&lt;/span&gt;:publish/&lt;span class=&quot;number&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;14&lt;/span&gt;、线上代码覆盖到本地：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    git checkout --theirs build/scripts/ddos&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    git checkout --theirs src/app/ddos&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
@@ -86,7 +87,7 @@
     <link href="http://yoursite.com/work/2016-09-01/yeoman-reactpackage.html"/>
     <id>http://yoursite.com/work/2016-09-01/yeoman-reactpackage.html</id>
     <published>2016-09-01T03:55:33.000Z</published>
-    <updated>2016-09-16T04:22:58.000Z</updated>
+    <updated>2016-10-11T16:30:13.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;自从前后端开始分离之后，前端项目工程化也显得越来越重要了，之前写过一篇搭建基于&lt;code&gt;Angular+Requirejs+Grunt&lt;/code&gt;的前端项目教程，有兴趣的可以&lt;a href=&quot;http://luckykun.com/work/2016-05-02/grunt-angular.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点这里去看&lt;/a&gt;&lt;/p&gt;
@@ -156,6 +157,7 @@
 &lt;/ul&gt;
 &lt;h1 id=&quot;结语&quot;&gt;&lt;a href=&quot;#结语&quot; class=&quot;headerlink&quot; title=&quot;结语&quot;&gt;&lt;/a&gt;结语&lt;/h1&gt;&lt;p&gt;可以看到，定义一个自己常用的脚手架骑士挺简单的，还有更多的功能有待探索。&lt;code&gt;generator-reactpackage&lt;/code&gt;是一个基于webpack+react+es6开发的项目模版，有需要用到这个模版的同学就赶快安装用起来吧。&lt;/p&gt;
 &lt;p&gt;另外，它的源码已经上传到github上，喜欢&lt;a href=&quot;https://github.com/luckykun/generator-reactpackage&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;generator-reactpackage&lt;/a&gt;的同学顺便给个star，多谢～～～&lt;/p&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
@@ -169,9 +171,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
@@ -186,7 +188,7 @@
     <link href="http://yoursite.com/work/2016-09-01/canvas-study01.html"/>
     <id>http://yoursite.com/work/2016-09-01/canvas-study01.html</id>
     <published>2016-09-01T03:07:56.000Z</published>
-    <updated>2016-09-01T03:27:34.000Z</updated>
+    <updated>2016-10-11T16:28:26.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;其实canvas本身很简单，就是去学习它的API，多看实例，多自己动手练习，多总结。但是canvas的API实在是有点多，对于初学者来说，可能学到一半就止步不前了。我也有这种感觉，在学习的过程中，编写实例，用到了其中很多的属性和方法，但是回头来看的时候总觉得什么也没用。所以决定系统性的记录一下它常用到的API，方便以后查阅，也顺便造福一下大家。&lt;/p&gt;
@@ -290,6 +292,7 @@
 &lt;/ul&gt;
 &lt;h1 id=&quot;结语&quot;&gt;&lt;a href=&quot;#结语&quot; class=&quot;headerlink&quot; title=&quot;结语&quot;&gt;&lt;/a&gt;结语&lt;/h1&gt;&lt;p&gt;这些API已经包含了大部分常用的了，结合requestAnimationFrame函数已经可以绘制很多酷炫的效果了。但是光看这些API很简单，但是想要在绘制游戏或者动画中用起来得心应手还需要看大量的实例，自己实践总结的。&lt;/p&gt;
 &lt;p&gt;本文就到这里，感谢各位看官～&lt;/p&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
@@ -314,7 +317,7 @@
     <link href="http://yoursite.com/work/2016-08-16/file-upload.html"/>
     <id>http://yoursite.com/work/2016-08-16/file-upload.html</id>
     <published>2016-08-16T11:41:57.000Z</published>
-    <updated>2016-10-11T15:25:22.000Z</updated>
+    <updated>2016-10-11T16:28:56.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;话说现在很多很多项目需要用到文件上传，自从有了HTML5之后，上传就变的超级简单了。HTML5支持多图片上传，而且支持ajax上传！而且支持上传之前图片的预览！而且支持图片拖拽上传！而且还是纯粹利用file控件实现！而且代码还超级简单！！！原谅我这个没见过世面的人这么激动==，但是说真的，有这么多优点，想不让人称赞都难啊！&lt;/p&gt;
@@ -325,7 +328,7 @@
 &lt;p&gt;但是！！！IE9以下的版本不支持呀！！&lt;/p&gt;
 &lt;p&gt;除此之外，上面的方法还有一个弊端，因为使用了ajax的上传方式，所以不能支持跨域上传，如果必须要满足这两个业务场景，那就试试下面的方法吧，借助form和iframe来实现上传。下面来详细看一下：&lt;/p&gt;
 &lt;h1 id=&quot;form表单提交到iframe&quot;&gt;&lt;a href=&quot;#form表单提交到iframe&quot; class=&quot;headerlink&quot; title=&quot;form表单提交到iframe&quot;&gt;&lt;/a&gt;form表单提交到iframe&lt;/h1&gt;&lt;p&gt;html代码:&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;iframe name=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; style=&lt;span class=&quot;string&quot;&gt;&quot;display:none&quot;&lt;/span&gt;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;form target=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; action=&lt;span class=&quot;string&quot;&gt;&quot;upload.php&quot;&lt;/span&gt; method=&lt;span class=&quot;string&quot;&gt;&quot;post&quot;&lt;/span&gt; enctype=&lt;span class=&quot;string&quot;&gt;&quot;multipart/form-data&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;input class=&quot;filename&quot; type=&quot;file&quot; name=&quot;fileLabel&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;input type=&quot;submit&quot; value=&quot;提交&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/form&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;iframe name=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; style=&lt;span class=&quot;string&quot;&gt;&quot;display:none&quot;&lt;/span&gt;&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;iframe&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;form target=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; action=&lt;span class=&quot;string&quot;&gt;&quot;upload.php&quot;&lt;/span&gt; method=&lt;span class=&quot;string&quot;&gt;&quot;post&quot;&lt;/span&gt; enctype=&lt;span class=&quot;string&quot;&gt;&quot;multipart/form-data&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;filename&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;file&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;fileLabel&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;提交&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;我们点击提交,可以看到下面的请求：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://img.alicdn.com/tps/TB1DHQaMpXXXXcaXVXXXXXXXXXX-794-199.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;已经把文件上传。那么，加入这个upload.php接口可用，而且假如上传成功后，会返回：&lt;/p&gt;
@@ -515,7 +518,7 @@
     <link href="http://yoursite.com/work/2016-07-23/css3-study02.html"/>
     <id>http://yoursite.com/work/2016-07-23/css3-study02.html</id>
     <published>2016-07-23T09:41:57.000Z</published>
-    <updated>2016-08-14T09:41:19.000Z</updated>
+    <updated>2016-10-11T16:28:42.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;CSS3系列已经学习了一段时间了，第一篇文章写了一些css3的奇技淫巧，&lt;a href=&quot;http://luckykun.com/work/2016-07-04/css3-study01.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原文戳这里&lt;/a&gt;，还获得了较多网友的支持，在此谢过各位，你们的支持是我写文章最大的动力^_^。&lt;/p&gt;
@@ -622,6 +625,7 @@
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.container&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    animation: rotate-frame &lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;s linear infinite;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h1 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;p&gt;总而言之，在我学习CSS3的过程中，见到了不少的新特性，也学会了如何使用，但是我想说的是我们不管要学会怎么使用，更要去理解每一行代码为什么产生对应的效果，特别是对于&lt;code&gt;3D transform&lt;/code&gt;，我们要从根本去理解了&lt;code&gt;3D空间&lt;/code&gt;，才能更好的去掌握它的每一个属性值能够带来的效果。&lt;/p&gt;
 &lt;p&gt;这篇文章内容稍微有点多，自己记录这篇文章的同时又对这个效果学习巩固了一篇，还是蛮开心哒。同时也希望能对各位看官在以后学习&lt;code&gt;3D transform&lt;/code&gt;的道路上起到一点点作用！&lt;/p&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
@@ -649,7 +653,7 @@
     <link href="http://yoursite.com/work/2016-07-10/hexo-faster.html"/>
     <id>http://yoursite.com/work/2016-07-10/hexo-faster.html</id>
     <published>2016-07-10T09:47:20.000Z</published>
-    <updated>2016-07-11T14:54:59.000Z</updated>
+    <updated>2016-10-11T16:29:18.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;刚开始搭建博客的时候觉得很好玩，可是玩的久了，问题慢慢就出来了，就跟谈恋爱一样＝＝。比如现在我访问博客的时候就感觉慢的要死，不可否认，使用hexo搭建服务器方便快捷，但是由于github作为服务器，也会有速度稍慢的代价产生。既然我不能放弃github，那就只有另寻出路了，作为一名前端，有哪些地方我们可以自己来优化呢？&lt;/p&gt;
@@ -701,6 +705,7 @@
 &lt;h1 id=&quot;博客优化-1&quot;&gt;&lt;a href=&quot;#博客优化-1&quot; class=&quot;headerlink&quot; title=&quot;博客优化&quot;&gt;&lt;/a&gt;博客优化&lt;/h1&gt;&lt;p&gt;优化之后，然后每次添加文章之后，编译发布之间需要多一个命令来压缩这些文件，总结了一下，详细如下：&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hexo clean      &lt;span class=&quot;comment&quot;&gt;//清除public文件夹&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;hexo g       &lt;span class=&quot;comment&quot;&gt;//编译文章，生成public文件夹&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp build     &lt;span class=&quot;comment&quot;&gt;//压缩js、css、img文件&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;hexo d      &lt;span class=&quot;comment&quot;&gt;//部署到github&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;最后再去测试一下网站的访问速度，可以看出比之前已经快了不少了，截图如下：&lt;br&gt;&lt;img src=&quot;https://img.alicdn.com/tps/TB1iMayKVXXXXX.XXXXXXXXXXXX-795-86.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
@@ -725,7 +730,7 @@
     <link href="http://yoursite.com/work/2016-07-04/css3-study01.html"/>
     <id>http://yoursite.com/work/2016-07-04/css3-study01.html</id>
     <published>2016-07-04T14:39:19.000Z</published>
-    <updated>2016-07-10T09:52:10.000Z</updated>
+    <updated>2016-10-11T16:28:35.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;自CSS3流行以来，虽然以前看过一遍所有的新增属性，但其实在实际项目中用到的少之又少。所以没有形成系统性的认识，以及看到效果立马就能想到解决方案的能力。然后最近正好遇到一个需要绘制大量动画的需求，所以决定趁此机会好好研究一下这个既熟悉又陌生的css3。&lt;/p&gt;
@@ -798,6 +803,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;p&gt;通过这段时间对css3的深入了解，发现css3真的很强大，研究起来还是挺有趣的，只有想不到，感觉没有做不到。不过为了实现很酷炫的效果，可能需要编写大量的css代码，这个时候使用什么技术就需要我们自己来衡量了。&lt;/p&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
@@ -887,7 +893,7 @@
     <link href="http://yoursite.com/work/2016-05-29/tiny-heart-study.html"/>
     <id>http://yoursite.com/work/2016-05-29/tiny-heart-study.html</id>
     <published>2016-05-29T01:41:43.000Z</published>
-    <updated>2016-09-01T03:10:23.000Z</updated>
+    <updated>2016-10-11T16:30:05.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;最近除了做业务，也在尝试学习h5和移动端，在这个过程中，学到了很多，利用h5和canvas做了一个爱心鱼的小游戏。源码在github上，down下来直接就能够运行。要是觉得还行，就给个star吧！&lt;a href=&quot;https://github.com/luckykun/tinyHeart&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;源码地址点这里&lt;/a&gt;&lt;/p&gt;
@@ -982,6 +988,7 @@
 &lt;/ul&gt;
 &lt;h1 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;p&gt;好啦，整个游戏的制作过程就分享完了，做的过程中有遇到过很多问题，不过都一一解决了，加深了很多以前模糊的概念，也学到了很多新的知识，比如使用rgba()来一起控制颜色和透明度，以前还真没用到过。&lt;/p&gt;
 &lt;p&gt;这个游戏本身功能比较简单，但是动画还算比较酷炫。这也算是一个比较基本的动画基础框架了，而比较不容易理解的地方也有很多，比如求趋近的角度函数&lt;code&gt;lerpAngle(a,b,c)&lt;/code&gt;，还有&lt;code&gt;Math.atan2()&lt;/code&gt;这个函数，等等。 欢迎大家提出bug或者改进建议～～～&lt;/p&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
@@ -1008,7 +1015,7 @@
     <link href="http://yoursite.com/work/2016-05-23/react-todo-study.html"/>
     <id>http://yoursite.com/work/2016-05-23/react-todo-study.html</id>
     <published>2016-05-23T14:11:51.000Z</published>
-    <updated>2016-07-23T09:50:26.000Z</updated>
+    <updated>2016-10-11T16:29:52.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;blockquote&gt;
@@ -1090,6 +1097,7 @@
 &lt;li&gt;&lt;a href=&quot;http://wiki.jikexueyuan.com/project/react-tutorial/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://wiki.jikexueyuan.com/project/react-tutorial/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://gank.io/post/564151c1f1df1210001c9161&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://gank.io/post/564151c1f1df1210001c9161&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
@@ -1119,7 +1127,7 @@
     <link href="http://yoursite.com/work/2016-05-20/hexo-advance.html"/>
     <id>http://yoursite.com/work/2016-05-20/hexo-advance.html</id>
     <published>2016-05-20T15:11:51.000Z</published>
-    <updated>2016-05-21T15:55:46.000Z</updated>
+    <updated>2016-10-11T16:29:11.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;之前我已经写了一篇文章详细的讲述了如何使用hexo搭建github博客。如果还没有看的可以去看看，&lt;a href=&quot;/work/2016-04-23/heoll-hexo.html&quot;&gt;hexo搭建博客&lt;/a&gt;&lt;/p&gt;
@@ -1140,7 +1148,7 @@
 &lt;h2 id=&quot;创建相册页面&quot;&gt;&lt;a href=&quot;#创建相册页面&quot; class=&quot;headerlink&quot; title=&quot;创建相册页面&quot;&gt;&lt;/a&gt;创建相册页面&lt;/h2&gt;&lt;p&gt;在根目录下执行命令：&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hexo page photos&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;会在&lt;code&gt;source/photos&lt;/code&gt;目录下生成一个index.md文件，编辑文件内容如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;link type=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt; href=&lt;span class=&quot;string&quot;&gt;&quot;/fancybox/jquery.fancybox.css&quot;&lt;/span&gt; rel=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;div class=&quot;instagram&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;section class=&quot;archives album&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;lt;ul class=&quot;img-box-ul&quot;&amp;gt;&amp;lt;/ul&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;/section&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;link type=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt; href=&lt;span class=&quot;string&quot;&gt;&quot;/fancybox/jquery.fancybox.css&quot;&lt;/span&gt; rel=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;instagram&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;archives album&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img-box-ul&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;section&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;修改themes-yilia-js-photo-js：&quot;&gt;&lt;a href=&quot;#修改themes-yilia-js-photo-js：&quot; class=&quot;headerlink&quot; title=&quot;修改themes/yilia/js/photo.js：&quot;&gt;&lt;/a&gt;修改&lt;code&gt;themes/yilia/js/photo.js&lt;/code&gt;：&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;init: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; that = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $.getJSON(&lt;span class=&quot;string&quot;&gt;&quot;/photos/data.json&quot;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;data&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        that.render(that.page, data);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        that.scroll(data);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;render: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;page, data&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; begin = (page - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) * &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.offset;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; end = page * &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.offset;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (begin &amp;gt;= data.length) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; html, li = &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = begin; i &amp;lt; end &amp;amp;&amp;amp; i &amp;lt; data.length; i++) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        li += &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;li&amp;gt;&amp;lt;div class=&quot;img-box&quot;&amp;gt;&#39;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;a class=&quot;img-bg&quot; rel=&quot;example_group&quot; href=&quot;https://raw.githubusercontent.com/jarson7426/blog-back-up/master/photos/&#39;&lt;/span&gt; + data[i] + &lt;span class=&quot;string&quot;&gt;&#39;&quot;&amp;gt;&amp;lt;/a&amp;gt;&#39;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;img lazy-src=&quot;https://raw.githubusercontent.com/jarson7426/blog-back-up/master/photos/&#39;&lt;/span&gt; + data[i] + &lt;span class=&quot;string&quot;&gt;&#39;&quot; /&amp;gt;&#39;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/li&amp;gt;&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&quot;.img-box-ul&quot;&lt;/span&gt;).append(li);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&quot;.img-box-ul&quot;&lt;/span&gt;).lazyload();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&quot;a[rel=example_group]&quot;&lt;/span&gt;).fancybox();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;...&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;上述文件读取json文件，将图片的线上url拼接起来渲染在页面上，相册样式使用yilia主题提供。然后上传这些文件，根据自定义的路径访问url，就能看到相册了。那么，到这里就基本完成了相册的制作。&lt;/p&gt;
 &lt;h1 id=&quot;独立域名&quot;&gt;&lt;a href=&quot;#独立域名&quot; class=&quot;headerlink&quot; title=&quot;独立域名&quot;&gt;&lt;/a&gt;独立域名&lt;/h1&gt;&lt;p&gt;到目前为止，我们的博客都是使用github分配的二级域名&lt;code&gt;luckykun.github.io&lt;/code&gt;来访问的， 那么我们会想如果能自己设置个域名，是多么cool的事！要怎么办呢？那就继续往下看吧！&lt;/p&gt;
@@ -1151,6 +1159,7 @@
 &lt;h2 id=&quot;添加CNAME&quot;&gt;&lt;a href=&quot;#添加CNAME&quot; class=&quot;headerlink&quot; title=&quot;添加CNAME&quot;&gt;&lt;/a&gt;添加CNAME&lt;/h2&gt;&lt;p&gt;然后回到博客项目根目录，在&lt;code&gt;source/&lt;/code&gt;下新建一个名为&lt;code&gt;CNAME&lt;/code&gt;的文件，里面的内容写入&lt;code&gt;luckykun.com&lt;/code&gt;即可。&lt;/p&gt;
 &lt;p&gt;然后在浏览器输入luckykun.com，即可代替之前的github.io的域名，访问到自己的博客页面了。实在是台、太cool了！&lt;/p&gt;
 &lt;h1 id=&quot;结语&quot;&gt;&lt;a href=&quot;#结语&quot; class=&quot;headerlink&quot; title=&quot;结语&quot;&gt;&lt;/a&gt;结语&lt;/h1&gt;&lt;p&gt;好的，文章写道这里就结束了，感谢大家的阅读，如果文章能给大家带来帮助就最好了，如果读者还有任何疑问，欢迎留言，我会尽力解答。再见啦～～&lt;/p&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
@@ -1176,7 +1185,7 @@
     <link href="http://yoursite.com/work/2016-05-14/weixin-share.html"/>
     <id>http://yoursite.com/work/2016-05-14/weixin-share.html</id>
     <published>2016-05-14T02:33:46.000Z</published>
-    <updated>2016-05-21T15:49:36.000Z</updated>
+    <updated>2016-10-11T16:28:11.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;最近要慢慢开始做移动端的一些页面了，并且大多数都是活动页面，需要在微信里面分享、传播。&lt;/p&gt;
@@ -1249,7 +1258,7 @@
     <link href="http://yoursite.com/work/2016-05-13/atom-edit.html"/>
     <id>http://yoursite.com/work/2016-05-13/atom-edit.html</id>
     <published>2016-05-13T02:11:00.000Z</published>
-    <updated>2016-05-15T07:18:36.000Z</updated>
+    <updated>2016-10-11T16:28:20.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;周末闲着没事，逛论坛发现了一个新的编辑器，由github发布的Atom编辑器。瞬间被吸引了，所以就去尝试着折腾了一下，后来发现这个编辑器确实很不错，他的特点就是两个字：&lt;code&gt;优美！！！&lt;/code&gt;&lt;/p&gt;
@@ -1635,7 +1644,7 @@
     <link href="http://yoursite.com/life/2016-05-11/life-miss-bike.html"/>
     <id>http://yoursite.com/life/2016-05-11/life-miss-bike.html</id>
     <published>2016-05-11T14:59:22.000Z</published>
-    <updated>2016-07-12T14:07:09.000Z</updated>
+    <updated>2016-10-11T16:29:38.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;blockquote&gt;
@@ -1658,6 +1667,7 @@
 &lt;p&gt;如果妈妈你看到这篇文章，请不要怪我，我不是故意的，我也很伤心。但是，除了伤心，我还会有决定，我会做兼职，把钱赚回来，至少把自行车的钱赚回来。所以，请你下次打电话时不要再拿这件事说我了，哭…&lt;/p&gt;
 &lt;p&gt;好了，这篇日志过后，我就不会再郁闷了，重新振作，千万不能让小偷再看见我伤心样子，那样他会更加猖狂的。&lt;/p&gt;
 &lt;p&gt;最后，用陈小春的歌来送给可恶的偷车大盗，算你狠！！！&lt;/p&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
@@ -1681,7 +1691,7 @@
     <link href="http://yoursite.com/work/2016-05-10/es6-feature.html"/>
     <id>http://yoursite.com/work/2016-05-10/es6-feature.html</id>
     <published>2016-05-10T15:11:23.000Z</published>
-    <updated>2016-08-16T16:29:28.000Z</updated>
+    <updated>2016-10-11T16:28:50.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;ES6是即将到来的新版本JavaScript语言的标准，他给我们带来了更”甜”的语法糖（一种语法，使得语言更容易理解和更具有可读性，也让我们编写代码更加简单快捷），如箭头函数（=&amp;gt;）、class等等。用一句话来说就是：&lt;/p&gt;
@@ -1770,7 +1780,7 @@
     <link href="http://yoursite.com/work/2016-05-08/react-todo-demo.html"/>
     <id>http://yoursite.com/work/2016-05-08/react-todo-demo.html</id>
     <published>2016-05-08T14:11:51.000Z</published>
-    <updated>2016-07-23T09:54:56.000Z</updated>
+    <updated>2016-10-11T16:29:43.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;header style=&quot;margin-top:-55px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/react-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
@@ -1817,7 +1827,7 @@
     <link href="http://yoursite.com/work/2016-05-02/grunt-angular.html"/>
     <id>http://yoursite.com/work/2016-05-02/grunt-angular.html</id>
     <published>2016-05-02T14:33:32.000Z</published>
-    <updated>2016-08-24T16:38:59.000Z</updated>
+    <updated>2016-10-11T16:29:02.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;前段时间在公司做了一个项目，前后端的合作方式是这样的：前端开发页面，然后把代码给到后端同学，后端同学通过java的vm模板来渲染页面。慢慢的我发现，这种方式简直是太low了，因为所有的前端代码都揉在服务端同学那里，而每次项目需要更新，甚至只是页面微调，只要服务端同学说他不懂，或者是没有时间，我们前端同学就要屁颠屁颠的跑去他那里配合他修改代码，维护成本高，卖力不讨好==，那我们到底该怎么办呢？&lt;/p&gt;
@@ -1949,13 +1959,13 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="grunt" scheme="http://yoursite.com/tags/grunt/"/>
     
       <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
     
       <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   

@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/111.png">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/2.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1iMayKVXXXXX.XXXXXXXXXXXX-795-86.png">
-<meta property="og:updated_time" content="2016-07-11T14:54:59.000Z">
+<meta property="og:updated_time" content="2016-10-11T16:29:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo博客进阶－性能优化">
 <meta name="twitter:description" content="刚开始搭建博客的时候觉得很好玩，可是玩的久了，问题慢慢就出来了，就跟谈恋爱一样＝＝。比如现在我访问博客的时候就感觉慢的要死，不可否认，使用hexo搭建服务器方便快捷，但是由于github作为服务器，也会有速度稍慢的代价产生。既然我不能放弃github，那就只有另寻出路了，作为一名前端，有哪些地方我们可以自己来优化呢？
@@ -160,7 +160,7 @@
 						<li>云标签</li>
 						
 						
-						<!-- <li>About</li> -->
+						<!-- <li>A propos</li> -->
 						<li>关于我</li>
 						
 					</ul>
@@ -384,6 +384,7 @@
 <h1 id="博客优化-1"><a href="#博客优化-1" class="headerlink" title="博客优化"></a>博客优化</h1><p>优化之后，然后每次添加文章之后，编译发布之间需要多一个命令来压缩这些文件，总结了一下，详细如下：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">hexo clean      <span class="comment">//清除public文件夹</span></div><div class="line">hexo g       <span class="comment">//编译文章，生成public文件夹</span></div><div class="line">gulp build     <span class="comment">//压缩js、css、img文件</span></div><div class="line">hexo d      <span class="comment">//部署到github</span></div></pre></td></tr></table></figure>
 <p>最后再去测试一下网站的访问速度，可以看出比之前已经快了不少了，截图如下：<br><img src="https://img.alicdn.com/tps/TB1iMayKVXXXXX.XXXXXXXXXXXX-795-86.png" alt=""></p>
+<hr>
 
       
     </div>
