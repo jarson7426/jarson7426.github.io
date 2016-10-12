@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/right.png">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/left.png">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/top-left.png">
-<meta property="og:updated_time" content="2016-10-11T16:28:42.000Z">
+<meta property="og:updated_time" content="2016-10-12T15:34:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3 3D立方体效果－transform也不过如此">
 <meta name="twitter:description" content="CSS3系列已经学习了一段时间了，第一篇文章写了一些css3的奇技淫巧，原文戳这里，还获得了较多网友的支持，在此谢过各位，你们的支持是我写文章最大的动力^_^。
@@ -169,7 +169,7 @@
 						<li>云标签</li>
 						
 						
-						<!-- <li>A propos</li> -->
+						<!-- <li>Über</li> -->
 						<li>关于我</li>
 						
 					</ul>
@@ -200,7 +200,7 @@
 					        
 								<a class="weibo" target="_blank" href="http://weibo.com/u/2732624311" title="weibo">weibo</a>
 					        
-								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xiao-jian-31-24" title="zhihu">zhihu</a>
 					        
 								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
 					        
@@ -276,7 +276,7 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/u/2732624311" title="weibo">weibo</a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xiao-jian-31-24" title="zhihu">zhihu</a>
 			        
 						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
 			        
@@ -426,19 +426,19 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.top &#123;</div><div class="line">    left: <span class="number">200</span>px;</div><div class="line">    top: <span class="number">-200</span>px;</div><div class="line">    transform: rotateX(<span class="number">-90</span>deg);</div><div class="line">    transform-origin: bottom;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>立方体底面</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.top &#123;</div><div class="line">    left: <span class="number">200</span>px;</div><div class="line">    bottom: <span class="number">-200</span>px;</div><div class="line">    transform: rotateX(<span class="number">90</span>deg);</div><div class="line">    transform-origin: top;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.bottom &#123;</div><div class="line">    left: <span class="number">200</span>px;</div><div class="line">    bottom: <span class="number">-200</span>px;</div><div class="line">    transform: rotateX(<span class="number">90</span>deg);</div><div class="line">    transform-origin: top;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>立方体左面</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.top &#123;</div><div class="line">    left: <span class="number">-200</span>px;</div><div class="line">    top: <span class="number">200</span>px;</div><div class="line">    transform: rotateY(<span class="number">90</span>deg);</div><div class="line">    transform-origin: right;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.left &#123;</div><div class="line">    left: <span class="number">-200</span>px;</div><div class="line">    top: <span class="number">200</span>px;</div><div class="line">    transform: rotateY(<span class="number">90</span>deg);</div><div class="line">    transform-origin: right;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>立方体右面</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.top &#123;</div><div class="line">    left: <span class="number">600</span>px;</div><div class="line">    top: <span class="number">200</span>px;</div><div class="line">    transform: rotateY(<span class="number">-90</span>deg);</div><div class="line">    transform-origin: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.right &#123;</div><div class="line">    left: <span class="number">600</span>px;</div><div class="line">    top: <span class="number">200</span>px;</div><div class="line">    transform: rotateY(<span class="number">-90</span>deg);</div><div class="line">    transform-origin: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>立方体前面</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.top &#123;</div><div class="line">    left: <span class="number">200</span>px;</div><div class="line">    top: <span class="number">200</span>px;</div><div class="line">    transform: translateZ(<span class="number">400</span>px);  <span class="comment">//立方体前面正对着屏幕，所以不用旋转，只需向Z轴前移动距离</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.front &#123;</div><div class="line">    left: <span class="number">200</span>px;</div><div class="line">    top: <span class="number">200</span>px;</div><div class="line">    transform: translateZ(<span class="number">400</span>px);  <span class="comment">//立方体前面正对着屏幕，所以不用旋转，只需向Z轴前移动距离</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>立方体后面</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.top &#123;</div><div class="line">    left: <span class="number">200</span>px;</div><div class="line">    top: <span class="number">200</span>px;</div><div class="line">    transform: translateZ(<span class="number">0</span>);   <span class="comment">//立方体后面正对着屏幕，所以不用旋转，只需向Z轴后移动距离</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">.back &#123;</div><div class="line">    left: <span class="number">200</span>px;</div><div class="line">    top: <span class="number">200</span>px;</div><div class="line">    transform: translateZ(<span class="number">0</span>);   <span class="comment">//立方体后面正对着屏幕，所以不用旋转，只需向Z轴后移动距离</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>  最后别忘了给每个不同面加上图片，位置什么的再稍微调一下，这个酷炫的立方体就大功告成了。</p>
 </li>
 </ul>

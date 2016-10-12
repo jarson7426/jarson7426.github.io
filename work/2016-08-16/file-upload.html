@@ -155,7 +155,7 @@
 						<li>云标签</li>
 						
 						
-						<!-- <li>A propos</li> -->
+						<!-- <li>Über</li> -->
 						<li>关于我</li>
 						
 					</ul>
@@ -186,7 +186,7 @@
 					        
 								<a class="weibo" target="_blank" href="http://weibo.com/u/2732624311" title="weibo">weibo</a>
 					        
-								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xiao-jian-31-24" title="zhihu">zhihu</a>
 					        
 								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
 					        
@@ -262,7 +262,7 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/u/2732624311" title="weibo">weibo</a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xiao-jian-31-24" title="zhihu">zhihu</a>
 			        
 						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
 			        
@@ -338,7 +338,7 @@
 <p>但是！！！IE9以下的版本不支持呀！！</p>
 <p>除此之外，上面的方法还有一个弊端，因为使用了ajax的上传方式，所以不能支持跨域上传，如果必须要满足这两个业务场景，那就试试下面的方法吧，借助form和iframe来实现上传。下面来详细看一下：</p>
 <h1 id="form表单提交到iframe"><a href="#form表单提交到iframe" class="headerlink" title="form表单提交到iframe"></a>form表单提交到iframe</h1><p>html代码:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;iframe name=<span class="string">"demoIframe"</span> style=<span class="string">"display:none"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span></div><div class="line">&lt;form target=<span class="string">"demoIframe"</span> action=<span class="string">"upload.php"</span> method=<span class="string">"post"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"filename"</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"fileLabel"</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;iframe name=<span class="string">"demoIframe"</span> style=<span class="string">"display:none"</span>&gt;&lt;/iframe&gt;</div><div class="line">&lt;form target=<span class="string">"demoIframe"</span> action=<span class="string">"upload.php"</span> method=<span class="string">"post"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;</div><div class="line">    &lt;input class="filename" type="file" name="fileLabel"&gt;</div><div class="line">    &lt;input type="submit" value="提交"&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 <p>我们点击提交,可以看到下面的请求：</p>
 <p><img src="https://img.alicdn.com/tps/TB1DHQaMpXXXXcaXVXXXXXXXXXX-794-199.png" alt=""></p>
 <p>已经把文件上传。那么，加入这个upload.php接口可用，而且假如上传成功后，会返回：</p>
