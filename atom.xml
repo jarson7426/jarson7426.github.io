@@ -320,7 +320,7 @@
 &lt;p&gt;但是！！！IE9以下的版本不支持呀！！&lt;/p&gt;
 &lt;p&gt;除此之外，上面的方法还有一个弊端，因为使用了ajax的上传方式，所以不能支持跨域上传，如果必须要满足这两个业务场景，那就试试下面的方法吧，借助form和iframe来实现上传。下面来详细看一下：&lt;/p&gt;
 &lt;h1 id=&quot;form表单提交到iframe&quot;&gt;&lt;a href=&quot;#form表单提交到iframe&quot; class=&quot;headerlink&quot; title=&quot;form表单提交到iframe&quot;&gt;&lt;/a&gt;form表单提交到iframe&lt;/h1&gt;&lt;p&gt;html代码:&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;iframe name=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; style=&lt;span class=&quot;string&quot;&gt;&quot;display:none&quot;&lt;/span&gt;&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;iframe&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;form target=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; action=&lt;span class=&quot;string&quot;&gt;&quot;upload.php&quot;&lt;/span&gt; method=&lt;span class=&quot;string&quot;&gt;&quot;post&quot;&lt;/span&gt; enctype=&lt;span class=&quot;string&quot;&gt;&quot;multipart/form-data&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;filename&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;file&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;fileLabel&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;提交&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;iframe name=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; style=&lt;span class=&quot;string&quot;&gt;&quot;display:none&quot;&lt;/span&gt;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;form target=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; action=&lt;span class=&quot;string&quot;&gt;&quot;upload.php&quot;&lt;/span&gt; method=&lt;span class=&quot;string&quot;&gt;&quot;post&quot;&lt;/span&gt; enctype=&lt;span class=&quot;string&quot;&gt;&quot;multipart/form-data&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;input class=&quot;filename&quot; type=&quot;file&quot; name=&quot;fileLabel&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;input type=&quot;submit&quot; value=&quot;提交&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/form&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;我们点击提交,可以看到下面的请求：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://img.alicdn.com/tps/TB1DHQaMpXXXXcaXVXXXXXXXXXX-794-199.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;已经把文件上传。那么，加入这个upload.php接口可用，而且假如上传成功后，会返回：&lt;/p&gt;
@@ -1106,9 +1106,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
@@ -1353,7 +1353,7 @@
     <link href="http://yoursite.com/work/2016-05-12/high-extend.html"/>
     <id>http://yoursite.com/work/2016-05-12/high-extend.html</id>
     <published>2016-05-12T04:11:51.000Z</published>
-    <updated>2016-05-29T04:37:20.000Z</updated>
+    <updated>2016-10-22T16:16:11.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;header style=&quot;margin-top:-55px;text-align:center&quot;&gt;&lt;br&gt;    &lt;p style=&quot;font-size: 1.5em;margin-top: 30px;&quot;&gt;&lt;span&gt;highextend图表实例&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/highextend&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/p&gt;&lt;br&gt;&lt;/header&gt;
@@ -1361,9 +1361,8 @@
 &lt;p&gt;highextend是基于highcharts进一步封装的图表组件，组件暴露一个&lt;code&gt;Hxt&lt;/code&gt;的全局对象，它有以下一些方法来绘制不同类的图形，从此以后，画图只需简简单单的几行配置就ok了！赶紧点进来看看实例吧！&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Hxt.line(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//渲染默认折线图&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Hxt.spline(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//曲线图&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Hxt.scatter(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//散点图&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Hxt.bubble(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//bubble图&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Hxt.column(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//柱状图&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Hxt.bar(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//bar图，（横向柱状图）&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Hxt.area(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//区域图（默认为平滑区域图）&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Hxt.pie(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//圆饼图&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Hxt.polar(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//雷达图&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Hxt.pyramid(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//金字塔图&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Hxt.mix(elem, data, options);         &lt;span class=&quot;comment&quot;&gt;//混合图&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;实例展示&quot;&gt;&lt;a href=&quot;#实例展示&quot; class=&quot;headerlink&quot; title=&quot;实例展示&quot;&gt;&lt;/a&gt;实例展示&lt;/h1&gt;&lt;div class=&quot;high-extend-container&quot;&gt;&lt;br&gt;    &lt;div class=&quot;chart&quot; id=&quot;line-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;chart&quot; id=&quot;area-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;chart&quot; id=&quot;column-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;chart&quot; id=&quot;mix-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;small-chart&quot; id=&quot;pie-chart1&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;small-chart&quot; id=&quot;pie-chart2&quot; style=&quot;margin-top:-28px;&quot;&gt;&lt;/div&gt;
+&lt;h1 id=&quot;实例展示&quot;&gt;&lt;a href=&quot;#实例展示&quot; class=&quot;headerlink&quot; title=&quot;实例展示&quot;&gt;&lt;/a&gt;实例展示&lt;/h1&gt;&lt;div class=&quot;high-extend-container&quot;&gt;&lt;br&gt;    &lt;div class=&quot;chart&quot; id=&quot;line-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;chart&quot; id=&quot;area-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;chart&quot; id=&quot;column-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;chart&quot; id=&quot;mix-chart&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;small-chart&quot; id=&quot;pie-chart1&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;div class=&quot;small-chart&quot; id=&quot;pie-chart2&quot; style=&quot;margin-top:-28px;&quot;&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
 &lt;h1 id=&quot;使用文档&quot;&gt;&lt;a href=&quot;#使用文档&quot; class=&quot;headerlink&quot; title=&quot;使用文档&quot;&gt;&lt;/a&gt;使用文档&lt;/h1&gt;&lt;p&gt;本页面的实例不全，读者可以在&lt;a href=&quot;https://github.com/luckykun/highextend&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;我的github&lt;/a&gt;上访问到这个项目的所有代码，然后down下来执行以下代码就能直接在浏览器看到所有实例。&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install   &lt;span class=&quot;comment&quot;&gt;//安装依赖&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;gulp   &lt;span class=&quot;comment&quot;&gt;//启动服务&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;在上面介绍的方法中，有&lt;code&gt;elem&lt;/code&gt;, &lt;code&gt;data&lt;/code&gt;, &lt;code&gt;options&lt;/code&gt;三个参数，下面依次介绍以下：&lt;/p&gt;
@@ -1373,105 +1372,72 @@
 &lt;li&gt;options：图表配置项,&lt;code&gt;可以为空，为空则使用默认配置。&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;公共配置项&quot;&gt;&lt;a href=&quot;#公共配置项&quot; class=&quot;headerlink&quot; title=&quot;公共配置项&quot;&gt;&lt;/a&gt;公共配置项&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;emptyHtml&lt;/code&gt;: 数据为空时的提示信息，支持html格式。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;backgroundColor&lt;/code&gt;: 图表背景颜色，默认为’白色‘。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;marginTop&lt;/code&gt;: 图形的上边距，例如 marginTop: 60。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;marginRight&lt;/code&gt;: 图形的上边距，例如 marginRight: 60。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;chartLoad&lt;/code&gt;: 设置图形加载方式。一般实时动态数据会配置此项。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;colors&lt;/code&gt;: 颜色，&lt;code&gt;类型为数组&lt;/code&gt;。非必选，有默认的颜色。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;title&lt;/code&gt;: 图表标题，默认为空。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;subtitle&lt;/code&gt;: 副标题，默认为空。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;markerEnabled&lt;/code&gt;: 是否显示线条上的点，默认&lt;code&gt;true&lt;/code&gt;为显示。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;markerSymbol&lt;/code&gt;: 线条上点的形状，默认为‘circle’圆形，并且默认样式为空心。其他值有‘square’，‘diamond’，‘triangle’等。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;legendEnabled&lt;/code&gt;: 图例是否显示，默认为&lt;code&gt;true&lt;/code&gt;，显示图例。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;legendLayout&lt;/code&gt;: 图例显示方式，默认为水平方向：‘horizontal’。 ‘vertical’为垂直方向。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;legendAlign&lt;/code&gt;: 水平方向显示位置，默认中间位置：‘center’，其他值有‘right’，‘left’。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;legendVerticalAlign&lt;/code&gt;: 垂直方向显示位置，默认‘bottom’，其他值有‘top’，‘middle’。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;legendItemMarginBottom&lt;/code&gt;: 每个图例的下边距，默认为4px。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;shared&lt;/code&gt;: tooltip提示框是否被共享。默认为&lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;valuePrefix&lt;/code&gt;: tooltip悬浮框value值前面的字符，默认为空。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;valueSuffix&lt;/code&gt;: tooltip悬浮框value值后面的字符，默认为空。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;xDateFormat&lt;/code&gt;: tooltip中时间转化格式，默认为‘%Y-%m-%d’，即‘2016-01-10’。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;chartLabel&lt;/code&gt;： 图形中的提示文案，格式为对象，如：{html:’title’, style:{left:’30px’, top: ‘5px’}}。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;emptyHtml&lt;/code&gt;: 数据为空时的提示信息，支持html格式。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;backgroundColor&lt;/code&gt;: 图表背景颜色，默认为’白色’。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;marginTop&lt;/code&gt;: 图形的上边距，例如 marginTop: 60。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;marginRight&lt;/code&gt;: 图形的上边距，例如 marginRight: 60。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chartLoad&lt;/code&gt;: 设置图形加载方式。一般实时动态数据会配置此项。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;colors&lt;/code&gt;: 颜色，&lt;code&gt;类型为数组&lt;/code&gt;。非必选，有默认的颜色。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt;: 图表标题，默认为空。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;subtitle&lt;/code&gt;: 副标题，默认为空。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;markerEnabled&lt;/code&gt;: 是否显示线条上的点，默认&lt;code&gt;true&lt;/code&gt;为显示。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;markerSymbol&lt;/code&gt;: 线条上点的形状，默认为’circle’圆形，并且默认样式为空心。其他值有’square’，’diamond’，’triangle’等。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;legendEnabled&lt;/code&gt;: 图例是否显示，默认为&lt;code&gt;true&lt;/code&gt;，显示图例。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;legendLayout&lt;/code&gt;: 图例显示方式，默认为水平方向：’horizontal’。 ‘vertical’为垂直方向。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;legendAlign&lt;/code&gt;: 水平方向显示位置，默认中间位置：’center’，其他值有’right’，’left’。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;legendVerticalAlign&lt;/code&gt;: 垂直方向显示位置，默认’bottom’，其他值有’top’，’middle’。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;legendItemMarginBottom&lt;/code&gt;: 每个图例的下边距，默认为4px。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;shared&lt;/code&gt;: tooltip提示框是否被共享。默认为&lt;code&gt;false&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;valuePrefix&lt;/code&gt;: tooltip悬浮框value值前面的字符，默认为空。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;valueSuffix&lt;/code&gt;: tooltip悬浮框value值后面的字符，默认为空。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;xDateFormat&lt;/code&gt;: tooltip中时间转化格式，默认为’%Y-%m-%d’，即’2016-01-10’。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chartLabel&lt;/code&gt;： 图形中的提示文案，格式为对象，如：{html:’title’, style:{left:’30px’, top: ‘5px’}}。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;线图-柱状图配置项&quot;&gt;&lt;a href=&quot;#线图-柱状图配置项&quot; class=&quot;headerlink&quot; title=&quot;线图/柱状图配置项&quot;&gt;&lt;/a&gt;线图/柱状图配置项&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;Xtype&lt;/code&gt;: 横坐标类型，默认为空。&lt;code&gt;如设置&amp;#39;datetime&amp;#39;，则为时间类型，默认转为&amp;#39;01-01&amp;#39;格式&lt;/code&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;Ytitle&lt;/code&gt;: 纵坐标标题，默认为空。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;Ytype&lt;/code&gt;: 纵坐标类型，默认为空。&lt;code&gt;如设置&amp;#39;rate&amp;#39;,则用1024为单位计算，且默认单位为‘kb’，大于1024单位变为‘M’&lt;/code&gt;。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Xtype&lt;/code&gt;: 横坐标类型，默认为空。&lt;code&gt;如设置&amp;#39;datetime&amp;#39;，则为时间类型，默认转为&amp;#39;01-01&amp;#39;格式&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ytitle&lt;/code&gt;: 纵坐标标题，默认为空。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ytype&lt;/code&gt;: 纵坐标类型，默认为空。&lt;code&gt;如设置&amp;#39;rate&amp;#39;,则用1024为单位计算，且默认单位为&amp;#39;kb&amp;#39;，大于1024单位变为&amp;#39;M&amp;#39;&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;饼图配置项&quot;&gt;&lt;a href=&quot;#饼图配置项&quot; class=&quot;headerlink&quot; title=&quot;饼图配置项&quot;&gt;&lt;/a&gt;饼图配置项&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;size&lt;/code&gt;: 饼图的整体大小（百分比），默认为100%。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;innerSize&lt;/code&gt;: 内圆所占的百分比，默认为55%。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;showInLegend&lt;/code&gt;: 设置圆饼图的图例是否显示，默认为&lt;code&gt;true&lt;/code&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;startAngle&lt;/code&gt;: 圆饼图的开始角度。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;endAngle&lt;/code&gt;: 圆饼图的结束角度。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;pieLabel&lt;/code&gt;: 设置圆饼图的series文案，默认为&lt;code&gt;数量&lt;/code&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;pieClick&lt;/code&gt;: 圆饼图的点击事件。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;pieMouseOut&lt;/code&gt;: 圆饼图的mouseout事件。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;pieMouseOver&lt;/code&gt;: 圆饼图的mouseover事件。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;size&lt;/code&gt;: 饼图的整体大小（百分比），默认为100%。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;innerSize&lt;/code&gt;: 内圆所占的百分比，默认为55%。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;showInLegend&lt;/code&gt;: 设置圆饼图的图例是否显示，默认为&lt;code&gt;true&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;startAngle&lt;/code&gt;: 圆饼图的开始角度。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;endAngle&lt;/code&gt;: 圆饼图的结束角度。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pieLabel&lt;/code&gt;: 设置圆饼图的series文案，默认为&lt;code&gt;数量&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pieClick&lt;/code&gt;: 圆饼图的点击事件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pieMouseOut&lt;/code&gt;: 圆饼图的mouseout事件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pieMouseOver&lt;/code&gt;: 圆饼图的mouseover事件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;雷达图配置项&quot;&gt;&lt;a href=&quot;#雷达图配置项&quot; class=&quot;headerlink&quot; title=&quot;雷达图配置项&quot;&gt;&lt;/a&gt;雷达图配置项&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;polarType&lt;/code&gt;: 雷达图的形状，可设置为‘circle’－圆形，默认为‘polygon’－菱形。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;polarSize&lt;/code&gt;: 雷达图大小百分比，默认95%。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;polarType&lt;/code&gt;: 雷达图的形状，可设置为’circle’－圆形，默认为’polygon’－菱形。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;polarSize&lt;/code&gt;: 雷达图大小百分比，默认95%。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;正负对比图（bar）配置项&quot;&gt;&lt;a href=&quot;#正负对比图（bar）配置项&quot; class=&quot;headerlink&quot; title=&quot;正负对比图（bar）配置项&quot;&gt;&lt;/a&gt;正负对比图（bar）配置项&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;barStacking&lt;/code&gt;: 设置为“normal”－表示正负对比图。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;barStacking&lt;/code&gt;: 设置为”normal”－表示正负对比图。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;混合图特有配置项&quot;&gt;&lt;a href=&quot;#混合图特有配置项&quot; class=&quot;headerlink&quot; title=&quot;混合图特有配置项&quot;&gt;&lt;/a&gt;混合图特有配置项&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;mixPieCenter&lt;/code&gt;: 混合图中饼图的特有设置–中心原点坐标，如[100,50]。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;mixPieSize&lt;/code&gt;: 混合图中饼图的特有设置–饼图大小，默认为‘60%’。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;mixPieInnerSize&lt;/code&gt;: 混合图中饼图的特有设置–饼图空心圆大小，默认为0。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;miePieShowInLegend&lt;/code&gt;: 混合图中饼图的特有设置–是否显示legend，默认为false。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mixPieCenter&lt;/code&gt;: 混合图中饼图的特有设置–中心原点坐标，如[100,50]。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mixPieSize&lt;/code&gt;: 混合图中饼图的特有设置–饼图大小，默认为’60%’。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mixPieInnerSize&lt;/code&gt;: 混合图中饼图的特有设置–饼图空心圆大小，默认为0。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;miePieShowInLegend&lt;/code&gt;: 混合图中饼图的特有设置–是否显示legend，默认为false。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;style&gt;
 .high-extend-container {
-    min-height: 400px;
+    width: 100%;
+    min-height: 300px;
     overflow: hidden;
 }
 .high-extend-container .chart {
     background: #f5f5f5;
     padding: 10px;
-    width: 90%;
+    width: 95%;
     height: 280px;
+}
+.high-extend-container .highcharts-container, .high-extend-container svg  {
+    width: 100% !important;
+    height: 100% !important;
 }
 .high-extend-container .small-chart {
     padding: 10px;
@@ -1568,45 +1534,45 @@
         endAngle: 90
     });
 
-                                var mixData = {
-                                    &quot;items&quot;: [{
-                                        &quot;type&quot;: &quot;column&quot;,
-                                        &quot;name&quot;: &quot;第一天&quot;,
-                                        &quot;data&quot;: [3, 2, 1, 3, 4]
-                                    },{
-                                        &quot;type&quot;: &quot;column&quot;,
-                                        &quot;name&quot;: &quot;第二天&quot;,
-                                        &quot;data&quot;: [2, 3, 5, 7, 9]
-                                    },{
-                                        &quot;type&quot;: &quot;spline&quot;,
-                                        &quot;name&quot;: &quot;平均值&quot;,
-                                        &quot;data&quot;: [2.5, 2.5, 3, 5, 6.5]
-                                    },{
-                                        &quot;type&quot;: &quot;pie&quot;,
-                                        &quot;name&quot;: &quot;总量&quot;,
-                                        &quot;data&quot;: [{
-                                            &quot;name&quot;: &quot;第一天&quot;,
-                                            &quot;y&quot;: 13
-                                        },{
-                                            &quot;name&quot;: &quot;第二天&quot;,
-                                            &quot;y&quot;: 26
-                                        }]
-                                    }],
-                                    &quot;categories&quot;: [&quot;苹果&quot;, &quot;橘子&quot;, &quot;石榴&quot;, &quot;香蕉&quot;, &quot;草莓&quot;]
-                                };
-                                var chart5 = Hxt.mix(&#39;mix-chart&#39;, mixData, {
-                                    valueSuffix: &#39;斤&#39;,
-                                    mixPieCenter: [60, 50],
-                                    mixPieSize: &#39;55%&#39;,
-                                    shared: true,
-                                    chartLabel: {
-                                        html: &#39;水果两天的总销量&#39;,
-                                        style: {
-                                            left: &#39;30px&#39;,
-                                            top: &#39;5px&#39;
-                                        }
-                                    }
-                                });
+    var mixData = {
+        &quot;items&quot;: [{
+            &quot;type&quot;: &quot;column&quot;,
+            &quot;name&quot;: &quot;第一天&quot;,
+            &quot;data&quot;: [3, 2, 1, 3, 4]
+        },{
+            &quot;type&quot;: &quot;column&quot;,
+            &quot;name&quot;: &quot;第二天&quot;,
+            &quot;data&quot;: [2, 3, 5, 7, 9]
+        },{
+            &quot;type&quot;: &quot;spline&quot;,
+            &quot;name&quot;: &quot;平均值&quot;,
+            &quot;data&quot;: [2.5, 2.5, 3, 5, 6.5]
+        },{
+            &quot;type&quot;: &quot;pie&quot;,
+            &quot;name&quot;: &quot;总量&quot;,
+            &quot;data&quot;: [{
+                &quot;name&quot;: &quot;第一天&quot;,
+                &quot;y&quot;: 13
+            },{
+                &quot;name&quot;: &quot;第二天&quot;,
+                &quot;y&quot;: 26
+            }]
+        }],
+        &quot;categories&quot;: [&quot;苹果&quot;, &quot;橘子&quot;, &quot;石榴&quot;, &quot;香蕉&quot;, &quot;草莓&quot;]
+    };
+    var chart5 = Hxt.mix(&#39;mix-chart&#39;, mixData, {
+        valueSuffix: &#39;斤&#39;,
+        mixPieCenter: [60, 50],
+        mixPieSize: &#39;55%&#39;,
+        shared: true,
+        chartLabel: {
+            html: &#39;水果两天的总销量&#39;,
+            style: {
+                left: &#39;30px&#39;,
+                top: &#39;5px&#39;
+            }
+        }
+    });
 &lt;/script&gt;
 </content>
     
