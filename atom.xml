@@ -320,7 +320,7 @@
 &lt;p&gt;但是！！！IE9以下的版本不支持呀！！&lt;/p&gt;
 &lt;p&gt;除此之外，上面的方法还有一个弊端，因为使用了ajax的上传方式，所以不能支持跨域上传，如果必须要满足这两个业务场景，那就试试下面的方法吧，借助form和iframe来实现上传。下面来详细看一下：&lt;/p&gt;
 &lt;h1 id=&quot;form表单提交到iframe&quot;&gt;&lt;a href=&quot;#form表单提交到iframe&quot; class=&quot;headerlink&quot; title=&quot;form表单提交到iframe&quot;&gt;&lt;/a&gt;form表单提交到iframe&lt;/h1&gt;&lt;p&gt;html代码:&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;iframe name=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; style=&lt;span class=&quot;string&quot;&gt;&quot;display:none&quot;&lt;/span&gt;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;form target=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; action=&lt;span class=&quot;string&quot;&gt;&quot;upload.php&quot;&lt;/span&gt; method=&lt;span class=&quot;string&quot;&gt;&quot;post&quot;&lt;/span&gt; enctype=&lt;span class=&quot;string&quot;&gt;&quot;multipart/form-data&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;input class=&quot;filename&quot; type=&quot;file&quot; name=&quot;fileLabel&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;input type=&quot;submit&quot; value=&quot;提交&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/form&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;iframe name=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; style=&lt;span class=&quot;string&quot;&gt;&quot;display:none&quot;&lt;/span&gt;&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;iframe&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;form target=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; action=&lt;span class=&quot;string&quot;&gt;&quot;upload.php&quot;&lt;/span&gt; method=&lt;span class=&quot;string&quot;&gt;&quot;post&quot;&lt;/span&gt; enctype=&lt;span class=&quot;string&quot;&gt;&quot;multipart/form-data&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;filename&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;file&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;fileLabel&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;提交&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;我们点击提交,可以看到下面的请求：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://img.alicdn.com/tps/TB1DHQaMpXXXXcaXVXXXXXXXXXX-794-199.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;已经把文件上传。那么，加入这个upload.php接口可用，而且假如上传成功后，会返回：&lt;/p&gt;
@@ -1353,7 +1353,7 @@
     <link href="http://yoursite.com/work/2016-05-12/high-extend.html"/>
     <id>http://yoursite.com/work/2016-05-12/high-extend.html</id>
     <published>2016-05-12T04:11:51.000Z</published>
-    <updated>2016-10-22T17:49:47.000Z</updated>
+    <updated>2016-10-23T04:37:14.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;header style=&quot;margin-top:-55px;text-align:center&quot;&gt;&lt;br&gt;    &lt;p style=&quot;font-size: 1.5em;margin-top: 30px;&quot;&gt;&lt;span&gt;highextend图表实例&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/highextend&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/p&gt;&lt;br&gt;&lt;/header&gt;
@@ -1738,15 +1738,15 @@
     <link href="http://yoursite.com/work/2016-05-08/react-todo-demo.html"/>
     <id>http://yoursite.com/work/2016-05-08/react-todo-demo.html</id>
     <published>2016-05-08T14:11:51.000Z</published>
-    <updated>2016-10-11T16:29:43.000Z</updated>
+    <updated>2016-10-26T16:53:30.000Z</updated>
     
     <content type="html">&lt;hr&gt;
-&lt;header style=&quot;margin-top:-55px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/react-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
+&lt;header style=&quot;margin-top:-55px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/About-React/tree/master/react-todo-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
 
 &lt;div class=&quot;container react-todo-demo&quot; style=&quot;margin-top:-30px;&quot;&gt;&lt;br&gt;    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;script src=&quot;https://rawgit.com/luckykun/react-demo/master/src/vendor/react.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://rawgit.com/luckykun/react-demo/master/out/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/luckykun/About-React/master/react-todo-demo/src/vendor/react.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/luckykun/About-React/master/react-todo-demo/out/bundle.js&quot;&gt;&lt;/script&gt;
 
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;code&gt;React-Todos&lt;/code&gt;是一个管理任务清单的例子，数据使用localstorage存储在浏览器中，有以下几点功能：&lt;/p&gt;
@@ -1762,12 +1762,12 @@
     <summary type="html">
     
       &lt;hr&gt;
-&lt;header style=&quot;margin-top:-55px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/react-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
+&lt;header style=&quot;margin-top:-55px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/About-React/tree/master/react-todo-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
 
 &lt;div class=&quot;container react-todo-demo&quot; style=&quot;margin-top:-30px;&quot;&gt;&lt;br&gt;    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;script src=&quot;https://rawgit.com/luckykun/react-demo/master/src/vendor/react.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://rawgit.com/luckykun/react-demo/master/out/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/luckykun/About-React/master/react-todo-demo/src/vendor/react.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/luckykun/About-React/master/react-todo-demo/out/bundle.js&quot;&gt;&lt;/script&gt;
     
     </summary>
     
