@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="baidu-site-verification" content="5tcBr0YNFF" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>webpack+react+antd单页面应用实例 | luckykun-不一样的世界</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="React框架已经火了好长一段时间了，再不学就out了！
+
+对React还没有了解的同学可以看看我之前的一篇文章，可以快速简单的认识一下React。React入门最好的实例－TodoList
+自己从开始接触react一窍不通，到慢慢的似懂非懂，通过各种途径学习也有一阵了。学习过程中还会接触到很多新的东西，比如ES6、webpack，过程艰辛谁人懂，见坑填坑慢慢来。今天把学习过程过滤了一下，只说">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack+react+antd单页面应用实例">
+<meta property="og:url" content="http://yoursite.com/work/2016-11-06/react-antd-demo.html">
+<meta property="og:site_name" content="luckykun-不一样的世界">
+<meta property="og:description" content="React框架已经火了好长一段时间了，再不学就out了！
+
+对React还没有了解的同学可以看看我之前的一篇文章，可以快速简单的认识一下React。React入门最好的实例－TodoList
+自己从开始接触react一窍不通，到慢慢的似懂非懂，通过各种途径学习也有一阵了。学习过程中还会接触到很多新的东西，比如ES6、webpack，过程艰辛谁人懂，见坑填坑慢慢来。今天把学习过程过滤了一下，只说">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB10sZlNVXXXXclXpXXXXXXXXXX-1425-673.gif">
+<meta property="og:updated_time" content="2016-11-06T16:23:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack+react+antd单页面应用实例">
+<meta name="twitter:description" content="React框架已经火了好长一段时间了，再不学就out了！
+
+对React还没有了解的同学可以看看我之前的一篇文章，可以快速简单的认识一下React。React入门最好的实例－TodoList
+自己从开始接触react一窍不通，到慢慢的似懂非懂，通过各种途径学习也有一阵了。学习过程中还会接触到很多新的东西，比如ES6、webpack，过程艰辛谁人懂，见坑填坑慢慢来。今天把学习过程过滤了一下，只说">
+<meta name="twitter:image" content="https://img.alicdn.com/tps/TB10sZlNVXXXXclXpXXXXXXXXXX-1425-673.gif">
+  
+  
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+  
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?527e9393be17772155eb920f1ce3648e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head>
+
+<body>
+    <div id="overviews">
+        <div id="slider-wrap">
+            <div class="sliders">
+                <div class="slide" data-num="1">
+                    <div class="text-wrap">
+                        <p>神灯神灯，我有一个愿望，</p>
+                        <p>我不要金钱、权利；</p>
+                        <p>也不要长生、不老。</p>
+                        <p>我只想要遇到一个女孩，</p>
+                        <p>陪她哭，陪她笑，陪她一起细水长流。</p>
+                    </div>
+                </div>
+                <div class="slide" data-num="2">
+                    <div class="text-wrap">
+                        <p>越了解，越喜欢；</p>
+                        <p>越喜欢，越害怕。</p>
+                        <p>你转身向北，</p>
+                        <p>侧脸还是那么美，</p>
+                        <p>我用眼光去追，竟听见你的泪。</p>
+                    </div>
+                </div>
+                <div class="slide" data-num="3">
+                    <div class="text-wrap">
+                        <p>置身在灯红酒绿的城市，</p>
+                        <p>站在车水马龙的街道，</p>
+                        <p>灯光的美，</p>
+                        <p>夜晚的静，</p>
+                        <p>更加衬托出了人们的寂寞。</p>
+                    </div>
+                </div>
+                <div class="slide" data-num="4">
+                    <div class="text-wrap">
+                        <p>从此故乡再无春秋，</p>
+                        <p>从此青春再无当时。</p>
+                        <p>你爱诗歌，我便学着写作；</p>
+                        <p>你爱远方，我便离开故乡。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-wrap">
+            <div class="main-top">
+                <div class="left-logo">
+                    Luckykun
+                    <span>不念过去，不畏将来</span>
+                </div>
+                <ul class="right-nav">
+                    <li><a href="//luckykun.com/categories/life/">生活随笔</a></li>
+                    <li><a href="//luckykun.com/demo/">实例DEMO</a></li>
+                    <li><a href="//luckykun.com/archives/">所有文章</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="welcome-info">
+            欢迎您，您是本站第 <span style="color:#ef7522" class="visitors">0</span> 位访客，
+            累计已有 <span style="color:#ef7522" class="comments">0</span> 条评论
+        </p>
+        <a href="javascript:;" id="btn-begin-blog">Let's Begin</a>
+    </div>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay">
+
+	<a href="/" class="profilepic">
+		
+		<img lazy-src="/img/user.png" class="js-avatar">
+		
+	</a>
+
+	<div class="search-wrap">
+		<span title="点击显示搜索框"><i class="search-icon"></i></span>
+		<input class="search-txt" type="text" placeholder="输入文章标题按回车键搜索" />
+	</div>
+	<div class="search-result">
+		<ul>
+
+		</ul>
+	</div>
+
+</div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">luckykun</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我就是我，颜色不一样的烟火</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<!-- <li>Menu</li> -->
+						<!-- <li>Tags</li> -->
+						<li>主菜单</li>
+						<li>云标签</li>
+						
+						
+						<!-- <li>Über</li> -->
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/demo/">demo</a></li>
+				        
+							<li><a href="/categories/life/">生活</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/luckykun" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2732624311" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xiao-jian-31-24" title="zhihu">zhihu</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/3D效果/" style="font-size: 10px;">3D效果</a> <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/antd/" style="font-size: 10px;">antd</a> <a href="/tags/canvas/" style="font-size: 15px;">canvas</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/es6/" style="font-size: 15px;">es6</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo系列/" style="font-size: 15px;">hexo系列</a> <a href="/tags/highcharts/" style="font-size: 10px;">highcharts</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/javascript/" style="font-size: 17.5px;">javascript</a> <a href="/tags/react/" style="font-size: 17.5px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/yeoman/" style="font-size: 10px;">yeoman</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/干货总结/" style="font-size: 12.5px;">干货总结</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/插件/" style="font-size: 12.5px;">插件</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/文件上传/" style="font-size: 10px;">文件上传</a> <a href="/tags/构建/" style="font-size: 12.5px;">构建</a> <a href="/tags/编辑器/" style="font-size: 10px;">编辑器</a>
+					</div>
+				</section>
+				
+
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">
+						<p>家乡：广元市，也是武则天的家乡~</p>
+						<p>学校：成都信息工程大学</p>
+						<p>职业：一枚程序猿~</p>
+						<p>爱好：篮球、羽毛球</p>
+					</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">luckykun</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/user.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">luckykun</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我就是我，颜色不一样的烟火</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/demo/">demo</a></li>
+		        
+					<li><a href="/categories/life/">生活</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/luckykun" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2732624311" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xiao-jian-31-24" title="zhihu">zhihu</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-react-antd-demo" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      
+<time datetime="2016-11-06T15:28:09.000Z" itemprop="datePublished">2016-11-06</time>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack+react+antd单页面应用实例
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/antd/">antd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+	</div>
+
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/work/">工作</a>
+	</div>
+
+
+        <div class="busuanzi-read-num">
+            阅读次数：<span id="busuanzi_value_page_pv"><img src="http://7xtawy.com2.z0.glb.clouddn.com/loading1.png"/></span>次
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <!-- Table of Contents -->
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<blockquote>
+<p>React框架已经火了好长一段时间了，再不学就out了！</p>
+</blockquote>
+<p>对React还没有了解的同学可以看看我之前的一篇文章，可以快速简单的认识一下React。<a href="http://luckykun.com/work/2016-05-23/react-todo-study.html" target="_blank" rel="external">React入门最好的实例－TodoList</a></p>
+<p>自己从开始接触react一窍不通，到慢慢的似懂非懂，通过各种途径学习也有一阵了。学习过程中还会接触到很多新的东西，比如ES6、webpack，过程艰辛谁人懂，见坑填坑慢慢来。今天把学习过程过滤了一下，只说项目实际需要用的东西，总结了一套能看到的东西，分享给大家，希望能让读者少踩一些坑！<br><a id="more"></a></p>
+<h1 id="本文看点"><a href="#本文看点" class="headerlink" title="本文看点"></a>本文看点</h1><ul>
+<li><code>实际项目效果</code>：最终你只需要在本地启一个服务，就能看到运行效果。</li>
+<li><code>webpack的配置</code>：项目实战中常用的插件和配置方法。</li>
+<li><code>React用法</code>：React在MVC（模型Model－视图View－控制器Controller）层面上主要扮演了视图的作用。我们可以学习它在项目中到底该如何使用。</li>
+<li><code>React-router配置</code>：单页面应用（SPA）离不开路由，我们可以学习在项目中React-router如何配置。</li>
+<li><code>ES6语法</code>：我们会用到一些在项目中常见的ES6语法。</li>
+<li><code>antd的使用</code>：蚂蚁金服出的一款基于React的框架，我们可以学习如何去使用。</li>
+</ul>
+<h1 id="项目效果"><a href="#项目效果" class="headerlink" title="项目效果"></a>项目效果</h1><p>项目代码已经上传至github，<a href="https://github.com/luckykun/About-React/tree/master/react-antd-demo" target="_blank" rel="external">项目代码github地址</a>。大家把代码下载下来之后，跟随以下步骤即可在本地看到效果。</p>
+<ul>
+<li>首先安装node环境。</li>
+<li><p>全局安装webpack</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">npm install webpack -g</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装项目依赖</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+</li>
+<li><p>开发模式，启动本地服务</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">npm run dev</div></pre></td></tr></table></figure>
+<p>  <code>至这一步成功后，在浏览器输入localhost:8888就能看到如下图的效果了，修改文件，自动编译（不会打包输出到build文件夹，知识保存在内存），浏览器自动刷新。</code></p>
+<p>  <img src="https://img.alicdn.com/tps/TB10sZlNVXXXXclXpXXXXXXXXXX-1425-673.gif" alt=""></p>
+</li>
+<li><p>在build文件夹下打包</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">npm run build</div></pre></td></tr></table></figure>
+<p>  <code>在build文件夹下生成main.css、vendor.js、main.js</code></p>
+</li>
+<li><p>具备功能</p>
+<ul>
+<li>开发模式监听端口8888</li>
+<li>修改保存文件的同时，浏览器实时刷新。</li>
+<li>css文件、三方js库文件，业务js文件分别打包。</li>
+<li>引入了antd，本地开发的时候可以按引入的组件单独引入文件。</li>
+</ul>
+</li>
+</ul>
+<h1 id="webpack配置"><a href="#webpack配置" class="headerlink" title="webpack配置"></a>webpack配置</h1><p>基于React的项目配合webpack来打包管理最合适不过了。但是不学不知道，一学吓一跳，webpack的学习TM复杂了，各种报错，各种坑，就是webpack让我在学习的过程中一度想要放弃。然而过来人告诉你，坚持就是胜利！</p>
+<p>学会怎么配置webpack，是独立管理项目的第一步。每个用webpack管理的项目都有一个<code>webpack.config.js</code>文件，先来看看这个项目的<code>webpack.config.js</code>文件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);  <span class="comment">//css单独打包</span></div><div class="line"><span class="keyword">var</span> CommonsChunkPlugin = <span class="built_in">require</span>(<span class="string">"webpack/lib/optimize/CommonsChunkPlugin"</span>);</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    devtool: <span class="string">'eval-source-map'</span>,</div><div class="line">    entry: &#123;</div><div class="line">        main: <span class="string">'./src/entry.js'</span>, <span class="comment">//唯一入口文件</span></div><div class="line">        vendor: [<span class="string">'react'</span>]   <span class="comment">//这里是依赖的库文件配置，和CommonsChunkPlugin配合使用可以单独打包</span></div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'./build'</span>, <span class="comment">//打包后的文件存放的地方</span></div><div class="line">        filename: <span class="string">'main.js'</span>, <span class="comment">//打包后输出文件的文件名</span></div><div class="line">        publicPath: <span class="string">'http://localhost:8888/build/'</span>  <span class="comment">//启动本地服务后的根目录</span></div><div class="line">    &#125;,</div><div class="line">    <span class="built_in">module</span>: &#123;</div><div class="line">        loaders: [</div><div class="line">            &#123; test: <span class="regexp">/\.js$/</span>, loader: <span class="string">"jsx!babel"</span>, include: <span class="regexp">/src/</span>&#125;,</div><div class="line">            &#123; test: <span class="regexp">/\.css$/</span>, loader: ExtractTextPlugin.extract(<span class="string">"style"</span>, <span class="string">"css!postcss"</span>)&#125;,</div><div class="line">            &#123; test: <span class="regexp">/\.scss$/</span>, loader: ExtractTextPlugin.extract(<span class="string">"style"</span>, <span class="string">"css!postcss!sass"</span>)&#125;,</div><div class="line">            &#123; test: <span class="regexp">/\.(png|jpg|gif)$/</span>, loader: <span class="string">'url?limit=819200'</span>&#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    babel: &#123;</div><div class="line">        presets: [<span class="string">'es2015'</span>, <span class="string">'stage-0'</span>, <span class="string">'react'</span>],</div><div class="line">        plugins: [<span class="string">'transform-runtime'</span>, [<span class="string">'import'</span>, &#123;</div><div class="line">          libraryName: <span class="string">'antd'</span>,</div><div class="line">          style: <span class="string">'css'</span></div><div class="line">        &#125;]]</div><div class="line">    &#125;,</div><div class="line">    postcss: [</div><div class="line">        <span class="built_in">require</span>(<span class="string">'autoprefixer'</span>)    <span class="comment">//调用autoprefixer插件,css3自动补全</span></div><div class="line">    ],</div><div class="line">    devServer: &#123;</div><div class="line">        <span class="comment">// contentBase: './src/views'  //本地服务器所加载的页面所在的目录</span></div><div class="line">        port: <span class="number">8888</span>,</div><div class="line">        colors: <span class="literal">true</span>,  <span class="comment">//终端中输出结果为彩色</span></div><div class="line">        historyApiFallback: <span class="literal">true</span>,  <span class="comment">//不跳转</span></div><div class="line">        inline: <span class="literal">true</span>  <span class="comment">//实时刷新</span></div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">        <span class="keyword">new</span> ExtractTextPlugin(<span class="string">'main.css'</span>),</div><div class="line">        <span class="keyword">new</span> CommonsChunkPlugin(&#123;</div><div class="line">           name: <span class="string">'vendor'</span>,</div><div class="line">           filename: <span class="string">'vendor.js'</span></div><div class="line">        &#125;)</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>一个完整项目的基本webpack配置就是这些了，重要的配置项已经在上述代码中作了注释。另外，也可以深入学习，推荐看看这篇文章。<a href="https://webpack.toobug.net/zh-cn/" target="_blank" rel="external">webpack详细指南</a></p>
+<h1 id="React用法"><a href="#React用法" class="headerlink" title="React用法"></a>React用法</h1><p>React本身真的非常简单。你可以把一个页面分为很多个组件的组成，而React就是开发这些组件的。所以React其实就是view层，说白了就是html，只不过每个组件是通过js创建的，每个组件还有自己的状态和自己的方法。</p>
+<p><code>React Component（一个组件）</code>提供一个<code>render</code>方法以及其他可选的生命周期函数、组件相关的事件或方法定义。常用API就以下几个：</p>
+<ul>
+<li><p><code>constructor</code>：构造函数</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">component</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">          <span class="keyword">super</span>(props);</div><div class="line">          <span class="keyword">this</span>.state = &#123;</div><div class="line">            color: props.initialColor</div><div class="line">          &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>render</code>：组件返回的dom内容（必须）。</p>
+</li>
+<li><code>componentWillMount</code>：在<code>render</code>之前自动调用，你可以在这个方法里面调用<code>setState</code>改变状态，并且不会导致额外调用一次<code>render</code>。</li>
+<li><code>componentDidMount</code>：在<code>render</code>之后自动调用，从这里开始可以通过<code>this.getDOMNode()</code>获取到组件的DOM节点。</li>
+<li><code>componentWillUpdate</code>: 组件收到新的<code>state</code>，更新view之前自动调用。</li>
+<li><code>componentDidUpdate</code>: 组件收到新的<code>state</code>，更新view完成之后自动调用。</li>
+</ul>
+<p>然后回到我们这个项目实例，拿代码中的<code>进度条组件（src-components-progress.js）</code>代码作为展示：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;    <span class="comment">//引入react</span></div><div class="line"><span class="keyword">import</span> &#123; Progress, Button &#125; <span class="keyword">from</span> <span class="string">'antd'</span>;    <span class="comment">//引入antd</span></div><div class="line"><span class="keyword">const</span> ButtonGroup = Button.Group;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">myProgress</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props)</div><div class="line">        <span class="keyword">this</span>.state = &#123;   <span class="comment">//初始化组件的状态</span></div><div class="line">            percent: <span class="number">0</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    increase() &#123;   <span class="comment">//自定义函数</span></div><div class="line">        <span class="keyword">let</span> percent = <span class="keyword">this</span>.state.percent + <span class="number">10</span>;</div><div class="line">        <span class="keyword">if</span> (percent &gt; <span class="number">100</span>) &#123;</div><div class="line">            percent = <span class="number">100</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.setState(&#123; percent &#125;);   <span class="comment">//设置组件的状态</span></div><div class="line">    &#125;</div><div class="line">    decline() &#123;   <span class="comment">//自定义函数</span></div><div class="line">        <span class="keyword">let</span> percent = <span class="keyword">this</span>.state.percent - <span class="number">10</span>;</div><div class="line">        <span class="keyword">if</span> (percent &lt; <span class="number">0</span>) &#123;</div><div class="line">            percent = <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.setState(&#123; percent &#125;);</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;div className="progress-wrap"&gt;    //类名使用className</div><div class="line">                &lt;Progress percent=&#123;this.state.percent&#125; /&gt;</div><div class="line">                &lt;Progress type="circle" percent=&#123;this.state.percent&#125; /&gt;</div><div class="line">                &lt;ButtonGroup&gt;</div><div class="line">                    &lt;Button type="ghost" onClick=&#123;this.decline.bind(this)&#125; icon="minus" /&gt;</div><div class="line">                    &lt;Button type="ghost" onClick=&#123;this.increase.bind(this)&#125; icon="plus" /&gt;</div><div class="line">                &lt;/ButtonGroup&gt;</div><div class="line">                &lt;span&gt;点击按钮可以看到进度条的变化&lt;/span&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">export default myProgress;  //导出这个组件（ES6语法）</div></pre></td></tr></table></figure>
+<p>代码我已经给出了注释，不做赘述。</p>
+<h1 id="React-router配置"><a href="#React-router配置" class="headerlink" title="React-router配置"></a>React-router配置</h1><p>独立的前端应用离不开路由配置，就像angular框架也有自己的路由一样。在React项目中使用路由，需要依赖<code>React-Router</code>模块。我们直接来看看此项目中的路由配置：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Router, Route, Link, hashHistory, IndexRoute, Redirect, IndexLink&#125; <span class="keyword">from</span> <span class="string">'react-router'</span>;</div><div class="line">ReactDom.render((</div><div class="line">    &lt;Router history=&#123;hashHistory&#125;&gt;   //路由容器</div><div class="line">        &lt;Route path="/" component=&#123;Sider&#125;&gt;    //一级路由，路径为"/"时，加载“Sider”组件</div><div class="line">            &lt;IndexRoute component=&#123;myIntroduce&#125; /&gt;   //默认路由，加载“Sider”和“myIntroduce”组件</div><div class="line">            &lt;Route path="myIntroduce" component=&#123;myIntroduce&#125; /&gt;   //二级路由</div><div class="line">            &lt;Route path="myTable" component=&#123;myTable&#125; /&gt;    //二级路由</div><div class="line">            &lt;Route path="myForm" component=&#123;myForm&#125; /&gt;   //二级路由</div><div class="line">            &lt;Route path="myProgress" component=&#123;myProgress&#125; /&gt;   //二级路由</div><div class="line">            &lt;Route path="myCarousel" component=&#123;myCarousel&#125; /&gt;   //二级路由</div><div class="line">        &lt;/Route&gt;</div><div class="line">    &lt;/Router&gt;</div><div class="line">), document.getElementById('app'));</div></pre></td></tr></table></figure>
+<p>React的路由配置其实很简单，就是把路径和定义好的组件一一对应起来就好了。上述代码结合实际运行效果，一看就明白。</p>
+<h1 id="ES6语法"><a href="#ES6语法" class="headerlink" title="ES6语法"></a>ES6语法</h1><p>我之前写过一篇关于ES6常见语法的文章，<a href="http://luckykun.com/work/2016-05-10/es6-feature.html" target="_blank" rel="external">总结ES6常用的新特性</a>。 。 另外，上述贴出的代码中已经出现过很多的ES6语法。ES6的学习就是见多学多的过程，多使用，多总结，自然就会了。</p>
+<h1 id="antd的使用"><a href="#antd的使用" class="headerlink" title="antd的使用"></a>antd的使用</h1><p><code>antd</code>可以理解为是一个基于react的ui组件库。引入这个库之后，我们就可以直接使用很多现成的组件，比如<code>按钮、图标、表单、菜单、导航等等</code>。去<a href="https://ant.design/docs/react/getting-started" target="_blank" rel="external">antd官网</a>发现更多牛逼的组件。</p>
+<p>比如上面已经贴过的进度条组件：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Progress, Button &#125; <span class="keyword">from</span> <span class="string">'antd'</span>;    <span class="comment">//引入antd</span></div><div class="line"><span class="keyword">const</span> ButtonGroup = Button.Group;   <span class="comment">//按钮组</span></div><div class="line">......</div><div class="line">&lt;Progress percent=&#123;<span class="keyword">this</span>.state.percent&#125; /&gt;    <span class="comment">//使用进度条组件，percent是组件提供的配置项</span></div><div class="line">&lt;Progress type=<span class="string">"circle"</span> percent=&#123;<span class="keyword">this</span>.state.percent&#125; /&gt;</div><div class="line">&lt;ButtonGroup&gt;</div><div class="line">    &lt;Button type="ghost" onClick=&#123;this.decline.bind(this)&#125; icon="minus" /&gt;</div><div class="line">    &lt;Button type="ghost" onClick=&#123;this.increase.bind(this)&#125; icon="plus" /&gt;</div><div class="line">&lt;/ButtonGroup&gt;</div><div class="line">......</div></pre></td></tr></table></figure>
+<p>另外，由于antd组件比较多，所以库文件比较大，所以我们在开发的时候可以按需引入对应的库。webpack配置需要用到<code>babel-plugin-import</code>模块。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">babel: &#123;</div><div class="line">    presets: [<span class="string">'es2015'</span>, <span class="string">'stage-0'</span>, <span class="string">'react'</span>],</div><div class="line">    plugins: [<span class="string">'transform-runtime'</span>, [<span class="string">'import'</span>, &#123;</div><div class="line">        libraryName: <span class="string">'antd'</span>,</div><div class="line">        style: <span class="string">'css'</span></div><div class="line">    &#125;]]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>上面项目的完整代码我已放到了Github上。<a href="https://github.com/luckykun/About-React/tree/master/react-antd-demo" target="_blank" rel="external">基于react+antd的项目实例</a>，喜欢的看官麻烦star一下啦！谢谢～</p>
+<p>大家可以把代码down下来之后直接按照上文步骤就可在本地预览效果，如有不懂的地方，欢迎留言咨询！</p>
+<p>学习的过程枯燥艰辛，但是取得的成果却令人兴奋。所以我们还是要不忘初心，不忘学习！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <p class="pay-code">
+        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
+    </p>
+</div>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/work/2016-10-11/com-func-skill.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">下一篇：总结js常用函数和常用技巧（持续更新）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<!-- Share to: &nbsp;  -->
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_facebook"></a>
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a>
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="react-antd-demo" data-title="webpack+react+antd单页面应用实例" data-url="http://yoursite.com/work/2016-11-06/react-antd-demo.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"jarson7426"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+            <span id="busuanzi_container_site_uv" style="color:#333;font-size:13px;">
+                本站到目前为止已有<span id="busuanzi_value_site_uv" style="color:#ef7522">0</span>人留下脚印
+            </span>
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+             --- &copy; 2016 luckykun
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/require,jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+  <div class="go-top"></div>
+  <script src="/js/busuanzi.min.js"></script>
+</body>
+</html>
