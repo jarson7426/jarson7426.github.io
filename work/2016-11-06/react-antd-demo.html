@@ -20,7 +20,7 @@
 对React还没有了解的同学可以看看我之前的一篇文章，可以快速简单的认识一下React。React入门最好的实例－TodoList
 自己从开始接触react一窍不通，到慢慢的似懂非懂，通过各种途径学习也有一阵了。学习过程中还会接触到很多新的东西，比如ES6、webpack，过程艰辛谁人懂，见坑填坑慢慢来。今天把学习过程过滤了一下，只说">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB10sZlNVXXXXclXpXXXXXXXXXX-1425-673.gif">
-<meta property="og:updated_time" content="2016-11-06T16:23:08.000Z">
+<meta property="og:updated_time" content="2016-11-06T16:33:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack+react+antd单页面应用实例">
 <meta name="twitter:description" content="React框架已经火了好长一段时间了，再不学就out了！
@@ -167,7 +167,7 @@
 						<li>云标签</li>
 						
 						
-						<!-- <li>Über</li> -->
+						<!-- <li>About</li> -->
 						<li>关于我</li>
 						
 					</ul>
@@ -395,7 +395,8 @@
 <h1 id="React-router配置"><a href="#React-router配置" class="headerlink" title="React-router配置"></a>React-router配置</h1><p>独立的前端应用离不开路由配置，就像angular框架也有自己的路由一样。在React项目中使用路由，需要依赖<code>React-Router</code>模块。我们直接来看看此项目中的路由配置：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Router, Route, Link, hashHistory, IndexRoute, Redirect, IndexLink&#125; <span class="keyword">from</span> <span class="string">'react-router'</span>;</div><div class="line">ReactDom.render((</div><div class="line">    &lt;Router history=&#123;hashHistory&#125;&gt;   //路由容器</div><div class="line">        &lt;Route path="/" component=&#123;Sider&#125;&gt;    //一级路由，路径为"/"时，加载“Sider”组件</div><div class="line">            &lt;IndexRoute component=&#123;myIntroduce&#125; /&gt;   //默认路由，加载“Sider”和“myIntroduce”组件</div><div class="line">            &lt;Route path="myIntroduce" component=&#123;myIntroduce&#125; /&gt;   //二级路由</div><div class="line">            &lt;Route path="myTable" component=&#123;myTable&#125; /&gt;    //二级路由</div><div class="line">            &lt;Route path="myForm" component=&#123;myForm&#125; /&gt;   //二级路由</div><div class="line">            &lt;Route path="myProgress" component=&#123;myProgress&#125; /&gt;   //二级路由</div><div class="line">            &lt;Route path="myCarousel" component=&#123;myCarousel&#125; /&gt;   //二级路由</div><div class="line">        &lt;/Route&gt;</div><div class="line">    &lt;/Router&gt;</div><div class="line">), document.getElementById('app'));</div></pre></td></tr></table></figure>
 <p>React的路由配置其实很简单，就是把路径和定义好的组件一一对应起来就好了。上述代码结合实际运行效果，一看就明白。</p>
-<h1 id="ES6语法"><a href="#ES6语法" class="headerlink" title="ES6语法"></a>ES6语法</h1><p>我之前写过一篇关于ES6常见语法的文章，<a href="http://luckykun.com/work/2016-05-10/es6-feature.html" target="_blank" rel="external">总结ES6常用的新特性</a>。 。 另外，上述贴出的代码中已经出现过很多的ES6语法。ES6的学习就是见多学多的过程，多使用，多总结，自然就会了。</p>
+<h1 id="ES6语法"><a href="#ES6语法" class="headerlink" title="ES6语法"></a>ES6语法</h1><p>我之前写过一篇关于ES6常见语法的文章，<a href="http://luckykun.com/work/2016-05-10/es6-feature.html" target="_blank" rel="external">总结ES6常用的新特性</a>。  另外，上述贴出的代码中已经出现过很多的ES6语法。ES6的学习就是见多学多的过程，多使用，多总结，自然就会了。</p>
+<p><code>总结一下，常用ES6语法有：创建类、模块的导入导出、箭头函数等。</code></p>
 <h1 id="antd的使用"><a href="#antd的使用" class="headerlink" title="antd的使用"></a>antd的使用</h1><p><code>antd</code>可以理解为是一个基于react的ui组件库。引入这个库之后，我们就可以直接使用很多现成的组件，比如<code>按钮、图标、表单、菜单、导航等等</code>。去<a href="https://ant.design/docs/react/getting-started" target="_blank" rel="external">antd官网</a>发现更多牛逼的组件。</p>
 <p>比如上面已经贴过的进度条组件：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Progress, Button &#125; <span class="keyword">from</span> <span class="string">'antd'</span>;    <span class="comment">//引入antd</span></div><div class="line"><span class="keyword">const</span> ButtonGroup = Button.Group;   <span class="comment">//按钮组</span></div><div class="line">......</div><div class="line">&lt;Progress percent=&#123;<span class="keyword">this</span>.state.percent&#125; /&gt;    <span class="comment">//使用进度条组件，percent是组件提供的配置项</span></div><div class="line">&lt;Progress type=<span class="string">"circle"</span> percent=&#123;<span class="keyword">this</span>.state.percent&#125; /&gt;</div><div class="line">&lt;ButtonGroup&gt;</div><div class="line">    &lt;Button type="ghost" onClick=&#123;this.decline.bind(this)&#125; icon="minus" /&gt;</div><div class="line">    &lt;Button type="ghost" onClick=&#123;this.increase.bind(this)&#125; icon="plus" /&gt;</div><div class="line">&lt;/ButtonGroup&gt;</div><div class="line">......</div></pre></td></tr></table></figure>
