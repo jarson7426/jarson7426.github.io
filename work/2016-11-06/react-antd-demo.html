@@ -20,7 +20,7 @@
 对React还没有了解的同学可以看看我之前的一篇文章，可以快速简单的认识一下React。React入门最好的实例－TodoList
 自己从开始接触react一窍不通，到慢慢的似懂非懂，通过各种途径学习也有一阵了。学习过程中还会接触到很多新的东西，比如ES6、webpack，过程艰辛谁人懂，见坑填坑慢慢来。今天把学习过程过滤了一下，只说">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB10sZlNVXXXXclXpXXXXXXXXXX-1425-673.gif">
-<meta property="og:updated_time" content="2016-11-06T16:33:21.000Z">
+<meta property="og:updated_time" content="2016-11-08T15:38:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack+react+antd单页面应用实例">
 <meta name="twitter:description" content="React框架已经火了好长一段时间了，再不学就out了！
@@ -329,6 +329,16 @@
     
     <!-- Table of Contents -->
     
+    <p class="show-toc-btn">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc" class="toc-article">
+    <span class="toc-close" title="隐藏导航">×</span>
+    <!-- <strong class="toc-title">文章目录</strong> -->
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#本文看点"><span class="toc-number">1.</span> <span class="toc-text">本文看点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目效果"><span class="toc-number">2.</span> <span class="toc-text">项目效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#webpack配置"><span class="toc-number">3.</span> <span class="toc-text">webpack配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#React用法"><span class="toc-number">4.</span> <span class="toc-text">React用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#React-router配置"><span class="toc-number">5.</span> <span class="toc-text">React-router配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ES6语法"><span class="toc-number">6.</span> <span class="toc-text">ES6语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#antd的使用"><span class="toc-number">7.</span> <span class="toc-text">antd的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">8.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
@@ -389,7 +399,7 @@
 <li><code>componentWillUpdate</code>: 组件收到新的<code>state</code>，更新view之前自动调用。</li>
 <li><code>componentDidUpdate</code>: 组件收到新的<code>state</code>，更新view完成之后自动调用。</li>
 </ul>
-<p>然后回到我们这个项目实例，拿代码中的<code>进度条组件（src-components-progress.js）</code>代码作为展示：</p>
+<p>然后回到我们这个项目实例，拿代码中的<code>进度条组件（src/components/progress.js）</code>代码作为展示：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;    <span class="comment">//引入react</span></div><div class="line"><span class="keyword">import</span> &#123; Progress, Button &#125; <span class="keyword">from</span> <span class="string">'antd'</span>;    <span class="comment">//引入antd</span></div><div class="line"><span class="keyword">const</span> ButtonGroup = Button.Group;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">myProgress</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props)</div><div class="line">        <span class="keyword">this</span>.state = &#123;   <span class="comment">//初始化组件的状态</span></div><div class="line">            percent: <span class="number">0</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    increase() &#123;   <span class="comment">//自定义函数</span></div><div class="line">        <span class="keyword">let</span> percent = <span class="keyword">this</span>.state.percent + <span class="number">10</span>;</div><div class="line">        <span class="keyword">if</span> (percent &gt; <span class="number">100</span>) &#123;</div><div class="line">            percent = <span class="number">100</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.setState(&#123; percent &#125;);   <span class="comment">//设置组件的状态</span></div><div class="line">    &#125;</div><div class="line">    decline() &#123;   <span class="comment">//自定义函数</span></div><div class="line">        <span class="keyword">let</span> percent = <span class="keyword">this</span>.state.percent - <span class="number">10</span>;</div><div class="line">        <span class="keyword">if</span> (percent &lt; <span class="number">0</span>) &#123;</div><div class="line">            percent = <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.setState(&#123; percent &#125;);</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;div className="progress-wrap"&gt;    //类名使用className</div><div class="line">                &lt;Progress percent=&#123;this.state.percent&#125; /&gt;</div><div class="line">                &lt;Progress type="circle" percent=&#123;this.state.percent&#125; /&gt;</div><div class="line">                &lt;ButtonGroup&gt;</div><div class="line">                    &lt;Button type="ghost" onClick=&#123;this.decline.bind(this)&#125; icon="minus" /&gt;</div><div class="line">                    &lt;Button type="ghost" onClick=&#123;this.increase.bind(this)&#125; icon="plus" /&gt;</div><div class="line">                &lt;/ButtonGroup&gt;</div><div class="line">                &lt;span&gt;点击按钮可以看到进度条的变化&lt;/span&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">export default myProgress;  //导出这个组件（ES6语法）</div></pre></td></tr></table></figure>
 <p>代码我已经给出了注释，不做赘述。</p>
 <h1 id="React-router配置"><a href="#React-router配置" class="headerlink" title="React-router配置"></a>React-router配置</h1><p>独立的前端应用离不开路由配置，就像angular框架也有自己的路由一样。在React项目中使用路由，需要依赖<code>React-Router</code>模块。我们直接来看看此项目中的路由配置：</p>
