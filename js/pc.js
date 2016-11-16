@@ -1,1 +1,144 @@
-define([],function(){var e=function(){var e=$(".tips-box");return{show:function(){e.removeClass("hide")},hide:function(){e.addClass("hide")},init:function(){}}}(),o=function(){var e=$(".tagcloud a");e.css({"font-size":"12px"});for(var o=0,n=e.length;o<n;o++){var i=e.eq(o).html().length%5+1;e[o].className="",e.eq(o).addClass("color"+i)}},n=function(e){var o=$(".switch-wrap");o.css({transform:"translate(-"+100*e+"%, 0 )"}),$(".icon-wrap").addClass("hide"),$(".icon-wrap").eq(e).removeClass("hide")},i=function(){var i=$("#myonoffswitch"),s=$(".second-part"),t=$(".first-part");i.click(function(){i.hasClass("clicked")?(i.removeClass("clicked"),s.removeClass("turn-left"),t.removeClass("turn-left")):(i.addClass("clicked"),s.addClass("turn-left"),t.addClass("turn-left"),o())});var r=!1,a=!1;$(".icon").bind("mouseenter",function(){r=!0,e.show()}).bind("mouseleave",function(){r=!1,setTimeout(function(){a||e.hide()},100)}),$(".profilepic").bind("mouseover",function(){$(this).addClass("hover-profile")}).bind("mouseout",function(){$(this).removeClass("hover-profile")}),$(".tips-box").bind("mouseenter",function(){a=!0,e.show()}).bind("mouseleave",function(){a=!1,setTimeout(function(){r||e.hide()},100)}),$(".tips-inner li").bind("click",function(){var o=$(this).index();n(o),e.hide()})};return{init:function(){if(o(),i(),e.init(),$.ajax({url:"http://jarson7426.duoshuo.com/api/posts/list.json",type:"get",data:{limit:2,nonce:"5769559c76989"},dataType:"json",success:function(e){$(".welcome-info .comments").text(e.cursor.total)},error:function(){console.log(2)}}),"/"!=location.pathname||sessionStorage.overviews)$("#container").show();else{$("#overviews").show(),$("body").css("overflow","hidden"),require(["/js/reSlider.js"],function(e){new reSlider({elem:"slider-wrap",allowAuto:!0})});var n=setInterval(function(){var e=parseInt($("#busuanzi_value_site_uv").text());0!=e&&(clearInterval(n),$("#container").show(),$(".welcome-info .visitors").text(e))},60)}$("#btn-begin-blog").click(function(){sessionStorage.overviews=!0,$("body").css("overflow","auto"),$("#overviews").hide()})}}});
+define([], function(){
+
+	var Tips = (function(){
+
+		var $tipBox = $(".tips-box");
+
+		return {
+			show: function(){
+				$tipBox.removeClass("hide");
+			},
+			hide: function(){
+				$tipBox.addClass("hide");
+			},
+			init: function(){
+
+			}
+		}
+	})();
+
+	var resetTags = function(){
+		var tags = $(".tagcloud a");
+		tags.css({"font-size": "12px"});
+		for(var i=0,len=tags.length; i<len; i++){
+			var num = tags.eq(i).html().length % 5 +1;
+			tags[i].className = "";
+			tags.eq(i).addClass("color"+num);
+		}
+	}
+
+	var slide = function(idx){
+		var $wrap = $(".switch-wrap");
+		$wrap.css({
+			"transform": "translate(-"+idx*100+"%, 0 )"
+		});
+		$(".icon-wrap").addClass("hide");
+		$(".icon-wrap").eq(idx).removeClass("hide");
+	}
+
+	var bind = function(){
+		var switchBtn = $("#myonoffswitch");
+		var tagcloud = $(".second-part");
+		var navDiv = $(".first-part");
+		switchBtn.click(function(){
+			if(switchBtn.hasClass("clicked")){
+				switchBtn.removeClass("clicked");
+				tagcloud.removeClass("turn-left");
+				navDiv.removeClass("turn-left");
+			}else{
+				switchBtn.addClass("clicked");
+				tagcloud.addClass("turn-left");
+				navDiv.addClass("turn-left");
+				resetTags();
+			}
+		});
+
+		var timeout;
+		var isEnterBtn = false;
+		var isEnterTips = false;
+
+		$(".icon").bind("mouseenter", function(){
+			isEnterBtn = true;
+			Tips.show();
+		}).bind("mouseleave", function(){
+			isEnterBtn = false;
+			setTimeout(function(){
+				if(!isEnterTips){
+					Tips.hide();
+				}
+			}, 100);
+		});
+
+		$('.profilepic').bind("mouseover", function() {
+			$(this).addClass('hover-profile');
+		}).bind("mouseout", function() {
+			$(this).removeClass('hover-profile');
+		});
+
+		$(".tips-box").bind("mouseenter", function(){
+			isEnterTips = true;
+			Tips.show();
+		}).bind("mouseleave", function(){
+			isEnterTips = false;
+			setTimeout(function(){
+				if(!isEnterBtn){
+					Tips.hide();
+				}
+			}, 100);
+		});
+
+		$(".tips-inner li").bind("click", function(){
+			var idx = $(this).index();
+			slide(idx);
+			Tips.hide();
+		});
+	}
+
+
+
+	return {
+		init: function(){
+			resetTags();
+			bind();
+			Tips.init();
+
+			// $.ajax({
+			// 	url: '//jarson7426.duoshuo.com/api/posts/list.json?nonce=5769559c76989',
+			// 	type: 'get',
+			// 	success: function(data) {
+			//
+			// 	},
+			// 	error: function() {
+			// 		console.log('error1');
+			// 	}
+			// });
+			$('.welcome-info .comments').text(121);
+
+			if(location.pathname == '/' && !sessionStorage.overviews) {  //访问首页，并且没有显示过overview
+				$('#overviews').show();
+				$('body').css('overflow', 'hidden');
+				require(['/js/reSlider.js'], function(pc){
+					var slider = new reSlider({
+						elem: 'slider-wrap',
+						allowAuto: true
+					});
+				});
+				var timer = setInterval(function() {
+					var num = parseInt($('#busuanzi_value_site_uv').text());
+					if(num != 0) {
+						clearInterval(timer);
+						$('#container').show();
+						$('.welcome-info .visitors').text(num);  //赋值当前访问人数
+					}
+				}, 60);
+			} else {
+				$('#container').show();
+			}
+			$('#btn-begin-blog').click(function() {
+				sessionStorage.overviews = true;
+				$('body').css('overflow', 'auto');
+				$('#overviews').hide();
+			});
+		}
+	}
+});
