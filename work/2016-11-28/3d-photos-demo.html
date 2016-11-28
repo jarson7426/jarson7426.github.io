@@ -5,17 +5,48 @@
   
   <meta name="baidu-site-verification" content="5tcBr0YNFF" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: CSS3 | luckykun-不一样的世界</title>
+  <title>CSS3实现的3D相册效果 | luckykun-不一样的世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="testtest">
-<meta property="og:type" content="website">
-<meta property="og:title" content="luckykun-不一样的世界">
-<meta property="og:url" content="http://yoursite.com/tags/CSS3/index.html">
+  <meta name="description" content="@keyframes rotateY360 {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+
+    .big-container {
+        width: 8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3实现的3D相册效果">
+<meta property="og:url" content="http://yoursite.com/work/2016-11-28/3d-photos-demo.html">
 <meta property="og:site_name" content="luckykun-不一样的世界">
-<meta property="og:description" content="testtest">
+<meta property="og:description" content="@keyframes rotateY360 {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+
+    .big-container {
+        width: 8">
+<meta property="og:updated_time" content="2016-11-28T15:23:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luckykun-不一样的世界">
-<meta name="twitter:description" content="testtest">
+<meta name="twitter:title" content="CSS3实现的3D相册效果">
+<meta name="twitter:description" content="@keyframes rotateY360 {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+
+    .big-container {
+        width: 8">
   
   
       <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
@@ -272,166 +303,220 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-3d-photos-demo" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
+    <div class="article-meta">
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
 <time datetime="2016-11-28T14:30:39.000Z" itemprop="datePublished">2016-11-28</time>
 
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/work/2016-11-28/3d-photos-demo.html">CSS3实现的3D相册效果</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3实现的3D相册效果
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
 	</div>
 
 
-          
+        
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/work/">工作</a>
 	</div>
 
 
+        <div class="busuanzi-read-num">
+            阅读次数：<span id="busuanzi_value_page_pv"><img src="http://7xtawy.com2.z0.glb.clouddn.com/loading1.png"/></span>次
         </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <!-- Table of Contents -->
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<style>
+    @keyframes rotateY360 {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+
+    .big-container {
+        width: 860px;
+        height: 400px;
+        margin: 0px auto;
+    }
+
+    .photo-wrap {
+        perspective: 800px;
+        width: 800px;
+        float: left;
+    }
+
+    .photo-container {
+        width: 800px;
+        height: 400px;
+        margin: 0 auto;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rotateY360 15s ease-in-out infinite;
+    }
+
+    .block {
+        width: 200px;
+        height: 118px;
+        position: absolute;
+        top: 160px;
+        left: 300px;
+        font-size: 16px;
+        line-height: 118px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(100, 50, 100, 0.9) inset;
+        background: pink;
+        color: #000;
+    }
+
+    .block01 {
+        transform: rotateY(0deg) translateZ(300px);
+    }
+    .block02 {
+        transform: rotateY(40deg) translateZ(300px);
+    }
+    .block03 {
+        transform: rotateY(80deg) translateZ(300px);
+    }
+    .block04 {
+        transform: rotateY(120deg) translateZ(300px);
+    }
+    .block05 {
+        transform: rotateY(160deg) translateZ(300px);
+    }
+    .block06 {
+        transform: rotateY(200deg) translateZ(300px);
+    }
+    .block07 {
+        transform: rotateY(240deg) translateZ(300px);
+    }
+    .block08 {
+        transform: rotateY(280deg) translateZ(300px);
+    }
+    .block09 {
+        transform: rotateY(320deg) translateZ(300px);
+    }
+</style>
+
+<div class="big-container"><br>    <div class="photo-wrap"><br>        <div class="photo-container"><br>            <div class="block block01">1</div><br>            <div class="block block02">2</div><br>            <div class="block block03">3</div><br>            <div class="block block04">4</div><br>            <div class="block block05">5</div><br>            <div class="block block06">6</div><br>            <div class="block block07">7</div><br>            <div class="block block08">8</div><br>            <div class="block block09">9</div><br>        </div><br>    </div><br></div>
+
+<hr>
+
+      
+    </div>
+    
   </div>
+  
+    
+<div class="support-author">
+    <p>如果您觉得我的文章对您有用，请随意打赏。</p>
+    <p>您的支持将鼓励我继续创作！</p>
+    <a href="javascript:;" class="show-code">¥ 打赏支持</a>
+    <p class="pay-code">
+        <img class src="http://7xtawy.com2.z0.glb.clouddn.com/qrcode.png">
+    </p>
+</div>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/work/2016-11-06/react-antd-demo.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">下一篇：webpack+react+antd单页面应用实例</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<time datetime="2016-07-24T09:41:57.000Z" itemprop="datePublished">2016-07-24</time>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/work/2016-07-24/rect-grid-demo.html">实例demo之3D transform立方体效果</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<!-- Share to: &nbsp;  -->
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_facebook"></a>
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a>
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/work/">工作</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<time datetime="2016-07-23T09:41:57.000Z" itemprop="datePublished">2016-07-23</time>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/work/2016-07-23/css3-study02.html">CSS3 3D立方体效果－transform也不过如此</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/3D效果/">3D效果</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
-	</div>
 
 
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/work/">工作</a>
-	</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="3d-photos-demo" data-title="CSS3实现的3D相册效果" data-url="http://yoursite.com/work/2016-11-28/3d-photos-demo.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"jarson7426"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<time datetime="2016-07-04T14:39:19.000Z" itemprop="datePublished">2016-07-04</time>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/work/2016-07-04/css3-study01.html">CSS3初体验之奇技淫巧</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/实例/">实例</a></li></ul>
-	</div>
 
 
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/work/">工作</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
 </div>
       <footer id="footer">
@@ -461,9 +546,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}

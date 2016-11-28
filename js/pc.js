@@ -112,7 +112,7 @@ define([], function(){
 			// 		console.log('error1');
 			// 	}
 			// });
-			$('.welcome-info .comments').text(121);
+			$('.welcome-info .comments').text(128);
 
 			if(location.pathname == '/' && !sessionStorage.overviews) {  //访问首页，并且没有显示过overview
 				$('#overviews').show();

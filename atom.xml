@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-08T15:38:54.000Z</updated>
+  <updated>2016-11-28T15:23:34.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,120 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CSS3实现的3D相册效果</title>
+    <link href="http://yoursite.com/work/2016-11-28/3d-photos-demo.html"/>
+    <id>http://yoursite.com/work/2016-11-28/3d-photos-demo.html</id>
+    <published>2016-11-28T14:30:39.000Z</published>
+    <updated>2016-11-28T15:23:34.000Z</updated>
+    
+    <content type="html">&lt;hr&gt;
+&lt;style&gt;
+    @keyframes rotateY360 {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+
+    .big-container {
+        width: 860px;
+        height: 400px;
+        margin: 0px auto;
+    }
+
+    .photo-wrap {
+        perspective: 800px;
+        width: 800px;
+        float: left;
+    }
+
+    .photo-container {
+        width: 800px;
+        height: 400px;
+        margin: 0 auto;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rotateY360 15s ease-in-out infinite;
+    }
+
+    .block {
+        width: 200px;
+        height: 118px;
+        position: absolute;
+        top: 160px;
+        left: 300px;
+        font-size: 16px;
+        line-height: 118px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(100, 50, 100, 0.9) inset;
+        background: pink;
+        color: #000;
+    }
+
+    .block01 {
+        transform: rotateY(0deg) translateZ(300px);
+    }
+    .block02 {
+        transform: rotateY(40deg) translateZ(300px);
+    }
+    .block03 {
+        transform: rotateY(80deg) translateZ(300px);
+    }
+    .block04 {
+        transform: rotateY(120deg) translateZ(300px);
+    }
+    .block05 {
+        transform: rotateY(160deg) translateZ(300px);
+    }
+    .block06 {
+        transform: rotateY(200deg) translateZ(300px);
+    }
+    .block07 {
+        transform: rotateY(240deg) translateZ(300px);
+    }
+    .block08 {
+        transform: rotateY(280deg) translateZ(300px);
+    }
+    .block09 {
+        transform: rotateY(320deg) translateZ(300px);
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;big-container&quot;&gt;&lt;br&gt;    &lt;div class=&quot;photo-wrap&quot;&gt;&lt;br&gt;        &lt;div class=&quot;photo-container&quot;&gt;&lt;br&gt;            &lt;div class=&quot;block block01&quot;&gt;1&lt;/div&gt;&lt;br&gt;            &lt;div class=&quot;block block02&quot;&gt;2&lt;/div&gt;&lt;br&gt;            &lt;div class=&quot;block block03&quot;&gt;3&lt;/div&gt;&lt;br&gt;            &lt;div class=&quot;block block04&quot;&gt;4&lt;/div&gt;&lt;br&gt;            &lt;div class=&quot;block block05&quot;&gt;5&lt;/div&gt;&lt;br&gt;            &lt;div class=&quot;block block06&quot;&gt;6&lt;/div&gt;&lt;br&gt;            &lt;div class=&quot;block block07&quot;&gt;7&lt;/div&gt;&lt;br&gt;            &lt;div class=&quot;block block08&quot;&gt;8&lt;/div&gt;&lt;br&gt;            &lt;div class=&quot;block block09&quot;&gt;9&lt;/div&gt;&lt;br&gt;        &lt;/div&gt;&lt;br&gt;    &lt;/div&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;style&gt;
+    @keyframes rotateY360 {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: 
+    
+    </summary>
+    
+      <category term="工作" scheme="http://yoursite.com/categories/work/"/>
+    
+    
+      <category term="CSS3" scheme="http://yoursite.com/tags/CSS3/"/>
+    
+      <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>webpack+react+antd单页面应用实例</title>
     <link href="http://yoursite.com/work/2016-11-06/react-antd-demo.html"/>
     <id>http://yoursite.com/work/2016-11-06/react-antd-demo.html</id>
     <published>2016-11-06T15:28:09.000Z</published>
-    <updated>2016-11-08T15:38:54.000Z</updated>
+    <updated>2016-11-28T14:25:57.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;blockquote&gt;
@@ -112,9 +221,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
@@ -299,9 +408,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
@@ -847,9 +956,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
     
   </entry>
   
@@ -1008,11 +1117,11 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
+      <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
+    
       <category term="canvas" scheme="http://yoursite.com/tags/canvas/"/>
     
       <category term="html5" scheme="http://yoursite.com/tags/html5/"/>
-    
-      <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
     
   </entry>
   
@@ -1243,9 +1352,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
@@ -1303,9 +1412,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo系列" scheme="http://yoursite.com/tags/hexo%E7%B3%BB%E5%88%97/"/>
     
   </entry>
   
@@ -1864,9 +1973,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
-    
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
     
   </entry>
   
@@ -1911,156 +2020,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
-    
       <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
     
-  </entry>
-  
-  <entry>
-    <title>前后端分离之前端项目构建（grunt+require+angular）</title>
-    <link href="http://yoursite.com/work/2016-05-02/grunt-angular.html"/>
-    <id>http://yoursite.com/work/2016-05-02/grunt-angular.html</id>
-    <published>2016-05-02T14:33:32.000Z</published>
-    <updated>2016-10-11T16:29:02.000Z</updated>
-    
-    <content type="html">&lt;hr&gt;
-&lt;p&gt;前段时间在公司做了一个项目，前后端的合作方式是这样的：前端开发页面，然后把代码给到后端同学，后端同学通过java的vm模板来渲染页面。慢慢的我发现，这种方式简直是太low了，因为所有的前端代码都揉在服务端同学那里，而每次项目需要更新，甚至只是页面微调，只要服务端同学说他不懂，或者是没有时间，我们前端同学就要屁颠屁颠的跑去他那里配合他修改代码，维护成本高，卖力不讨好==，那我们到底该怎么办呢？&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;可能有人会说了，使用svn或者git这种版本控制工具呀，大家down一套代码，在一起开发不就好了。我想说的是，代码虽然有了，但是对于服务端同学的那一套复杂的环境，有兴趣或者涉猎还好，如果没有，自己去启个java环境估计都得花上半天时间吧。&lt;/p&gt;
-&lt;p&gt;此时你会深深的感受到了那句名言的魅力，&lt;code&gt;时间就是金钱！&lt;/code&gt;后来我发现，现在的web开发，谁还用这种低级的方法，大家都已经开始搞&lt;code&gt;前后端分离了&lt;/code&gt;！&lt;/p&gt;
-&lt;p&gt;本篇文章会讲述搭建一个基于&lt;code&gt;grunt+require+angular&lt;/code&gt;完整的前端项目的过程，&lt;code&gt;本项目主要在于项目结构和思路，具体功能可以在此基础上进一步开发&lt;/code&gt;。最后完整的代码，你可以在Github上看到&lt;a href=&quot;https://github.com/luckykun/grunt-require-angular/tree/master&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;完整代码点这里&lt;/a&gt;，喜欢的同学不妨帮我&lt;code&gt;star一下&lt;/code&gt;，谢谢^_^。&lt;/p&gt;
-&lt;p&gt;down下来运行以下命令就可以直接看到效果：&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install grunt -g&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm install   &lt;span class=&quot;comment&quot;&gt;//安装依赖&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;grunt  &lt;span class=&quot;comment&quot;&gt;//启动服务&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;最后页面上的结果是：&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hello, world&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;前后端分离的目的和作用&quot;&gt;&lt;a href=&quot;#前后端分离的目的和作用&quot; class=&quot;headerlink&quot; title=&quot;前后端分离的目的和作用&quot;&gt;&lt;/a&gt;前后端分离的目的和作用&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;要弄清前后端分离的目的和作用，首先要知道什么是前后端分离。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;现在的web前端越来越偏向于独立的技术种类，在不久的将来，服务端的活都会被我们给承包了。我曾经在某个网站读到这样一句话，假如有一个大型网站，例如淘宝网，它肯定不止是一个web项目，而是多个web项目的集合，那么如果前端不作整合、封装，那么不同的项目开发必然会有大量的重复劳动。从这句话和我在前言中举的例子中可以看出，前端开发单独封装组件，单独开发项目，单独维护，前端代码不和服务端逻辑揉在一起，这就是我理解的前后端分离。唯一需要和服务端交互的，就是通过ajax去请求他们提供的接口。&lt;/p&gt;
-&lt;p&gt;所以，从另一个角度看，我们在开发的时候，只要和服务端约定好接口格式，从项目开工到结束，我们都不需要和服务端开发打交道，这无疑提高了项目质量和开发效率。前后端分离的终极目标应该是前端和服务端是完全独立的项目，一个项目开始之后，前端开发前端的，服务端开发服务端的，并且最后还需要独立部署，这样才真正实现了前后端解耦分离，前后端的沟通主要集中在数据接口的格式上。&lt;/p&gt;
-&lt;h1 id=&quot;前端项目构建&quot;&gt;&lt;a href=&quot;#前端项目构建&quot; class=&quot;headerlink&quot; title=&quot;前端项目构建&quot;&gt;&lt;/a&gt;前端项目构建&lt;/h1&gt;&lt;p&gt;现在要做到前端项目独立，这时候为了项目便于管理维护，我们就需要项目化，工程化，开发规范，自动化压缩混淆，自动化发布，前端优化等等。&lt;/p&gt;
-&lt;p&gt;现在前端框架这么丰富，一个项目要引入哪些框架，就因人而异了，工作以来一直在学习angular，所以最近自己尝试着搭了一套基于grunt+requireJs+angularJs的应用。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;grunt: 操作项目文件：比如文件转换、压缩、打包部署等等。&lt;/li&gt;
-&lt;li&gt;requireJs: js库加载管理，支持按需加载，模块化引入。&lt;/li&gt;
-&lt;li&gt;angularJs: js前端MVC框架，支持依赖注入、双向绑定等主要特性。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这几个库是现在中大型前端项目比较适合的搭配，很有必要去学习并掌握他们。&lt;/p&gt;
-&lt;h2 id=&quot;创建项目目录&quot;&gt;&lt;a href=&quot;#创建项目目录&quot; class=&quot;headerlink&quot; title=&quot;创建项目目录&quot;&gt;&lt;/a&gt;创建项目目录&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mkdir myProject&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;cd myProject&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;创建项目文件夹，然后进入文件夹，一下操作均在此文件夹下执行。&lt;/p&gt;
-&lt;h2 id=&quot;创建package-json&quot;&gt;&lt;a href=&quot;#创建package-json&quot; class=&quot;headerlink&quot; title=&quot;创建package.json&quot;&gt;&lt;/a&gt;创建package.json&lt;/h2&gt;&lt;p&gt;&lt;code&gt;首先我们需要为npm提供一个package.json，告诉它我们的项目信息，特别是项目中将会使用的插件。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;可以用命令生成，后续也能够手动修改。&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm init&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;他会问我们一些问题，一路使用默认值，创建完毕。&lt;/p&gt;
-&lt;h2 id=&quot;安装grunt&quot;&gt;&lt;a href=&quot;#安装grunt&quot; class=&quot;headerlink&quot; title=&quot;安装grunt&quot;&gt;&lt;/a&gt;安装grunt&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install grunt --save-dev&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;使用npm安装grunt插件，它将被安装到根目录的&lt;code&gt;node_modules&lt;/code&gt;文件夹下，所有npm插件都会放到这里。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;--save-dev&lt;/code&gt;： 意思是安装插件的同时，也把它添加到项目信息文件&lt;code&gt;package.json&lt;/code&gt;中的&lt;code&gt;devDependencies&lt;/code&gt;字段里，意思是这个项目依赖于这些插件。下次使用&lt;code&gt;npm install&lt;/code&gt;的时候就会自动安装这些插件。&lt;/p&gt;
-&lt;h2 id=&quot;为grunt创建配置文件Gruntfile-js&quot;&gt;&lt;a href=&quot;#为grunt创建配置文件Gruntfile-js&quot; class=&quot;headerlink&quot; title=&quot;为grunt创建配置文件Gruntfile.js&quot;&gt;&lt;/a&gt;为grunt创建配置文件Gruntfile.js&lt;/h2&gt;&lt;p&gt;Gruntfile.js文件用于定义任务、任务组。它可以用来执行文件的类型转换、压缩、合并等等操作，为开发大大提高了效率。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;安装grunt-init&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install grunt-init -g      &lt;span class=&quot;comment&quot;&gt;//全局安装grunt-init&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;下载grunt模板&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git clone https:&lt;span class=&quot;comment&quot;&gt;//github.com/gruntjs/grunt-init-gruntfile.git ~/.grunt-init/gruntfile&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;生成Gruntfile&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;grunt-init gruntfile&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;  在项目根目录下生成Gruntfile.js文件，跟package.json文件一下，按需回答一些文件，就创建好了，后续能手动修改（其实大部分都是自己手写的）。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;安装bower&quot;&gt;&lt;a href=&quot;#安装bower&quot; class=&quot;headerlink&quot; title=&quot;安装bower&quot;&gt;&lt;/a&gt;安装bower&lt;/h2&gt;&lt;p&gt;bower是用来管理js库的一个工具，比如下载jquery、angularjs等库。并且下载的时候还能指定库的版本。&lt;/p&gt;
-&lt;p&gt;同样适用npm进行安装。&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install bower -g&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;为bower生成配置文件bower-json&quot;&gt;&lt;a href=&quot;#为bower生成配置文件bower-json&quot; class=&quot;headerlink&quot; title=&quot;为bower生成配置文件bower.json&quot;&gt;&lt;/a&gt;为bower生成配置文件bower.json&lt;/h2&gt;&lt;p&gt;整个项目的信息文件是&lt;code&gt;package.json&lt;/code&gt;，执行任务插件grunt的信息文件是&lt;code&gt;Gruntfile.js&lt;/code&gt;，那么bower当然也有自己的信息文件了，那就是&lt;code&gt;bower.json&lt;/code&gt;。&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;bower init&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;不过我觉得bower.json基本没有什么作用，它最大的作用就是用来下载我们需要的各种技术库。&lt;/p&gt;
-&lt;p&gt;比如使用bower下载angularjs：&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;bower install angularjs&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这行命令将会把angular下载下来，放在根目录下的&lt;code&gt;bower_components&lt;/code&gt;文件夹下，不过它默认下载的是angular的最新版，有时候，我们可能不需要最新版。假如，我想下载angularjs 1.2.2版本该怎么办呢？&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;bower install angularjs#1.2.2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;另外，bower只负责下载文件到&lt;code&gt;bower_components&lt;/code&gt;目录下，但是我们项目中可能并不想把库放在这里，所以我们可以选择使用grunt的插件&lt;code&gt;grunt-bower-task&lt;/code&gt;，在Gruntfile.js中定义一个任务来移动文件到想要的目录下。&lt;/p&gt;
-&lt;h2 id=&quot;关于Requirejs&quot;&gt;&lt;a href=&quot;#关于Requirejs&quot; class=&quot;headerlink&quot; title=&quot;关于Requirejs&quot;&gt;&lt;/a&gt;关于Requirejs&lt;/h2&gt;&lt;p&gt;官网上是这样说的：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;RequireJS的目标是鼓励代码的模块化。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;它使用了不同于传统的脚本加载步骤。可以用它来加速、优化代码，但其主要目的还是为了代码的模块化，按需加载。&lt;/p&gt;
-&lt;h2 id=&quot;使用Requirejs&quot;&gt;&lt;a href=&quot;#使用Requirejs&quot; class=&quot;headerlink&quot; title=&quot;使用Requirejs&quot;&gt;&lt;/a&gt;使用Requirejs&lt;/h2&gt;&lt;p&gt;&lt;code&gt;&amp;lt;script data-main=&amp;quot;scripts/main&amp;quot; src=&amp;quot;scripts/require.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;一般在首页加载requiejs文件，然后属性&lt;code&gt;data-main&lt;/code&gt;指定的文件就是接下来要加载的文件，然后我们再看&lt;code&gt;main.js&lt;/code&gt;文件:&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;.config(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    baseUrl: &lt;span class=&quot;string&quot;&gt;&#39;script/lib&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    paths: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        app: &lt;span class=&quot;string&quot;&gt;&#39;app&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        jquery: &lt;span class=&quot;string&quot;&gt;&#39;/jquery/jquery-min&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        angular: &lt;span class=&quot;string&quot;&gt;&#39;/angularjs/angular-min&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    shim: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;angular&#39;&lt;/span&gt;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            exports: &lt;span class=&quot;string&quot;&gt;&#39;angular&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;([&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;app&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;app&lt;/span&gt;) (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    app.hello();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;))&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;我们在&lt;code&gt;paths&lt;/code&gt;中声明了3个模块，app、jquery和angular，后面的路径是模块对应的文件路径。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;shim&lt;/code&gt;中用来处理一些没有遵守requirejs规范的js库，比如angularjs库，所以要手动配置一个叫&lt;code&gt;angular&lt;/code&gt;的模块。&lt;/li&gt;
-&lt;li&gt;最后用require来导入我们自己的模块，可在后面的callback中拿到对应模块的实例，并对它进行一些操作，比如我们调用了&lt;code&gt;app.hello()&lt;/code&gt;方法。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;AngularJs实例&quot;&gt;&lt;a href=&quot;#AngularJs实例&quot; class=&quot;headerlink&quot; title=&quot;AngularJs实例&quot;&gt;&lt;/a&gt;AngularJs实例&lt;/h1&gt;&lt;p&gt;上面的步骤只是简单说了下大体步骤，纸上谈兵之后，就可以开始实际操作了。&lt;/p&gt;
-&lt;h2 id=&quot;目录结构&quot;&gt;&lt;a href=&quot;#目录结构&quot; class=&quot;headerlink&quot; title=&quot;目录结构&quot;&gt;&lt;/a&gt;目录结构&lt;/h2&gt;&lt;p&gt;项目文件夹结构如下图（当然目录结构因人而异）：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://img.alicdn.com/tps/TB1bzUGJXXXXXcOXpXXXXXXXXXX-251-584.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;node_modules&lt;/code&gt;: 用来存放项目依赖的grunt插件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;bower_components&lt;/code&gt;: 用来存放bower下载的库。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;build&lt;/code&gt;: 用来存放经过build处理之后的js文件。&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;app&lt;/code&gt;: 是真正的开发需要的文件。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;data&lt;/code&gt;: 用来存放mock数据用的json文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;images&lt;/code&gt;: 用来存放静态图片。&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;scripts&lt;/code&gt;: 用来存放所有js文件。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;controller&lt;/code&gt;: 用来存放控制器文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;directive&lt;/code&gt;: 定义的指令文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;filter&lt;/code&gt;: 定义的过滤器文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;route&lt;/code&gt;: 路由文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;service&lt;/code&gt;: 服务文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;vendor&lt;/code&gt;: 公共库文件，比如angular,jquery,bootstrap等等。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;styles&lt;/code&gt;目录用来存放样式文件。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;views&lt;/code&gt;目录用来存放&lt;code&gt;页面&lt;/code&gt;html文件。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;partials&lt;/code&gt;目录用来存放&lt;code&gt;页面片段&lt;/code&gt;的html文件。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;目录创建好了，现在来写一些代码，让项目能够运行起来。&lt;/p&gt;
-&lt;h2 id=&quot;views-index-html&quot;&gt;&lt;a href=&quot;#views-index-html&quot; class=&quot;headerlink&quot; title=&quot;views/index.html&quot;&gt;&lt;/a&gt;views/index.html&lt;/h2&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;charset&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;grunt+requirejs+angular项目构建&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;../scripts/vendor/requirejs/require.js&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;data-main&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;../scripts/config&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;    &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 先引入requirejs, 然后引入config.js --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;ng-controller&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;testController&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#123;&amp;#123;app&amp;#125;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;上述index中，先引入了require.js，然后加载data-main对应的config.js文件。&lt;/p&gt;
-&lt;h2 id=&quot;scripts-config-js&quot;&gt;&lt;a href=&quot;#scripts-config-js&quot; class=&quot;headerlink&quot; title=&quot;scripts/config.js&quot;&gt;&lt;/a&gt;scripts/config.js&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; vendorPath = &lt;span class=&quot;string&quot;&gt;&#39;vendor/&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;.config(&amp;#123;    &lt;span class=&quot;comment&quot;&gt;//配置模块&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    baseUrl: &lt;span class=&quot;string&quot;&gt;&#39;../scripts/&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    paths: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;app&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;app&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;angular&#39;&lt;/span&gt;: vendorPath + &lt;span class=&quot;string&quot;&gt;&#39;angular/angular&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;jquery&#39;&lt;/span&gt;: vendorPath + &lt;span class=&quot;string&quot;&gt;&#39;jquery/jquery&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    shim: &amp;#123;   &lt;span class=&quot;comment&quot;&gt;//处理没有遵守requirejs规范的js库&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;angular&#39;&lt;/span&gt;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            exports: &lt;span class=&quot;string&quot;&gt;&#39;angular&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;([&lt;span class=&quot;string&quot;&gt;&#39;./bootstrap&#39;&lt;/span&gt;], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;bootstrap&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// ...&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;然后通过require引入了bootstrap.js文件。&lt;/p&gt;
-&lt;h2 id=&quot;scripts-bootstrap-js&quot;&gt;&lt;a href=&quot;#scripts-bootstrap-js&quot; class=&quot;headerlink&quot; title=&quot;scripts/bootstrap.js&quot;&gt;&lt;/a&gt;scripts/bootstrap.js&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;define([&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;angular&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;app&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;jquery&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;./controller/_base&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;angular&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 手动将angular模块绑定到document对象&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    angular.element(&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;).ready(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        angular.bootstrap(&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;, [&lt;span class=&quot;string&quot;&gt;&#39;myProject&#39;&lt;/span&gt;]);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;code&gt;注意：function的内容是requirejs引入所有文件之后的回调函数。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;bootstrap是angular对象的一个方法，用于手动启动。上述代码除了引入了angular等js库外，还引入了app.js文件。&lt;/p&gt;
-&lt;h2 id=&quot;scripts-app-js&quot;&gt;&lt;a href=&quot;#scripts-app-js&quot; class=&quot;headerlink&quot; title=&quot;scripts/app.js&quot;&gt;&lt;/a&gt;scripts/app.js&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;define([&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;angular&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;./controller/controllers&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;angular&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//定义将要绑定到document上的模块名称&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; angular.module(&lt;span class=&quot;string&quot;&gt;&#39;myProject&#39;&lt;/span&gt;, [&lt;span class=&quot;string&quot;&gt;&#39;projectController&#39;&lt;/span&gt;]);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;定义模块名&lt;code&gt;myProject&lt;/code&gt;的时候，同时指定它依赖于另一个模块&lt;code&gt;projectController&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;同时在&lt;code&gt;./controller/controllers.js&lt;/code&gt;中定义这个模块：&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;define([&lt;span class=&quot;string&quot;&gt;&#39;angular&#39;&lt;/span&gt;], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;angular&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; angular.module(&lt;span class=&quot;string&quot;&gt;&#39;projectController&#39;&lt;/span&gt;, []);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这里是给所有的控制器定义了一个单独的模块，然后让主要模块依赖于这个模块，这样做的目的是方便管理维护，我们还可以给所有的服务、路由、过滤器都添加一个单独的模块，然后在app.js中添加注入即可。&lt;/p&gt;
-&lt;h2 id=&quot;controller-testController-js&quot;&gt;&lt;a href=&quot;#controller-testController-js&quot; class=&quot;headerlink&quot; title=&quot;controller/testController.js&quot;&gt;&lt;/a&gt;controller/testController.js&lt;/h2&gt;&lt;p&gt;如果想要让视图文件&lt;code&gt;views/index.html&lt;/code&gt;能够看到效果，我们就要开始编写控制器文件了，&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;define([&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;./controllers&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;mod&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; controllerFn = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;$scope, $location&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        $scope.app = &lt;span class=&quot;string&quot;&gt;&#39;hello, world&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    controllerFn.$inject = [&lt;span class=&quot;string&quot;&gt;&#39;$scope&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;$location&#39;&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    mod.controller(&lt;span class=&quot;string&quot;&gt;&#39;testController&#39;&lt;/span&gt;, controllerFn);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;引入控制器的单独模块文件’./controllers’,然后在模块上新建一个名为&lt;code&gt;testController&lt;/code&gt;的控制器，并在$scope上绑定了一个值为’hello, world’的变量&lt;code&gt;app&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&quot;查看效果&quot;&gt;&lt;a href=&quot;#查看效果&quot; class=&quot;headerlink&quot; title=&quot;查看效果&quot;&gt;&lt;/a&gt;查看效果&lt;/h2&gt;&lt;p&gt;使用&lt;code&gt;grunt&lt;/code&gt;命令启动一个简单的web服务器（前提是边编写好了Gruntfile.js文件，可以去github上看我已经写好的源码）。在浏览器就能看到效果了。&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hello, world&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;注：完整的代码我已上传至github&lt;a href=&quot;https://github.com/luckykun/grunt-require-angular/tree/master&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;完整代码点这里&lt;/a&gt;，喜欢的同学帮忙点个star，谢谢咯。&lt;/p&gt;
-&lt;h1 id=&quot;结语&quot;&gt;&lt;a href=&quot;#结语&quot; class=&quot;headerlink&quot; title=&quot;结语&quot;&gt;&lt;/a&gt;结语&lt;/h1&gt;&lt;p&gt;现在，我们需要做的就是，和服务端约定好接口格式，自己根据格式mock需要的数据，然后，我们可以随心所欲的开发我们的项目了，不用再和人打交道了。开发完毕之后，再通过grunt压缩、合并、打包文件等操作，暴露给外部的只需一个js文件，另外还可以通过git等版本管理工具来迭代项目。有了这种开发方式，你再也不用担心服务端开发随时来烦你，自己也有更多时间来钻研前端本身的技术了，哈哈。&lt;/p&gt;
-&lt;hr&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;前段时间在公司做了一个项目，前后端的合作方式是这样的：前端开发页面，然后把代码给到后端同学，后端同学通过java的vm模板来渲染页面。慢慢的我发现，这种方式简直是太low了，因为所有的前端代码都揉在服务端同学那里，而每次项目需要更新，甚至只是页面微调，只要服务端同学说他不懂，或者是没有时间，我们前端同学就要屁颠屁颠的跑去他那里配合他修改代码，维护成本高，卖力不讨好==，那我们到底该怎么办呢？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工作" scheme="http://yoursite.com/categories/work/"/>
-    
-    
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="grunt" scheme="http://yoursite.com/tags/grunt/"/>
-    
-      <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
-    
-      <category term="构建" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA/"/>
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
   </entry>
   

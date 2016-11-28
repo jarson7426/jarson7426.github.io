@@ -197,7 +197,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/3D效果/" style="font-size: 10px;">3D效果</a> <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/antd/" style="font-size: 10px;">antd</a> <a href="/tags/canvas/" style="font-size: 15px;">canvas</a> <a href="/tags/demo/" style="font-size: 17.5px;">demo</a> <a href="/tags/es6/" style="font-size: 15px;">es6</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo系列/" style="font-size: 15px;">hexo系列</a> <a href="/tags/highcharts/" style="font-size: 10px;">highcharts</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/javascript/" style="font-size: 17.5px;">javascript</a> <a href="/tags/react/" style="font-size: 17.5px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/yeoman/" style="font-size: 10px;">yeoman</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/干货总结/" style="font-size: 12.5px;">干货总结</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/插件/" style="font-size: 12.5px;">插件</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/文件上传/" style="font-size: 10px;">文件上传</a> <a href="/tags/构建/" style="font-size: 12.5px;">构建</a> <a href="/tags/编辑器/" style="font-size: 10px;">编辑器</a>
+						<a href="/tags/3D效果/" style="font-size: 10px;">3D效果</a> <a href="/tags/CSS3/" style="font-size: 16px;">CSS3</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/antd/" style="font-size: 10px;">antd</a> <a href="/tags/canvas/" style="font-size: 14px;">canvas</a> <a href="/tags/demo/" style="font-size: 18px;">demo</a> <a href="/tags/es6/" style="font-size: 14px;">es6</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo系列/" style="font-size: 14px;">hexo系列</a> <a href="/tags/highcharts/" style="font-size: 10px;">highcharts</a> <a href="/tags/html5/" style="font-size: 14px;">html5</a> <a href="/tags/javascript/" style="font-size: 16px;">javascript</a> <a href="/tags/react/" style="font-size: 16px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/yeoman/" style="font-size: 10px;">yeoman</a> <a href="/tags/实例/" style="font-size: 10px;">实例</a> <a href="/tags/干货总结/" style="font-size: 12px;">干货总结</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/插件/" style="font-size: 12px;">插件</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/文件上传/" style="font-size: 10px;">文件上传</a> <a href="/tags/构建/" style="font-size: 12px;">构建</a> <a href="/tags/编辑器/" style="font-size: 10px;">编辑器</a>
 					</div>
 				</section>
 				
@@ -273,6 +273,150 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-3d-photos-demo" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      
+<time datetime="2016-11-28T14:30:39.000Z" itemprop="datePublished">2016-11-28</time>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/work/2016-11-28/3d-photos-demo.html">CSS3实现的3D相册效果</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <!-- Table of Contents -->
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<style>
+    @keyframes rotateY360 {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+
+    .big-container {
+        width: 860px;
+        height: 400px;
+        margin: 0px auto;
+    }
+
+    .photo-wrap {
+        perspective: 800px;
+        width: 800px;
+        float: left;
+    }
+
+    .photo-container {
+        width: 800px;
+        height: 400px;
+        margin: 0 auto;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rotateY360 15s ease-in-out infinite;
+    }
+
+    .block {
+        width: 200px;
+        height: 118px;
+        position: absolute;
+        top: 160px;
+        left: 300px;
+        font-size: 16px;
+        line-height: 118px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(100, 50, 100, 0.9) inset;
+        background: pink;
+        color: #000;
+    }
+
+    .block01 {
+        transform: rotateY(0deg) translateZ(300px);
+    }
+    .block02 {
+        transform: rotateY(40deg) translateZ(300px);
+    }
+    .block03 {
+        transform: rotateY(80deg) translateZ(300px);
+    }
+    .block04 {
+        transform: rotateY(120deg) translateZ(300px);
+    }
+    .block05 {
+        transform: rotateY(160deg) translateZ(300px);
+    }
+    .block06 {
+        transform: rotateY(200deg) translateZ(300px);
+    }
+    .block07 {
+        transform: rotateY(240deg) translateZ(300px);
+    }
+    .block08 {
+        transform: rotateY(280deg) translateZ(300px);
+    }
+    .block09 {
+        transform: rotateY(320deg) translateZ(300px);
+    }
+</style>
+
+<div class="big-container"><br>    <div class="photo-wrap"><br>        <div class="photo-container"><br>            <div class="block block01">1</div><br>            <div class="block block02">2</div><br>            <div class="block block03">3</div><br>            <div class="block block04">4</div><br>            <div class="block block05">5</div><br>            <div class="block block06">6</div><br>            <div class="block block07">7</div><br>            <div class="block block08">8</div><br>            <div class="block block09">9</div><br>        </div><br>    </div><br></div>
+
+<hr>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li></ul>
+	</div>
+
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/work/">工作</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-react-antd-demo" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1020,88 +1164,6 @@
       
         <p class="article-more-link">
           <a  href="/work/2016-07-04/css3-study01.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-tiny-heart-demo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      
-<time datetime="2016-05-30T01:41:43.000Z" itemprop="datePublished">2016-05-30</time>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/work/2016-05-30/tiny-heart-demo.html">实例demo之小游戏tinyHeart</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <!-- Table of Contents -->
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<style>
-.introduce{width:100%;min-height:50px;margin:0 auto;overflow:hidden;margin-top:-40px;}
-.introduce p.title{font-size: 16px;font-weight: bold;text-align: center;}
-.page{width: 100%;min-height: 600px;margin: 0px auto;margin-top: 6px;}
-#main{width: 100%;height: 600px;position: relative;top: -60px;}
-#canvas1, #canvas2 {width: 800px;height: 600px;position: absolute;left: 50%;top: 0;margin-left: -400px;}
-#canvas1{z-index: 1;}
-#canvas2{z-index: 0;}
-</style>
-
-<p><header style="margin-top:-55px;text-align:center;"><br>    <h1><span>TinyHeart</span><a href="https://github.com/luckykun/tinyHeart" style="font-size:14px;font-weight:normal;">view on github</a></h1><br></header></p>
-<div class="introduce"><br>    <p class="title">游戏规则：</p><br>    <p>1. 大鱼跟着鼠标的位置移动而吃到果实，如吃到红色果实，身体变红，画布下方的个数加1；如吃到蓝色果实，身体变蓝，下方的倍数加1。</p><p>2. 画布右上角显示着小鱼的体力值，初始为10，身体为红色，随着时间的推移，体力值减小，身体颜色变淡。</p><p>3. 大鱼吃到果实之后去喂小鱼，此时小鱼的体力值也会相应增加，画布上方的分值等于画布下方的倍数乘以个数的累加和。</p><p>4. 当小鱼体力值减到0时，游戏结束；点击画布，则可重新开始游戏。好了，拯救小鱼行动开始，躁起来吧！</p><br></div>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/demo/">demo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
-	</div>
-
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/work/">工作</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/work/2016-05-30/tiny-heart-demo.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
