@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-29T15:15:56.000Z</updated>
+  <updated>2016-12-01T14:54:57.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,10 +17,74 @@
   
   <entry>
     <title>CSS3实现的3D相册效果</title>
+    <link href="http://yoursite.com/work/2016-12-01/css3-study03.html"/>
+    <id>http://yoursite.com/work/2016-12-01/css3-study03.html</id>
+    <published>2016-12-01T14:49:50.000Z</published>
+    <updated>2016-12-01T14:54:57.000Z</updated>
+    
+    <content type="html">&lt;hr&gt;
+&lt;p&gt;CSS3系列我已经写过两篇文章，感兴趣的同学可以先看一下&lt;a href=&quot;http://luckykun.com/work/2016-07-04/css3-study01.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS3初体验之奇技淫巧&lt;/a&gt;，&lt;a href=&quot;http://luckykun.com/work/2016-07-23/css3-study02.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS3 3D立方体效果－transform也不过如此&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第一篇主要列出了一些常用或经典的CSS3技巧和方法；第二篇是一个用CSS3实现的立方体实例，详细讲解了3D旋转和transform等属性。&lt;/p&gt;
+&lt;p&gt;本文再来利用CSS3属性来编写一个实例，话不多说，先直接看看效果。&lt;a href=&quot;http://luckykun.com/work/2016-11-28/3d-photos-demo.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;3D相册实例DEMO&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;因为前面已经讲解过一些属性的用法，此篇文章不再赘述，只记录这个实例的编码过程。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;布局&quot;&gt;&lt;a href=&quot;#布局&quot; class=&quot;headerlink&quot; title=&quot;布局&quot;&gt;&lt;/a&gt;布局&lt;/h1&gt;&lt;p&gt;直接看html布局：&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;my-container&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 大容器 --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;photo-wrap&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 舞台 --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;container&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;   &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 相册容器 --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img01&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img02&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img03&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img04&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img05&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img06&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img07&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img08&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img09&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;样式&quot;&gt;&lt;a href=&quot;#样式&quot; class=&quot;headerlink&quot; title=&quot;样式&quot;&gt;&lt;/a&gt;样式&lt;/h1&gt;&lt;h2 id=&quot;大容器&quot;&gt;&lt;a href=&quot;#大容器&quot; class=&quot;headerlink&quot; title=&quot;大容器&quot;&gt;&lt;/a&gt;大容器&lt;/h2&gt;&lt;p&gt;最外层的大容器根据实际情况定义样式即可。&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.my-container&lt;/span&gt; &amp;#123;        &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;800px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;500px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;20px&lt;/span&gt; auto;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;舞台元素&quot;&gt;&lt;a href=&quot;#舞台元素&quot; class=&quot;headerlink&quot; title=&quot;舞台元素&quot;&gt;&lt;/a&gt;舞台元素&lt;/h2&gt;&lt;p&gt;perspective属性用来激活一个3D空间，使其子元素都会获得透视效果（使用了3D变换的元素，此实例中也就是相册容器元素）。&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.photo-wrap&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;perspective&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;800px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;800px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;相册容器&quot;&gt;&lt;a href=&quot;#相册容器&quot; class=&quot;headerlink&quot; title=&quot;相册容器&quot;&gt;&lt;/a&gt;相册容器&lt;/h2&gt;&lt;p&gt;相册容器的&lt;code&gt;transform-style: preserve-3d;&lt;/code&gt;样式，表示所有子元素在3D空间中呈现。&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.container&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;800px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;500px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; auto;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;: relative;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform-style&lt;/span&gt;: preserve-&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;d;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;单个元素&quot;&gt;&lt;a href=&quot;#单个元素&quot; class=&quot;headerlink&quot; title=&quot;单个元素&quot;&gt;&lt;/a&gt;单个元素&lt;/h2&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;118px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;line-height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;118px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: center;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;: absolute;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;top&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;160px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;300px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;box-shadow&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;20px&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;rgba&lt;/span&gt;(0, 0, 0, 0.9) inset;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: pink;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;现在浏览器看看效果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/phtos/1111.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;右上图可以看出，现在每张图片都固定在同一个位置。很明显不是我们想要的效果。但是想要达到我们预期的效果，要怎么改变呢？&lt;/p&gt;
+&lt;p&gt;现在这些图片都在容器的最中心点以平面的形式展现的，要想形成一个圆形，就要用到旋转属性（因为要绕着Y轴旋转，所以是&lt;code&gt;rotateY&lt;/code&gt;）了。&lt;/p&gt;
+&lt;p&gt;这里一共有9张图，所以按&lt;code&gt;360/9=40度&lt;/code&gt;为单位来分别对每张图进行旋转。&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img01&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(0deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img02&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(40deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img03&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(80deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img04&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(120deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img05&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(160deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img06&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(200deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img07&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(240deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img08&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(280deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img09&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(320deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;增加旋转之后，再看看效果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/phtos/2222.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我们发现这些图片不在一个平面了，但是都挤在了一起，我们试着把每张图片都向自己的前方(&lt;code&gt;translateZ&lt;/code&gt;)移动300像素，看看会发生什么。&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img01&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(0deg) &lt;span class=&quot;built_in&quot;&gt;translateZ&lt;/span&gt;(300px);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img02&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(40deg) &lt;span class=&quot;built_in&quot;&gt;translateZ&lt;/span&gt;(300px);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img03&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(80deg) &lt;span class=&quot;built_in&quot;&gt;translateZ&lt;/span&gt;(300px);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img04&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(120deg) &lt;span class=&quot;built_in&quot;&gt;translateZ&lt;/span&gt;(300px);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img05&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(160deg) &lt;span class=&quot;built_in&quot;&gt;translateZ&lt;/span&gt;(300px);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img06&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(200deg) &lt;span class=&quot;built_in&quot;&gt;translateZ&lt;/span&gt;(300px);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img07&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(240deg) &lt;span class=&quot;built_in&quot;&gt;translateZ&lt;/span&gt;(300px);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img08&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(280deg) &lt;span class=&quot;built_in&quot;&gt;translateZ&lt;/span&gt;(300px);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.img09&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(320deg) &lt;span class=&quot;built_in&quot;&gt;translateZ&lt;/span&gt;(300px);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;增加旋转和移动之后的效果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/phtos/3333.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;至此，就已经达到我们预期的效果了。把每个图片标签加上喜欢的照片，就OK啦！&lt;/p&gt;
+&lt;h1 id=&quot;动画&quot;&gt;&lt;a href=&quot;#动画&quot; class=&quot;headerlink&quot; title=&quot;动画&quot;&gt;&lt;/a&gt;动画&lt;/h1&gt;&lt;p&gt;想要让这个相册动起来，加一个动画就好了。&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;keyframes&lt;/span&gt; rotateY360 &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;selector-tag&quot;&gt;from&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(0deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;selector-tag&quot;&gt;to&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotateY&lt;/span&gt;(360deg);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后给”相册容器”container元素添加动画属性：&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;animation&lt;/span&gt;: &lt;span class=&quot;selector-tag&quot;&gt;rotateY360&lt;/span&gt; 15&lt;span class=&quot;selector-tag&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;ease-in-out&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;infinite&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;最终，大功告成：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/phtos/gifgif.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;CSS3系列我已经写过两篇文章，感兴趣的同学可以先看一下&lt;a href=&quot;http://luckykun.com/work/2016-07-04/css3-study01.html&quot;&gt;CSS3初体验之奇技淫巧&lt;/a&gt;，&lt;a href=&quot;http://luckykun.com/work/2016-07-23/css3-study02.html&quot;&gt;CSS3 3D立方体效果－transform也不过如此&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第一篇主要列出了一些常用或经典的CSS3技巧和方法；第二篇是一个用CSS3实现的立方体实例，详细讲解了3D旋转和transform等属性。&lt;/p&gt;
+&lt;p&gt;本文再来利用CSS3属性来编写一个实例，话不多说，先直接看看效果。&lt;a href=&quot;http://luckykun.com/work/2016-11-28/3d-photos-demo.html&quot;&gt;3D相册实例DEMO&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;因为前面已经讲解过一些属性的用法，此篇文章不再赘述，只记录这个实例的编码过程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工作" scheme="http://yoursite.com/categories/work/"/>
+    
+    
+      <category term="CSS3" scheme="http://yoursite.com/tags/CSS3/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="3D效果" scheme="http://yoursite.com/tags/3D%E6%95%88%E6%9E%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3实现的3D相册效果</title>
     <link href="http://yoursite.com/work/2016-11-28/3d-photos-demo.html"/>
     <id>http://yoursite.com/work/2016-11-28/3d-photos-demo.html</id>
     <published>2016-11-28T14:30:39.000Z</published>
-    <updated>2016-11-29T15:15:56.000Z</updated>
+    <updated>2016-12-01T14:51:02.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;style&gt;
@@ -29,7 +93,7 @@
             transform: rotateY(0deg);
         }
         to {
-            transform: rotateY(360deg);
+            transform: rotateY(-360deg);
         }
     }
 
@@ -221,9 +285,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
@@ -565,7 +629,7 @@
 &lt;p&gt;但是！！！IE9以下的版本不支持呀！！&lt;/p&gt;
 &lt;p&gt;除此之外，上面的方法还有一个弊端，因为使用了ajax的上传方式，所以不能支持跨域上传，如果必须要满足这两个业务场景，那就试试下面的方法吧，借助form和iframe来实现上传。下面来详细看一下：&lt;/p&gt;
 &lt;h1 id=&quot;form表单提交到iframe&quot;&gt;&lt;a href=&quot;#form表单提交到iframe&quot; class=&quot;headerlink&quot; title=&quot;form表单提交到iframe&quot;&gt;&lt;/a&gt;form表单提交到iframe&lt;/h1&gt;&lt;p&gt;html代码:&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;iframe name=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; style=&lt;span class=&quot;string&quot;&gt;&quot;display:none&quot;&lt;/span&gt;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;form target=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; action=&lt;span class=&quot;string&quot;&gt;&quot;upload.php&quot;&lt;/span&gt; method=&lt;span class=&quot;string&quot;&gt;&quot;post&quot;&lt;/span&gt; enctype=&lt;span class=&quot;string&quot;&gt;&quot;multipart/form-data&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;input class=&quot;filename&quot; type=&quot;file&quot; name=&quot;fileLabel&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;lt;input type=&quot;submit&quot; value=&quot;提交&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/form&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;iframe name=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; style=&lt;span class=&quot;string&quot;&gt;&quot;display:none&quot;&lt;/span&gt;&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;iframe&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;form target=&lt;span class=&quot;string&quot;&gt;&quot;demoIframe&quot;&lt;/span&gt; action=&lt;span class=&quot;string&quot;&gt;&quot;upload.php&quot;&lt;/span&gt; method=&lt;span class=&quot;string&quot;&gt;&quot;post&quot;&lt;/span&gt; enctype=&lt;span class=&quot;string&quot;&gt;&quot;multipart/form-data&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;filename&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;file&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;fileLabel&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;提交&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;我们点击提交,可以看到下面的请求：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://img.alicdn.com/tps/TB1DHQaMpXXXXcaXVXXXXXXXXXX-794-199.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;已经把文件上传。那么，加入这个upload.php接口可用，而且假如上传成功后，会返回：&lt;/p&gt;
@@ -1352,9 +1416,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
-    
       <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
@@ -1976,53 +2040,6 @@
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
       <category term="es6" scheme="http://yoursite.com/tags/es6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实例demo之React-Todos</title>
-    <link href="http://yoursite.com/work/2016-05-08/react-todo-demo.html"/>
-    <id>http://yoursite.com/work/2016-05-08/react-todo-demo.html</id>
-    <published>2016-05-08T14:11:51.000Z</published>
-    <updated>2016-10-26T16:55:36.000Z</updated>
-    
-    <content type="html">&lt;hr&gt;
-&lt;header style=&quot;margin-top:-55px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/About-React/tree/master/react-todo-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
-
-&lt;div class=&quot;container react-todo-demo&quot; style=&quot;margin-top:-30px;&quot;&gt;&lt;br&gt;    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;
-
-&lt;script src=&quot;https://rawgit.com/luckykun/About-React/master/react-todo-demo/src/vendor/react.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://rawgit.com/luckykun/About-React/master/react-todo-demo/out/bundle.js&quot;&gt;&lt;/script&gt;
-
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;code&gt;React-Todos&lt;/code&gt;是一个管理任务清单的例子，数据使用localstorage存储在浏览器中，有以下几点功能：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在输入框输入任务名称，回车键显示。&lt;/li&gt;
-&lt;li&gt;勾选其中一条任务列表，表示已完成。&lt;/li&gt;
-&lt;li&gt;鼠标移入其中一个list，可以删除。&lt;/li&gt;
-&lt;li&gt;底部有全选和删除已完成任务列表的功能。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;header style=&quot;margin-top:-55px;&quot;&gt;&lt;br&gt;    &lt;h1 class=&quot;todo-title&quot;&gt;&lt;span&gt;React-Todos&lt;/span&gt;&lt;a href=&quot;https://github.com/luckykun/About-React/tree/master/react-todo-demo&quot; style=&quot;font-size:14px;font-weight:normal;&quot;&gt;view on github&lt;/a&gt;&lt;/h1&gt;&lt;br&gt;&lt;/header&gt;
-
-&lt;div class=&quot;container react-todo-demo&quot; style=&quot;margin-top:-30px;&quot;&gt;&lt;br&gt;    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;
-
-&lt;script src=&quot;https://rawgit.com/luckykun/About-React/master/react-todo-demo/src/vendor/react.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://rawgit.com/luckykun/About-React/master/react-todo-demo/out/bundle.js&quot;&gt;&lt;/script&gt;
-    
-    </summary>
-    
-      <category term="工作" scheme="http://yoursite.com/categories/work/"/>
-    
-    
-      <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
-    
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
   </entry>
   
