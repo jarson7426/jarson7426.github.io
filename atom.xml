@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-01T16:15:17.000Z</updated>
+  <updated>2016-12-01T16:21:24.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>CSS3实现的3D相册效果</title>
+    <title>如何使用CSS3实现一个3D相册</title>
     <link href="http://yoursite.com/work/2016-12-01/css3-study03.html"/>
     <id>http://yoursite.com/work/2016-12-01/css3-study03.html</id>
     <published>2016-12-01T14:49:50.000Z</published>
-    <updated>2016-12-01T16:15:17.000Z</updated>
+    <updated>2016-12-01T16:21:24.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;CSS3系列我已经写过两篇文章，感兴趣的同学可以先看一下&lt;a href=&quot;http://luckykun.com/work/2016-07-04/css3-study01.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS3初体验之奇技淫巧&lt;/a&gt;，&lt;a href=&quot;http://luckykun.com/work/2016-07-23/css3-study02.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS3 3D立方体效果－transform也不过如此&lt;/a&gt;&lt;/p&gt;
@@ -81,11 +81,11 @@
   </entry>
   
   <entry>
-    <title>CSS3实现的3D相册效果</title>
+    <title>实例demo之3D相册效果</title>
     <link href="http://yoursite.com/work/2016-11-28/3d-photos-demo.html"/>
     <id>http://yoursite.com/work/2016-11-28/3d-photos-demo.html</id>
     <published>2016-11-28T14:30:39.000Z</published>
-    <updated>2016-12-01T14:51:02.000Z</updated>
+    <updated>2016-12-01T16:20:50.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;style&gt;
@@ -1305,11 +1305,11 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="canvas" scheme="http://yoursite.com/tags/canvas/"/>
     
       <category term="html5" scheme="http://yoursite.com/tags/html5/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
