@@ -7,20 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>canvas学习之API整理笔记（二） | luckykun-不一样的世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前面我整理过一篇文章canvas常用的API总结（一），包括基本绘图的API、简单的变换和动画。本篇文章则主要内容包括高级动画、像素操作、性能优化等知识点，除此之外还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。">
+  <meta name="description" content="前面我整理过一篇文章canvas学习之API整理笔记（一），从这篇文章已经可以了解基本绘图的API、简单的变换和动画。而本篇文章的主要内容包括高级动画、像素操作、性能优化等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。除此之外，关于canvas的一系列实例即将来袭！欢迎关注！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="canvas学习之API整理笔记（二）">
 <meta property="og:url" content="http://yoursite.com/work/2016-12-12/canvas-study02.html">
 <meta property="og:site_name" content="luckykun-不一样的世界">
-<meta property="og:description" content="前面我整理过一篇文章canvas常用的API总结（一），包括基本绘图的API、简单的变换和动画。本篇文章则主要内容包括高级动画、像素操作、性能优化等知识点，除此之外还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。">
+<meta property="og:description" content="前面我整理过一篇文章canvas学习之API整理笔记（一），从这篇文章已经可以了解基本绘图的API、简单的变换和动画。而本篇文章的主要内容包括高级动画、像素操作、性能优化等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。除此之外，关于canvas的一系列实例即将来袭！欢迎关注！">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/ball1.gif">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/ball2.gif">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/color.gif">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/fangao.jpg">
-<meta property="og:updated_time" content="2016-12-12T15:17:58.000Z">
+<meta property="og:updated_time" content="2016-12-12T15:29:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="canvas学习之API整理笔记（二）">
-<meta name="twitter:description" content="前面我整理过一篇文章canvas常用的API总结（一），包括基本绘图的API、简单的变换和动画。本篇文章则主要内容包括高级动画、像素操作、性能优化等知识点，除此之外还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。">
+<meta name="twitter:description" content="前面我整理过一篇文章canvas学习之API整理笔记（一），从这篇文章已经可以了解基本绘图的API、简单的变换和动画。而本篇文章的主要内容包括高级动画、像素操作、性能优化等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。除此之外，关于canvas的一系列实例即将来袭！欢迎关注！">
 <meta name="twitter:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/ball1.gif">
   
   
@@ -336,7 +336,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>前面我整理过一篇文章<a href="http://luckykun.com/work/2016-09-01/canvas-study01.html" target="_blank" rel="external">canvas常用的API总结（一）</a>，包括基本绘图的API、简单的变换和动画。本篇文章则主要内容包括<code>高级动画、像素操作、性能优化</code>等知识点，除此之外还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。<br><a id="more"></a></p>
+<p>前面我整理过一篇文章<a href="http://luckykun.com/work/2016-09-01/canvas-study01.html" target="_blank" rel="external">canvas学习之API整理笔记（一）</a>，从这篇文章已经可以了解基本绘图的API、简单的变换和动画。而本篇文章的主要内容包括<code>高级动画、像素操作、性能优化</code>等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。<br>除此之外，关于canvas的一系列实例即将来袭！欢迎关注！<br><a id="more"></a></p>
 <h1 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h1><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> can = <span class="built_in">document</span>.getElementById(‘canvas’);</div><div class="line"><span class="comment">//创建一个画布</span></div><div class="line"><span class="keyword">var</span> ctx = can.getContext(‘<span class="number">2</span>d’);</div></pre></td></tr></table></figure>
 <p>下面所有的操作都在画布ctx上进行操作。</p>
 <h1 id="高级动画"><a href="#高级动画" class="headerlink" title="高级动画"></a>高级动画</h1><p>继上一篇简单介绍了动画（主要是requestAnimationFrame方法），现在我们来一步步实现一个在画布内滚动的实例。</p>
@@ -380,7 +380,7 @@
 <p><img src="http://7xtawy.com1.z0.glb.clouddn.com/phtos/color.gif" alt=""></p>
 <p>注意： 如果有些同学试到这里发现有这个报错内容<code>Failed to execute &#39;getImageData&#39; on &#39;CanvasRenderingContext2D&#39;: The canvas has been tainted by cross-origin data.</code>，需要检查这行代码：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">img.src = <span class="string">"img_the_scream.jpg"</span>;</div></pre></td></tr></table></figure>
-<p>这里的图片地址<code>不能是跨域地址</code>。虽然网上也有一些解决办法，但是这里不展开了。</p>
+<p>这里的图片地址<code>不能是跨域地址</code>。网上有一些解决办法，这里就不展开讲了。</p>
 <h2 id="写入像素数据"><a href="#写入像素数据" class="headerlink" title="写入像素数据"></a>写入像素数据</h2><p>你可以用<code>putImageData()方法</code>去对场景进行像素数据的写入。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">ctx.putImageData(myImageData, x, y);  <span class="comment">//在画布的(x, y)点开始绘制myImageData所存储的像素信息。</span></div></pre></td></tr></table></figure>
 <p>所以我们可以把获取到的像素信息进行处理，然后再重新绘制，就得到了新的图形。看看下面这个实例：</p>
