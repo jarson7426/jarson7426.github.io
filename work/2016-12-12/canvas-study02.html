@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/ball2.gif">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/color.gif">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/fangao.jpg">
-<meta property="og:updated_time" content="2016-12-12T15:07:56.000Z">
+<meta property="og:updated_time" content="2016-12-12T15:17:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="canvas学习之API整理笔记（二）">
 <meta name="twitter:description" content="前面我整理过一篇文章canvas常用的API总结（一），包括基本绘图的API、简单的变换和动画。本篇文章则主要内容包括高级动画、像素操作、性能优化等知识点，除此之外还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。">
@@ -336,8 +336,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>前面我整理过一篇文章<a href="http://luckykun.com/work/2016-09-01/canvas-study01.html" target="_blank" rel="external">canvas常用的API总结（一）</a>，包括基本绘图的API、简单的变换和动画。本篇文章则主要内容包括<code>高级动画、像素操作、性能优化</code>等知识点，除此之外还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。</p>
-<a id="more"></a>
+<p>前面我整理过一篇文章<a href="http://luckykun.com/work/2016-09-01/canvas-study01.html" target="_blank" rel="external">canvas常用的API总结（一）</a>，包括基本绘图的API、简单的变换和动画。本篇文章则主要内容包括<code>高级动画、像素操作、性能优化</code>等知识点，除此之外还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。<br><a id="more"></a></p>
 <h1 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h1><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> can = <span class="built_in">document</span>.getElementById(‘canvas’);</div><div class="line"><span class="comment">//创建一个画布</span></div><div class="line"><span class="keyword">var</span> ctx = can.getContext(‘<span class="number">2</span>d’);</div></pre></td></tr></table></figure>
 <p>下面所有的操作都在画布ctx上进行操作。</p>
 <h1 id="高级动画"><a href="#高级动画" class="headerlink" title="高级动画"></a>高级动画</h1><p>继上一篇简单介绍了动画（主要是requestAnimationFrame方法），现在我们来一步步实现一个在画布内滚动的实例。</p>
@@ -404,6 +403,7 @@
 </ul>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>OK，canvas常用的API就基本总结完了，靠这些API已经足够开发一些中型游戏了。比如之前自己写的<a href="http://luckykun.com/work/2016-05-30/tiny-heart-demo.html" target="_blank" rel="external">实例demo之小游戏tinyHeart</a>，就是用这些函数画出来的。关键是这些函数的组合使用，多多联系就好了。</p>
 <p>如果你把我之前的两篇文章都看了的话，相信你会对canvas越来越感兴趣。所以为了做一个有始有终的人，我后续还会出一系列的关于canvas的实例，注意，是一系列！敬请期待！</p>
+<hr>
 
       
     </div>

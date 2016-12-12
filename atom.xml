@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-12T15:07:56.000Z</updated>
+  <updated>2016-12-12T15:17:58.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,11 +20,10 @@
     <link href="http://yoursite.com/work/2016-12-12/canvas-study02.html"/>
     <id>http://yoursite.com/work/2016-12-12/canvas-study02.html</id>
     <published>2016-12-12T15:05:20.000Z</published>
-    <updated>2016-12-12T15:07:56.000Z</updated>
+    <updated>2016-12-12T15:17:58.000Z</updated>
     
     <content type="html">&lt;hr&gt;
-&lt;p&gt;前面我整理过一篇文章&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;canvas常用的API总结（一）&lt;/a&gt;，包括基本绘图的API、简单的变换和动画。本篇文章则主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，除此之外还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;前面我整理过一篇文章&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;canvas常用的API总结（一）&lt;/a&gt;，包括基本绘图的API、简单的变换和动画。本篇文章则主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，除此之外还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;开始之前&quot;&gt;&lt;a href=&quot;#开始之前&quot; class=&quot;headerlink&quot; title=&quot;开始之前&quot;&gt;&lt;/a&gt;开始之前&lt;/h1&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; can = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(‘canvas’);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//创建一个画布&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ctx = can.getContext(‘&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;d’);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;下面所有的操作都在画布ctx上进行操作。&lt;/p&gt;
 &lt;h1 id=&quot;高级动画&quot;&gt;&lt;a href=&quot;#高级动画&quot; class=&quot;headerlink&quot; title=&quot;高级动画&quot;&gt;&lt;/a&gt;高级动画&lt;/h1&gt;&lt;p&gt;继上一篇简单介绍了动画（主要是requestAnimationFrame方法），现在我们来一步步实现一个在画布内滚动的实例。&lt;/p&gt;
@@ -91,12 +90,13 @@
 &lt;/ul&gt;
 &lt;h1 id=&quot;结语&quot;&gt;&lt;a href=&quot;#结语&quot; class=&quot;headerlink&quot; title=&quot;结语&quot;&gt;&lt;/a&gt;结语&lt;/h1&gt;&lt;p&gt;OK，canvas常用的API就基本总结完了，靠这些API已经足够开发一些中型游戏了。比如之前自己写的&lt;a href=&quot;http://luckykun.com/work/2016-05-30/tiny-heart-demo.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;实例demo之小游戏tinyHeart&lt;/a&gt;，就是用这些函数画出来的。关键是这些函数的组合使用，多多联系就好了。&lt;/p&gt;
 &lt;p&gt;如果你把我之前的两篇文章都看了的话，相信你会对canvas越来越感兴趣。所以为了做一个有始有终的人，我后续还会出一系列的关于canvas的实例，注意，是一系列！敬请期待！&lt;/p&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;前面我整理过一篇文章&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot;&gt;canvas常用的API总结（一）&lt;/a&gt;，包括基本绘图的API、简单的变换和动画。本篇文章则主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，除此之外还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。&lt;/p&gt;
+&lt;p&gt;前面我整理过一篇文章&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot;&gt;canvas常用的API总结（一）&lt;/a&gt;，包括基本绘图的API、简单的变换和动画。本篇文章则主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，除此之外还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。&lt;br&gt;
     
     </summary>
     
@@ -114,14 +114,13 @@
     <link href="http://yoursite.com/work/2016-12-01/css3-study03.html"/>
     <id>http://yoursite.com/work/2016-12-01/css3-study03.html</id>
     <published>2016-12-01T14:49:50.000Z</published>
-    <updated>2016-12-01T16:21:24.000Z</updated>
+    <updated>2016-12-12T15:19:05.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;CSS3系列我已经写过两篇文章，感兴趣的同学可以先看一下&lt;a href=&quot;http://luckykun.com/work/2016-07-04/css3-study01.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS3初体验之奇技淫巧&lt;/a&gt;，&lt;a href=&quot;http://luckykun.com/work/2016-07-23/css3-study02.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS3 3D立方体效果－transform也不过如此&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;第一篇主要列出了一些常用或经典的CSS3技巧和方法；第二篇是一个用CSS3实现的立方体实例，详细讲解了3D旋转和transform等属性。&lt;/p&gt;
 &lt;p&gt;本文再来利用CSS3属性来编写一个实例，话不多说，先直接看看效果。&lt;a href=&quot;http://luckykun.com/work/2016-11-28/3d-photos-demo.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;3D相册实例DEMO&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;因为前面已经讲解过一些属性的用法，此篇文章不再赘述，只记录这个实例的编码过程。项目代码已上传至github，&lt;a href=&quot;https://github.com/luckykun/About-CSS3/blob/master/3dPhotos.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目代码github地址&lt;/a&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;因为前面已经讲解过一些属性的用法，此篇文章不再赘述，只记录这个实例的编码过程。项目代码已上传至github，&lt;a href=&quot;https://github.com/luckykun/About-CSS3/blob/master/3dPhotos.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目代码github地址&lt;/a&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;布局&quot;&gt;&lt;a href=&quot;#布局&quot; class=&quot;headerlink&quot; title=&quot;布局&quot;&gt;&lt;/a&gt;布局&lt;/h1&gt;&lt;p&gt;直接看html布局：&lt;/p&gt;
 &lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;my-container&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 大容器 --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;photo-wrap&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 舞台 --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;container&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;   &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 相册容器 --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img01&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img02&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img03&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img04&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img05&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img06&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img07&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img08&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;img img09&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h1 id=&quot;样式&quot;&gt;&lt;a href=&quot;#样式&quot; class=&quot;headerlink&quot; title=&quot;样式&quot;&gt;&lt;/a&gt;样式&lt;/h1&gt;&lt;h2 id=&quot;大容器&quot;&gt;&lt;a href=&quot;#大容器&quot; class=&quot;headerlink&quot; title=&quot;大容器&quot;&gt;&lt;/a&gt;大容器&lt;/h2&gt;&lt;p&gt;最外层的大容器根据实际情况定义样式即可。&lt;/p&gt;
@@ -151,6 +150,7 @@
 &lt;p&gt;最终，大功告成：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/phtos/gifgif.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;代码已经上传至github。&lt;a href=&quot;https://github.com/luckykun/About-CSS3/blob/master/3dPhotos.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目代码github地址&lt;/a&gt;，喜欢的童鞋们不妨点个star呀！谢谢～&lt;/p&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
@@ -159,7 +159,7 @@
 &lt;p&gt;CSS3系列我已经写过两篇文章，感兴趣的同学可以先看一下&lt;a href=&quot;http://luckykun.com/work/2016-07-04/css3-study01.html&quot;&gt;CSS3初体验之奇技淫巧&lt;/a&gt;，&lt;a href=&quot;http://luckykun.com/work/2016-07-23/css3-study02.html&quot;&gt;CSS3 3D立方体效果－transform也不过如此&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;第一篇主要列出了一些常用或经典的CSS3技巧和方法；第二篇是一个用CSS3实现的立方体实例，详细讲解了3D旋转和transform等属性。&lt;/p&gt;
 &lt;p&gt;本文再来利用CSS3属性来编写一个实例，话不多说，先直接看看效果。&lt;a href=&quot;http://luckykun.com/work/2016-11-28/3d-photos-demo.html&quot;&gt;3D相册实例DEMO&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;因为前面已经讲解过一些属性的用法，此篇文章不再赘述，只记录这个实例的编码过程。项目代码已上传至github，&lt;a href=&quot;https://github.com/luckykun/About-CSS3/blob/master/3dPhotos.html&quot;&gt;项目代码github地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;因为前面已经讲解过一些属性的用法，此篇文章不再赘述，只记录这个实例的编码过程。项目代码已上传至github，&lt;a href=&quot;https://github.com/luckykun/About-CSS3/blob/master/3dPhotos.html&quot;&gt;项目代码github地址&lt;/a&gt;&lt;br&gt;
     
     </summary>
     
@@ -288,14 +288,14 @@
     <link href="http://yoursite.com/work/2016-11-06/react-antd-demo.html"/>
     <id>http://yoursite.com/work/2016-11-06/react-antd-demo.html</id>
     <published>2016-11-06T15:28:09.000Z</published>
-    <updated>2016-11-28T14:25:57.000Z</updated>
+    <updated>2016-12-12T15:20:31.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;blockquote&gt;
 &lt;p&gt;React框架已经火了好长一段时间了，再不学就out了！&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;对React还没有了解的同学可以看看我之前的一篇文章，可以快速简单的认识一下React。&lt;a href=&quot;http://luckykun.com/work/2016-05-23/react-todo-study.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React入门最好的实例－TodoList&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;自己从开始接触react一窍不通，到慢慢的似懂非懂，通过各种途径学习也有一阵了。学习过程中还会接触到很多新的东西，比如ES6、webpack，过程艰辛谁人懂，见坑填坑慢慢来。今天把学习过程过滤了一下，只说项目实际需要用的东西，总结了一套能看到的东西，分享给大家，希望能让读者少踩一些坑！&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;自己从开始接触react一窍不通，到慢慢的似懂非懂，通过各种途径学习也有一阵了。学习过程中还会接触到很多新的东西，比如ES6、webpack，过程艰辛谁人懂，见坑填坑慢慢来。今天把学习过程过滤了一下，只说项目实际需要用的东西，总结了一套能看到的东西，分享给大家，希望能让读者少踩一些坑！ &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;本文看点&quot;&gt;&lt;a href=&quot;#本文看点&quot; class=&quot;headerlink&quot; title=&quot;本文看点&quot;&gt;&lt;/a&gt;本文看点&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;实际项目效果&lt;/code&gt;：最终你只需要在本地启一个服务，就能看到运行效果。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;webpack的配置&lt;/code&gt;：项目实战中常用的插件和配置方法。&lt;/li&gt;
@@ -364,6 +364,7 @@
 &lt;h1 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;p&gt;上面项目的完整代码我已放到了Github上。&lt;a href=&quot;https://github.com/luckykun/About-React/tree/master/react-antd-demo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;基于react+antd的项目实例&lt;/a&gt;，喜欢的看官麻烦star一下啦！谢谢～&lt;/p&gt;
 &lt;p&gt;大家可以把代码down下来之后直接按照上文步骤就可在本地预览效果，如有不懂的地方，欢迎留言咨询！&lt;/p&gt;
 &lt;p&gt;学习的过程枯燥艰辛，但是取得的成果却令人兴奋。所以我们还是要不忘初心，不忘学习！&lt;/p&gt;
+&lt;hr&gt;
 </content>
     
     <summary type="html">
@@ -373,7 +374,7 @@
 &lt;p&gt;React框架已经火了好长一段时间了，再不学就out了！&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;对React还没有了解的同学可以看看我之前的一篇文章，可以快速简单的认识一下React。&lt;a href=&quot;http://luckykun.com/work/2016-05-23/react-todo-study.html&quot;&gt;React入门最好的实例－TodoList&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;自己从开始接触react一窍不通，到慢慢的似懂非懂，通过各种途径学习也有一阵了。学习过程中还会接触到很多新的东西，比如ES6、webpack，过程艰辛谁人懂，见坑填坑慢慢来。今天把学习过程过滤了一下，只说项目实际需要用的东西，总结了一套能看到的东西，分享给大家，希望能让读者少踩一些坑！&lt;br&gt;
+&lt;p&gt;自己从开始接触react一窍不通，到慢慢的似懂非懂，通过各种途径学习也有一阵了。学习过程中还会接触到很多新的东西，比如ES6、webpack，过程艰辛谁人懂，见坑填坑慢慢来。今天把学习过程过滤了一下，只说项目实际需要用的东西，总结了一套能看到的东西，分享给大家，希望能让读者少踩一些坑！
     
     </summary>
     
@@ -1277,11 +1278,11 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
+      <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
+    
       <category term="canvas" scheme="http://yoursite.com/tags/canvas/"/>
     
       <category term="html5" scheme="http://yoursite.com/tags/html5/"/>
-    
-      <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
     
   </entry>
   
