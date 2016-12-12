@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-12T15:34:58.000Z</updated>
+  <updated>2016-12-12T15:52:11.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://yoursite.com/work/2016-12-12/canvas-study02.html"/>
     <id>http://yoursite.com/work/2016-12-12/canvas-study02.html</id>
     <published>2016-12-12T15:05:20.000Z</published>
-    <updated>2016-12-12T15:34:58.000Z</updated>
+    <updated>2016-12-12T15:52:11.000Z</updated>
     
     <content type="html">&lt;hr&gt;
-&lt;p&gt;前面我整理过一篇文章&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;canvas学习之API整理笔记（一）&lt;/a&gt;，从这篇文章已经可以了解基本绘图的API、简单的变换和动画。而本篇文章的主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。&lt;br&gt;除此之外，关于canvas的一系列实例即将来袭！欢迎关注！&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;前面我整理过一篇文章&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;canvas学习之API整理笔记（一）&lt;/a&gt;，从这篇文章我们已经可以基本了解到常用绘图的API、简单的变换和动画。而本篇文章的主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们全程在线，毫无尿点，看完不会后悔，哈哈，一个耿直的笑^_^。&lt;br&gt;除此之外，关于canvas的一系列实例即将来袭！欢迎关注！&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;开始之前&quot;&gt;&lt;a href=&quot;#开始之前&quot; class=&quot;headerlink&quot; title=&quot;开始之前&quot;&gt;&lt;/a&gt;开始之前&lt;/h1&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; can = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(‘canvas’);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//创建一个画布&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ctx = can.getContext(‘&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;d’);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;下面所有的操作都在画布ctx上进行操作。&lt;/p&gt;
 &lt;h1 id=&quot;高级动画&quot;&gt;&lt;a href=&quot;#高级动画&quot; class=&quot;headerlink&quot; title=&quot;高级动画&quot;&gt;&lt;/a&gt;高级动画&lt;/h1&gt;&lt;p&gt;继上一篇简单介绍了动画（主要是requestAnimationFrame方法），现在我们来一步步实现一个在画布内滚动的实例。&lt;/p&gt;
@@ -82,7 +82,7 @@
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;canvas id=&lt;span class=&quot;string&quot;&gt;&quot;background-can&quot;&lt;/span&gt; width=&lt;span class=&quot;string&quot;&gt;&quot;480&quot;&lt;/span&gt; height=&lt;span class=&quot;string&quot;&gt;&quot;320&quot;&lt;/span&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;canvas id=&lt;span class=&quot;string&quot;&gt;&quot;game-can&quot;&lt;/span&gt; width=&lt;span class=&quot;string&quot;&gt;&quot;480&quot;&lt;/span&gt; height=&lt;span class=&quot;string&quot;&gt;&quot;320&quot;&lt;/span&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;用CSS设置静态大图&quot;&gt;&lt;a href=&quot;#用CSS设置静态大图&quot; class=&quot;headerlink&quot; title=&quot;用CSS设置静态大图&quot;&gt;&lt;/a&gt;用CSS设置静态大图&lt;/h2&gt;&lt;p&gt;如果有一层是永远不变的，比如一张静态的背景图，最好使用&lt;code&gt;div+css的方法去替代ctx.drawimage()&lt;/code&gt;，这么做可以避免在每一帧在画布上绘制大图。简单讲，dom渲染肯定比canvas的操作性能更高。&lt;/p&gt;
 &lt;h2 id=&quot;尽量少操作canvas的缩放&quot;&gt;&lt;a href=&quot;#尽量少操作canvas的缩放&quot; class=&quot;headerlink&quot; title=&quot;尽量少操作canvas的缩放&quot;&gt;&lt;/a&gt;尽量少操作canvas的缩放&lt;/h2&gt;&lt;p&gt;如果要对一个画布进行缩放，如果可以的话，尽量使用CSS3的transform来实现。总之，记住一个原则，能用html+div实现的尽量不用js对canvas进行操作。&lt;/p&gt;
-&lt;h2 id=&quot;更多&quot;&gt;&lt;a href=&quot;#更多&quot; class=&quot;headerlink&quot; title=&quot;更多&quot;&gt;&lt;/a&gt;更多&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&quot;更多Tips&quot;&gt;&lt;a href=&quot;#更多Tips&quot; class=&quot;headerlink&quot; title=&quot;更多Tips&quot;&gt;&lt;/a&gt;更多Tips&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;将画布的函数调用集合到一起（例如，画一条折线，而不要画多条分开的直线）&lt;/li&gt;
 &lt;li&gt;使用不同的办法去清除画布(clearRect()、fillRect()、调整canvas大小)&lt;/li&gt;
 &lt;li&gt;尽可能避免 shadowBlur特性&lt;/li&gt;
@@ -96,7 +96,7 @@
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;前面我整理过一篇文章&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot;&gt;canvas学习之API整理笔记（一）&lt;/a&gt;，从这篇文章已经可以了解基本绘图的API、简单的变换和动画。而本篇文章的主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。&lt;br&gt;除此之外，关于canvas的一系列实例即将来袭！欢迎关注！&lt;br&gt;
+&lt;p&gt;前面我整理过一篇文章&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot;&gt;canvas学习之API整理笔记（一）&lt;/a&gt;，从这篇文章我们已经可以基本了解到常用绘图的API、简单的变换和动画。而本篇文章的主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们全程在线，毫无尿点，看完不会后悔，哈哈，一个耿直的笑^_^。&lt;br&gt;除此之外，关于canvas的一系列实例即将来袭！欢迎关注！&lt;br&gt;
     
     </summary>
     

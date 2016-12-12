@@ -7,20 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>canvas学习之API整理笔记（二） | luckykun-不一样的世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前面我整理过一篇文章canvas学习之API整理笔记（一），从这篇文章已经可以了解基本绘图的API、简单的变换和动画。而本篇文章的主要内容包括高级动画、像素操作、性能优化等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。除此之外，关于canvas的一系列实例即将来袭！欢迎关注！">
+  <meta name="description" content="前面我整理过一篇文章canvas学习之API整理笔记（一），从这篇文章我们已经可以基本了解到常用绘图的API、简单的变换和动画。而本篇文章的主要内容包括高级动画、像素操作、性能优化等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们全程在线，毫无尿点，看完不会后悔，哈哈，一个耿直的笑^_^。除此之外，关于canvas的一系列实例即将来袭！欢迎关注！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="canvas学习之API整理笔记（二）">
 <meta property="og:url" content="http://yoursite.com/work/2016-12-12/canvas-study02.html">
 <meta property="og:site_name" content="luckykun-不一样的世界">
-<meta property="og:description" content="前面我整理过一篇文章canvas学习之API整理笔记（一），从这篇文章已经可以了解基本绘图的API、简单的变换和动画。而本篇文章的主要内容包括高级动画、像素操作、性能优化等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。除此之外，关于canvas的一系列实例即将来袭！欢迎关注！">
+<meta property="og:description" content="前面我整理过一篇文章canvas学习之API整理笔记（一），从这篇文章我们已经可以基本了解到常用绘图的API、简单的变换和动画。而本篇文章的主要内容包括高级动画、像素操作、性能优化等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们全程在线，毫无尿点，看完不会后悔，哈哈，一个耿直的笑^_^。除此之外，关于canvas的一系列实例即将来袭！欢迎关注！">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/ball1.gif">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/ball2.gif">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/color.gif">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/fangao.jpg">
-<meta property="og:updated_time" content="2016-12-12T15:34:58.000Z">
+<meta property="og:updated_time" content="2016-12-12T15:52:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="canvas学习之API整理笔记（二）">
-<meta name="twitter:description" content="前面我整理过一篇文章canvas学习之API整理笔记（一），从这篇文章已经可以了解基本绘图的API、简单的变换和动画。而本篇文章的主要内容包括高级动画、像素操作、性能优化等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。除此之外，关于canvas的一系列实例即将来袭！欢迎关注！">
+<meta name="twitter:description" content="前面我整理过一篇文章canvas学习之API整理笔记（一），从这篇文章我们已经可以基本了解到常用绘图的API、简单的变换和动画。而本篇文章的主要内容包括高级动画、像素操作、性能优化等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们全程在线，毫无尿点，看完不会后悔，哈哈，一个耿直的笑^_^。除此之外，关于canvas的一系列实例即将来袭！欢迎关注！">
 <meta name="twitter:image" content="http://7xtawy.com1.z0.glb.clouddn.com/phtos/ball1.gif">
   
   
@@ -161,7 +161,7 @@
 						<li>云标签</li>
 						
 						
-						<!-- <li>About</li> -->
+						<!-- <li>Über</li> -->
 						<li>关于我</li>
 						
 					</ul>
@@ -330,13 +330,13 @@
     <div id="toc" class="toc-article">
     <span class="toc-close" title="隐藏导航">×</span>
     <!-- <strong class="toc-title">文章目录</strong> -->
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#开始之前"><span class="toc-number">1.</span> <span class="toc-text">开始之前</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#高级动画"><span class="toc-number">2.</span> <span class="toc-text">高级动画</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#像素操作"><span class="toc-number">3.</span> <span class="toc-text">像素操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建ImageData对象"><span class="toc-number">3.1.</span> <span class="toc-text">创建ImageData对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取像素数据"><span class="toc-number">3.2.</span> <span class="toc-text">获取像素数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写入像素数据"><span class="toc-number">3.3.</span> <span class="toc-text">写入像素数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能优化"><span class="toc-number">4.</span> <span class="toc-text">性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#坐标点尽量用整数"><span class="toc-number">4.1.</span> <span class="toc-text">坐标点尽量用整数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用多个画布绘制复杂场景"><span class="toc-number">4.2.</span> <span class="toc-text">使用多个画布绘制复杂场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用CSS设置静态大图"><span class="toc-number">4.3.</span> <span class="toc-text">用CSS设置静态大图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#尽量少操作canvas的缩放"><span class="toc-number">4.4.</span> <span class="toc-text">尽量少操作canvas的缩放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更多"><span class="toc-number">4.5.</span> <span class="toc-text">更多</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结语"><span class="toc-number">5.</span> <span class="toc-text">结语</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#开始之前"><span class="toc-number">1.</span> <span class="toc-text">开始之前</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#高级动画"><span class="toc-number">2.</span> <span class="toc-text">高级动画</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#像素操作"><span class="toc-number">3.</span> <span class="toc-text">像素操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建ImageData对象"><span class="toc-number">3.1.</span> <span class="toc-text">创建ImageData对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取像素数据"><span class="toc-number">3.2.</span> <span class="toc-text">获取像素数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写入像素数据"><span class="toc-number">3.3.</span> <span class="toc-text">写入像素数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能优化"><span class="toc-number">4.</span> <span class="toc-text">性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#坐标点尽量用整数"><span class="toc-number">4.1.</span> <span class="toc-text">坐标点尽量用整数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用多个画布绘制复杂场景"><span class="toc-number">4.2.</span> <span class="toc-text">使用多个画布绘制复杂场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用CSS设置静态大图"><span class="toc-number">4.3.</span> <span class="toc-text">用CSS设置静态大图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#尽量少操作canvas的缩放"><span class="toc-number">4.4.</span> <span class="toc-text">尽量少操作canvas的缩放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更多Tips"><span class="toc-number">4.5.</span> <span class="toc-text">更多Tips</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结语"><span class="toc-number">5.</span> <span class="toc-text">结语</span></a></li></ol>
     </div>
     
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>前面我整理过一篇文章<a href="http://luckykun.com/work/2016-09-01/canvas-study01.html" target="_blank" rel="external">canvas学习之API整理笔记（一）</a>，从这篇文章已经可以了解基本绘图的API、简单的变换和动画。而本篇文章的主要内容包括<code>高级动画、像素操作、性能优化</code>等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们看完不会后悔，哈哈，一个耿直的笑^_^。<br>除此之外，关于canvas的一系列实例即将来袭！欢迎关注！<br><a id="more"></a></p>
+<p>前面我整理过一篇文章<a href="http://luckykun.com/work/2016-09-01/canvas-study01.html" target="_blank" rel="external">canvas学习之API整理笔记（一）</a>，从这篇文章我们已经可以基本了解到常用绘图的API、简单的变换和动画。而本篇文章的主要内容包括<code>高级动画、像素操作、性能优化</code>等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们全程在线，毫无尿点，看完不会后悔，哈哈，一个耿直的笑^_^。<br>除此之外，关于canvas的一系列实例即将来袭！欢迎关注！<br><a id="more"></a></p>
 <h1 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h1><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> can = <span class="built_in">document</span>.getElementById(‘canvas’);</div><div class="line"><span class="comment">//创建一个画布</span></div><div class="line"><span class="keyword">var</span> ctx = can.getContext(‘<span class="number">2</span>d’);</div></pre></td></tr></table></figure>
 <p>下面所有的操作都在画布ctx上进行操作。</p>
 <h1 id="高级动画"><a href="#高级动画" class="headerlink" title="高级动画"></a>高级动画</h1><p>继上一篇简单介绍了动画（主要是requestAnimationFrame方法），现在我们来一步步实现一个在画布内滚动的实例。</p>
@@ -395,7 +395,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;canvas id=<span class="string">"background-can"</span> width=<span class="string">"480"</span> height=<span class="string">"320"</span>&gt;&lt;/canvas&gt;</div><div class="line">&lt;canvas id=<span class="string">"game-can"</span> width=<span class="string">"480"</span> height=<span class="string">"320"</span>&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure>
 <h2 id="用CSS设置静态大图"><a href="#用CSS设置静态大图" class="headerlink" title="用CSS设置静态大图"></a>用CSS设置静态大图</h2><p>如果有一层是永远不变的，比如一张静态的背景图，最好使用<code>div+css的方法去替代ctx.drawimage()</code>，这么做可以避免在每一帧在画布上绘制大图。简单讲，dom渲染肯定比canvas的操作性能更高。</p>
 <h2 id="尽量少操作canvas的缩放"><a href="#尽量少操作canvas的缩放" class="headerlink" title="尽量少操作canvas的缩放"></a>尽量少操作canvas的缩放</h2><p>如果要对一个画布进行缩放，如果可以的话，尽量使用CSS3的transform来实现。总之，记住一个原则，能用html+div实现的尽量不用js对canvas进行操作。</p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><ul>
+<h2 id="更多Tips"><a href="#更多Tips" class="headerlink" title="更多Tips"></a>更多Tips</h2><ul>
 <li>将画布的函数调用集合到一起（例如，画一条折线，而不要画多条分开的直线）</li>
 <li>使用不同的办法去清除画布(clearRect()、fillRect()、调整canvas大小)</li>
 <li>尽可能避免 shadowBlur特性</li>
