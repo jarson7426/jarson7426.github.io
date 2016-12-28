@@ -9,24 +9,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="想看前面整理的canvas常用API的同学可以点下面：
 canvas学习之API整理笔记（一）canvas学习之API整理笔记（二）
-从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘制多边形的方法。">
+项目代码github地址，喜欢的同学们欢迎点Star～
+从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘">
 <meta property="og:type" content="article">
 <meta property="og:title" content="canvas快速绘制三角形、矩形、多边形">
 <meta property="og:url" content="http://yoursite.com/work/2016-12-28/canvas-study03.html">
 <meta property="og:site_name" content="luckykun-不一样的世界">
 <meta property="og:description" content="想看前面整理的canvas常用API的同学可以点下面：
 canvas学习之API整理笔记（一）canvas学习之API整理笔记（二）
-从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘制多边形的方法。">
+项目代码github地址，喜欢的同学们欢迎点Star～
+从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘">
 <meta property="og:image" content="http://files.cnblogs.com/files/jarson-7426/yuanxing.gif">
 <meta property="og:image" content="http://files.cnblogs.com/files/jarson-7426/sanjiao.gif">
 <meta property="og:image" content="http://files.cnblogs.com/files/jarson-7426/rect.gif">
 <meta property="og:image" content="http://7xtawy.com1.z0.glb.clouddn.com/duobian.png">
-<meta property="og:updated_time" content="2016-12-28T15:59:58.000Z">
+<meta property="og:updated_time" content="2016-12-28T16:11:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="canvas快速绘制三角形、矩形、多边形">
 <meta name="twitter:description" content="想看前面整理的canvas常用API的同学可以点下面：
 canvas学习之API整理笔记（一）canvas学习之API整理笔记（二）
-从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘制多边形的方法。">
+项目代码github地址，喜欢的同学们欢迎点Star～
+从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘">
 <meta name="twitter:image" content="http://files.cnblogs.com/files/jarson-7426/yuanxing.gif">
   
   
@@ -344,7 +347,9 @@ canvas学习之API整理笔记（一）canvas学习之API整理笔记（二）
         <hr>
 <p>想看前面整理的canvas常用API的同学可以点下面：</p>
 <p><a href="http://luckykun.com/work/2016-09-01/canvas-study01.html" target="_blank" rel="external">canvas学习之API整理笔记（一）</a><br><a href="http://luckykun.com/work/2016-09-01/canvas-study02.html" target="_blank" rel="external">canvas学习之API整理笔记（二）</a></p>
-<p>从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘制多边形的方法。 <a id="more"></a></p>
+<p><a href="https://github.com/luckykun/About-Canvas" target="_blank" rel="external">项目代码github地址</a>，喜欢的同学们欢迎点Star～</p>
+<p>从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘制多边形的方法。</p>
+<a id="more"></a>
 <h1 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h1><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//获取canvas容器</span></div><div class="line"><span class="keyword">var</span> can = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>);</div><div class="line"><span class="comment">//创建一个画布</span></div><div class="line"><span class="keyword">var</span> ctx = can.getContext(<span class="string">'2d'</span>);</div></pre></td></tr></table></figure>
 <h1 id="绘制圆形"><a href="#绘制圆形" class="headerlink" title="绘制圆形"></a>绘制圆形</h1><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> draw = <span class="function"><span class="keyword">function</span>(<span class="params">x, y, r, start, end, color, type</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> unit = <span class="built_in">Math</span>.PI / <span class="number">180</span>;</div><div class="line">    ctx.beginPath();</div><div class="line">    ctx.arc(x, y, r, start * unit, end * unit);</div><div class="line">    ctx[type + <span class="string">'Style'</span>] = color;</div><div class="line">    ctx.closePath();</div><div class="line">    ctx[type]();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>参数解释</code>：x,y-圆心；start-起始角度；end-结束角度；color-绘制颜色；type-绘制类型（’fill’和’stroke’）。</p>
@@ -375,6 +380,7 @@ canvas学习之API整理笔记（一）canvas学习之API整理笔记（二）
 <p>上图效果的代码如下：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">上图<span class="number">1</span>的代码：</div><div class="line">drawPolygon(ctx, &#123;</div><div class="line">    num: <span class="number">6</span>,</div><div class="line">    r: <span class="number">100</span>,</div><div class="line">    strokeStyle: <span class="string">'blue'</span>,</div><div class="line">    fillStyle: <span class="string">'#9da'</span></div><div class="line">&#125;)</div><div class="line">上图<span class="number">2</span>的代码：</div><div class="line">drawPolygon(ctx, &#123;</div><div class="line">    num: <span class="number">4</span>,</div><div class="line">    r: <span class="number">150</span>,</div><div class="line">    strokeStyle: <span class="string">'red'</span>,</div><div class="line">    width: <span class="number">4</span></div><div class="line">&#125;)</div><div class="line">上图<span class="number">3</span>的代码：</div><div class="line">drawPolygon(ctx, &#123;</div><div class="line">    x: <span class="number">800</span>,</div><div class="line">    y: <span class="number">250</span>,</div><div class="line">    num: <span class="number">10</span>,</div><div class="line">    fillStyle: <span class="string">'#000'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>我们总结一下，使用canvas绘制图形就是那几个函数：<code>beginPath</code>、<code>arc</code>、<code>moveTo</code>、<code>lineTo</code>、<code>closePath</code>、<code>fill</code>、<code>stroke</code>。当我们能够熟练掌握并运用自如的时候，就能够独当一面了。加油吧，骚年们！</p>
+<p>本文涉及的代码我已经上传至github，<a href="https://github.com/luckykun/About-Canvas/tree/master/canvas-polygon" target="_blank" rel="external">项目代码github地址</a>，喜欢的同学点个Star，多谢多谢～</p>
 <hr>
 
       

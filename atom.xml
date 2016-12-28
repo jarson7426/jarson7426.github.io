@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-28T15:59:58.000Z</updated>
+  <updated>2016-12-28T16:11:28.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,12 +20,14 @@
     <link href="http://yoursite.com/work/2016-12-28/canvas-study03.html"/>
     <id>http://yoursite.com/work/2016-12-28/canvas-study03.html</id>
     <published>2016-12-28T15:55:55.000Z</published>
-    <updated>2016-12-28T15:59:58.000Z</updated>
+    <updated>2016-12-28T16:11:28.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;想看前面整理的canvas常用API的同学可以点下面：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;canvas学习之API整理笔记（一）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study02.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;canvas学习之API整理笔记（二）&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘制多边形的方法。 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/luckykun/About-Canvas&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目代码github地址&lt;/a&gt;，喜欢的同学们欢迎点Star～&lt;/p&gt;
+&lt;p&gt;从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘制多边形的方法。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;开始之前&quot;&gt;&lt;a href=&quot;#开始之前&quot; class=&quot;headerlink&quot; title=&quot;开始之前&quot;&gt;&lt;/a&gt;开始之前&lt;/h1&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//获取canvas容器&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; can = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;canvas&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//创建一个画布&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ctx = can.getContext(&lt;span class=&quot;string&quot;&gt;&#39;2d&#39;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h1 id=&quot;绘制圆形&quot;&gt;&lt;a href=&quot;#绘制圆形&quot; class=&quot;headerlink&quot; title=&quot;绘制圆形&quot;&gt;&lt;/a&gt;绘制圆形&lt;/h1&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; draw = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x, y, r, start, end, color, type&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; unit = &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.PI / &lt;span class=&quot;number&quot;&gt;180&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.beginPath();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.arc(x, y, r, start * unit, end * unit);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx[type + &lt;span class=&quot;string&quot;&gt;&#39;Style&#39;&lt;/span&gt;] = color;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.closePath();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx[type]();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;code&gt;参数解释&lt;/code&gt;：x,y-圆心；start-起始角度；end-结束角度；color-绘制颜色；type-绘制类型（’fill’和’stroke’）。&lt;/p&gt;
@@ -56,6 +58,7 @@
 &lt;p&gt;上图效果的代码如下：&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;上图&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;的代码：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;drawPolygon(ctx, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    num: &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    r: &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    strokeStyle: &lt;span class=&quot;string&quot;&gt;&#39;blue&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    fillStyle: &lt;span class=&quot;string&quot;&gt;&#39;#9da&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;上图&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;的代码：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;drawPolygon(ctx, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    num: &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    r: &lt;span class=&quot;number&quot;&gt;150&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    strokeStyle: &lt;span class=&quot;string&quot;&gt;&#39;red&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    width: &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;上图&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;的代码：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;drawPolygon(ctx, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x: &lt;span class=&quot;number&quot;&gt;800&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    y: &lt;span class=&quot;number&quot;&gt;250&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    num: &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    fillStyle: &lt;span class=&quot;string&quot;&gt;&#39;#000&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h1 id=&quot;结语&quot;&gt;&lt;a href=&quot;#结语&quot; class=&quot;headerlink&quot; title=&quot;结语&quot;&gt;&lt;/a&gt;结语&lt;/h1&gt;&lt;p&gt;我们总结一下，使用canvas绘制图形就是那几个函数：&lt;code&gt;beginPath&lt;/code&gt;、&lt;code&gt;arc&lt;/code&gt;、&lt;code&gt;moveTo&lt;/code&gt;、&lt;code&gt;lineTo&lt;/code&gt;、&lt;code&gt;closePath&lt;/code&gt;、&lt;code&gt;fill&lt;/code&gt;、&lt;code&gt;stroke&lt;/code&gt;。当我们能够熟练掌握并运用自如的时候，就能够独当一面了。加油吧，骚年们！&lt;/p&gt;
+&lt;p&gt;本文涉及的代码我已经上传至github，&lt;a href=&quot;https://github.com/luckykun/About-Canvas/tree/master/canvas-polygon&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目代码github地址&lt;/a&gt;，喜欢的同学点个Star，多谢多谢～&lt;/p&gt;
 &lt;hr&gt;
 </content>
     
@@ -64,7 +67,8 @@
       &lt;hr&gt;
 &lt;p&gt;想看前面整理的canvas常用API的同学可以点下面：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot;&gt;canvas学习之API整理笔记（一）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study02.html&quot;&gt;canvas学习之API整理笔记（二）&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘制多边形的方法。
+&lt;p&gt;&lt;a href=&quot;https://github.com/luckykun/About-Canvas&quot;&gt;项目代码github地址&lt;/a&gt;，喜欢的同学们欢迎点Star～&lt;/p&gt;
+&lt;p&gt;从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘制多边形的方法。&lt;/p&gt;
     
     </summary>
     
