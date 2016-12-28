@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-24T14:11:48.000Z</updated>
+  <updated>2016-12-28T15:59:58.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,14 +16,76 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>canvas快速绘制三角形、矩形、多边形</title>
+    <link href="http://yoursite.com/work/2016-12-28/canvas-study03.html"/>
+    <id>http://yoursite.com/work/2016-12-28/canvas-study03.html</id>
+    <published>2016-12-28T15:55:55.000Z</published>
+    <updated>2016-12-28T15:59:58.000Z</updated>
+    
+    <content type="html">&lt;hr&gt;
+&lt;p&gt;想看前面整理的canvas常用API的同学可以点下面：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;canvas学习之API整理笔记（一）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study02.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;canvas学习之API整理笔记（二）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘制多边形的方法。 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;开始之前&quot;&gt;&lt;a href=&quot;#开始之前&quot; class=&quot;headerlink&quot; title=&quot;开始之前&quot;&gt;&lt;/a&gt;开始之前&lt;/h1&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//获取canvas容器&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; can = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;canvas&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//创建一个画布&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ctx = can.getContext(&lt;span class=&quot;string&quot;&gt;&#39;2d&#39;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;绘制圆形&quot;&gt;&lt;a href=&quot;#绘制圆形&quot; class=&quot;headerlink&quot; title=&quot;绘制圆形&quot;&gt;&lt;/a&gt;绘制圆形&lt;/h1&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; draw = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x, y, r, start, end, color, type&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; unit = &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.PI / &lt;span class=&quot;number&quot;&gt;180&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.beginPath();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.arc(x, y, r, start * unit, end * unit);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx[type + &lt;span class=&quot;string&quot;&gt;&#39;Style&#39;&lt;/span&gt;] = color;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.closePath();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx[type]();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;参数解释&lt;/code&gt;：x,y-圆心；start-起始角度；end-结束角度；color-绘制颜色；type-绘制类型（’fill’和’stroke’）。&lt;/p&gt;
+&lt;p&gt;实例如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://files.cnblogs.com/files/jarson-7426/yuanxing.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;绘制三角形&quot;&gt;&lt;a href=&quot;#绘制三角形&quot; class=&quot;headerlink&quot; title=&quot;绘制三角形&quot;&gt;&lt;/a&gt;绘制三角形&lt;/h1&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; draw = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x1, y1, x2, y2, x3, y3, color, type&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.beginPath();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.moveTo(x1, y1);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.lineTo(x2, y2);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.lineTo(x3, y3);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      ctx[type + &lt;span class=&quot;string&quot;&gt;&#39;Style&#39;&lt;/span&gt;] = color;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      ctx.closePath();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx[type]();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;参数解释&lt;/code&gt;：x1(2、3),y1(2、3)-三角形的三个点的坐标；color-绘制颜色；type-绘制类型（’fill’和’stroke’）。&lt;/p&gt;
+&lt;p&gt;实例如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://files.cnblogs.com/files/jarson-7426/sanjiao.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;绘制（圆角）矩形&quot;&gt;&lt;a href=&quot;#绘制（圆角）矩形&quot; class=&quot;headerlink&quot; title=&quot;绘制（圆角）矩形&quot;&gt;&lt;/a&gt;绘制（圆角）矩形&lt;/h1&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; draw = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x, y, width, height, radius, color, type&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.beginPath();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.moveTo(x, y+radius);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.lineTo(x, y+height-radius);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.quadraticCurveTo(x, y+height, x+radius, y+height);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.lineTo(x+width-radius, y+height);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.quadraticCurveTo(x+width, y+height, x+width, y+height-radius);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.lineTo(x+width, y+radius);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.quadraticCurveTo(x+width, y, x+width-radius, y);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.lineTo(x+radius, y);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.quadraticCurveTo(x, y, x, y+radius);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      ctx[type + &lt;span class=&quot;string&quot;&gt;&#39;Style&#39;&lt;/span&gt;] = color || params.color;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.closePath();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx[type]();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;参数解释&lt;/code&gt;：x,y-左上角点的坐标；width、height-宽高；radius-圆角；color-绘制颜色；type-绘制类型（’fill’和’stroke’）。&lt;/p&gt;
+&lt;p&gt;实例如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://files.cnblogs.com/files/jarson-7426/rect.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;绘制多边形&quot;&gt;&lt;a href=&quot;#绘制多边形&quot; class=&quot;headerlink&quot; title=&quot;绘制多边形&quot;&gt;&lt;/a&gt;绘制多边形&lt;/h1&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; drawPolygon = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;ctx, conf&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; x = conf &amp;amp;&amp;amp; conf.x || &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;  &lt;span class=&quot;comment&quot;&gt;//中心点x坐标&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; y = conf &amp;amp;&amp;amp; conf.y || &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;  &lt;span class=&quot;comment&quot;&gt;//中心点y坐标&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; num = conf &amp;amp;&amp;amp; conf.num || &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;;   &lt;span class=&quot;comment&quot;&gt;//图形边的个数&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; r = conf &amp;amp;&amp;amp; conf.r || &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;;   &lt;span class=&quot;comment&quot;&gt;//图形的半径&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; width = conf &amp;amp;&amp;amp; conf.width || &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; strokeStyle = conf &amp;amp;&amp;amp; conf.strokeStyle;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; fillStyle = conf &amp;amp;&amp;amp; conf.fillStyle;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//开始路径&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.beginPath();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; startX = x + r * &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.cos(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.PI*&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;/num);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; startY = y + r * &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.sin(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.PI*&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;/num);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.moveTo(startX, startY);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i &amp;lt;= num; i++) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; newX = x + r * &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.cos(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.PI*i/num);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; newY = y + r * &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.sin(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.PI*i/num);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ctx.lineTo(newX, newY);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ctx.closePath();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//路径闭合&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(strokeStyle) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ctx.strokeStyle = strokeStyle;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ctx.lineWidth = width;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ctx.lineJoin = &lt;span class=&quot;string&quot;&gt;&#39;round&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ctx.stroke();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(fillStyle) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ctx.fillStyle = fillStyle;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        ctx.fill();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;参数说明：&lt;/p&gt;
+&lt;p&gt;ctx: canvas画布&lt;/p&gt;
+&lt;p&gt;conf: 配置项，提供以下一些配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;x： 中心点横坐标&lt;/li&gt;
+&lt;li&gt;y： 中心点纵坐标&lt;/li&gt;
+&lt;li&gt;num: 多边形的边数&lt;/li&gt;
+&lt;li&gt;r：多边形的半径长度&lt;/li&gt;
+&lt;li&gt;width：多边形线的宽度&lt;/li&gt;
+&lt;li&gt;strokeStyle：边线的颜色&lt;/li&gt;
+&lt;li&gt;fillStyle：填充的颜色&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/duobian.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;上图效果的代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;上图&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;的代码：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;drawPolygon(ctx, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    num: &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    r: &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    strokeStyle: &lt;span class=&quot;string&quot;&gt;&#39;blue&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    fillStyle: &lt;span class=&quot;string&quot;&gt;&#39;#9da&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;上图&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;的代码：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;drawPolygon(ctx, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    num: &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    r: &lt;span class=&quot;number&quot;&gt;150&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    strokeStyle: &lt;span class=&quot;string&quot;&gt;&#39;red&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    width: &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;上图&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;的代码：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;drawPolygon(ctx, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    x: &lt;span class=&quot;number&quot;&gt;800&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    y: &lt;span class=&quot;number&quot;&gt;250&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    num: &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    fillStyle: &lt;span class=&quot;string&quot;&gt;&#39;#000&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;结语&quot;&gt;&lt;a href=&quot;#结语&quot; class=&quot;headerlink&quot; title=&quot;结语&quot;&gt;&lt;/a&gt;结语&lt;/h1&gt;&lt;p&gt;我们总结一下，使用canvas绘制图形就是那几个函数：&lt;code&gt;beginPath&lt;/code&gt;、&lt;code&gt;arc&lt;/code&gt;、&lt;code&gt;moveTo&lt;/code&gt;、&lt;code&gt;lineTo&lt;/code&gt;、&lt;code&gt;closePath&lt;/code&gt;、&lt;code&gt;fill&lt;/code&gt;、&lt;code&gt;stroke&lt;/code&gt;。当我们能够熟练掌握并运用自如的时候，就能够独当一面了。加油吧，骚年们！&lt;/p&gt;
+&lt;hr&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;想看前面整理的canvas常用API的同学可以点下面：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot;&gt;canvas学习之API整理笔记（一）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study02.html&quot;&gt;canvas学习之API整理笔记（二）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;从本篇文章开始，我会着重分享给大家一些使用Canvas开发的实例和这些实例的实现思路。本文看点：使用canvas来绘制常见的各种图形实例，并且会简单封装一下绘制各图形的方法，最后会分享给大家一个封装好的快速绘制多边形的方法。
+    
+    </summary>
+    
+      <category term="工作" scheme="http://yoursite.com/categories/work/"/>
+    
+    
+      <category term="canvas" scheme="http://yoursite.com/tags/canvas/"/>
+    
+      <category term="html5" scheme="http://yoursite.com/tags/html5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>canvas学习之API整理笔记（二）</title>
     <link href="http://yoursite.com/work/2016-12-12/canvas-study02.html"/>
     <id>http://yoursite.com/work/2016-12-12/canvas-study02.html</id>
     <published>2016-12-12T15:05:20.000Z</published>
-    <updated>2016-12-24T14:11:48.000Z</updated>
+    <updated>2016-12-28T15:58:32.000Z</updated>
     
     <content type="html">&lt;hr&gt;
-&lt;p&gt;前面我整理过一篇文章&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;canvas学习之API整理笔记（一）&lt;/a&gt;，从这篇文章我们已经可以基本了解到常用绘图的API、简单的变换和动画。而本篇文章的主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们全程在线，毫无尿点，看完不会后悔，哈哈，一个耿直的笑^_^。&lt;br&gt;除此之外，关于canvas的一系列实例即将来袭！欢迎关注！&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;前面我整理过一篇文章介绍了一些基本的API，从这篇文章我们已经可以基本了解到常用绘图的API、简单的变换和动画。而本篇文章的主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们全程在线，毫无尿点，看完不会后悔，哈哈，一个耿直的笑^_^。&lt;br&gt;除此之外，关于canvas的一系列实例即将来袭！欢迎关注！&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;开始之前&quot;&gt;&lt;a href=&quot;#开始之前&quot; class=&quot;headerlink&quot; title=&quot;开始之前&quot;&gt;&lt;/a&gt;开始之前&lt;/h1&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//获取canvas容器&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; can = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;canvas&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//创建一个画布&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ctx = can.getContext(&lt;span class=&quot;string&quot;&gt;&#39;2d&#39;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;下面所有的操作都在画布ctx上进行操作。&lt;/p&gt;
 &lt;h1 id=&quot;高级动画&quot;&gt;&lt;a href=&quot;#高级动画&quot; class=&quot;headerlink&quot; title=&quot;高级动画&quot;&gt;&lt;/a&gt;高级动画&lt;/h1&gt;&lt;p&gt;继上一篇简单介绍了动画（主要是requestAnimationFrame方法），现在我们来一步步实现一个在画布内滚动的实例。&lt;/p&gt;
@@ -98,7 +160,7 @@
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;前面我整理过一篇文章&lt;a href=&quot;http://luckykun.com/work/2016-09-01/canvas-study01.html&quot;&gt;canvas学习之API整理笔记（一）&lt;/a&gt;，从这篇文章我们已经可以基本了解到常用绘图的API、简单的变换和动画。而本篇文章的主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们全程在线，毫无尿点，看完不会后悔，哈哈，一个耿直的笑^_^。&lt;br&gt;除此之外，关于canvas的一系列实例即将来袭！欢迎关注！&lt;br&gt;
+&lt;p&gt;前面我整理过一篇文章介绍了一些基本的API，从这篇文章我们已经可以基本了解到常用绘图的API、简单的变换和动画。而本篇文章的主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们全程在线，毫无尿点，看完不会后悔，哈哈，一个耿直的笑^_^。&lt;br&gt;除此之外，关于canvas的一系列实例即将来袭！欢迎关注！&lt;br&gt;
     
     </summary>
     
@@ -279,9 +341,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="CSS3" scheme="http://yoursite.com/tags/CSS3/"/>
-    
       <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
+    
+      <category term="CSS3" scheme="http://yoursite.com/tags/CSS3/"/>
     
   </entry>
   
@@ -906,9 +968,9 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
-      <category term="CSS3" scheme="http://yoursite.com/tags/CSS3/"/>
-    
       <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
+    
+      <category term="CSS3" scheme="http://yoursite.com/tags/CSS3/"/>
     
   </entry>
   
@@ -2003,53 +2065,6 @@
       <category term="highcharts" scheme="http://yoursite.com/tags/highcharts/"/>
     
       <category term="插件" scheme="http://yoursite.com/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>瑾以此文纪念我逝去的“宝马”</title>
-    <link href="http://yoursite.com/life/2016-05-11/life-miss-bike.html"/>
-    <id>http://yoursite.com/life/2016-05-11/life-miss-bike.html</id>
-    <published>2016-05-11T14:59:22.000Z</published>
-    <updated>2016-10-11T16:29:38.000Z</updated>
-    
-    <content type="html">&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;此文由本人写于大学时期，时间：2012-10-19&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2012年10月18日，也就是昨天，我的“宝马”毫无征兆的永远的离开了我，我很伤心，瑾以吐槽的方式用此文纪念我逝去的爱车。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/ac1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;首先，它再也不会回来了，我真的很气愤，很伤心。虽然我学过很多自我疗伤的方法:生气是拿别人的过错来惩罚自己，宽恕别人就是善待自己；任何事情都有两面性，要看到好的那一面；吃一堑，长一智，只有失去才会明白得到有多么不易…这些话当真不无道理，它们也确实能够让我得到暂时的安慰，但是无论我想得怎么怎么好，只要一想到爱车不再的结果，我还是会被它莫名其妙的困扰，毕竟跟了我一年多的时光，它的零件构造我都记忆犹新;毕竟它是用血汗钱买来的，而不是偷来的！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/bike.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;其次，我再回头想想，好像最近一直比较霉，霉透了！事事不顺心，件件不如意。列举如下，开始是打篮球弄破指甲，这个就算了，然后是物理书失踪，后来找到也就算了，然后是手机屏幕毫无征兆的摔坏，修好手机的当天接着就是自行车瞬间被盗！不说不知道，一说吓一跳啊。感觉这好像电影情节，我就是正宗的男主角！但为什么又偏偏是如此令人蛋疼的剧情！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/ac2.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;我想问，我又没有得罪老天爷吧？！相反，最近我还做了许多好事的吧！爬金龙长城时我不顾生死也要爬到顶端只为给佛祖添点香火；在路上偶遇残疾人小施1元，虽然不多，至少心意是好的吧；早读捡钱我还拾金不昧主动发短信询问失主。真是越说越气愤，真想引用《窦娥冤》的一句话，天你不明是非枉做天！真心觉得自己被老天无缘无故的扣上一个罪犯的帽子，无辜却又无奈。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/ac3.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;唉。。。无法与老天抗衡，我认了，但他小偷算个什么东西，社会的人渣、败类。想到尾随我一年多的自行车现在不知被哪个牲口停靠在哪个角落里时，我就气不打一处来，要是真逮着他，我恨不得扒了他的衣服，写上“我是小偷”挂在树上，吊个三天三夜，但千万别弄死他，我真想看看就算这样他是否还有勇气活在这世上，如若真有，那国家不把他的脸拿去研究防弹衣就简直太可惜了！&lt;/p&gt;
-&lt;p&gt;此文至此，我也不再深究了。不是我不想，也不是我不敢，只是有心无力罢了。&lt;/p&gt;
-&lt;p&gt;我想对我的爱车说:对不起，没保护好你是我的错，希望你不要太早“死去”，就算死去也要去幸福的天堂。&lt;/p&gt;
-&lt;p&gt;我还想对偷车大盗说:没关系，虽然不知道你是谁，但我知道，你的人生是龌龊的，至少到昨晚推走我车时为止，你就是TM的一个son of a bitch。作为一个文明人，还要温馨提示一下: 如果你要用它，就烧个香祈祷它有朝一日不会像马一样把你像坨屎一样甩出去，如果你要卖它，就祈祷你看病的钱不会高于你卖车的钱。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/ac4.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;如果妈妈你看到这篇文章，请不要怪我，我不是故意的，我也很伤心。但是，除了伤心，我还会有决定，我会做兼职，把钱赚回来，至少把自行车的钱赚回来。所以，请你下次打电话时不要再拿这件事说我了，哭…&lt;/p&gt;
-&lt;p&gt;好了，这篇日志过后，我就不会再郁闷了，重新振作，千万不能让小偷再看见我伤心样子，那样他会更加猖狂的。&lt;/p&gt;
-&lt;p&gt;最后，用陈小春的歌来送给可恶的偷车大盗，算你狠！！！&lt;/p&gt;
-&lt;hr&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;此文由本人写于大学时期，时间：2012-10-19&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2012年10月18日，也就是昨天，我的“宝马”毫无征兆的永远的离开了我，我很伤心，瑾以吐槽的方式用此文纪念我逝去的爱车。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xtawy.com1.z0.glb.clouddn.com/ac1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="http://yoursite.com/categories/life/"/>
-    
     
   </entry>
   
