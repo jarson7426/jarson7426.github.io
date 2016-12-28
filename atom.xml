@@ -1342,11 +1342,11 @@
       <category term="工作" scheme="http://yoursite.com/categories/work/"/>
     
     
+      <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
+    
       <category term="canvas" scheme="http://yoursite.com/tags/canvas/"/>
     
       <category term="html5" scheme="http://yoursite.com/tags/html5/"/>
-    
-      <category term="demo" scheme="http://yoursite.com/tags/demo/"/>
     
   </entry>
   
