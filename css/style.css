@@ -384,7 +384,7 @@ body {
   display: none;
 }
 #container .share_jia {
-  padding: 0 40px;
+  padding: 0 30px;
 }
 #container #mobile-nav {
   display: none;
@@ -1151,7 +1151,8 @@ div.instagram .album li {
 #yun-tie-sdk-wrap .tie-tab-bar {
   margin-left: -1px !important;
 }
-#yun-tie-sdk-wrap .tie-page-wrapper {
+#yun-tie-sdk-wrap .tie-page-wrapper,
+#yun-tie-sdk-wrap .tie-empty-tip {
   display: none !important;
 }
 @-moz-keyframes rotate360 {
