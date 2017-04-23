@@ -86,7 +86,7 @@
     <link href="http://yoursite.com/work/2016-12-12/canvas-study02.html"/>
     <id>http://yoursite.com/work/2016-12-12/canvas-study02.html</id>
     <published>2016-12-12T15:05:20.000Z</published>
-    <updated>2016-12-28T15:58:32.000Z</updated>
+    <updated>2017-04-23T09:16:23.000Z</updated>
     
     <content type="html">&lt;hr&gt;
 &lt;p&gt;前面我整理过一篇文章介绍了一些基本的API，从这篇文章我们已经可以基本了解到常用绘图的API、简单的变换和动画。而本篇文章的主要内容包括&lt;code&gt;高级动画、像素操作、性能优化&lt;/code&gt;等知识点，讲解每个知识点的同时还会有一些酷炫的demo，保证看官们全程在线，毫无尿点，看完不会后悔，哈哈，一个耿直的笑^_^。&lt;br&gt;除此之外，关于canvas的一系列实例即将来袭！欢迎关注！&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
