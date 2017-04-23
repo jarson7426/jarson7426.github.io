@@ -1144,6 +1144,113 @@ div.instagram .album li {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
+.post-comments-count a::before {
+  content: "评论";
+}
+#yun-tie-sdk-wrap .input-box .tie-submit-row .tie-submit-btn {
+  background-color: #649ab6;
+}
+#yun-tie-sdk-wrap .input-box .tie-submit-row .tie-submit-btn:hover {
+  background-color: #4c618f;
+}
+.tie-empty-tip {
+  display: none;
+}
+#yun-tie-sdk-wrap .input-box .tie-submit-row .user-info img:hover {
+#fff
+  -webkit-box-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 10px #fff;
+rgba(255,255,255,0.6)
+  -webkit-box-shadow: 0 0 10px #fff;
+rgba(255,255,255,0.6)
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  -ms-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+}
+#yun-tie-sdk-wrap .input-box .tie-submit-row .user-info img {
+  width: 32px;
+  height: 32px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin: 4px 10px 4px 8px;
+  padding: 0;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(51,51,51,0.2) sf;
+  box-shadow: inset 0 -1px 0 rgba(51,51,51,0.2) sf; /*设置图像阴影效果*/
+  -webkit-box-shadow: inset 0 -1px 0 rgba(51,51,51,0.2) sf;
+  -webkit-transition: 0.4s;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  -moz-transition: -moz-transform 0.4s ease-out;
+  -ms-transition: -ms-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out; /*变化时间设置为0.4秒(变化动作即为下面的图像旋转360读）*/
+  -moz-transition: -moz-transform 0.4s ease-out;
+}
+#yun-tie-sdk-wrap .single-tie .photo img:hover {
+#fff
+  -webkit-box-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 10px #fff;
+rgba(255,255,255,0.6)
+  -webkit-box-shadow: 0 0 10px #fff;
+rgba(255,255,255,0.6)
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  -ms-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+}
+#yun-tie-sdk-wrap .single-tie .photo img {
+  width: 42px;
+  height: 42px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(51,51,51,0.2) sf;
+  box-shadow: inset 0 -1px 0 rgba(51,51,51,0.2) sf; /*设置图像阴影效果*/
+  -webkit-box-shadow: inset 0 -1px 0 rgba(51,51,51,0.2) sf;
+  -webkit-transition: 0.4s;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  -moz-transition: -moz-transform 0.4s ease-out;
+  -ms-transition: -ms-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out; /*变化时间设置为0.4秒(变化动作即为下面的图像旋转360读）*/
+  -moz-transition: -moz-transform 0.4s ease-out;
+}
+.name-nick:hover {
+  border-left: 14px solid #3264b4;
+}
+.name-desp:hover {
+  border-left: 14px solid #3264b4;
+}
+#yun-tie-sdk-wrap .single-tie .tie-author .name-nick {
+  cursor: pointer;
+  -webkit-transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+  -moz-transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+  -ms-transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+  transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+}
+#yun-tie-sdk-wrap .single-tie .tie-author .name-desp {
+  cursor: pointer;
+  -webkit-transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+  -moz-transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+  -ms-transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+  transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+}
+.tie-time:hover {
+  border-right: 14px solid #3264b4;
+}
+#yun-tie-sdk-wrap .single-tie .tie-time {
+  -webkit-transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+  -moz-transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+  -ms-transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+  transition: border-width 0.3s linear 0.1s, color 0.2s linear 0.3s;
+  cursor: pointer;
+}
 @-moz-keyframes rotate360 {
   0% {
     -webkit-transform: rotate(0deg);
