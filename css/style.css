@@ -1145,10 +1145,11 @@ div.instagram .album li {
   border-radius: 10px;
 }
 #yun-tie-sdk-wrap {
-  background-color: none !important;
+  background-color: transparent !important;
+  margin: 0 10px;
 }
 #yun-tie-sdk-wrap .tie-tab-bar {
-  margin-left: -1px;
+  margin-left: -1px !important;
 }
 #yun-tie-sdk-wrap .tie-page-wrapper {
   display: none !important;
