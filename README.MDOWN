@@ -3,4 +3,4 @@
 
 由于项目打下限制为300M，文章图片放到七牛cdn上。
 
-https://raw.githubusercontent.com/luckykun/blog-back-up/master/photos/IMG_0020.JPG
+https://raw.githubusercontent.com/luckykun/blog-back-up/master/photos/IMG_0306.JPG
